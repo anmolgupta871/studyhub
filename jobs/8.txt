@@ -1,0 +1,36 @@
+Required Skill Set:
+Working experience with the Android SDK.
+Practical understanding of modern mobile and web technologies: Java, XML, HTTP, HTML5, CSS3, JavaScript, JSON and AJAX.
+In building UI across multiple platforms(Mobile/Tablets), SQLLITE DB
+Good knowledge of Object Oriented concepts and a strong passion for software development
+Object Oriented design and programming skills in Java (J2EE/ J2ME).
+Should have experience working with any enterprise application on mobile and develop applications in android for various devices.
+Should have sound knowledge of overall android architecture
+Exposure on Location based application.
+Core Responsibilities:
+Software development team member ; interface with product principles i.e. be SPOC( Single Point of Contact) 
+Should be able to design, development and maintenance of Android applications.
+Experience in iPhone, iPad, Windows Mobile is added advantage.
+
+Generating PoCs (Proof of concepts) directly and through a team and conducting application demonstrations
+Gather requirements around functionality and translate those requirements into elegant functional solutions.
+Should be able to collaborate with Project Team
+In addition to above Primary Responsibilitiesthe incumbentmay be assigned any other task fromtime totime byManagement of MAP IT.
+
+Salary: Not Disclosed by Recruiter
+
+Industry:IT-Software / Software Services
+
+Functional Area:IT Software - Application Programming , Maintenance
+
+Role Category:Programming & Design
+
+Role:Software Developer
+
+Employment Type: Permanent Job, Full Time
+
+Education-
+
+UG: B.Tech/B.E. - Any Specialization, Computers, BCA - Computers, B.Sc - Any Specialization
+
+PG:MCA - Computers, M.Tech - Any Specialization, Computers

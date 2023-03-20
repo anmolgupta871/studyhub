@@ -1,0 +1,65 @@
+Title: Sr. Software Engineer-Database
+
+Department: Global Support
+
+Sub Dept: Problem Management
+
+Prerequisites: -
+
+Should have work experience in the following skill sets:
+
+- IDEs: Toad, Oracle Sql Developer
+
+- Oracle 11g experience
+
+- PL/SQL
+
+- SVN or GIT Code Repository experience
+
+- Ability to work well in a team oriented, agile scrum environment.
+
+- Build SQL query models, stored procedures, trigger, views and reports.
+
+Key Responsibility Areas (Details):
+
+- 4-7 years of hands on programming experience with Oracle and PL/SQL.
+
+- Gathering / interpreting requirements and designing best-of-breed solutions
+
+- Experience writing and testing/debugging PL/SQL packages and stored procedures
+
+- Experience in full life-cycle software development including AGILE.
+
+- Strong analytical & troubleshooting skills.
+
+- Excellent communication skill.
+
+Primary Skills:
+
+Strong analytical & troubleshooting skills, Core Oracle DB and Object-Oriented Programming knowledge.
+Salary: Not Disclosed by Recruiter
+
+Industry:IT-Software / Software Services
+
+Functional Area:IT Software - DBA , Datawarehousing
+
+Role Category:Programming & Design
+
+Role:Software Developer
+
+Employment Type: Permanent Job, Full Time
+
+Desired Candidate Profile
+ 
+Education-
+
+UG: Any Graduate - Any Specialization
+
+PG:Any Postgraduate - Any Specialization
+
+Doctorate:Doctorate Not Required
+
+Company Profile:
+Premium
+
+Client of Big Recruit Consulting
