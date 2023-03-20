@@ -1,0 +1,70 @@
+                MT-205 
+               B.C.A. VI Semester Examination 2015        
+                             dot net Technology Paper Time Allowed                       Three Hours Maximum Marks 85.              Pass Marks: 28 
+
+             Note: Attempt all the questions.       
+                  Section A 
+     objective Type Questions 
+Q.1, Choose the correct answer: 
+i). Which language is used to create an Asp.net Code file?
+ a) Visual Basic
+ b) C#
+ c) C++
+ d) All of the above.
+
+ii) Visual Basic Web Form interface. file fHg What is the Extensian for a Visual basic web form interface file-
+ a) .asp 
+b) .aspx 
+c) .asp.vb
+ d) .aspx.vb.
+
+iii) CLR stands for:
+ a ) Common Language Runtime 
+b) Command Language Runtime r
+ c) Common Layer Runtime
+ d) Common Layer Rate 
+
+iv)When an Asp.net File is placed,on an IIS server and viewed through a browser, the resulting HTML page contain.
+ a) All Asp.net code 
+b) As much Asp.net code as is in the Asp.net file
+ c) Amix of Asp. net and HTML code
+d) all html code.
+
+Q.4. Define the data-binding concept with web in detail. 
+                 or
+ Connection class command class at Explain connection class and command class.
+
+    Q.5. Describe different web services in detail.
+                  or
+Explain Web application deployment. 
+
+Q.6. Describe delegates andreflection in C#with examples. 
+               or
+What are language featude of C#? Define Boxing and unboxing with example.
+
+
+                   Section C 
+    Long Answer Type Questions 
+
+Q.7. What is .Net? Explain parts of .Net framework with diagram. 
+                    or 
+
+Explain common language Runtime in..Net architecture. 
+
+Q.8.What is state management? Define different states used in Web services.
+ Define the following: 
+1)  AdRotator control 
+ii) Internet Explorer Control. 
+
+Q.9.  How can we access data using data adapters and data sets? Explain with examples. 
+               or
+explain the architecture and purpose of ADO.net IN detail.
+
+Q.10. How can we write data settoXML and haw can we read data set with XML? Explain with example. 
+
+             or
+ Explain soap and Remote method call using XML. 
+
+Q.11.What is structure of c program? Differentiate c with JAVA. 
+                   Or 
+How can we serialize and deserialize an object? Give example.

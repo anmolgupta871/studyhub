@@ -1,0 +1,238 @@
+
+<html>
+<body>
+<div align="justify">                                                                                                 <center>      <h2>       BCA 6th Semester Examination -2013</br>
+                                                                                                                       .NET Technology</br></h2>
+                                                                                                                          <font size="5">      Section-A</br>
+                                                                                                                     (Objective Type Question)</center>
+
+                                                                                                                     Time Allotted : Three Hours
+                                 <div align="right">            Maximum Marks: 85        </br>                                                                                                                                                                                      Pass Marks : 28</div>
+                                      
+NOTE:- Attempt all Question </br>
+Internal Choice is Available in Each Section.</br>
+  </font>                                                      
+Q-1 Choose The Correct Answer    </br>                                                                                                                                                                                                                <div align="right"> 5*3=15</div>
+
+1:- Which of the following object encapsulates the state of the client and the browser:  </br>
+(a) Server object</br>
+(b) Request object</br>
+(c) Response object</br>
+(d) Session object   </br>
+Ans:-session object
+  </br>
+
+2:- Which one of the following is the type of assembly that contains localized resources?</br>
+(a) Satellite </br>
+(b) Shared <br>
+(c) Hub <br>
+(d) localized   </br>
+Ans:-satellite  </br>
+
+3:-Which one of the following is to be implemented for .NET remote server object?:  </br>
+(a) ISerializable  </br>
+(b) ISingleCall  </br>
+(c) IUnknown  </br>
+(d) IMarshalByValue  </br>
+Ans:-ISerialization
+  </br>
+4:-  is the DataType return in IsPostback property. :  </br>
+(a) bit<br>
+(b) boolean<br>
+(c) int<br>
+(d) object</br>
+Ans:- boolean</br>
+5:- Session_End fires in which of these SessionState modes? :  </br>
+(a) Inproc  </br>
+(b) StateServer  </br>
+(c) SQLServer  </br>
+(d) None  </br>
+Ans:-Inproc
+  </br>
+
+                                                                                                                      <center>     <font size="5">                   Section-B</br>
+                                                                                                                                 (Short Answer Type Question)</center></font>
+                                                                                                                                                                                                                                                                          <div align="right"> 5*5=25     </div>                                                               
+Q:-2 Write .NET Framework.?  </br>
+Answer-    The .NET Framework is a technology that supports building and running the next generation of apps and XML Web services. The .NET Framework is designed to fulfill the following objectives:</br>
+•	To provide a consistent object-oriented programming environment whether object code is stored and executed locally, executed locally but Internet-distributed, or executed remotely.</br>
+•	To provide a code-execution environment that minimizes software deployment and versioning conflicts.</br>
+•	To provide a code-execution environment that promotes safe execution of code, including code created by an unknown or semi-trusted third party.</br>
+•	To provide a code-execution environment that eliminates the performance problems of scripted or interpreted environments.</br>
+•	To make the developer experience consistent across widely varying types of apps, such as Windows-based apps and Web-based apps.</br>
+•	To build all communication on industry standards to ensure that code based on the .NET Framework integrates with any other code.</br>
+Q:-3 Write about Introduction of ASP.NET. ?  </br>
+Answer:-ASP.NET is a web development platform, which provides a programming model, a comprehensive software infrastructure and various services required to build up robust web applications for PC, as well as mobile devices.</br>
+         </br>
+ASP.NET works on top of the HTTP protocol, and uses the HTTP commands and policies to set a browser-to-server bilateral communication and cooperation.</br>
+ASP.NET is a part of Microsoft .Net platform. ASP.NET applications are compiled codes, written using the extensible and reusable components or objects present in .Net framework. </br>
+These codes can use the entire hierarchy of classes in .Net framework.</br>
+The ASP.NET application codes can be written in any of the following languages:</br>
+•	C# <br>
+•	Visual Basic.Net </br>
+•	Jscript </br>
+•	J# </br>
+ASP.NET is used to produce interactive, data-driven web applications over the internet. It consists of a large number of controls such as text boxes, buttons, and labels for assembling, configuring, and manipulating code to create HTML pages.</br>
+ASP.NET web forms extend the event-driven model of interaction to the web applications. The browser submits a web form to the web server and the server returns a full markup page or HTML page in response. .</br>
+All client side user activities are forwarded to the server for stateful processing. The server processes the output of the client actions and triggers the reactions. .</br>
+Now, HTTP is a stateless protocol. ASP.NET framework helps in storing the information regarding the state of the application, which consists of: .</br>
+•	Page state </br>
+•	Session state <br>
+The page state is the state of the client, i.e., the content of various input fields in the web form. The session state is the collective information obtained from various pages the user visited and worked with, i.e., the overall session state. To clear the concept, let us take an example of a shopping cart </br>.
+User adds items to a shopping cart. Items are selected from a page, say the items page, and the total collected items and price are shown on a different page, say the cart page. Only HTTP cannot keep track of all the information coming from various pages. ASP.NET session state and server side infrastructure keeps track of the information collected globally over a session.</br>
+The ASP.NET runtime carries the page state to and from the server across page requests while generating ASP.NET runtime codes, and incorporates the state of the server side components in hidden fields.</br>
+This way, the server becomes aware of the overall application state and operates in a two-tiered connected way.</br>
+The ASP.NET Component Model:-</br>
+The ASP.NET component model provides various building blocks of ASP.NET pages. Basically it is an object model, which describes:</br>
+•	Server side counterparts of almost all HTML elements or tags, such as form and input.</br>
+•	Server controls, which help in developing complex user-interface. For example, the Calendar control or the Gridview control.</br>
+ASP.NET is a technology, which works on the .Net framework that contains all web-related functionalities. The .Net framework is made of an object-oriented hierarchy. An ASP.NET web application is made of pages. When a user requests an ASP.NET page, the IIS delegates the processing of the page to the ASP.NET runtime system.</br>
+The ASP.NET runtime transforms the .aspx page into an instance of a class, which inherits from the base class page of the .Net framework. Therefore, each ASP.NET page is an object and all its components i.e., the server-side controls are also objects.</br>
+Q:-4 . Write about Architecture of ADO.NET?  </br>
+Answer:-  
+The ADO.NET components have been designed to factor data access from data manipulation. There are two central components of ADO.NET that accomplish this: the DataSet, and the .NET Framework data provider, which is a set of components including the Connection, Command, DataReader, and DataAdapter objects.</br>
+The ADO.NET DataSet is the core component of the disconnected architecture of ADO.NET. The DataSet is explicitly designed for data access independent of any data source. As a result it can be used with multiple and differing data sources, used with XML data, or used to manage data local to the application. The DataSet contains a collection of one or more DataTable objects made up of rows and columns of data, as well as primary key, foreign key, constraint, and relation information about the data in the DataTable objects.</br>
+The other core element of the ADO.NET architecture is the .NET Framework data provider, whose components are explicitly designed for data manipulation and fast, forward-only, read-only access to data. The Connection object provides connectivity to a data source. The Command object enables access to database commands to return data, modify data, run stored procedures, and send or retrieve parameter information. The DataReader provides a high-performance stream of data from the data source. Finally, the DataAdapter provides the bridge between the DataSetobject and the data source. The DataAdapter uses Command objects to execute SQL commands at the data source to both load the DataSet with data, and reconcile changes made to the data in the DataSet back to the data source.
+You can write .NET Framework data providers for any data source. The .NET Framework ships with two .NET Framework data providers: </br>The .NET Framework Data Provider for SQL Server and the .NET Framework Data Provider for OLE DB.</BR>
+
+
+
+
+
+Q:-5 Write about reading and writing Dataset’s Data in XMl file?  </br>
+Answer:-
+This article describes how to create XML file and also shows various ways of reading XML File in .NET using XmlTextReader, XmlDocumenet, XPathDocument, DataSet and XmlDataSource control.</BR>
+Introduction </BR>
+In todays world of software development, its tough to escape from XML data. In this article, I have tried to describe briefly how to create XML file and also how to read it using different inbuilt classes provided in .NET Framework. </BR> 
+Lets start this by creating an xml document first and then we will see how to read them. In general, to work with XML document, you need to use System.Xml namespace. </BR>
+
+
+Creating XML File</BR>
+To create XML file, you can use XmlTextWriter. In following code-snippet, I have instantiated XmlTextWriter class and passed two parameter, filename and encoding type to use while creating XML file. </BR>
+Above code-snippet is self explanatory, however in briefly XmlTextWriter's method: .</BR>
+•	WriteStartDocument:-  writes version and encoding type - the top level element. .</BR>
+•	WriteEndDocument:-    writes end of the document, if any </BR>
+•	WriteStartElement :-  writes start element with the string you pass as parameter.</BR>.
+•	WriteAttributeString :- writes the name of the attribute and its value.</BR>
+•	WriteString :- writes any string you pass as innertext of the element.</BR>
+•	WriteEndElement :- write end element, this follows the herarchy, so be careful. You can't use it without using WriteStartElement method.</BR>
+ 
+Q:-6 Write about C# Language.?  </br>
+Answer:-
+C# syntax is highly expressive, yet it is also simple and easy to learn. The curly-brace syntax of C# will be instantly recognizable to anyone familiar with C, C++ or Java. Developers who know any of these languages are typically able to begin to work productively in C# within a very short time. C# syntax simplifies many of the complexities of C++ and provides powerful features such as nullable value types, enumerations, delegates, lambda expressions and direct memory access, which are not found in Java. C# supports generic methods and types, which provide increased type safety and performance, and iterators, which enable implementers of collection classes to define custom iteration behaviors that are simple to use by client code. Language-Integrated Query (LINQ) expressions make the strongly-typed query a first-class language construct.</BR>
+As an object-oriented language, C# supports the concepts of encapsulation, inheritance, and polymorphism. All variables and methods, including the Main method, the application's entry point, are encapsulated within class definitions. A class may inherit directly from one parent class, but it may implement any number of interfaces. Methods that override virtual methods in a parent class require the override keyword as a way to avoid accidental redefinition. In C#, a struct is like a lightweight class; it is a stack-allocated type that can implement interfaces but does not support inheritance.</BR>
+In addition to these basic object-oriented principles, C# makes it easy to develop software components through several innovative language constructs, including the following: </BR>
+•	Encapsulated method signatures called delegates, which enable type-safe event notifications. </BR>
+•	Properties, which serve as accessors for private member variables. </BR>
+•	Attributes, which provide declarative metadata about types at run time. </BR>
+•	Inline XML documentation comments. </BR>
+•	Language-Integrated Query (LINQ) which provides built-in query capabilities across a variety of data sources. </BR>
+If you have to interact with other Windows software such as COM objects or native Win32 DLLs, you can do this in C# through a process called "Interop." Interop enables C# programs to do almost anything that a native C++ application can do. C# even supports pointers and the concept of "unsafe" code for those cases in which direct memory access is absolutely critical. </BR>
+The C# build process is simple compared to C and C++ anSd more flexible than in Java. There are no separate header files, and no requirement that methods and types be declared in a particular order. A C# source file may define any number of classes, structs, interfaces, and events. </BR>
+.NET Framework Platform Architecture </BR>
+C# programs run on the .NET Framework, an integral component of Windows that includes a virtual execution system called the common language runtime (CLR) and a unified set of class libraries. The CLR is the commercial implementation by Microsoft of the common language infrastructure (CLI), an international standard that is the basis for creating execution and development environments in which languages and libraries work together seamlessly. </BR>
+Source code written in C# is compiled into an intermediate language (IL) that conforms to the CLI specification. The IL code and resources, such as bitmaps and strings, are stored on disk in an executable file called an assembly, typically with an extension of .exe or .dll. An assembly contains a manifest that provides information about the assembly's types, version, culture, and security requirements. </BR>
+When the C# program is executed, the assembly is loaded into the CLR, which might take various actions based on the information in the manifest. Then, if the security requirements are met, the CLR performs just in time (JIT) compilation to convert the IL code to native machine instructions. The CLR also provides other services related to automatic garbage collection, exception handling, and resource management. Code that is executed by the CLR is sometimes referred to as "managed code," in contrast to "unmanaged code" which is compiled into native machine language that targets a specific system. The following diagram illustrates the compile-time and run-time relationships of C# source code files, the .NET Framework class libraries, assemblies, and the CLR. </BR>
+Language interoperability is a key feature of the .NET Framework. Because the IL code produced by the C# compiler conforms to the Common Type Specification (CTS), IL code generated from C# can interact with code that was generated from the .NET versions of Visual Basic, Visual C++, or any of more than 20 other CTS-compliant languages. A single assembly may contain multiple modules written in different .NET languages, and the types can reference each other just as if they were written in the same language.</BR>
+In addition to the run time services, the .NET Framework also includes an extensive library of over 4000 classes organized into namespaces that provide a wide variety of useful functionality for everything from file input and output to string manipulation to XML parsing, to Windows Forms controls. The typical C# application uses the .NET Framework class library extensively to handle common "plumbing" chores.</BR>
+
+                                                                                            
+                                                                                                            <center><font size="5">                        Section-C</br>
+                                                                                                                   (Long Answer Type Question)</center></font>
+                                                                                                                                                                                                                                                                           <div align="right"> 5*9=45</div>
+Q:-7 what is CLR in .Net Architecture? Explains its  features?</br>
+Answer:-
+Ans. Microsoft's .NET Framework provides an amazing aspect of development, called cross-language development, which includes cross-language inheritance, cross-language debugging, and cross-language exception handling. More generally, we can visualize cross-language development as follows. Code written using any .NET-compliant language (such as C#) should be usable in any other .NET-compliant language (such as VB). Later on, these code modules should be usable in yet another language (such as JScript, J#, and so on). To make this possible, you need a common runtime environment that can understand all these languages. </BR>
+One of the main design goals of .NET is to encourage cross-language development. The advantage is that the developer can choose the language that best suits for delivering a given module/unit (each language has its own strengths) and still be able to integrate into a single application. The end result is that the language becomes equal. Even employers feel more comfortable with cross-language development, as they have more resources and options at hand. </BR>
+
+The .NET Framework also eliminates "DLL hell" and allows for side-by-side deployment of components because registration information and state data are no longer stored in the Registry, where this information can be difficult to establish and maintain. </BR>
+
+Next, let's explore the cross-language capabilities of CLR (the Common Language Runtime Environment) and see how IL (Intermediate Language) becomes the core of all .NET-compliant languages. In particular, I'll discuss how to program for the CLR and show some examples that demonstrate the cross-language capabilities of the .NET Framework. </BR>
+
+Common Language Runtime </BR>
+
+The Common Language Runtime (CLR) Environment provides a rich set of features for cross-language development and deployment. CLR supports both object-oriented languages and procedural languages. CLR manages the execution of code and provides various services such as security, garbage collection, cross-language exception handling, cross-language inheritance, support for the Base Class Library (BCL), and so on. These are the main constituents of the CLR: </BR>
+
+•	The Common Type System (CTS) supports object-oriented programming languages as well as procedural languages. Basically CTS provides a rich type system that's intended to support a wide range of languages.</•	The Common Language Specification (CLS) is a subset of the Common Type System, to which all language compilers targeting CLR must adhere.</BR>
+•	All compilers under .NET will generate a uniform, common language called Intermediate Language (IL), no matter what language is used to develop the application. In fact, CLR will not be aware of the language used to develop an application. For this reason, IL can be considered the language of CLR—a platform for cross-language development.</BR>
+•	The Just in Time (JIT) compiler converts the Intermediate Language code back to a platform/device-specific code. In .NET you have three types of JIT compilers</BR>:
+•	Pre-JIT (compiles entire code into native code at one stretch) </BR>
+•	Ecno-JIT (compiles code part by part, freeing when required)</BR>
+•	Normal-JIT (compiles only that part of the code when called, and places it in the cache)</BR>
+•	Type safety is ensured in this phase. In all, the role of a JIT compiler is to bring higher performance by placing the once-compiled code in cache, so that when the next call is made to the same method/procedure, it's executed at a faster speed.</BR>
+•	The Virtual Execution System (VES) implements the Common Type System. VES loads links and runs Portable Executable (PE) files. VES also ensures loading of the information contained in metadata.</BR>
+•	Metadata describes and references the datatypes defined by the VOS type system, lays out instances of classes in memory, resolves method invocation, and solves versioning problems (DLL hell).</BR>
+</BR>
+Common Language Features </BR>
+•	All languages use the same library, the Base Class Library (BCL). However, the syntax used by these languages remains the same as that of the original language.</BR>
+•	No language under .NET has its own library.</BR>
+•	Garbage collection is the responsibility of the CLR environment and not a language.</BR>
+
+
+
+
+
+
+
+
+
+
+Q:-8 Explain the architecture of ADO.Net in detail? </br>
+Answer:-
+ADO.NET consist of a set of Objects that expose data access services to the .NET environment. It is a data access technology from Microsoft .Net Framework , which provides communication between relational and non relational systems through a common set of components .</BR>
+System.Data namespace is the core of ADO.NET and it contains classes used by all data providers. ADO.NET is designed to be easy to use, and Visual Studio provides several wizards and other features that you can use to generate ADO.NET data access code.</br>
+Data Providers and DataSet:- </br>
+The two key components of ADO.NET are Data Providers and DataSet . The Data Provider classes are meant to work with different kinds of data sources. They are used to perform all data-management operations on specific databases. DataSet class provides mechanisms for managing data when it is disconnected from the data source.</br>
+Data Providers :-</br>
+The .Net Framework includes mainly three Data Providers for ADO.NET. They are the Microsoft SQL Server Data Provider , OLEDB Data Provider and ODBC Data Provider . SQL Server uses the SqlConnection object , OLEDB uses the OleDbConnection Object and ODBC uses OdbcConnection Object respectively.</br>
+A data provider contains Connection, Command, DataAdapter, and DataReader objects. These four objects provides the functionality of Data Providers in the ADO.NET.</br>
+Connection :- </br>
+The Connection Object provides physical connection to the Data Source. Connection object needs the necessary information to recognize the data source and to log on to it properly, this information is provided through a connection string.</br>
+Command :- </br>
+The Command Object uses to perform SQL statement or stored procedure to be executed at the Data Source. The command object provides a number of Execute methods that can be used to perform the SQL queries in a variety of fashions.</br>
+DataReader :- </br>
+The DataReader Object is a stream-based , forward-only, read-only retrieval of query results from the Data Source, which do not update the data. DataReader requires a live connection with the databse and provides a very intelligent way of consuming all or part of the result set.</br>
+DataAdapter :- </br>
+DataAdapter Object populate a Dataset Object with results from a Data Source . It is a special class whose purpose is to bridge the gap between the disconnected Dataset objects and the physical data source.</br>
+
+DataSet provides a disconnected representation of result sets from the Data Source, and it is completely independent from the Data Source. DataSet provides much greater flexibility when dealing with related Result Sets.</br>
+DataSet contains rows, columns,primary keys, constraints, and relations with other DataTable objects. It consists of a collection of DataTable objects that you can relate to each other with DataRelation objects. The DataAdapter Object provides a bridge between the DataSet and the Data Source.</br>
+
+
+
+
+
+
+
+
+Q:-9 Explain soap and Remote method call using XML?</br>
+Answer:-
+Remote procedure calls in SOAP are essentially client-server interactions over HTTP where the request and response comply with SOAP encoding rules. The Request-URI (Universal Resource Identifier) in HTTP is typically used at the server end to map to a class or an object, but this is not mandated by SOAP. Additionally, the HTTP header SOAPAction specifies the interface name (a URI) and the name of the method to be called on the server. The SOAP message is an XML document whose root element, the Envelope, specifies the overall structure of the message, its intended recipient, and other attributes of the message. SOAP specifies a remote procedure call convention, which includes the representation and format to be used for calls and responses. A method call is modeled as a compound data element consisting of a sequence of fields (accessors), one for each parameter. A return structure consists of the return value as well as the out and in/out parameters. SOAP encoding rules specify the serialization for primitive and application-defined datatypes.</br>
+SOAP allows hierarchically structured queries and responses, and specifies serialization of primitive string, numeric and date datatypes, and aggregates like arrays and vectors. Sparse arrays, and protocols for sending parts of them are also supported. New types may be defined using the <complexType> construct inside a schema definition.</br>
+Overall, SOAP provides many advantages. Unfortunately, its universality comes with a performance penalty: XML messages are textual and so the sizes of its messages are significantly larger than protocols which send binary data. Since a distinguishing characteristic of scientific computation is the need to handle large data sets, the performance of SOAP relative to specialized protocols that can use binary representations is an important issue. The next section tests SOAP performance relative to other communication protocols.</br>
+Q:-10 Write about state management in ASP.Net?</br>
+Answer:-
+ASP.NET WebForms is an abstraction that was built on top of HTTP, but it was primarily designed as an easy path for Developers from the Visual Basic world to migrate to the web world. So it mimicked things like Controls, events, event handlers and even State. ASP.NET provides a number of ways to preserve the state/data between round trips. In this article, we will briefly explore some of these ways</br>.
+Data can be maintained between round trips at two different locations. Yes you guessed it right – on the Client Side or the Server Side. Take a look at the following diagram which shows different options for maintaining the state on client as well as the server-</br>
+Taking an informed decision of storing what kind of data where, is a crucial part of each web application design. Usually non-secure information is stored at client side and secured information is always stored at the server side.</br>
+Client Side State Management :-</br>
+Client-side management techniques don’t utilize server resources. They are less secure but fast performing. Let’s explore some client-side techniques to save state:</br>
+ViewState :- ViewState is ASP.NET’s own integrated state serialization mechanism. ViewState objects are used to store page related data which are preserved between the round trips from client to server and server to client. View state is maintained as a hidden field in the page. Here’s how viewstate for an ASP.NET textbox would look like if you view the page source:</br>
+input type=""hidden"" id=""__VIEWSTATE"" name=""__VIEWSTATE"" value=""dDw3GTg2NTI5MDEDC0y3="" </br>
+
+
+Q:-11  Write  about serialization and reflection in C# ?</br>
+Answer:-
+. Serializes and deserializes objects into and from XML documents. The XmlSerializer enables you to control how objects are encoded into XML.</br>
+Reflection provides objects (of type Type) that encapsulate assemblies, modules and types. You can use reflection to dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties. If you are using attributes in your code, Reflection enables you to access them.>/br>
+
+As far as my understanding goes, I could create objects in run time using XML Serialization? In other words, let's say I have a database, I could define my "classes" or "objects" in couple of tables. I could then get the XML for the object's data and then create the object at run-time.</br>
+
+I could also already have those objects compiled as libraries readily available and then use Reflection to access it's functions.</br>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<html>
+<body>    
+<div align="justify">   <center> <h2>
+	BCA 6TH Semester (ATKT)</br>
+                                                                                                                                   Examination April/May, 2017</br>
+
+                                                                                                                                                 KU-75</br>
+                                                                                                                                  DOTNET TECHNOLOGY</br>
+                                                                                                                                                Paper :III</br></center></h2>
+                                                                             <font size="5">    [Time : 3Hrs]   </br>                                                                                     
+                                                                                                         
+             
+Attempt all questions.
+                                                                                                                          <center>                     (Section-A)</br>
+                                                                                                                                   (Objective Types Questions)                  </center>          
+																																   
+</br>
+1.Choose the correct answer.</br></font>
+i) Lower bound value of array in VB.NET :</br>
+a) -1           </br> b) 0</br>
+c) 2             </br>d) 3</br>
+
+Ans:) b</br>
+
+ii) Which one can be used to view Assembly? </br>
+a)SN.exe            </br>  b)ILDASM</br>
+c)JIT                   </br>  d)Ngen.exe</br>
+
+Ans:) b</br>
+
+iii)Which of the following is not the method of debug class?</br>
+a) Assert()</br>
+b) Flush()</br>
+c) Open()</br>
+d) None of the above</br>
+
+Ans:) b</br>
+
+iv)The object of .NET data provider is :</br>
+a) Connection</br>
+b) Command</br>
+c) Data reader</br>
+d) All of the above</br>
+
+Ans:) c </br>
+
+v)Which of the following is not the method of data adaptor ?</br>
+a) Fill</br>
+b) Fill schema</br>
+c) Read data</br>
+d) Update</br>
+
+Ans:) c</br>
+
+
+
+
+</br>
+     <center>                                                                                                                          <font size="5">              (Section-B)</br>
+                                                                                                                          (Short Answer Type Questions)        </font>       
+</center></br>
+2.)What is XML? How XML is used in .NET ?</br>
+Or </br>
+Explain the .NET framework?</br>
+
+Ans :)  Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable.
+ XML documents consist entirely of characters from the Unicode repertoire. Except for a small number of specifically excluded control characters, any character defined by Unicode may appear 
+within the content of an XML document.</br>
+XML includes facilities for identifying the encoding of the Unicode characters that make up the document, and for expressing characters that, for one reason or another, cannot be used directly.
+The .NET Framework has extensive support for working with XML documents. IN the .NET framework, the support for XML documents includes:</br>
+?	XML namespace</br>
+?	XML designer</br>
+?	XML Web Server control</br>
+?	XML DOM support</br>
+OR</br>
+
+Ans:) .NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows. It includes a large class library named Framework Class Library (FCL)
+ and provides language interoperability (each language can use code written in other languages) across several programming languages. </br>
+Programs written for .NET Framework execute in a software environment (in contrast to a hardware environment) named Common Language Runtime(CLR), an application virtual machine that provides services such as
+ security, memory management, and exception handling. (As such, computer code written using .NET Framework is called "managed code".) FCL and CLR together constitute .NET Framework.
+FCL provides user interface, data access, database connectivity, cryptography, web application development, numeric algorithms, and network communications. Programmers produce software by combining their source 
+code with .NET Framework and other libraries. The framework is intended to be used by most new applications created for the Windows platform. Microsoft also produces
+ an integrated development environment largely for .NET software called Visual Studio.</br>
+.NET Framework began as proprietary software, although the firm worked to standardize the software stack almost immediately, even before its first release. Despite the standardization efforts, developers, mainly those
+ in the free and open-source softwarecommunities, expressed their unease with the selected terms and the prospects of any free and open-source implementation, especially regarding software patents. Since then,
+ Microsoft has changed .NET development to more closely follow a contemporary model of a community-developed software project, including issuing an update to its patent promising to address the concerns.
+</br>
+</br>
+3.)What is state management ? Explain it.
+</br>Or</br>
+Explain IIS installation process.
+</br>
+Ans :) ASP.NET provides state management techniques both on client as well as server-side. ASP.NET WebForms is an abstraction that was built on top of HTTP, but it was primarily designed as an easy path for 
+Developers from the Visual Basic world to migrate to the web world. So it mimicked things like Controls, events, event handlers and even State. ASP.NET provides a number of ways to preserve the state/data between
+ round trips.
+</br>
+Data can be maintained between round trips at two different locations.
+ 
+</br>
+Or
+Ans :) 
+</br></br>
+4.)How can you connect or disconnect database using ADO.NET?</br>
+Or</br>
+Explain the dataset classes.</br>
+Ans:) Connected Architecture of ADO.NET
+The architecture of ADO.net, in which connection must be opened to access the data retrieved from database is called as connected architecture. Connected architecture was built on the classes connection, command,
+ datareader and transaction. </br>
+
+Connected architecture is when you constantly make trips to the database for any CRUD (Create, Read, Update and Delete) operation you wish to do. This creates more traffic to the database but is normally much faster
+ as you should be doing smaller transactions.
+ </br>
+Disconnected Architecture in ADO.NET
+</br>
+The architecture of ADO.net in which data retrieved from database can be accessed even when connection to database was closed is called as disconnected architecture. Disconnected architecture of ADO.net was built
+ on classes connection, dataadapter, commandbuilder and dataset and dataview.</br>
+Disconnected architecture is a method of retrieving a record set from the database and storing it giving you the ability to do many CRUD (Create, Read, Update and Delete) operations on the data in memory, then it can be
+ re-synchronized with the database when reconnecting. A method of using disconnected architecture is using a Dataset.
+</br>
+ 
+OR</br>
+ Ans:) The DataSet, which is an in-memory cache of data retrieved from a data source, is a major component of the ADO.NET architecture. The DataSetconsists of a collection of DataTable objects that you can relate to
+ each other with DataRelation objects. You can also enforce data integrity in the DataSet by using the UniqueConstraint and ForeignKeyConstraint objects. For further details about working with DataSet objects,
+ see DataSets, DataTables, and DataViews (ADO.NET).</br>
+Whereas DataTable objects contain the data, the DataRelationCollection allows you to navigate though the table hierarchy. The tables are contained in a DataTableCollection accessed through the Tables property.
+ When accessing DataTable objects, note that they are conditionally case sensitive. For example, if one DataTable is named "mydatatable" and another is named "Mydatatable", a string used to search for one of the tables
+ is regarded as case sensitive. However, if "mydatatable" exists and "Mydatatable" does not, the search string is regarded as case insensitive. For more information about working with DataTable objects, 
+see Creating a DataTable (ADO.NET).</br>
+A DataSet can read and write data and schema as XML documents. The data and schema can then be transported across HTTP and used by any application, on any platform that is XML-enabled. You can save the schema
+ as an XML schema with the WriteXmlSchema method, and both schema and data can be saved using the WriteXml method. To read an XML document that includes both schema and data, use the ReadXml method.
+</br>
+</br>
+5.)What is SOAP? Explain it.</br>
+Or</br>
+What are the web services ? Explain.</br>
+ Ans:) SOAP was originally developed by Microsoft, IBM, DevelopMentor and Userland Software and was then submitted to the Internet Engineering Task Force (IETF), who eventually made it an official recommendation.
+ Though Microsoft camp seem to have played a major role in defining the specification of SOAP. SOAP (Simple Object Access Protocol) is a simple solution for interaction of different applications built in different languages 
+and running on different platforms as it uses HTTP as its transport and XML as its payload for sending and receiving messages. Its is a lightweight and a loosely coupled protocol for exchange of information in a decentralized
+ and a distributed environment.</br>
+Or
+</br>
+Ans:) A Web Service is programmable application logic accessible via standard Web protocols. One of these Web protocols is the Simple Object Access Protocol (SOAP). SOAP is a W3C submitted note
+ (as of May 2000) that uses standards based technologies (XML for data description and HTTP for transport) to encode and transmit application data.
+Consumers of a Web Service do not need to know anything about the platform, object model, or programming language used to implement the service; they only need to understand how to send and receive
+ SOAP messages (HTTP and XML)</br>
+. Web Services are simple and easy to understand. It is possible, in fact, to author a simple application that surfaces data as XML conforming to the SOAP specification. It would also be relatively straightforward to build
+ an application capable of receiving SOAP messages over HTTP and deriving meaningful value out of it. For those of you familiar with PERL, this could simply be a matter of using RegEx to parse the value out of the
+ XML result; it's just another string.</br>
+However, just as we use frameworks such as ASP and ASP.NET to build Web applications, we would much rather use a framework for building Web Services. The reasoning is quite logical. We don't need to reinvent the
+ plumbing—that is, at a high level, the capability to serialize our data as XML, transport the data using HTTP, and de-serialize the XML back to meaningful data. Instead, we want a framework that makes building 
+Web Services easy, allowing us to focus on the application logic not the plumbing. ASP.NET provides this framework for us.
+</br>
+
+</br>
+6.)Differentiate Java and .NET .</br>
+Or</br>
+Explain the boxing and unboxing.
+</br>
+Ans:) Java and .NET are known programming languages. These languages belong to different platforms,
+ Java is a Oracle Trademark, and Oracle licensed software programming language, whereas 
+.NET is a Microsoft's CLI executable environment and programming language. These languages form the backbone in the software and information technologies.
+Java is a famous open source programming language product of Oracle trademark. Java is a software programming languages, which is wholly object-oriented, concurrent and class-based in features.
+.NET is the most upcoming and advanced programming language in the computer and IT sectors. Initially, Microsoft developed the .NET Framework in the late 1990s, and named it originally as, 
+Next Generation Windows Services (NGWS).</br>
+Or</br>
+
+Ans:) Boxing and unboxing are the most important concepts you always get asked in your interviews. Actually, it's really easy to understand, and simply refers to the allocation of a value type (e.g. int, char, etc.)
+ on the heap rather than the stack.</br>
+Boxing</br>
+Implicit conversion of a value type (int, char etc.) to a reference type (object), is known as Boxing. In boxing process, a value type is being allocated on the heap rather than the stack.
+Unboxing</br>
+Explicit conversion of same reference type (which is being created by boxing process); back to a value type is known as unboxing. In unboxing process, boxed value type is unboxed from the heap and assigned to a
+ value type which is being allocated on the stack.
+</br>
+
+</br>
+     <center>                                                                                             <font size="5">                                         (Section-C)</br>
+                                                                                                                          (Long Answer Type Questions)      </font>    
+	</center></br></br>
+7.)What are the various features of .NET ? Explain them.</br>
+Or</br>
+Explain the ASP.NET life cycle in detail.</br>
+</br>
+Ans:) 1) Assembly: The .DLL or .EXE is the assembly that creates the portion of the application. It has a MSIL code which CLR executes. The permissions are granted on this assembly unit, who has a version. 
+The assemblies comprise of interfaces, classes, and different resources such as bitmaps. The assembly consists of Meta data which is the information storehouse of the assembly. This information is further used by CLR which makes use of this info while executing the assembly. The assemblies are either private, which are in the hands of those who own the application or they might be Global which can be used by any application in the system. Two different version assemblies having same name can be run parallel thus providing the applications to make use of the specific version of the assembly.
+</br>
+Common Type System or CTS is concerned with data types needed by the language to follow. Similar to the programs which can be converted to MSIL, the various data types of the languages are also convertible into 
+certain data types, which are a standard one. CTS creates the world if rules to be followed by the language. It is a portion of the criss language integration which permits the languages in one class yo be used for others after extension.
+</br>
+Cross language interoperability: .NET is highly supportive for the language interoperability. This does not mean that every program in one language can be used in another. To enable the program in such a way that it may
+ accompany other languages, it is necessary to create a set of rules to be followed. This is called Cross Language Specifications (CLS).
+</br>
+Cross language exception It is the ability to create a class in C# from the one established in VB.NET. When an exception is raised by any of the C# written programs, it is handled by VB.NET
+ and is known as cross-language exception handling.
+</br>
+
+
+ </br>
+8.)What are the various form control ? Explain them.</br>
+Or</br>
+What do you mean by Validation ? Explain different validation.</br>
+</br>
+Ans:) VB.Net provides a huge variety of controls that help you to create rich user interface. Functionalities of all these controls are defined in the respective control classes.
+ The control classes are defined in the System.Windows.Forms namespace.
+The following table lists some of the commonly used controls:
+</br>S.N.	Widget & Description</br>
+1	Forms</br>
+The container for all the controls that make up the user interface.
+2	TextBox</br>
+It represents a Windows text box control.
+3	Label</br>
+It represents a standard Windows label.
+4	Button</br>
+It represents a Windows button control.
+5	ListBox</br>
+It represents a Windows control to display a list of items.
+6	ComboBox</br>
+It represents a Windows combo box control.
+7	RadioButton</br>
+It enables the user to select a single option from a group of choices when paired with other RadioButton controls.
+8	CheckBox</br>
+It represents a Windows CheckBox.
+9	PictureBox</br>
+It represents a Windows picture box control for displaying an image.
+10	ProgressBar</br>
+It represents a Windows progress bar control.
+11	ScrollBar</br>
+It Implements the basic functionality of a scroll bar control.
+12	DateTimePicker</br>
+It represents a Windows control that allows the user to select a date and a time and to display the date and time with a specified format.
+13	TreeView</br>
+It displays a hierarchical collection of labeled items, each represented by a TreeNode.
+14	ListView</br>
+It represents a Windows list view control, which displays a collection of items that can be displayed using one of four different views.
+</br>
+Or</br>
+ Ans:) An important aspect of creating ASP.NET Web pages for user input is to be able to check that the information users enter is valid. ASP.NET provides a set of validation controls that provide
+ an easy-to-use but powerful way to check for errors and, if necessary, display messages to the user.
+Type of validation	Control to use	Description
+Required entry	RequiredFieldValidator
+Ensures that the user does not skip an entry. For details, see How to: Validate Required Entries for ASP.NET Server Controls.
+</br>
+Comparison to a value	CompareValidator
+Compares a user's entry against a constant value, against the value of another control (using a comparison operator such as less than, equal, or greater than), or for a specific data type.
+ Validate Against a Specific Value for ASP.NET Server Controls and How to: Validate Against a Data Type for ASP.NET Server Controls.
+</br>
+Range checking	RangeValidator
+Checks that a user's entry is between specified lower and upper boundaries. You can check ranges within pairs of numbers, alphabetic characters, and dates.
+How to: Validate Against a Range of Values for ASP.NET Server Controls.
+</br>
+Pattern matching	RegularExpressionValidator
+Checks that the entry matches a pattern defined by a regular expression. This type of validation enables you to check for predictable sequences of characters, such as those in e-mail addresses
+, telephone numbers, postal codes, and so on. For details, see How to: Validate Against Patterns for ASP.NET Server Controls.
+</br>
+User-defined	CustomValidator</br>
+Checks the user's entry using validation logic that you write yourself. This type of validation enables you to check for values derived at run time. 
+ How to: Validate with a Custom Function for ASP.NET Server Controls and How to: Validate Against Values in a Database for ASP.NET Server Controls.
+
+</br></br>
+9.)How you can display data on web form using data bound control?
+Or</br>
+Explain the ADO.NET components.
+ Ans:) The SqlDataSource control contains ConnectionString, SelectCommand, UpdateCommand and DeleteCommand properties. The ConnectionString property connects the DataSource (SqlDataSource)
+ control to the database and properties such as SelectCommand, InsertCommand, UpdateCommand, DeleteCommand contains SQL statements that are executed when we display,
+ insert and delete records using the GridView control. 
+A GridView control and a SqlDataSource control is placed on the web form. The Select, Delete, Insert and Update commands are used to interact with the Sql Server database. 
+</br>
+The Figure shown above gives a overview of how the gridView control works in tandem with SqlDataSource control and the Sql server database. The GridView control is placed on the web form and is
+ visible to the user. The SqlDataSource control is placed on the web form and is not visible to the user at runtime. 
+</br>
+After the DataSourceID of the GridView control is set, the SqlDataSource control is ready to establish a connection with the Sql Server database, retrieve data from the database table and pass the data
+ to the GridView control. </br>
+Or</br>
+Ans:) </br>1. ADO.Net Data Provider
+Connection (connection string): Connection object is used to establish a connection between database and .Net application, all the database processing is handled once the connection between DB and 
+application created successfully.
+Command (Transection): Command object contains queries like select, update, insert and delete commands which need to be executed on database server. To execute command we need to provide the connection
+ to it and set the command
+DataReader: Data reader is an alternative to the Dataset and dataadapter combination. Data reader is working on connected mode. We can use it if we need to retrieve data only. It reads data in forward only-read
+ only manner. It’s faster than DataSet. So these objects are suitable for read-only data access.
+Data Adapter(Select, Insert, Update, Delete): Data Adapter is a bridge between database and dataset to transfer data, receive data. It uses select, update, delete command. Select command is used to retrieve data 
+from database. Insert, update, delete commands are used to update the changes at database using dataset. Data Adapter uses connection object to process all these requests.
+</br>2. DataSet:  There are two types of DataSets:-               </br>1) Typed DataSet
+     </br>                                                                                            2) Untyped DataSet</br>
+Typed DataSet: is derived from the base DataSet class and then uses information in .xsd file to generate a new class. Information from the schema (tables, columns, and so on) is generated and compiled into this new 
+DataSet class as a set of first-class objects and properties. Typed dataset is easier to read. It’s also supported by IntelliSense in the Visual Studio Code Editor. At compile time, it has type checking so that there are 
+fewer errors in assigning values to DataSet members.
+Therefore, using Typed DataSet has many advantages.</br>
+Untyped DataSet: is not defined by a schema, instead, you have to add tables, columns and other elements to it yourself, either by setting properties at design time or by adding them at run time. Typical scenario:
+ if you don’t know in advance what the structure of your program is that is interacting with a component that returns a DataSet.
+Data Set can be a collection of datatable objects which is used to store the data retrieved from Database, so that we can process the retrieved data in disconnected mode into our application.
+DataTable Collection</br>
+Data Table is a collection of DataRow and DataColumn. We can have multiple DataTable in a DataSet.
+</br>
+Data Relation
+Data relation can be implemented on different tables on the basis of keys as Parent Child relation.
+
+</br></br>
+
+10.) What are the different types of remoting ? Explain.
+Or</br>
+What is the process for web application deployment? Explain.
+Ans:) .NET Remoting allows an application to make an object (termed remotable object) available across remoting boundaries, which includes different appdomains, processes or even different computers
+ connected by a network.The .NET Remoting runtime hosts the listener for requests to the object in the appdomain of the server application. On the client end, any requests to the remotable object are proxied by the
+ .NET Remoting runtime over Channel objects, that encapsulate the actual transport mode, including TCP streams, HTTPstreams and named pipes. As a result, by instantiating proper Channel objects, a .NET Remoting
+ application can be made to support different communication protocols without recompiling the application. The runtime itself manages the act of serialization and marshalling of objects across the client and server
+ appdomains.</br>
+.NET Remoting makes a reference of a remotable object available to a client application, which then instantiates and uses a remotable object as if it were a local object. However, the actual code execution happens
+ at the server-side. A remotable object is identified by Activation URLs and are instantiated by a connection to the URL. A listener for the object is created by the remoting runtime when the server registers the channel
+ that is used to connect to the remotable object. At the client side, the remoting infrastructure creates a proxy that stands-in as a pseudo-instantiation of the remotable object. It does not implement the functionality of the
+ remotable object, but presents a similar interface. As such, the remoting infrastructure needs to know the public interface of the remotable object beforehand. Any method calls made against the object, including the identity of the method 
+and any parameters passed, are serialized to a byte stream and transferred over a communication protocol-dependent Channel to a recipient proxy object at the server side ("marshalled"), by writing to the Channel's 
+transport sink.At the server side, the proxy reads the stream off the sink and makes the call to the remotable object on the behalf of the client. The results are serialized and transferred over the sink to the client, where the proxy reads the result and hands it over to the calling application.[5] If the remotable object needs to make a callback to a client object for some services, the client application must mark it as remotable and have a remoting runtime host a listener for it.[5] The server can connect to it over a different Channel, or over the already existent one if the underlying connection supports bidirectional communication.[5] A channel can be composed of a number of different Channel objects, possibly with different heterogeneous transports. Thus, remoting can
+ also work across systems separated by an interconnection of heterogeneous networks, including the internet.
+Or</br>
+ Ans:) Step 1: Preparation</br>
+There are a few things to consider when you are finalizing a website, and they all depend on what type of deployment you will be completing.
+The three general scenarios of a website deployment is:</br>
+1.	The client has nothing (i.e. this is their first website)</br>
+2.	The client already has hosting and you will be deploying the site on their server</br>
+3.	The client already has hosting but you will be moving to a new server</br>
+
+
+Step 2: Set Up DNS Records</br>
+If you are going to be setting up the website on a new host and you have access to the DNS management administration, then that’s great. Create yourself an A record (the address record that maps a domain name
+ to the IP address of the server) or subdomain record for a live development site such as dev.domainname.com. Point this subdomain to the IP address of the new server.
+</br>Step 3: Set Up a Live Testing Site</br>
+It’s now time to see if the site works on the live server environment.
+A practice I recommend doing is setting up a subdomain URL prior to officially deploying the site. Something like dev.domainname.com which will eventually be on domainname.com.
+Don’t create a subdomain on the host as this will set up a new directory and make local DNS changes. Set it so that dev.domainname.com acts as a totally separate website. What you want to do is make 
+dev.domainname.com a domain alias (also known as a CNAME record).
+</br>Step 4: Set Up Email Accounts</br>
+Developers deploying a website often overlook email, but it will be a priority to the client. Does your client have mail hosted on their old server? Are you moving their email?
+If their email is currently in the same hosting account as the old website, then you will probably be moving mail to the new server. If so, collect all email account addresses and set up the exact same accounts on the 
+new server. In most cases, you then won’t need to change anything, it will just transition to the new mail server at the same time the website does.
+If the client has an internal mail server or third-party mail hosting, then you will need to make sure that the MX records (the DNS records that deal with mail) are all correct.
+If your client has no idea, then a quick test is to ping the mail server, and if it has a different IP address to the website, then it’s most likely hosted on a different server and you need to double-check the 
+MX records and make sure whoever is managing the DNS is notified of what is happening.
+</br>Step 5: Backup and Go Live</br>
+Even if you are hosting on a new server, take a full backup including any databases of the old website, as you never know when you might need something.
+OK, all set to go live. If you have full control over DNS records then just change the A record for the domain name so that the IP address is set to the new web server and in about 20 minutes the new website will be live.
+If anything is not right, just change it back to the old website and do some testing.
+If you are changing Name Servers to point to the new host, then this can take anywhere up to 72 hours, so make sure you have the time to monitor and fix any errors as they happen on the new website.
+ Because this is a change in name servers, you can’t just change it back quickly, so be prepared and give yourself enough time.
+If you are hosting on the same server and removing the old website to make way for the new one, then do it at a time where you can monitor and fix anything live as it happens.
+Give yourself enough time and try to go live in the business hours of the companies that you will need to contact if anything goes wrong.
+All done. If you follow these steps, you should have a 100% smooth deployment of your new website and a happy client to spread the word of your business.
+Website Deployment Checklist</br>
+1.	Have access to DNS record management or know the people to contact</br>
+2.	Set up the DNS records and make sure that all the settings are correct</br>
+3.	Set up and test the website on the production server (where it will live)</br>
+4.	Set up email</br>
+5.	Back up the old site (if applicable) and deploy the new one</br>
+
+</br>
+11.)Explain the serialization in detail.</br>
+Or</br>
+Differentiate between Java and C#.</br>
+Ans:)</br> Serialization is the process of converting the state information of an object instance into a binary or textual form to persist into storage medium or transported over a network.
+
+Serialization is executed by Common Language Runtime (CLR) to save an object‘s current state information to a temporary (like ASP.NET cache) or permanent storage (file, database, etc.) so as to
+ be used later to update an object with this same information. It involves the conversion of public and private members of an object including the name of class and assembly into a stream of bytes, which is then
+ written to data stream. The reverse process of converting stream of bits into an object is called deserialization. 
+</br>
+The .NET framework offers two methods of serialization, namely, binary serialization and XML serialization. Binary serialization preserves the state of the object between different invocations of an application by
+ preserving type fidelity. XML serialization uses XML as an open standard to serialize only the public properties and fields. It does not preserve type fidelity but provides support for serialization in human-readable,
+ cross-platform XML. The framework provides many options to customize the serialization process to meet application requirements.
+ </br>
+Or</br>
+Ans:)</br> Java is a programming language, which has been influenced by the C language. It derives much of its syntax from C and C++, however it has fewer low-level facilities than either. Java is a general-purpose
+ programming language that is designed to have fewer implementation dependencies as compared to previous languages. C#, also known as C sharp, is an object oriented programming language. C# is a multi-paradigm
+ programming language. C# is based on the C programming language. It was originally developed by Anders Hejlsberg for Microsoft for use in its .NET framework
+As of 2012, Java has become one of the most popular programming languages for use. This is especially true for client-server web applications. Many other systems have developed alternative implementations
+ of Sun technologies, such as GNU Compiler for Java and GNU Classpath.
+C#, also known as C sharp, is an object oriented programming language. C# is a multi-paradigm programming language. It includes strong typing, imperative, declarative, functional, procedural, generic, object-oriented
+ (class-based), and component-oriented programming disciplines.
+</br>
+</div>
+</body>
+</html>
