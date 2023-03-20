@@ -1,0 +1,389 @@
+<html>
+<body>
+<div align="justify">
+
+
+<center><h2>
+
+MT - 206</br>
+B.C.A  VIth   Semester Examination, 2015</br>
+JAVA</h2>
+SECTION-B
+</center>
+2. Explain various primitive data types used in java?
+                                  OR
+Explain arithmetic operator with their precedence?
+Ans. There is a special group of data types (also known as primitive types) that will be used quite often in programming. For performance reasons, the designers of the Java language decided to include these primitive types. Java determines the size of each primitive type. These sizes do not change from one operating system to another. This is one of the key features of the language that makes Java so portable. Java defines eight primitive types of data: byte, short, int, long, char, float, double, and boolean. The primitive types are also commonly referred to as simple types which can be put in four groups
+i	Integers: This group includes byte, short, int, and long, which are for whole-valued signed numbers.
+ii	Floating-point numbers: This group includes float and double, which represent numbers with fractional precision.
+iii	Characters: This group includes char, which represents symbols in a character set, like letters and numbers.
+iv	Boolean: This group includes boolean, which is a special type for representing true/false values.
+Let is discuss each in details:
+byte
+The smallest integer type is byte. It has a minimum value of -128 and a maximum value of 127 (inclusive). The byte data type can be useful for saving memory in large arrays, where the memory savings actually matters. Byte variables are declared by use of the byte keyword. For example, the following declares and initialize byte variables called b:
+byte  b =100;
+short:
+The short data type is a 16-bit signed two's complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive). As with byte, the same guidelines apply: you can use a short to save memory in large arrays, in situations where the memory savings actually matters. Following example declares and initialize short variable called s:
+short  s =123;
+int:
+The most commonly used integer type is int. It is a signed 32-bit type that has a range from –2,147,483,648 to 2,147,483,647. In addition to other uses, variables of type int are commonly employed to control loops and to index arrays. This data type will most likely be large enough for the numbers your program will use, but if you need a wider range of values, use long instead.
+int  v = 123543;
+int  calc = -9876345;
+long:
+long is a signed 64-bit type and is useful for those occasions where an int type is not large enough to hold the desired value. It has a minimum value of -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807 (inclusive). Use of this data type might be in banking application when large amount is to be calculated and stored.
+long  amountVal = 1234567891;
+float:
+Floating-point numbers, also known as real numbers, are used when evaluating expressions that require fractional precision. For example interest rate calculation or calculating square root. The float data type is a single-precision 32-bit IEEE 754 floating point. As with the recommendations for byte and short, use a float (instead of double) if you need to save memory in large arrays of floating point numbers. The type float specifies a single-precision value that uses 32 bits of storage. Single precision is faster on some processors and takes half as much space as double precision. The declaration and initialization syntax for float variables given below, please note “f” after value initialization.
+float  intrestRate = 12.25f;
+double:
+Double precision, as denoted by the double keyword, uses 64 bits to store a value. Double precision is actually faster than single precision on some modern processors that have been optimized for high-speed mathematical calculations. All transcendental math functions, such as sin( ), cos( ), and sqrt( ), return double values. The declaration and initialization syntax for double variables given below, please note “d” after value initialization.
+double  sineVal = 12345.234d;
+boolean:
+The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This is the type returned by all relational operators, as in the case of a < b. boolean is also the type required by the conditional expressions that govern the control statements such as if or while.
+boolean  flag = true;
+booleanval  = false;
+char:
+In Java, the data type used to store characters is char. The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive). There are no negative chars.
+char ch1 = 88; // code for X
+char  ch2 = 'Y';
+ 
+
+                                                           OR
+
+Java has well-defined rules for specifying the order in which the operators in an expression are evaluated when the expression has several operators. For example, multiplication and division have a higher precedence than addition and subtraction. Precedence rules can be overridden by explicit parentheses.
+Precedence order.
+ When two operators share an operand the operator with the higher precedence goes first. For example, 1 + 2 * 3 is treated as 1 + (2 * 3), whereas 1 * 2 + 3 is treated as (1 * 2) + 3 since multiplication has a higher precedence than addition.
+Associativity.
+ When an expression has two operators with the same precedence, the expression is evaluated according to its associativity. For example x = y = z = 17 is treated as x = (y = (z = 17)), leaving all three variables with the value 17, since the = operator has right-to-left associativity (and an assignment statement evaluates to the value on the right hand side). On the other hand, 72 / 2 / 3 is treated as (72 / 2) / 3 since the / operator has left-to-right associativity. Some operators are not associative: for example, the expressions (x <= y <= z) and x++-- are invalid.
+Precedence and associativity of Java operators.
+ The table below shows all Java operators from highest to lowest precedence, along with their associativity. Most programmers do not memorize them all, and even those that do still use parentheses for clarity.
+
+Level	Operator	Description	Associativity
+16	[]
+.
+()	access array element
+access object member
+parentheses	left to right
+15	++
+--	unary post-increment
+unary post-decrement	not associative
+14	++
+--
++
+-
+!
+~	unary pre-increment
+unary pre-decrement
+unary plus
+unary minus
+unary logical NOT
+unary bitwise NOT	right to left
+13	()
+new	cast
+object creation	right to left
+12	* / %	multiplicative	left to right
+11	+ -
++	additive
+string concatenation	left to right
+10	<< >>
+>>>	shift	left to right
+9	< <=
+> >=
+instanceof	relational	not associative
+8	==
+!=	equality	left to right
+7	&	bitwise AND	left to right
+6	^	bitwise XOR	left to right
+5	|	bitwise OR	left to right
+4	&&	logical AND	left to right
+3	||	logical OR	left to right
+2	?:	ternary	right to left
+1	 =   +=   -=
+*=   /=   %=
+&=   ^=   |=
+<<=  >>= >>>=	assignment	right to left
+There is no explicit operator precedence table in the Java Language Specification. Different tables on the web and in textbooks disagree in some minor ways.
+
+
+3. In what ways does switch statement differ from an if statement?
+                                                    OR
+Write an program that computer and prints a table of factorial for any given numbers ?
+Ans. Key Difference: The if statement is uses a Boolean expression to execute the function and can often be used to check multiple conditions at a time. The switch statement uses a int expression to check each cause to see if it satisfies the conditions, if it does the statement will execute the code.
+    Many budding engineers and programming enthusiasts come across this question when they start learning about computer programming, and are often stunned by it. The two statements seem similar when performing functions, but under the hood they differ from each other in how the execute operations.
+The if statement and switch statement are two different functions that can be used when trying to execute operations. These two are used when one needs to select between two alternatives. In both statements the runtime evaluates each expression in a series until it finds one that is true, at which point it executes the code corresponding to the case. If the expression is false, then the statement shifts to the second case provided.
+ Both the functions are often used for different reasons though. The if statement is uses a Boolean expression to execute the function and can often be used to check multiple conditions at a time. It is often used when comparing between two strings. It will check the conditions that are provided and if it is true, it will execute the code and if the conditions is not satisfied, it will not execute it. The if statement is commonly used for its nesting ability, in which an if statement can be found under another if function.
+ Comparison between if Statement and switch Statement:
+ 	if Statement	switch Statement
+Language	Java	Java
+Field	Computer Programming	Computer Programming
+Type of expression used	Boolean	Int
+Conditions	Can be used check multiple conditions at a time	Can be used to check a single condition at a time
+Organized	If more conditions are used, it is more difficult to understand	Even if the number of conditions increase, switch statement is still easier to understand
+Nesting	Popular for nesting of a loop	Not as popular for nesting of a loop
+Used for	Comparing string vs string	Comparing int, byte, char, long, short, and enum
+
+                                                       OR
+import java.util.Scanner;
+ 
+class Factorial
+{
+   public static void main(String args[])
+   {
+      int n, c, fact = 1;
+ 
+      System.out.println("Enter an integer to calculate it's factorial");
+      Scanner in = new Scanner(System.in);
+ 
+      n = in.nextInt();
+ 
+      if (n < 0)
+         System.out.println("Number should be non-negative.");
+      else
+      {
+         for (c = 1; c <= n; c++)
+            fact = fact*c;
+ 
+         System.out.println("Factorial of "+n+" is = "+fact);
+      }
+   }
+}
+
+4. How objective are created in java?
+                             OR
+Write about the constructor in java with example?
+Ans. Object is the physical as well as logical entity whereas class is the logical entity only.
+Object in Java
+An entity that has state and behavior is known as an object e.g. chair, bike, marker, pen, table, car etc. It can be physical or logical (tangible and intangible). The example of intangible object is banking system.
+An object has three characteristics:
+o	state: represents data (value) of an object.
+o	behavior: represents the behavior (functionality) of an object such as deposit, withdraw etc.
+o	identity: Object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. But, it is used internally by the JVM to identify each object uniquely.
+For Example: Pen is an object. Its name is Reynolds, color is white etc. known as its state. It is used to write, so writing is its behavior.
+Object is an instance of a class. Class is a template or blueprint from which objects are created. So object is the instance(result) of a class.
+Object Definitions:
+o	Object is a real world entity.
+o	Object is a run time entity.
+o	Object is an entity which has state and behavior.
+o	Object is an instance of a class
+                                                   OR
+A constructor is similar to a method (but not actually a method) that is invoked automatically when an object is instantiated.
+
+Java compiler distinguish between a method and a constructor by its name and return type. In Java, a constructor has same name as that of the class, and doesn’t return any value.
+
+class Test {
+    Test() {
+        // constructor body
+    }
+}
+Here, Test() is a constructor; it has same name as that of the class and doesn’t have a return type.
+
+class Test {
+    void Test() {
+        // method body
+    }
+}
+Here, Test() has same name as that of the class. However, it has a return type void. Hence, it’s a method not a constructor.
+
+Recommended Reading: Why do constructors not return values?
+
+Example: Java Constructor
+class ConsMain {
+    private int x;
+
+    // constructor
+    private ConsMain(){
+        System.out.println("Constructor Called");
+        x = 5;
+    }
+
+    public static void main(String[] args){
+        ConsMain obj = new ConsMain();
+        System.out.println("Value of x = " + obj.x);
+    }
+}
+When you run the program, the output will be:
+
+Constructor Called
+Value of x = 5
+Here, ConsMain() constructor is called when obj object is instantiated.
+5. How super keyword is used in java?
+                                 OR
+Write do you understand by expectation handling in java?
+Ans. The super keyword in java is a reference variable that is used to refer parent class objects.  The keyword “super” came into the picture with the concept of Inheritance. It is majorly used in the following contexts:
+
+1.	Use of super with variables: This scenario occurs when a derived class and base class has same data members. In that case there is a possibility of ambiguity for the JVM.
+it more clearly using this code snippet:
+/* Base class vehicle */
+class Vehicle
+{
+    int maxSpeed = 120;
+}
+ 
+/* sub class Car extending vehicle */
+class Car extends Vehicle
+{
+    int maxSpeed = 180;
+ 
+    void display()
+    {
+        /* print maxSpeed of base class (vehicle) */
+        System.out.println("Maximum Speed: " + super.maxSpeed);
+    }
+}
+ 
+/* Driver program to test */
+class Test
+{
+    public static void main(String[] args)
+    {
+        Car small = new Car();
+        small.display();
+    }
+}
+Run on IDE
+Output:
+Maximum Speed: 120
+In the above example, both base class and subclass have a member maxSpeed. We could access maxSpeed of base class in sublcass using super keyword.
+ 
+
+
+
+2. Use of super with methods: This is used when we want to call parent class method. So whenever a parent and child class have same named methods then to resolve ambiguity we use super keyword. This code snippet helps to understand the said usage of super keyword.
+/* Base class Person */
+class Person
+{
+    void message()
+    {
+        System.out.println("This is person class");
+    }
+}
+ 
+/* Subclass Student */
+class Student extends Person
+{
+    void message()
+    {
+        System.out.println("This is student class");
+    }
+ 
+    // Note that display() is only in Student class
+    void display()
+    {
+        // will invoke or call current class message() method
+        message();
+ 
+        // will invoke or call parent class message() method
+        super.message();
+    }
+}
+ 
+/* Driver program to test */
+class Test
+{
+    public static void main(String args[])
+    {
+        Student s = new Student();
+ 
+        // calling display() of Student
+        s.display();
+    }
+}
+Run on IDE
+Output:
+This is student class
+This is person class
+In the above example, we have seen that if we only call method message() then, the current class message() is invoked but with the use of super keyword, message() of superclass could also be invoked.
+ 
+3. Use of super with constructors: super keyword can also be used to access the parent class constructor. One more important thing is that, ‘’super’ can call both parametric as well as non parametric constructors depending upon the situation. Following is the code snippet to explain the above concept:
+/* superclass Person */
+class Person
+{
+    Person()
+    {
+        System.out.println("Person class Constructor");
+    }
+}
+ 
+/* subclass Student extending the Person class */
+class Student extends Person
+{
+    Student()
+    {
+        // invoke or call parent class constructor
+        super();
+ 
+        System.out.println("Student class Constructor");
+    }
+}
+ 
+/* Driver program to test*/
+class Test
+{
+    public static void main(String[] args)
+    {
+        Student s = new Student();
+    }
+}
+
+
+
+                                                 OR
+An Exception is an unwanted event that interrupts the normal flow of the program. When an exception occurs program execution gets terminated. In such cases we get a system generated error message. The good thing about exceptions is that they can be handled in Java. By handling the exceptions we can provide a meaningful message to the user about the issue rather than a system generated message, which may not be understandable to a user.
+
+here can be several reasons that can cause a program to throw exception. For example: Opening a non-existing file in your program, Network connection problem, bad input data provided by user etc
+
+Advantage of exception handling
+
+Exception handling ensures that the flow of the program doesn’t break when an exception occurs. For example, if a program has bunch of statements and an exception occurs mid way after executing certain statements then the statements after the exception will not execute and the program will terminate abruptly.
+By handling we make sure that all the statements execute and the flow of program doesn’t break.
+
+
+6. Write the difference between local and remote applet?
+                                                 OR
+How can pass parameter to an applet?
+
+Ans. Local Applet:- An applet developed locally and stored in a local system is known as a local applet. When a Web page is trying to find a local applet, it does not need to use the Internet and therefore the local system does not require the Internet connection. It simply searches the directories in the local system and locates and loads the specified applet.
+
+ Specifying a Local Applet:
+<!---
+<applet codebase="path" code="NewApplet.class" width=120 height=120 ></apple>
+-->
+Remote Applets:- A remote applet is developed by someone else and stored on a remote computer connected to the Internet. If our system is connected to the internet, we can download the remote applet onto our system via at the Internet and run it. To locate and load a remote applet, we must know the applet’s address on the Web. This address is known as Uniform Resource Locator (URL) and must be specified in the applet’s HTML document as the value of the CODEBASE attribute.
+
+Specifying a Remote Applet:
+<!---
+<applet codebase=http://www.myconnectdemo.com/applets/code="NewApplet.class" width=120 height=120 > </applet>
+--->
+OR
+
+
+Parameter in Applet
+We can get any information from the HTML file as a parameter. For this purpose, Applet class provides a method named getParameter(). Syntax:
+
+public String getParameter(String parameterName)  
+Example of using parameter in Applet:
+import java.applet.Applet;  
+import java.awt.Graphics;  
+  
+public class UseParam extends Applet{  
+  
+public void paint(Graphics g){  
+String str=getParameter("msg");  
+g.drawString(str,50, 50);  
+}  
+  
+}  <!------
+myapplet.html
+<html>  
+<body>  
+<applet code="UseParam.class" width="300" height="300">  
+<param name="msg" value="Welcome to applet">  
+</applet>  
+</body>  
+
+
+---->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1041 @@
+<html>
+<body>
+<div align="justify">
+<center> <h2> BCA 6th Semester Examination</br>
+Sample Paper</br>
+ Java</center> </br> </h2>
+Q.1. Explain arithmetic operator with their precedence.</br>
+Ans. The Java programming language supports various arithmetic operators for all floating-point and integer numbers. These operators are + (addition), - (subtraction), * (multiplication), / (division), and % (modulo). The following table summarizes the binary arithmetic operations in the Java programming language.</p>
+Operator	Use	Description</br>
++	op1 + op2	Adds op1 and op2; also used to concatenate strings</br>
+-	op1 - op2	Subtracts op2 from op1</br>
+*	op1 * op2	Multiplies op1 by op2</br>
+/	op1 / op2	Divides op1 by op2</br>
+%	op1 % op2	Computes the remainder of dividing op1 by op2</br>
+OPERATOR PRECEDENCE</br>
+When several operations occur in an expression, each part is evaluated and resolved in a predetermined order called operator precedence. Parentheses can be used to override the order of precedence and force some parts of an expression to be evaluated before other parts. Operations within parentheses are always performed before those outside. Within parentheses, however, normal operator precedence is maintained.
+When expressions contain operators from more than one category, arithmetic operators are evaluated first, comparison operators are evaluated next, and logical operators are evaluated last. Comparison operators all have equal precedence; that is, they are evaluated in the left-to-right order in which they appear. Arithmetic and logical operators are evaluated in the following order of precedence:</p>
+Arithmetic	Comparison	Logical</br>
+Exponentiation (^)	Equality (=)	Not</br>
+Negation (-)	Inequality (<>)	And</br>
+Multiplication and division (*, /)	Less than (<)	Or</br>
+Integer division (\)	Greater than (>)	Xor</br>
+Modulus arithmetic (Mod)	Less than or equal to (<=)	Eqv</br>
+Addition and subtraction (+, -)	Greater than or equal to (>=)	Imp</br>
+String concatenation (&)	Is	&</br>
+When multiplication and division occur together in an expression, each operation is evaluated as it occurs from left to right. Likewise, when addition and subtraction occur together in an expression, each operation is evaluated in order of appearance from left to right.
+The string concatenation operator (&) is not an arithmetic operator, but in precedence it does fall after all arithmetic operators and before all comparison operators. The Is operator is an object reference comparison operator. It does not compare objects or their values; it checks only to determine if two object references refer to the same object.</p>
+<center>OR</center></br>
+Q.2. Explain the data types in Java?</br>
+Ans. Based on the data type of a variable, the operating system allocates memory and decides what can be stored in the reserved memory. Therefore, by assigning different data types to variables, you can store integers, decimals, or characters in these variables.
+There are two data types available in Java -</p>
+•	Primitive Data Types</br>
+•	Reference/Object Data Types</p>
+Primitive Data Types</br>
+There are eight primitive datatypes supported by Java. Primitive datatypes are predefined by the language and named by a keyword. Let us now look into the eight primitive data types in detail.
+byte</p>
+•	Byte data type is an 8-bit signed two's complement integer</br>
+•	Minimum value is -128 (-2^7)</br>
+•	Maximum value is 127 (inclusive)(2^7 -1)</br>
+•	Default value is 0</br>
+•	Byte data type is used to save space in large arrays, mainly in place of integers, since a byte is four times smaller than an integer.</br>
+•	Example: byte a = 100, byte b = -50</br>
+short</br>
+•	Short data type is a 16-bit signed two's complement integer</br>
+•	Minimum value is -32,768 (-2^15)</br>
+•	Maximum value is 32,767 (inclusive) (2^15 -1)</br>
+•	Short data type can also be used to save memory as byte data type. A short is 2 times smaller than an integer</br>
+•	Default value is 0.</br>
+•	Example: short s = 10000, short r = -20000</br>
+int</br>
+•	Int data type is a 32-bit signed two's complement integer.</br>
+•	Minimum value is - 2,147,483,648 (-2^31)</br>
+•	Maximum value is 2,147,483,647(inclusive) (2^31 -1)</br>
+•	Integer is generally used as the default data type for integral values unless there is a concern about memory.</br>
+•	The default value is 0</br>
+•	Example: int a = 100000, int b = -200000</br>
+long</br>
+•	Long data type is a 64-bit signed two's complement integer</br>
+•	Minimum value is -9,223,372,036,854,775,808(-2^63)</br>
+•	Maximum value is 9,223,372,036,854,775,807 (inclusive)(2^63 -1)</br>
+•	This type is used when a wider range than int is needed</br>
+•	Default value is 0L</br>
+•	Example: long a = 100000L, long b = -200000L</br>
+float</br>
+•	Float data type is a single-precision 32-bit IEEE 754 floating point</br>
+•	Float is mainly used to save memory in large arrays of floating point numbers</br>
+•	Default value is 0.0f</br>
+•	Float data type is never used for precise values such as currency</br>
+•	Example: float f1 = 234.5f</br>
+double</br>
+•	double data type is a double-precision 64-bit IEEE 754 floating point</br>
+•	This data type is generally used as the default data type for decimal values, generally the default choice</br>
+•	Double data type should never be used for precise values such as currency</br>
+•	Default value is 0.0d</br>
+•	Example: double d1 = 123.4</br>
+booleanv
+•	boolean data type represents one bit of information</br>
+•	There are only two possible values: true and false</br>
+•	This data type is used for simple flags that track true/false conditions</br>
+•	Default value is false</br>
+•	Example: boolean one = true</br>
+char</br>
+•	char data type is a single 16-bit Unicode character</br>
+•	Minimum value is '\u0000' (or 0)</br>
+•	Maximum value is '\uffff' (or 65,535 inclusive)</br>
+•	Char data type is used to store any character</br>
+•	Example: char letterA = 'A'</br>
+Reference Datatypes</br>
+•	Reference variables are created using defined constructors of the classes. They are used to access objects. These variables are declared to be of a specific type that cannot be changed. For example, Employee, Puppy, etc.</p>
+•	Class objects and various type of array variables come under reference datatype.</br>
+•	Default value of any reference variable is null.</br>
+•	A reference variable can be used to refer any object of the declared type or any compatible type.</br>
+•	Example: Animal animal = new Animal("giraffe");</br>
+Java Literals</br>
+A literal is a source code representation of a fixed value. They are represented directly in the code without any computation.</br>
+Literals can be assigned to any primitive type variable. For example -</br>
+byte a = 68;</br>
+char a = 'A'</br>
+byte, int, long, and short can be expressed in decimal(base 10), hexadecimal(base 16) or octal(base 8) number systems as well.</br>
+Prefix 0 is used to indicate octal, and prefix 0x indicates hexadecimal when using these number systems for literals. For example -</br>
+int decimal = 100;</br>
+int octal = 0144;</br>
+int hexa =  0x64;</br>
+String literals in Java are specified like they are in most other languages by enclosing a sequence of characters between a pair of double quotes. Examples of string literals are -
+Example</p>
+"Hello World"</br>
+"two\nlines"</br>
+"\"This is in quotes\""</br>
+String and char types of literals can contain any Unicode characters. For example -</br>
+char a = '\u0001';</br>
+String a = "\u0001";</br>
+
+Q.2 In what ways does switch statement different from an if statement?</br>
+Ans. Key Difference: The if statement is uses a Boolean expression to execute the function and can often be used to check multiple conditions at a time. The switch statement uses a int expression to check each cause to see if it satisfies the conditions, if it does the statement will execute the code.
+ Many budding engineers and programming enthusiasts come across this question when they start learning about computer programming, and are often stunned by it. The two statements seem similar when performing functions, but under the hood they differ from each other in how the execute operations.
+The if statement and switch statement are two different functions that can be used when trying to execute operations. These two are used when one needs to select between two alternatives. In both statements the runtime evaluates each expression in a series until it finds one that is true, at which point it executes the code corresponding to the case. If the expression is false, then the statement shifts to the second case provided.
+ Both the functions are often used for different reasons though. The if statement is uses a Boolean expression to execute the function and can often be used to check multiple conditions at a time. It is often used when comparing between two strings. It will check the conditions that are provided and if it is true, it will execute the code and if the conditions is not satisfied, it will not execute it. The if statement is commonly used for its nesting ability, in which an if statement can be found under another if function.</p>
+<center> OR</center></br>>
+What is Array?</br>
+Ans. An array in Java is a set of variables referenced by using a single variable name combined with an index number. Each item of an array is an element. All the elements in an array must be of the same type. Thus, the array itself has a type that specifies what kind of elements it can contain. An int array can contain intvalues, for example, and a String array can contain strings.
+Written after the variable name, the index number is enclosed in brackets. So if the variable name is x, you could access a specific element with an expression like x[5].</p>
+DECLARING AN ARRAY</br>
+Before you can create an array, you must declare a variable that refers to the array. This variable declaration should indicate the type of elements stored by the array, followed by a set of empty brackets, like this:</br>>
+String[] names;</br>
+Here, a variable named names is declared. Its type is an array of String objects.</br>
+You can also put the brackets on the variable name rather than the type. The following two statements both create arrays of int elements:</br>
+int[] array1;   // an array of int elements</br>
+int array2[];   // another array of int elements</br>
+Declaring an array doesn’t actually create the array. To do that, you must use the new keyword, followed by the array type. For example:</br>
+String[] names;</br>
+names = new String[10];</br>
+Or, more concisely:</br>
+String[] names = new String[10];</br>
+INITIALIZING ARRAY ELEMENTS</br>
+You can initialize an array by assigning values one by one, like this:</br>
+String[] days = new Array[7];</br>
+Days[0] = "Sunday";</br>
+Days[1] = "Monday";</br>
+Days[2] = "Tuesday";</br>
+Days[3] = "Wednesday";</br>
+Days[4] = "Thursday";</br>
+Days[5] = "Friday";</br>
+Days[6] = "Saturday";</br>
+Or you can use the following shorthand:</br>
+String[] days = { "Sunday", "Monday", "Tuesday",</br>
+"Wednesday", "Thursday",</br>
+"Friday", "Saturday" };</br>
+Here, each element to be assigned to the array is listed in an array initializer. The number of values listed in the initializer determines the length of the array that the initializer creates.</br>
+USING LOOPS WITH ARRAYS</br>
+Frequently, arrays are processed within for loops. For example, here’s a for loop that creates an array of 100 random numbers, with values ranging from 1 to100:</br>
+int[] numbers = new int[100];</br>
+for (int i = 0; i < 100; i++)</br>
+numbers[i] = (int)(Math.random() * 100) + 1;</br>
+Java also provides a special type of for loop called an enhanced for loop that’s designed to simplify loops that process arrays. An enhanced for loop allows you to skip the index variable, as in this example:</br>
+for (type identifier : array)</br>
+{</br>
+statements...</br>
+}</br>
+int[] numbers = new int[100];</br>
+for (int number : numbers</br>
+number = (int)(Math.random() * 100) + 1;</br>
+Q.3 what is class and object in Java?</br>
+Ans. Classes and Objects in Java</br>
+Classes and Objects are basic concepts of Object Oriented Programming which revolve around the real life entities.</br>
+Class</br>
+A class is a user defined blueprint or prototype from which objects are created.  It represents the set of properties or methods that are common to all objects of one type. In general, class declarations can include these components, in order:</br>
+1.	Modifiers : A class can be public or has default access (Refer this for details).</br>
+2.	Class name: The name should begin with a initial letter (capitalized by convention).</br>
+3.	Superclass(if any): The name of the class’s parent (superclass), if any, preceded by the keyword extends. A class can only extend (subclass) one parent.</br>
+4.	Interfaces(if any): A comma-separated list of interfaces implemented by the class, if any, preceded by the keyword implements. A class can implement more than one interface.</br>
+5.	Body: The class body surrounded by braces, { }.</br>
+Constructors are used for initializing new objects. Fields are variables that provides the state of the class and its objects, and methods are used to implement the behavior of the class and its objects.
+There are various types of classes that are used in real time applications such as nested classes,anonymous classes, lambda expressions.</p>
+Object</br>
+It is a basic unit of Object Oriented Programming and represents the real life entities.  A typical Java program creates many objects, which as you know, interact by invoking methods. An object consists of :</br>
+1.	State : It is represented by attributes of an object. It also reflects the properties of an object.</br>
+2.	Behavior : It is represented by methods of an object. It also reflects the response of an object with other objects.</br>
+3.	Identity : It gives a unique name to an object and enables one object to interact with other objects.</br>
+Example of an object : dog</br>
+ </br>
+Objects correspond to things found in the real world. For example, a graphics program may have objects such as “circle”, “square”, “menu”. An online shopping system might have objects such as “shopping cart”, “customer”, and “product”.</br>
+Declaring Objects (Also called instantiating a class)</br>
+When an object of a class is created, the class is said to be instantiated. All the instances share the attributes and the behavior of the class. But the values of those attributes, i.e. the state are unique for each object. A single class may have any number of instances.</br>
+Example :</br>
+ </br>
+As we declare variables like (type name;). This notifies the compiler that we will use name to refer to data whose type is type. With a primitive variable, this declaration also reserves the proper amount of memory for the variable. So for reference variable, type must be strictly a concrete class name. In general,we can’t create objects of an abstract class or an interface.</br>
+Dog tuffy;</br>
+If we declare reference variable(tuffy) like this, its value will be undetermined(null) until an object is actually created and assigned to it. Simply declaring a reference variable does not create an object.</br>
+<center> OR</center></br>
+Write about the constructor in java with example.</br>
+Ans. Java constructor: A constructor in Java is a method which is used used to initialize objects. Constructor method of a class has the same name as that of the class, they are called or invoked when an object of a class is created and can't be called explicitly. Attributes of an object may or may not be available while creating objects, if no attribute is available then default constructor is called, some of the attributes may be known initially. It is optional to write constructor method(s) in a class but due to their utility they are used.</p>
+Java constructor example</br>
+class Programming {</br>
+//constructor method</br>
+Programming() {</br>
+System.out.println("Constructor method called.");</br>
+}</br>
+</br>
+public static void main(String[] args) {</br>
+Programming object = new Programming(); // Creating an object</br>
+}</br>
+}</br>
+Output of program:</br>
+ </br>
+This code is the simplest example of a constructor, we create class Programming and create an object, constructor is called when an object is created. As you can see in output "Constructor method called." is printed.</br>
+Java constructor overloading</br>
+Constructors in Java can be overloaded just like other methods i.e. we can create as many constructors in our class as desired. Number of constructors depends on the information we have about the attributes of an object while creating it. See constructor overloading program example:</br>
+class Language {</br>
+String name;</br>
+</br>
+Language() {</br>
+System.out.println("Constructor method called.");</br>
+}</br>
+</br>
+Language(String t) {</br>
+name = t;</br>
+}</br>
+</br>
+public static void main(String[] args) {</br>
+Language cpp  = new Language();</br>
+Language java = new Language("Java");</br>
+</br>
+cpp.setName("C++");</br>
+</br>
+java.getName();</br>
+cpp.getName();</br>
+}</br>
+</br>
+void setName(String t) {</br>
+name = t;</br>
+}</br>
+</br>
+void getName() {</br>
+System.out.println("Language name: " + name);</br>
+}</br>
+}</br>
+Output of program:</br>
+</br> 
+When cpp object is created default constructor is called and when java object is created the constructor with argument is called, setName method is used to set 'name' attribute of language, getName method prints language name.</br>
+Java constructor chaining</br>
+Constructor chaining occurs when a class inherits another class i.e. in inheritance, as in inheritance sub class inherits the properties of super class. Both the super and sub class may have constructor methods, when an object of sub class is created it's constructor is invoked it initializes sub class attributes, now super class constructor needs to be invoked, to achieve this Java provides a super keyword through which we can pass arguments to super class constructor. For more clarity see constructor chaining example:</br>
+class GrandParent {</br>
+int a;</br>
+</br>
+GrandParent(int a) {</br>
+this.a = a;</br>
+}</br>
+}</br>
+</br>
+class Parent extends GrandParent {</br>
+int b;</br>
+</br>
+Parent(int a, int b) {</br>
+super(a);</br>
+this.b = b;</br>
+}</br>
+</br>
+void show() {</br>
+System.out.println("GrandParent's a = " + a);</br>
+System.out.println("Parent's b      = " + b);</br>
+}</br>
+}</br>
+</br>
+class Child {</br>
+public static void main(String[] args) {</br>
+Parent object = new Parent(8, 9);</br>
+object.show();</br>
+}</br>
+}</br>
+Output of program:</br>
+ </br>
+Q.4 What do you understand by exception handling in java?</br>
+Ans. What is exception handling</br>
+Exception Handling is a mechanism to handle runtime errors such as ClassNotFound, IO, SQL, Remote etc.</br>
+Advantage of Exception Handling
+The core advantage of exception handling is to maintain the normal flow of the application. Exception normally disrupts the normal flow of the application that is why we use exception handling. Let's take a scenario:</br>
+1.	statement 1;</br>
+2.	statement 2;</br>
+3.	statement 3;</br>
+4.	statement 4;</br>
+5.	statement 5;//exception occurs</br>
+6.	statement 6;</br>
+7.	statement 7;</br>
+8.	statement 8;</br>
+9.	statement 9;</br>
+10.	statement 10;</br>
+Suppose there is 10 statements in your program and there occurs an exception at statement 5, rest of the code will not be executed i.e. statement 6 to 10 will not run. If we perform exception handling, rest of the statement will be executed. That is why we use exception handling in java.</br>
+Hierarchy of Java Exception classes</br>
+ 
+________________________________________</br>
+Types of Exception</br>
+There are mainly two types of exceptions: checked and unchecked where error is considered as unchecked exception. The sun microsystem says there are three types of exceptions:</br>
+1.	Checked Exception</br>
+2.	Unchecked Exception</br>
+3.	Error</br>
+________________________________________</br>
+Difference between checked and unchecked exceptions</br>
+1) Checked Exception</br>
+The classes that extend Throwable class except RuntimeException and Error are known as checked exceptions e.g.IOException, SQLException etc. Checked exceptions are checked at compile-time.</br>
+2) Unchecked Exception</br>
+The classes that extend RuntimeException are known as unchecked exceptions e.g. ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException etc. Unchecked exceptions are not checked at compile-time rather they are checked at runtime.</br>
+3) Error</br>
+Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc.</br>
+________________________________________</br>
+Common scenarios where exceptions may occur</br>
+There are given some scenarios where unchecked exceptions can occur. They are as follows:</br>
+1) Scenario where ArithmeticException occurs</br>
+If we divide any number by zero, there occurs an ArithmeticException.</br>
+1.	int a=50/0;//ArithmeticException</br>
+________________________________________</br>
+2) Scenario where NullPointerException occurs</br>
+If we have null value in any variable, performing any operation by the variable occurs an NullPointerException</br>.
+1.	String s=null;</br>
+2.	System.out.println(s.length());//NullPointerException</br>
+________________________________________</br>
+3) Scenario where NumberFormatException occurs</br>
+The wrong formatting of any value, may occur NumberFormatException. Suppose I have a string variable that have characters, converting this variable into digit will occur NumberFormatException.</br>
+1.	String s="abc";</br>
+2.	int i=Integer.parseInt(s);//NumberFormatException</br>
+________________________________________</br>
+4) Scenario where ArrayIndexOutOfBoundsException occurs</br>
+If you are inserting any value in the wrong index, it would result ArrayIndexOutOfBoundsException as shown below:</br>
+1.	int a[]=new int[5];</br>
+2.	a[10]=50; //ArrayIndexOutOfBoundsException</br>
+________________________________________</br>
+Java Exception Handling Keywords</br>
+There are 5 keywords used in java exception handling.</br>
+1.	try</br>
+2.	catch</br>
+3.	finally</br>
+4.	throw</br>
+5.	throws</br>
+<center>OR</center></br>
+What is inheritance?</br>
+Ans. Inheritance in Java</br>
+Inheritance is an important pillar of OOP(Object Oriented Programming). It is the mechanism in java by which one class is allow to inherit the features(fields and methods) of another class.</p>
+Important terminology:</br>
+?	Super Class: The class whose features are inherited is known as super class(or a base class or a parent class).</br>
+?	Sub Class: The class that inherits the other class is known as sub class(or a derived class, extended class, or child class). The subclass can add its own fields and methods in addition to the superclass fields and methods.</br>
+?	Reusability: Inheritance supports the concept of “reusability”, i.e. when we want to create a new class and there is already a class that includes some of the code that we want, we can derive our new class from the existing class. By doing this, we are reusing the fields and methods of the existing class.</br>
+Types of Inheritance in Java</br>
+Below are the different types of inheritance which is supported by Java.</br>
+1.	Single Inheritance : In single inheritance, subclasses inherit the features of one superclass. In image below, the class A serves as a base class for the derived class B.</br>
+ </br>
+2.	Multilevel Inheritance : In Multilevel Inheritance, a derived class will be inheriting a base class and as well as the derived class also act as the base class to other class. In below image, the class A serves as a base class for the derived class B, which in turn serves as a base class for the derived class C. In Java, a class cannot directly access the grandparent’s members.</br>
+ </br>
+3.	Hierarchical Inheritance : In Hierarchical Inheritance, one class serves as a superclass (base class) for more than one sub class.In below image, the class A serves as a base class for the derived class B,C and D.</br>
+</br> 
+4.	Multiple Inheritance (Through Interfaces) : In Multiple inheritance ,one class can have more than one superclass and inherit features from all parent classes. Please note that Java does notsupport multiple inheritance with classes. In java, we can achieve multiple inheritance only throughInterfaces. In image below, Class C is derived from interface A and B.</br>
+ </br>
+5.	Hybrid Inheritance(Through Interfaces) : It is a mix of two or more of the above types of inheritance. Since java doesn’t support multiple inheritance with classes, the hybrid inheritance is also not possible with classes. In java, we can achieve hybrid inheritance only through Interfaces.</br>
+</br> 
+Important facts about inheritance in Java</br>
+?	Default superclass: Except Object class, which has no superclass, every class has one and only one direct superclass (single inheritance). In the absence of any other explicit superclass, every class is implicitly a subclass of Object class.</br>
+?	Superclass can only be one: A superclass can have any number of subclasses. But a subclass can have only one superclass. This is because Java does not support multiple inheritance with classes. Although with interfaces, multiple inheritance is supported by java.</br>
+?	Inheriting Constructors: A subclass inherits all the members (fields, methods, and nested classes) from its superclass. Constructors are not members, so they are not inherited by subclasses, but the constructor of the superclass can be invoked from the subclass.</br>
+?	Private member inheritance: A subclass does not inherit the private members of its parent class. However, if the superclass has public or protected methods(like getters and setters) for accessing its private fields, these can also be used by the subclass.</br>
+</br>
+Q.5. What is applet?</br>
+Ans. A Java applet is a small dynamic Java program that can be transferred via the Internet and run by a Java-compatible Web browser. The main difference between Java-based applications and applets is that applets are typically executed in an AppletViewer or Java-compatible Web browser. All applets import the java.awt package.</p>
+The following are two issues with Java applets:</br>
+•	Security: Java resolves the security issue by restricting applets to Java’s execution environment and preventing access to system resources.</br>
+•	Portability: Portability is defined as the applet’s ability to run on different computers and operating systems.</br>
+Any browser with Java Virtual Machine (JVM) can execute bytecode, which is the output of a Java compiler and can be run only in a JVM. Bytecode is Java’s solution for security and portability</br>
+<center> OR</center></br>
+Write the difference between local and remote applet?</br>
+Ans. In this article, we will show you how to pass some parameters to an applet and how to read those parameters in an applet to display their values in the output. </p>
+
+Steps to accomplish this task -:</br>
+•	To pass the parameters to the Applet we need to use param attribute of <applet> tag.</br>
+•	To retrieve a parameter's value, we need to use getParameter() method of Applet class.</br>
+</br>
+
+
+
+
+
+Signature of getParamter() method</br>
+
+
+public String getParameter(String name)</br>
+•	Method takes a String argument name, which represents the name of the parameter which was specified with the param attribute in the <applet> tag.</br>
+•	Method returns the value of the name parameter(if it was defined) else null is returned.</br>
+</br>
+
+
+
+
+
+•	Passing parameters to an applet.</br>
+
+o	In the upcoming code we are going to pass a few parameters like Name, Age, Sport, Food, Fruit, Destination to the applet using param attibute in <applet></br>
+o	Next, we will retrieve the values of these parameters using getParameter() method of Applet class.</br>
+</br>
+import java.awt.*;</br>
+import java.applet.*;</br>
+</br>
+
+/*</br>
+<applet code="Applet8" width="400" height="200"></br>
+<param name="Name" value="Roger"></br>
+<param name="Age" value="26"></br>
+<param name="Sport" value="Tennis"></br>
+<param name="Food" value="Pasta"></br>
+<param name="Fruit" value="Apple"></br>
+<param name="Destination" value="California"></br>
+</applet></br>
+*/</br>
+</br>
+
+public class Applet8 extends Applet</br>
+{</br>
+String name;</br>
+String age;</br>
+String sport;</br>
+String food;</br>
+String fruit;</br>
+String destination;</br>
+
+
+
+public void init()</br>
+{</br>
+name = getParameter("Name");</br>
+age = getParameter("Age");</br>
+food = getParameter("Food");</br>
+fruit = getParameter("Fruit");</br>
+destination = getParameter("Destination");</br>
+sport = getParameter("Sport");</br>
+}</br>
+
+
+
+public void paint(Graphics g)</br>
+{</br>
+g.drawString("Reading parameters passed to this applet -", 20, 20);</br>
+g.drawString("Name -" + name, 20, 40);</br>
+g.drawString("Age -" + age, 20, 60);</br>
+g.drawString("Favorite fruit -" + fruit, 20, 80);</br>
+g.drawString("Favorite food -" + food, 20, 100);</br>
+g.drawString("Favorite destination -" + name, 20, 120);</br>
+g.drawString("Favorite sport -" + sport, 20, 140);</br>
+}</br>
+
+}</br>
+
+
+
+Output</br>
+
+In order to run our applet using appletviewer, type the following command at command prompt-</br>
+appletviewer Applet8.java</br>
+</br>
+Where Applet8.java is the name of java file that contains the code of an applet. Right after running the applet program using appletviewer a new applet window is displayed to us -</br>
+ </br>
+
+
+
+
+
+
+•	Passing a parameter to an applet to set a message on its status bar.</br>
+
+o	In the upcoming code, we are passing a parameter to the applet and setting the message at status bar of applet window with the value of this parameter.</br>
+o	showStatus() method of Applet class is called to set a message on the status bar of applet window.</br>
+</br>
+
+import java.awt.*;</br>
+import java.applet.*;</br>
+
+/*</br>
+<applet code="Applet11" width="400" height="300"></br>
+<param name="StatusBar" value="Have a good day"></br>
+</br>
+*/</br>
+
+public class Applet11 extends Applet</br>
+{</br>
+String statusBar;</br>
+</br>
+
+public void init()</br>
+{</br>
+statusBar= getParameter("StatusBar");</br>
+}</br>
+
+
+public void paint(Graphics g)</br>
+{</br>
+g.drawString("Reading the applet parameter to set status bar message - ", 20, 20);</br>
+
+//Setting a message at the status bar of our applet.</br>
+showStatus(statusBar);</br>
+g.drawString("Setting the status bar message -" + statusBar, 20, 100);</br>
+}</br>
+}</br>
+</br>
+
+
+Output-</br>
+
+In order to run our applet using appletviewer, type the following command at command prompt-</br>
+appletviewer Applet11.java</br>
+</br>
+Where Applet11.java is the name of java file that contains the code of an applet.</br>
+ </br>
+
+o	We have passed a parameter to an applet, named StatusBar with the value Have a good day.</br>
+o	Next, we have read the value of this parameter by calling getParameter() method and have used it to set the message at the status bar of an applet, by calling showStatus() method of Applet class.</br>
+</br>
+Q.6. Explain various types of operators in java?</br>
+Ans. Java provides a rich set of operators to manipulate variables. We can divide all the Java operators into the following groups -</br>
+•	Arithmetic Operators</br>
+•	Relational Operators</br>
+•	Bitwise Operators</br>
+•	Logical Operators</br>
+•	Assignment Operators</br>
+•	Misc Operators</br>
+The Arithmetic Operators</br>
+Arithmetic operators are used in mathematical expressions in the s</P>
+Show Examples</br>
+Operator	Description	Example</br>
++ (Addition)	Adds values on either side of the operator.	A + B will give 30</br>
+- (Subtraction)	Subtracts right-hand operand from left-hand operand.	A - B will give -10</br>
+* (Multiplication)	Multiplies values on either side of the operator.	A * B will give 200</br>
+/ (Division)	Divides left-hand operand by right-hand operand.	B / A will give 2</br>
+% (Modulus)	Divides left-hand operand by right-hand operand and returns remainder.	B % A will give 0</br>
+++ (Increment)	Increases the value of operand by 1.	B++ gives 21</br>
+-- (Decrement)	Decreases the value of operand by 1.	B-- gives 19</br>
+The Relational Operators</br>
+There are following relational operators supported by Java language.</br>
+Assume variable A holds 10 and variable B holds 20, then -</br>
+Show Examples</br>
+Operator	Description	Example</br>
+== (equal to)	Checks if the values of two operands are equal or not, if yes then condition becomes true.	(A == B) is not true.</br>
+!= (not equal to)	Checks if the values of two operands are equal or not, if values are not equal then condition becomes true.	(A != B) is true.</br>
+> (greater than)	Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.	(A > B) is not true.</br>
+< (less than)	Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.	(A < B) is true.</br>
+>= (greater than or equal to)	Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.	(A >= B) is not true.</br>
+<= (less than or equal to)	Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.	(A <= B) is true.</br>
+The Bitwise Operators</br>
+Java defines several bitwise operators, which can be applied to the integer types, long, int, short, char, and byte.</br>
+Bitwise operator works on bits and performs bit-by-bit operation. Assume if a = 60 and b = 13; now in binary format they will be as follows -</br>
+a = 0011 1100V
+b = 0000 1101</br>
+-----------------</br>
+a&b = 0000 1100</br>
+a|b = 0011 1101</br>
+a^b = 0011 0001</br>
+~a  = 1100 0011</br>
+The following table lists the bitwise operators -</br>
+Assume integer variable A holds 60 and variable B holds 13 then -</br>
+Show Examples</br>
+Operator	Description	Example</br>
+& (bitwise and)	Binary AND Operator copies a bit to the result if it exists in both operands.	(A & B) will give 12 which is 0000 1100</br>
+| (bitwise or)	Binary OR Operator copies a bit if it exists in either operand.	(A | B) will give 61 which is 0011 1101</br>
+^ (bitwise XOR)	Binary XOR Operator copies the bit if it is set in one operand but not both.	(A ^ B) will give 49 which is 0011 0001</br>
+~ (bitwise compliment)	Binary Ones Complement Operator is unary and has the effect of 'flipping' bits.	(~A ) will give -61 which is 1100 0011 in 2's complement form due to a signed binary number.</br>
+<< (left shift)	Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.	A << 2 will give 240 which is 1111 0000</br>
+>> (right shift)	Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.	A >> 2 will give 15 which is 1111</br>
+>>> (zero fill right shift)	Shift right zero fill operator. The left operands value is moved right by the number of bits specified by the right operand and shifted values are filled up with zeros.	A >>>2 will give 15 which is 0000 1111</br>
+The Logical Operators</br>
+The following table lists the logical operators -</br>
+Assume Boolean variables A holds true and variable B holds false, then -</br>
+Show Examples</br>
+Operator	Description	Example</br>
+&& (logical and)	Called Logical AND operator. If both the operands are non-zero, then the condition becomes true.	(A && B) is false</br>
+|| (logical or)	Called Logical OR Operator. If any of the two operands are non-zero, then the condition becomes true.	(A || B) is true</br>
+! (logical not)	Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.	!(A && B) is true</br>
+The Assignment Operators</br>
+Following are the assignment operators supported by Java language -</br>
+Show Examples</br>
+Operator	Description	Example</br>
+=	Simple assignment operator. Assigns values from right side operands to left side operand.	C = A + B will assign value of A + B into C</br>
++=	Add AND assignment operator. It adds right operand to the left operand and assign the result to left operand.	C += A is equivalent to C = C + A</br>
+-=	Subtract AND assignment operator. It subtracts right operand from the left operand and assign the result to left operand.	C -= A is equivalent to C = C – A</br>
+*=	Multiply AND assignment operator. It multiplies right operand with the left operand and assign the result to left operand.	C *= A is equivalent to C = C * A</br>
+/=	Divide AND assignment operator. It divides left operand with the right operand and assign the result to left operand.	C /= A is equivalent to C = C / A</br>
+%=	Modulus AND assignment operator. It takes modulus using two operands and assign the result to left operand.	C %= A is equivalent to C = C % A</br>
+<<=	Left shift AND assignment operator.	C <<= 2 is same as C = C << 2</br>
+>>=	Right shift AND assignment operator.	C >>= 2 is same as C = C >> 2</br>
+&=	Bitwise AND assignment operator.	C &= 2 is same as C = C & 2</br>
+^=	bitwise exclusive OR and assignment operator.	C ^= 2 is same as C = C ^ 2</br>
+|=	bitwise inclusive OR and assignment operator.	C |= 2 is same as C = C | 2</br>
+Miscellaneous Operators</br>
+There are few other operators supported by Java Language.</br>
+Conditional Operator ( ? : )</br>
+Conditional operator is also known as the ternary operator. This operator consists of three operands and is used to evaluate Boolean expressions. The goal of the operator is to decide, which value should be assigned to the variable. The operator is written as -</br>
+variable x = (expression) ? value if true : value if false</br>
+instanceof Operator</br>
+This operator is used only for object reference variables. The operator checks whether the object is of a particular type (class type or interface type). instanceof operator is written as -</br>
+( Object reference variable ) instanceof  (class/interface type)</br>
+If the object referred by the variable on the left side of the operator passes the IS-A check for the class/interface type on the right side, then the result will be true.</br>
+Precedence of Java Operators</br>
+Operator precedence determines the grouping of terms in an expression. This affects how an expression is evaluated. Certain operators have higher precedence than others; for example, the multiplication operator has higher precedence than the addition operator -</P>
+For example, x = 7 + 3 * 2; here x is assigned 13, not 20 because operator * has higher precedence than +, so it first gets multiplied with 3 * 2 and then adds into 7.</br>
+Here, operators with the highest precedence appear at the top of the table, those with the lowest appear at the bottom. Within an expression, higher precedence operators will be evaluated first.</br>
+Category	Operator	Associativity</br>
+Postfix	>() [] . (dot operator)	Left toright</br>
+Unary	>++ - - ! ~	Right to left</br>
+Multiplicative	>* /	Left to right</br>
+Additive	>+ -	Left to right</br>
+Shift	>>> >>> <<	Left to right</br>
+Relational	>> >= < <=	Left to right</br>
+Equality	>== !=	Left to right</br>
+Bitwise AND	>&	Left to right</br>
+Bitwise XOR	>^	Left to right</br>
+Bitwise OR	>|	Left to right</br>
+Logical AND	>&&	Left to right</br>
+Logical OR	>||	Left to right</br>
+Conditional	?:	Right to left</br>
+Assignment	>= += -= *= /= %= >>= <<= &= ^= |=	Right to left</br>
+<CENTER> OR</CENTER> </BR>
+Explain primitive data types with their ranges?</br>
+Ans. Java Eight Primitive Data Types</br>
+Java primitive data types are the basic data types that are built-in to Java language. A data type is a classification mechanism whereby it can be identified that what kind of data is stored inside the variable, and what operations it supports.</br>
+Java provides a richer set of primitive or basic or built-in data types than other languages like C and C++. There are eight built-in types supported by Java to support integer, floating-point, character, and boolean values. All primitive or basic data types hold numeric data that is directly understood by system.
+The following table lists all Java primitive data types, their storage requirements in bytes and the numeric range they support.</P>
+Table 1: List of Java's primitive data types</br>
+Type	Size in Bytes	Range</br>
+byte	1 byte	-128 to 127</br>
+short	2 bytes	-32,768 to 32,767</br>
+int	4 bytes	-2,147,483,648 to 2,147,483, 647</br>
+long	8 bytes	-9,223,372,036,854,775,808 to </br>
+9,223,372,036,854,775,807</br>
+float	4 bytes	approximately ±3.40282347E+38F </br>
+(6-7 significant decimal digits) </br>
+Java implements IEEE 754 standard</br>
+double	8 bytes	approximately ±1.79769313486231570E+308</br>
+(15 significant decimal digits)</br>
+char	2 byte	0 to 65,536 (unsigned)</br>
+boolean	not precisely defined*	true or false</br>
+*boolean represents one bit of information, but its "size" isn't something that's precisely defined.</br>
+Default Values of Java's Primitive Types</br>
+Java primitive data types are initialized to some default values when they are declared as class members. While programming in Java you declare and use variables at two places. First, inside a function those are local to that function. And second, as a class member. When a variable is declared local to a function it must be initialized or assigned before its first use otherwise compiler reports an error "variable <variable name> might not have been initialized". But when a variable is declared as a class member or field, it is not always essential to assign a value to the member. In that case class members are initialized to some default values by the compiler. However, leaving class members uninitialized is not considered a good practice.</br>
+The following table lists the default values for Java's primitive data types shown in Table 1.</br>
+Table 2: Default values of primitive data types in Java</br>
+Type	Default Value</br>
+byte	0</br>
+short	0</br>
+int	0</br>
+long	0</br>
+float	0.0f</br>
+double	0.0d</br>
+char	'\u0000'</br>
+boolean	False</br>
+String or other object	Null</br></br>
+</br>
+Q.7. Write the difference between for loop and while loop with example?</br>
+Ans.</br>
+BASIS FOR COMPARISON	FOR	WHILE</br>
+Declaration	for(initialization; condition; iteration){</br>
+//body of 'for' loop</br>
+}	while ( condition) {</br>
+statements; //body of loop</br>
+}</br>
+Format	Initialization, condition checking, iteration statement are written at the top of the loop.	Only initialization and condition checking is done at the top of the loop.</br>
+Use	The 'for' loop used only when we already knew the number of iterations.	The 'while' loop used only when the number of iteration are not exactly known.</br>
+Condition	If the condition is not put up in 'for' loop, then loop iterates infinite times.	If the condition is not put up in 'while' loop, it provides compilation error.</br>
+Initialization	In 'for' loop the initialization once done is never repeated.	In while loop if initialization is done during condition checking, then initialization is done each time the loop iterate</br>.
+Iteration statement	In 'for' loop iteration statement is written at top, hence, executes only after all statements in loop are executed.	In 'while' loop, the iteration statement can be written anywhere in the loop.</br>
+Definition of for loop</br>
+In Java, there are two forms of for loops. The first form is “traditional” form and the second is “for-each” form. The general form of traditional for loop statement.</br>
+1.	for(initialization; condition; iteration){</br>
+2.	//body of for loop</br>
+3.	}</br>
+The initialization of the loop controlling variable of for loop is executed only once, during the first iteration of the loop. Here, the loop controlling variable is initialized, sometimes if the loop variable is not used again anywhere in the program and is only used as the controlling variable of the loop, then it is both declared and initialized in the for loop.  The condition of the for loop is executed each time the loop is iterated. The iteration statement is an expression that increment or decrement the loop controlling variable.
+Whenever the loop is executed, its initialization condition is executed first; then the condition is checked. If the condition is satisfied the body of the loop is executed, then the iteration statement is executed. Then again the condition is checked to know whether the loop will iterate further or will terminate.</P>
+In Java, the initialization statement and the iteration statement may include more than one statement. Each statement is separated by other by a comma, in Java, a comma is a separator whereas, in C++,  “comma” is an operator that can be used in any valid expression.</br>
+The “for-each” form is an enhanced for loop. The general form of the for-each loop is as follow.</br>
+1.	for(type iter_variable: collection) statement-block</br>
+Here, the “type” specify the type of iteration variable followed by the iteration variable. The iteration variable will receive the element from the collection variable. The type must be same as the type of elements stored in the collection variable. The for-each form of for loop automates the iteration of the loop from starting to end accessing the values in sequential order.
+There are various types of collection used with for loop.  Let’s discuss it with an array as a collection.</P>
+1.	int array[]={10, 20, 30, 40, 50, 60};</br>
+2.	int add=0;</br>
+3.	for( int c: array) {</br>
+4.	system.out.prinln( "value in c " + c)</br>
+5.	add = add+c;V
+6.	}</br>
+7.	system.out.prinln("additon of array elements is " +add);</br>
+8.	</br>
+9.	// output</br>
+10.	value in c 10</br>
+11.	value in c 20</br>
+12.	value in c 30</br>
+13.	value in c 40</br>
+14.	value in c 50</br>
+15.	value in c 60</br>
+16.	additon of array elements is 210</br>
+Here, ‘c’ is an iteration variable; it receives the values from array[ ],  one at a time, from lowest index to the highest index in the array. Here, the loop iterates until all the elements of the array are examined. It is possible to terminate the loop in between by using “break”. However, the change in the iteration variable does not affect the array, as it is only a read-only variable.</br>
+Definition of while loop</br>
+The while loop is the most fundamental loop available in C++ and Java.  The working of a while loop is similar in both C++ and Java. The declaration of a while loop is as follow.</br>
+Declaration:</br>
+1.	while ( condition) {</br>
+2.	</br>
+3.	statements; //body of loop</br>
+4.	}</br>
+The while loop initially checks the condition and then executes the statements till the condition in while loop turns out to be true. The condition in while loop can be any boolean expression. When expression returns any non-zero value, then the condition is true, and if the expression returns a zero value, the condition becomes false. If the condition becomes true, then loop iterates itself, and if the condition becomes false, then the control passes to the next line of the code immediately followed by the loop.The statements or the body loop can either be an empty statement or a single statement or a block of statements.Let’s discuss the working of ‘while’ loop. In the example below the code will print from 1 to 10.
+Let’s discuss the working of a while loop. In the example below the code will print from 1 to 10.</P>
+1.	//example is in Java.</br>
+2.	class while{</br>
+3.	public static void main ( args[] ){</br>
+4.	int n=0;</br>
+5.	while(n<10){</br>
+6.	n++;</br>
+7.	system.out.println("n=" +n);</br>
+8.	}</br>
+9.	}</br>
+10.	}</br>
+11.	</br>
+12.	//output</br>
+13.	n=1</br>
+14.	n=2</br>
+15.	n=3</br>
+16.	n=4</br>
+17.	n=5</br>
+18.	n=6</br>
+19.	n=7</br>
+20.	n=8</br>
+21.	n=9</br>
+22.	n=10
+Here, the initial value of ‘n’ is 0, which makes the condition in while loop true. The control then enters the body of the while loop and the value of ‘n’ is incremented according to the first statement in the body of a while loop. The value of ‘n’ is printed, then the control goes back to the condition in a while loop, now the value of ‘n’ is 1  which again satisfies the condition, and the body of the loop is executed again. This continue till the condition is true, as soon as the condition become false the loop is terminated.</br>
+Like for loop, the while loop can also initialize the control variable at the top of the loop i.e. during condition checking.</br>
+1.	//for example
+2.	</br>
+3.	while((ch = getchar( ) ) != 'A'){</br>
+4.	</br>
+5.	sysytem.out.println(" The input alphabet " +ch);</br>
+6.	</br>
+7.	}</br>
+Here the control variable ‘ch’ is initialized and the condition of the loop is verified at the top of the loop.</br>
+<CENTER> OR</CENTER></BR>
+Explain switch statement with example?</br>
+Ans. A switch statement allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case.</P>
+Syntax</br>
+The syntax of enhanced for loop is -</br>
+switch(expression) {</br>
+case value :</br>
+// Statements</br>
+break; // optional</br>
+</br>
+case value :</br>
+// Statements</br>
+break; // optional</br>
+</br>
+// You can have any number of case statements.</br>
+default : // Optional</br>
+// Statements</br>
+}</br>
+The following rules apply to a switch statement -</br>
+•	The variable used in a switch statement can only be integers, convertable integers (byte, short, char), strings and enums.</br>
+•	You can have any number of case statements within a switch. Each case is followed by the value to be compared to and a colon.</br>
+•	The value for a case must be the same data type as the variable in the switch and it must be a constant or a literal.</br>
+•	When the variable being switched on is equal to a case, the statements following that case will execute until a break statement is reached.</br>
+•	When a break statement is reached, the switch terminates, and the flow of control jumps to the next line following the switch statement.</br>
+•	Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.</br>
+•	A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case.</br>
+Flow Diagram</br>
+ </br>
+Example</br>
+ Live Demo</br>
+public class Test {</br>
+</br>
+public static void main(String args[]) {</br>
+// char grade = args[0].charAt(0);</br>
+char grade = 'C';</br>
+</br>
+switch(grade) {</br>
+case 'A' :</br>
+System.out.println("Excellent!");</br>
+break;</br>
+case 'B' :</br>
+case 'C' :</br>
+System.out.println("Well done");</br>
+break;</br>
+case 'D' :</br>
+System.out.println("You passed");</br>
+case 'F' :</br>
+System.out.println("Better try again");</br>
+break;</br>
+default :</br>
+System.out.println("Invalid grade");</br>
+}</br>
+System.out.println("Your grade is " + grade);</br>
+}</br>
+}</br>
+Compile and run the above program using various command line arguments. This will produce the following result -</br>
+Output</br>
+Well done</br>
+Your grade is C</br>
+</br>
+Q.8. Explain class with example.</br>
+Ans. A class is a blueprint from which individual objects are created.</br>
+Following is a sample of a class.</br>
+Example</br>
+public class</br> Dog {
+String breed;</br>
+int age;</br>
+String color;</br>
+</br>
+void barking() {</br>
+}</br>
+</br>
+void hungry() {</br>
+}</br>
+</br>
+void sleeping() {</br>
+}</br>
+}</br>
+A class can contain any of the following variable types.</br>
+•	Local variables - Variables defined inside methods, constructors or blocks are called local variables. The variable will be declared and initialized within the method and the variable will be destroyed when the method has completed.</br>
+•	Instance variables - Instance variables are variables within a class but outside any method. These variables are initialized when the class is instantiated. Instance variables can be accessed from inside any method, constructor or blocks of that particular class.</br>
+•	Class variables - Class variables are variables declared within a class, outside any method, with the static keyword.</br>
+A class can have any number of methods to access the value of various kinds of methods. In the above example, barking(), hungry() and sleeping() are methods.</br>
+Following are some of the important topics that need to be discussed when looking into classes of the Java Language.</br>
+Constructors</br>
+When discussing about classes, one of the most important sub topic would be constructors. Every class has a constructor. If we do not explicitly write a constructor for a class, the Java compiler builds a default constructor for that class.</br>
+Each time a new object is created, at least one constructor will be invoked. The main rule of constructors is that they should have the same name as the class. A class can have more than one constructor.</br>
+Following is an example of a constructor -</br>
+Example</br>
+public class Puppy {</br>
+public Puppy() {</br>
+}</br>
+</br>
+public Puppy(String name) {</br>
+// This constructor has one parameter, name.</br>
+}</br>
+}</br>
+Java also supports Singleton Classes where you would be able to create only one instance of a class.</br>
+Note - We have two different types of constructors. We are going to discuss constructors in detail in the subsequent chapters.</br>
+Creating an Object</br>
+As mentioned previously, a class provides the blueprints for objects. So basically, an object is created from a class. In Java, the new keyword is used to create new objects.</br>
+There are three steps when creating an object from a class -</br>
+•	Declaration - A variable declaration with a variable name with an object type.</br>
+•	Instantiation - The 'new' keyword is used to create the object.</br>
+•	Initialization - The 'new' keyword is followed by a call to a constructor. This call initializes the new object.</br>
+Following is an example of creating an object -</br>
+Example</br>
+ Live Demo</br>
+public class Puppy {</br>
+public Puppy(String name) {</br>
+// This constructor has one parameter, name.</br>
+System.out.println("Passed Name is :" + name );</br>
+}</br>
+</br>
+public static void main(String []args) {</br>
+// Following statement would create an object myPuppy</br>
+Puppy myPuppy = new Puppy( "tommy" );</br>
+}</br>
+}</br>
+If we compile and run the above program, then it will produce the following result -</br>
+Output</br>
+Passed Name is :tommy</br>
+Accessing Instance Variables and Methods</br>
+Instance variables and methods are accessed via created objects. To access an instance variable, following is the fully qualified path -</br>
+/* First create an object */</br>
+ObjectReference = new Constructor();</br>
+</br>
+/* Now call a variable as follows */</br>
+ObjectReference.variableName;</br>
+</br>
+/* Now you can call a class method as follows */</br>
+ObjectReference.MethodName();</br>
+Example</br>
+This example explains how to access instance variables and methods of a class.</br>
+ Live Demo</br>
+public class Puppy {</br>
+int puppyAge;</br>
+</br>
+public Puppy(String name) {</br>
+// This constructor has one parameter, name.</br>
+System.out.println("Name chosen is :" + name );</br>
+}</br>
+
+public void setAge( int age ) {</br>
+puppyAge = age;</br>
+}</br>
+
+public int getAge( ) {</br>
+System.out.println("Puppy's age is :" + puppyAge );</br>
+return puppyAge;</br>
+}</br>
+</br>
+public static void main(String []args) {</br>
+/* Object creation */</br>
+Puppy myPuppy = new Puppy( "tommy" );</br>
+</br>
+/* Call class method to set puppy's age */</br>
+myPuppy.setAge( 2 );</br>
+</br>
+/* Call another class method to get puppy's age */</br>
+myPuppy.getAge( );</br>
+</br>
+/* You can access instance variable as follows as well */</br>
+System.out.println("Variable Value :" + myPuppy.puppyAge );</br>
+}</br>
+}</br>
+If we compile and run the above program, then it will produce the following result -</br>
+Output</br>
+Name chosen is :tommy</br>
+Puppy's age is :2</br>
+Variable Value :2</br>
+Source File Declaration Rules</br>
+As the last part of this section, let's now look into the source file declaration rules. These rules are essential when declaring classes, import statements and package statements in a source file.</br>
+•	There can be only one public class per source file.</br>
+•	A source file can have multiple non-public classes.</br>
+•	The public class name should be the name of the source file as well which should be appended by .java at the end. For example: the class name is public class Employee{} then the source file should be as Employee.java.</br>
+•	If the class is defined inside a package, then the package statement should be the first statement in the source file.</br>
+•	If import statements are present, then they must be written between the package statement and the class declaration. If there are no package statements, then the import statement should be the first line in the source file.</br>
+•	Import and package statements will imply to all the classes present in the source file. It is not possible to declare different import and/or package statements to different classes in the source file.</br>
+Classes have several access levels and there are different types of classes; abstract classes, final classes, etc. We will be explaining about all these in the access modifiers chapter.</br>
+Apart from the above mentioned types of classes, Java also has some special classes called Inner classes and Anonymous classes.</br>
+</br>
+<CENTER>OR</CENTER></br>
+Write about naming convention in java?</br>
+Ans. Java Naming conventions</br>
+Java naming convention is a rule to follow as you decide what to name your identifiers such as class, package, variable, constant, method etc.</br>
+But, it is not forced to follow. So, it is known as convention not rule.</br>
+All the classes, interfaces, packages, methods and fields of java programming language are given according to java naming convention.</br>
+Advantage of naming conventions in java</br>
+Name	Convention</br>
+class name	should start with uppercase letter and be a noun e.g. String, Color, Button, System, Thread etc.</br>
+interface name	should start with uppercase letter and be an adjective e.g. Runnable, Remote, ActionListener etc.</br>
+method name	should start with lowercase letter and be a verb e.g. actionPerformed(), main(), print(), println() etc.</br>
+variable name	should start with lowercase letter e.g. firstName, orderNumber etc.</br>
+package name	should be in lowercase letter e.g. java, lang, sql, util etc.</br>
+constants name	should be in uppercase letter. e.g. RED, YELLOW, MAX_PRIORITY etc.</br>
+ By using standard Java naming conventions, you make your code easier to read for yourself and for other programmers. Readability of Java program is very important. It indicates that less time is spent to figure out what the code does.</br>
+</br>
+Q.9. Explain the concept of java virtual machine?</br>
+Ans. Java Naming conventions</br>
+Java naming convention is a rule to follow as you decide what to name your identifiers such as class, package, variable, constant, method etc.</br>
+But, it is not forced to follow. So, it is known as convention not rule.</br>
+All the classes, interfaces, packages, methods and fields of java programming language are given according to java naming convention.</br>
+Advantage of naming conventions in java</br>
+By using standard Java naming conventions, you make your code easier to read for yourself and for other programmers. Readability of Java program is very important. It indicates that less time is spent to figure out what the code does.</br>
+Name	Convention</br>
+class name	should start with uppercase letter and be a noun e.g. String, Color, Button, System, Thread etc.</br>
+interface name	should start with uppercase letter and be an adjective e.g. Runnable, Remote, ActionListener etc.</br>
+method name	should start with lowercase letter and be a verb e.g. actionPerformed(), main(), print(), println() etc.</br>
+variable name	should start with lowercase letter e.g. firstName, orderNumber etc.</br>
+package name	should be in lowercase letter e.g. java, lang, sql, util etc.</br>
+constants name	should be in uppercase letter. e.g. RED, YELLOW, MAX_PRIORITY etc.</br>
+</br>
+<CENTER>OR</CENTER></br>
+What do you understand by multithreading? What are advantages of multithreading explain with example.</br>
+Ans. Multithreading in java is a process of executing multiple threads simultaneously.</br>
+Thread is basically a lightweight sub-process, a smallest unit of processing. Multiprocessing and multithreading, both are used to achieve multitasking.</br>
+But we use multithreading than multiprocessing because threads share a common memory area. They don't allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
+Java Multithreading is mostly used in games, animation etc.</P>
+________________________________________</br>
+Advantages of Java Multithreading</br>
+1) It doesn't block the user because threads are independent and you can perform multiple operations at same time.</br>
+2) You can perform many operations together so it saves time.</br>
+3) Threads are independent so it doesn't affect other threads if exception occur in a single thread.</br>
+Q.10. How do applets different from application programs.</br>
+Ans. The common difference between Applet and Application is that application starts its execution through main() method while an applet doesn’t use method main() instead it initialize through init().</br>
+Applets are small programs usually written to be transmitted over the internet and automatically executed by java compatible web browser. And applications are stand alone programs written for performing general operations by the user directly, and it doesn’t need any JAVA enabled APIs’ (browsers).</br>
+Applets are not affected by the users operating system or hardware. If the browser has the proper JVM installed then these applets run with the help of JVM. While the look and feel of the application on the various operating system remain the same.</br>
+Comparison Chart</br>
+BASIS FOR COMPARISON	APPLET	APPLICATION</br>
+Basic	It is small program uses another application program for its execution.	An application is the programs executed on the computer independently.</br>
+main() method	Do not use the main method	Uses the main method for execution</br>
+Execution	Can not run independently require API's (Ex. Web API).	Can run alone but require JRE.</br>
+Installation	Prior installation is not needed	Requires prior explicit installation on the local computer.</br>
+Read and write operation	Applets can not read from and write to the files on the local computer.	Applications are capable of performing those operations to the files on the local computer.</br>
+Communication with other servers	Can not communicate with other servers.	Communication with other servers is probably possible.</br>
+Restrictions	Applets cannot access files residing on the local computer.	Can access any data or file available on the system.</br>
+Security	Requires security for the system as they are untrusted.	No security concerns are there.</br>
+</br>
+<CENTER>OR</CENTER></br>
+What are threads and packages?</br>
+Ans. Java Threads</br>
+A thread is a:</br>
+•	Facility to allow multiple activities within a single process</br>
+•	Referred as lightweight process</br>
+•	A thread is a series of executed statements</br>
+•	Each thread has its own program counter, stack and local variables</br>
+•	A thread is a nested sequence of method calls</br>
+•	Its shares memory, files and per-process state</br>
+Whats the need of a thread or why we use Threads?</br>
+•	To perform asynchronous or background processing</br>
+•	Increases the responsiveness of GUI applications</br>
+•	Take advantage of multiprocessor systems</br>
+•	Simplify program logic when there are multiple independent entities</br>
+What happens when a thread is invoked?</br>
+When a thread is invoked, there will be two paths of execution. One path will execute the thread and the other path will follow the statement after the thread invocation. There will be a separate stack and memory space for each thread.
+Risk Factor</P>
+•	Proper co-ordination is required between threads accessing common variables [use of synchronized and volatile] for consistence view of data</br>
+•	overuse of java threads can be hazardous to program’s performance and its maintainability.</br>
+Threads in Java</br>
+Java threads facility and API is deceptively simple:</br>
+Every java program creates at least one thread [ main() thread ]. Additional threads are created through the Thread constructor or by instantiating classes that extend the Thread class.</br>
+JAVA Packages</br>
+Java Package</br>
+1.	Java Package</br>
+2.	Example of package</br>
+3.	Accessing package</br>
+1.	By import packagename.*</br>
+2.	By import packagename.classname</br>
+3.	By fully qualified name</br>
+4.	Subpackage</br>
+5.	Sending class file to another directory</br>
+6.	-classpath switch</br>
+7.	4 ways to load the class file or jar file</br>
+8.	How to put two public class in a package</br>
+9.	Static Import</br>
+10.	Package class</br>
+A java package is a group of similar types of classes, interfaces and sub-packages.</br>
+Package in java can be categorized in two form, built-in package and user-defined package.</br>
+There are many built-in packages such as java, lang, awt, javax, swing, net, io, util, sql etc.</br>
+Here, we will have the detailed learning of creating and using user-defined packages.</br>
+Advantage of Java Package</br>
+1) Java package is used to categorize the classes and interfaces so that they can be easily maintained.</br>
+2) Java package provides access protection.</br>
+3) Java package removes naming collision.</br>
+ </br>
+________________________________________</br>
+Simple example of java package</br>
+The package keyword is used to create a package in java.</br>
+1.	//save as Simple.java</br>
+2.	package mypack;</br>
+3.	public class Simple{</br>
+4.	public static void main(String args[]){</br>
+5.	System.out.println("Welcome to package");</br>
+6.	}</br>
+7.	}</br>
+How to compile java package</br>
+If you are not using any IDE, you need to follow the syntax given below:</br>
+1.	javac -d directory javafilename</br>
+For example</br>
+1.	javac -d . Simple.java</br>
+The -d switch specifies the destination where to put the generated class file. You can use any directory name like /home (in case of Linux), d:/abc (in case of windows) etc. If you want to keep the package within the same directory, you can use . (dot).</br>
+________________________________________</br>
+How to run java package program</br>
+You need to use fully qualified name e.g. mypack.Simple etc to run the class.</br>
+________________________________________</br>
+To Compile: javac -d . Simple.java</br>
+To Run: java mypack.Simple</br>
+Output:Welcome to package</br>
+</br>

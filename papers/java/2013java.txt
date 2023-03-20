@@ -1,0 +1,806 @@
+   Java 2013
+
+
+
+Q1.
+1)  (a) Java virtual machine
+2)  (d) 0 to 65535
+3)  (c) 4 byte
+4)  (a) javac
+5)  (d) .java
+
+Q2.
+Ans2.  Data Types in Java
+Data types represent the different values to be stored in the variable. In java, there are two types of data types:
+
+Primitive data types
+Non-primitive data types
+datatype in java.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATATYPE
+DEFAULT VALUE
+DEFAULT SIZE
+
+Boolean
+False
+1 bit
+
+Char
+'\u0000'
+2byte
+
+Byte
+0
+1 byte
+
+Short
+0
+2 byte
+
+Int
+0
+4 byte
+
+Long
+0L
+8 byte
+
+Float
+0.0f
+4byte
+
+Double
+0.0d
+8 byte
+
+
+
+Q2. 
+Ans2.  Reserve keywords
+Java reserved words are keywords that are reserved by Java functions or other uses that cannot be used as identifiers (e.g., variable names, function names, class names). If a reserved word was used as a variable you would get an error or unexpected result. The list of reserved words in Java is provided below.
+List of Java reserved words
+
+abstract
+assert
+boolean
+break
+byte
+case
+catch
+char
+class
+const
+default
+do
+double
+else
+enum
+extends
+false
+final
+finally
+float
+for
+goto
+if
+implements
+import
+instanceof
+int
+interface
+long
+native
+new
+null
+package
+private
+protected
+public
+return
+short
+static
+strictfp
+super
+switch
+synchronized
+this
+throw
+throws
+transient
+true
+try
+void
+volatile
+while
+continue
+
+Q3.
+Ans3. Do and for statement with examples
+ do-while Loop
+The Java do-while loop is used to iterate a part of the program several times. If the number of iteration is not fixed and you must have to execute the loop at least once, it is recommended to use do-while loop.
+
+The Java do-while loop is executed at least once because condition is checked after loop body.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Syntax:
+
+do{  
+//code to be executed  
+}while(condition);  
+
+Example:
+public class DoWhileExample {  
+public static void main(String args[]) {  
+    int i=1;  
+    do{  
+        System.out.println(i);  
+    i++;  
+    }while(i<=10);  
+}  
+}  
+
+Output:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+For loop
+for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the initialization, condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping.
+Syntax:
+for (initialization condition; testing condition; increment/decrement)
+{
+    statement(s)
+}
+
+Example:
+class forLoopDemo
+{
+    public static void main(String args[])
+     {
+        for (int x = 2; x <= 4; x++)
+        System.out.println("Value of x:" +x);
+    }
+}
+
+Output:
+Value of x:2
+Value of x:3
+Value of x:4
+
+Q3.
+Ans3. Array
+Normally, array is a collection of similar type of elements that have contiguous memory location.
+ array is an object the contains elements of similar data type. It is a data structure where we store similar elements. We can store only fixed set of elements in a java array.
+Array in java is index based, first element of the array is stored at 0 index.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advantage of Java Array
+Code Optimization: It makes the code optimized, we can retrieve or sort the data easily.
+Random access: We can get any data located at any index position.
+
+Disadvantage of Java Array
+Size Limit: We can store only fixed size of elements in the array. It doesn't grow its size at runtime. To solve this problem, collection framework is used in java.
+Types of Array in java
+There are two types of array:
+Single Dimensional Array
+Multidimensional Array
+
+Q4.
+Ans4. Class and objects in java
+Objects in java
+Object is the physical as well as logical entity whereas class is the logical entity only.
+An entity that has state and behavior is known as an object e.g. chair, bike, marker, pen, table, car etc. It can be physical or logical (tangible and intangible). The example of intangible object is banking system.
+
+An object has three characteristics:
+state: represents data (value) of an object.
+behavior: represents the behavior (functionality) of an object such as deposit, withdraw etc.
+identity: Object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. But, it is used internally by the JVM to identify each object uniquely.
+
+For Example: Pen is an object. Its name is Reynolds, color is white etc. known as its state. It is used to write, so writing is its behavior.
+
+Object is an instance of a class. Class is a template or blueprint from which objects are created. So object is the instance(result) of a class.
+
+Object Definitions:
+
+Object is a real world entity.
+Object is a run time entity.
+Object is an entity which has state and behavior.
+Object is an instance of a class.
+
+Class in java
+A  class is a group of objects which have common properties. It is a template or blueprint from which objects are created. It is a logical entity. It can't be physical.
+A class in Java can contain:
+
+fields
+methods
+constructors
+blocks
+nested class and interface
+
+Syntax to declare a class:
+class <class_name>{  
+    field;  
+    method;  
+}  
+
+Q4.
+Ans4. Constructor
+In Java, constructor is a block of codes similar to method. It is called when an instance of object is created and memory is allocated for the object.
+It is a special type of method which is used to initialize the object.
+Note: It is called constructor because it constructs the values at the time of object creation. It is not necessary to write a constructor for a class. It is because java compiler creates a default constructor if your class doesn't have any.
+
+Rules for creating java constructor:
+There are basically two rules defined for the constructor.
+Constructor name must be same as its class name.
+Constructor must have no explicit return type.
+
+Types of java constructors:
+There are two types of constructors in java:
+Default constructor (no-arg constructor)
+Parameterized constructor
+
+Q5.
+Ans5. Inheritance
+Inheritance in java is a mechanism in which one object acquires all the properties and behaviors of parent object.
+The idea behind inheritance in java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of parent class, and you can add new methods and fields also.
+Inheritance represents the IS-A relationship, also known as parent-child relationship.
+Syntax of Java Inheritance:
+class Subclass-name extends Superclass-name  
+{  
+   //methods and fields  
+}  
+
+The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+In the terminology of Java, a class which is inherited is called parent or super class and the new class is called child or subclass.
+Types of inheritance in java:
+On the basis of class, there can be three types of inheritance in java:
+ Single
+ Multilevel
+ Hierarchical
+
+In java programming, multiple and hybrid inheritance is supported through interface only.
+
+Q5.
+Ans5. Interface
+An interface in java is a blueprint of a class. It has static constants and abstract methods.
+The interface in java is a mechanism to achieve abstraction. There can be only abstract methods in the java interface not method body. It is used to achieve abstraction and multiple inheritance in Java.
+Java Interface also represents IS-A relationship.
+It cannot be instantiated just like abstract class.
+There are mainly three reasons to use interface. They are given below:
+It is used to achieve abstraction.
+By interface, we can support the functionality of multiple inheritance.
+It can be used to achieve loose coupling.
+Q6.
+Ans6. Applets
+Applet is a special type of program that is embedded in the webpage to generate the dynamic content. It runs inside the browser and works at client side.
+Advantage of Applet:
+There are many advantages of applet. They are as follows:
+It works at client side so less response time.
+Secured
+It can be executed by browsers running under many plateforms, including Linux, Windows, Mac Os etc.
+Drawback of Applet:
+Plugin is required at client browser to execute applet.
+Lifecycle of Java Applet:
+Applet is initialized.
+Applet is started.
+Applet is painted.
+Applet is stopped.
+Applet is destroyed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q6.
+Ans6. Parameter in Applet
+We can get any information from the HTML file as a parameter. For this purpose, Applet class provides a method named getParameter().
+ Syntax:
+public String getParameter(String parameterName)  
+Example of using parameter in Applet:
+import java.applet.Applet;  
+import java.awt.Graphics;
+public class UseParam extends Applet
+{ 
+public void paint(Graphics g)
+{ 
+ String str=getParameter("msg");  
+g.drawString(str,50, 50);  
+}  
+}  
+
+Q7. 
+Ans7. Primitive Data Types in Java
+Data types represent the different values to be stored in the variable. In java, there are two types of data types:
+Primitive data types
+Non-primitive data types
+
+
+
+
+In java primitive type is predefined and named by reserved keywords. 
+primitive types and reference types these are two types in java.primitive type direct contain value and reference type refer to object. 
+Primitive type are 8 in java:
+byte 
+short 
+int 
+long 
+char 
+float 
+double 
+boolean
+Ranges of primitive data type:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ans7. Program in Java to add two numbers:
+import java.io.*;
+class Addition
+{
+public static void main(String args[])throws Exception
+{
+int a,b,c;
+BufferedReader br= new BufferedReader( new InputStreamReader(System.in));
+System.out.println("Enter the two numbers to add:");
+a=Integer.parseInt(br.readLine());
+b=Integer.parseInt(br.readLine());
+c = a+b;
+System.out.println("\nSum of two numbers:"+ c);
+}
+}
+Output:
+Enter the two numbers to add:
+2
+3
+Sum of two numbers:5
+Q8.
+Ans8. Java Switch Statement 
+The Java switch statement executes one statement from multiple conditions. It is like if-else-if ladder statement.
+Syntax:
+switch(expression){    
+case value1:    
+ //code to be executed;    
+ break;  //optional  
+case value2:    
+ //code to be executed;    
+ break;  //optional  
+......    
+default:     
+ code to be executed if all cases are not matched;    
+}    
+Example:
+public class SwitchExample
+ {  
+public static void main(String[] args)
+ {  
+    int number=20;  
+    switch(number)
+    {  
+    case 10:
+ System.out.println("10");
+ break;  
+    case 20:
+ System.out.println("20");
+ break;  
+    case 30:
+ System.out.println("30");
+ break;  
+    default:
+ System.out.println("Not in 10, 20 or 30");  
+    }  
+}  
+}  
+Output:
+20
+
+Q8.
+Ans8. (a) Break statement
+When the break statement is encountered inside a loop, the loop is immediately terminated and the program control resumes at the next statement following the loop.
+It can be used to terminate a case in the switch statement.
+Syntax:
+The syntax of a break is a single statement inside any loop −
+break;
+Example:
+public class Test 
+{
+
+   public static void main(String args[])
+ {
+      int [] numbers = {10, 20, 30, 40, 50};
+      for(int x : numbers )
+     {
+         if( x == 30 )
+        {
+            break;
+         }
+         System.out.print( x );
+         System.out.print("\n");
+      }
+   }
+}
+
+This will produce the following result −
+Output:
+10
+20
+
+(b) Continue statement
+The continue keyword can be used in any of the loop control structures. It causes the loop to immediately jump to the next iteration of the loop.
+In a for loop, the continue keyword causes control to immediately jump to the update statement.
+In a while loop or do/while loop, control immediately jumps to the Boolean expression.
+Syntax:
+The syntax of a continue is a single statement inside any loop −
+continue; 
+
+Example:
+public class Test
+ {
+   public static void main(String args[])
+ {
+      int [] numbers = {10, 20, 30, 40, 50};
+
+      for(int x : numbers )
+ {
+         if( x == 30 )
+ {
+            continue;
+         }
+         System.out.print( x );
+         System.out.print("\n");
+      }
+   }
+}
+This will produce the following result −
+
+Output:
+10
+20
+40
+50
+
+Q9.
+Ans9. Class with examples
+At its core, Java is an object-oriented language.  A class, on the other hand, is used to create object(s). Think of a class as a blueprint for creating objects. In the example below, the object is really an Employee; however we've created a class so that we can structure the object to our needs.
+Example:
+public class Employee {
+  public String empName; //Employee name
+  public double hourly_rate, hours_worked;
+  public double getWeeklyHours() {
+   return (hourly_rate * hours_worked);
+  }
+} //end of class
+A class helps to define the object (e.g., Employee, Publication, User, etc.) in object-oriented programming. Basically, a class is used to create an object. It determines the variables and methods that will be inside the object. A method is a task, such as performing a calculation or processing user input. These pieces are fairly constant.
+Objects come and go: They are created and discarded during normal program operation, but the classes are part of the structure and remain. There is a very technical term for this, which you will hear as you learn more about object-oriented programming: instantiation. An object is instantiated when the class is invoked. Again, we return to the Employee class: the class itself remains constant; each time Employee is used to create a new instance of an employee, we say that class has been instantiated.
+
+Q9.
+Ans9. Creating objects in Java
+in Java, a class provides the blueprint for objects, you create an object from a class. There are many different ways to create objects in Java.
+Following are some ways in which you can create objects in Java:
+1.) Using new Keyword : Using new keyword is the most basic way to create an object. This is the most common way to create an object in java. Almost 99% of objects are created in this way. By using this method we can call any constructor we want to call (no argument or parameterized constructors).
+Example:
+// Java program to illustrate creation of Object
+// using new keyword
+public class NewKeywordExample 
+{
+    String name = "Bhopal";
+    public static void main(String args[]) 
+    {
+        // Here we are creating Object of 
+        // NewKeywordExample using new keyword
+        NewKeywordExample obj = new NewKeywordExample();
+        System.out.println(obj.name);
+    }
+}
+Output:
+Bhopal
+
+2) Using New Instance : If we know the name of the class & if it has a public default constructor we can create an object –Class.forName. We can use it to create the Object of a Class. Class.forName actually loads the Class in Java but doesn’t create any Object. To Create an Object of the Class you have to use the new Instance Method of the Class.
+Example:
+// Java program to illustrate creation of Object
+// using new Instance
+public class NewInstanceExample
+{
+    String name = "College";
+    public static void main(String args[])
+    {
+        try
+        {
+            Class cls = Class.forName("NewInstanceExample");
+            NewInstanceExample obj =
+                    (NewInstanceExample) cls.newInstance();
+            System.out.println(obj.name);
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InstantiationException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+Output:
+College
+
+3) Using clone() method: Whenever clone() is called on any object, the JVM actually creates a new object and copies all content of the previous object into it. Creating an object using the clone method does not invoke any constructor.
+To use clone() method on an object we need to implement Cloneable and define the clone() method in it.
+Example:
+// Java program to illustrate creation of Object
+// using clone() method
+public class CloneExample implements Cloneable
+{
+    @Override
+    protected Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
+    }
+    String name = "Career";
+ 
+    public static void main(String args[])
+    {
+        CloneExample obj1 = new CloneExample();
+        try
+        {
+            CloneExample obj2 = (CloneExample) obj1.clone();
+            System.out.println(obj2.name);
+        }
+        catch (CloneNotSupportedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+Output:
+Career
+
+Q10.
+Ans10. Exceptions in Java
+An  exception (or exceptional event) is a problem that arises during the execution of a program. When an Exception occurs the normal flow of the program is disrupted and the program/Application terminates abnormally, which is not recommended, therefore, these exceptions are to be handled.
+An exception can occur for many different reasons. Following are some scenarios where an exception occurs.
+A user has entered an invalid data.
+A file that needs to be opened cannot be found.
+A network connection has been lost in the middle of communications or the JVM has run out of memory.
+Some of these exceptions are caused by user error, others by programmer error, and others by physical resources that have failed in some manner.
+Based on these, we have three categories of Exceptions. You need to understand them to know how exception handling works in Java.
+Checked exceptions − A checked exception is an exception that occurs at the compile time, these are also called as compile time exceptions. These exceptions cannot simply be ignored at the time of compilation, the programmer should take care of (handle) these exceptions.
+For example, if you use FileReader class in your program to read data from a file, if the file specified in its constructor doesn't exist, then a FileNotFoundException occurs, and the compiler prompts the programmer to handle the exception.
+
+Example:
+import java.io.File;
+import java.io.FileReader;
+
+public class FilenotFound_Demo {
+
+   public static void main(String args[]) {		
+      File file = new File("E://file.txt");
+      FileReader fr = new FileReader(file); 
+   }
+}
+If you try to compile the above program, you will get the following exceptions.
+
+Output:
+C:\>javac FilenotFound_Demo.java
+FilenotFound_Demo.java:8: error: unreported exception FileNotFoundException; must be caught or declared to be thrown
+      FileReader fr = new FileReader(file);
+                      ^
+1 error
+Note − Since the methods read() and close() of FileReader class throws IOException, you can observe that the compiler notifies to handle IOException, along with FileNotFoundException.
+Unchecked exceptions − An unchecked exception is an exception that occurs at the time of execution. These are also called as Runtime Exceptions. These include programming bugs, such as logic errors or improper use of an API. Runtime exceptions are ignored at the time of compilation.
+For example, if you have declared an array of size 5 in your program, and trying to call the 6th element of the array then an ArrayIndexOutOfBoundsExceptionexception occurs.
+Example:
+public class Unchecked_Demo {
+   public static void main(String args[]) {
+      int num[] = {1, 2, 3, 4};
+      System.out.println(num[5]);
+   }
+}
+If you compile and execute the above program, you will get the following exception.
+Output:
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 5
+	at Exceptions.Unchecked_Demo.main(Unchecked_Demo.java:8)
+Errors − These are not exceptions at all, but problems that arise beyond the control of the user or the programmer. Errors are typically ignored in your code because you can rarely do anything about an error. For example, if a stack overflow occurs, an error will arise. They are also ignored at the time of compilation.
+
+Q10.
+Ans10. Java virtual machine
+A Virtual Machine is a software implementation of a physical machine. Java was developed with the concept of WORA (Write Once Run Anywhere), which runs on a VM. The compiler compiles the Java file into a Java .class file, then that .class file is input into the JVM, which Loads and executes the class file. Below is a diagram of the Architecture of the JVM.
+What it does?
+The JVM performs following operation:
+Loads code
+Verifies code
+Executes code
+Provides runtime environment
+JVM provides definitions for the:
+Memory area
+Class file format
+Register set
+Garbage-collected heap
+Fatal error reporting etc.
+
+JVM Architecture Diagram:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) Classloader
+Classloader is a subsystem of JVM that is used to load class files.
+2) Class(Method) Area
+Class(Method) Area stores per-class structures such as the runtime constant pool, field and method data, the code for methods.
+3) Heap
+It is the runtime data area in which objects are allocated.
+4) Stack
+Java Stack stores frames.It holds local variables and partial results, and plays a part in method invocation and return.
+Each thread has a private JVM stack, created at the same time as thread.
+A new frame is created each time a method is invoked. A frame is destroyed when its method invocation completes.
+5) Program Counter Register
+PC (program counter) register. It contains the address of the Java virtual machine instruction currently being executed.
+6) Native Method Stack
+It contains all the native methods used in the application.
+7) Execution Engine
+It contains:
+1) A virtual processor
+2) Interpreter: Read bytecode stream then execute the instructions.
+3) Just-In-Time(JIT) compiler: It is used to improve the performance.JIT compiles parts of the byte code that have similar functionality at the same time, and hence reduces the amount of time needed for compilation.Here the term ?compiler? refers to a translator from the instruction set of a Java virtual machine (JVM) to the instruction set of a specific CPU.
+
+Q11.
+Ans11. Local and Remote Applets
+
+Local Applet:- An applet developed locally and stored in a local system is known as a local applet. When a Web page is trying to find a local applet, it does not need to use the Internet and therefore the local system does not require the Internet connection. It simply searches the directories in the local system and locates and loads the specified applet.
+
+ Specifying a Local Applet:
+
+<applet codebase="path" code="NewApplet.class" width=120 height=120 ></apple>
+
+Remote Applets:- A remote applet is developed by someone else and stored on a remote computer connected to the Internet. If our system is connected to the internet, we can download the remote applet onto our system via at the Internet and run it. To locate and load a remote applet, we must know the applet’s address on the Web. This address is known as Uniform Resource Locator (URL) and must be specified in the applet’s HTML document as the value of the CODEBASE attribute.
