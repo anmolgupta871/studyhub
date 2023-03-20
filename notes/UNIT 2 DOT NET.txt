@@ -1,0 +1,2672 @@
+Unit-II
+
+C -Sharp Language (C#)
+
+2.1 Introduction
+
+Microsoft Corporation, developed a new computer programming language C# pronounced as ‗C-Sharp‘. C# is a simple, modern, object oriented, and type safe programming language derived from C and C++. C# is a purely object-oriented language like as Java. It has been designed to support the key features of .NET framework.
+
+Like Java, C# is a descendant language of C++ which is descendant of C language.
+
+
+
+
+C
+
+Object Orientation
+
+
+
+
+C++
+
+Component
+
+Orientation
+
+	Component	
+Java	Orientation	VB
+		
+
+Elegance
+C#	Productivity
+
+
+
+
+C# modernize C++ by enhancing some of its features and adding a few new features. C# borrows Java‘s features such as grouping of classes, interface and implementation together in one file so the programmers can easily edit the codes. C# also handles objects using reference, the same way as Java.
+
+C# uses VB‘s approach to form designing, namely, dragging controls from a tool box, dropping them onto forms, and writing events handlers for them.
+
+Comparing C# to C++ and Java
+C# versus Java
+
+C# and Java are both new-generation languages descended from a line including C and C++. Each includes advanced features, like garbage collection, which remove some of the low level maintenance tasks from the programmer. In a lot of areas they are syntactically similar.
+
+Both C# and Java compile initially to an intermediate language: C# to Microsoft Intermediate Language (MSIL), and Java to Java bytecode. In each case the intermediate language can be run -
+ 
+
+10
+ 
+by interpretation or just-in-time compilation - on an appropriate 'virtual machine'. In C#, however, more support is given for the further compilation of the intermediate language code into native code.
+
+C# contains more primitive data types than Java, and also allows more extension to the value types. For example, C# supports 'enumerations', type -safe value types which are limited to a defined set of constant variables, and 'structs', which are user-defined value types.
+
+Unlike Java, C# has the useful feature that we can overload various operators.
+
+Like Java, C# gives up on multiple class inheritance in favour of a single inheritance model extended by the multiple inheritance of interfaces. However, polymorphism is handled in a more complicated fashion, with derived class methods either 'overriding' or 'hiding' super class methods C# also uses 'delegates' - type-safe method pointers. These are used to implement event-handling. In Java, multi -dimensional arrays are implemented solely with single-dimensional arrays (where arrays can be members of other arrays. In addition to jagged arrays, however, C# also implements genuine rectangular arrays.
+
+C# versus C++
+
+Although it has some elements derived from Visual Basic and Java, C++ is C#'s closest relative. In an important change from C++, C# code does not require header files. All code is written inline. As touched on above, the .NET runtime in which C# runs performs memory management, taking care of tasks like garbage collection. Because of this, the use of pointers in C# is much less important than in C++. Pointers can be used in C#, where the code is marked as 'unsafe', but they are only really useful in situations where performance gains are at an absolute premium.
+
+Speaking generally, the 'plumbing' of C# types is different from that of C++ types, with all C# types being ultimately derived from the 'object' type. There are also specific differences in the way that certain common types can be used. For instance, C# arrays are bounds checked unlike in C++, and it is therefore not possible to write past the end of a C# array.
+C# statements are quite similar to C++ statements. To note just one example of a difference:
+the 'switch' statements has been changed so that 'fall-through' behavior is disallowed.
+
+As mentioned above, C# gives up on the idea of multiple class inheritance. Other differences relating to the use of classes are: there is support for class 'properties' of the kind found in Visual Basic, and class methods are called using the . operator rather than the :: operator.
+Features of C#
+1. Simplicity
+
+All the Syntax of java is like C++. There is no preprocessor, and much larger library. C# code does not require header files. All code is written inline.
+
+2. Consistent behavior
+
+C# introduced an unified type system which eliminates the problem of varying ranges of integer types. All types are treated as objects and developers can extend the type system simply and easily.
+
+3. Modern programming language
+C# supports number of modern features, such as:
+	•	Automatic Garbage Collection 
+
+•	Error Handling features 
+•	Modern debugging features 
+•	Robust Security features 
+
+4. Pure Object- Oriented programming language
+
+In C#, every thing is an object. There are no more global functions, variable and constants.
+It supports all three object oriented features:
+•	Encapsulation 
+ 
+
+11
+ 
+	•	Inheritance 
+	•	Polymorphism 
+		
+5. Type Safety
+Type safety promotes robust programming. Some examples of type safety are:
+	•  All objects and arrays are initialized by zero dynamically 
+
+•  An error message will be produced , on use of any uninitialized variable 
+	•  Automatic checking of array out of bound and etc. 
+6. Feature of Versioning
+
+Making new versions of software module work with the existing applications is known as versioning. Its achieve by the keywords new and override.
+
+7. Compatible with other language
+
+C# enforces the .NET common language specifications (CLS) and therefore allows inter-operation with other .NET language.
+
+8. Inter-operability
+
+C# provides support for using COM objects, no matter what language was used to author them.
+C# also supports a special feature that enables a program to call out any native API.
+A Simple C# Program
+
+Let's begin in the traditional way, by looking at the code of a Hello World program (note that the tabulation and line numbers are included just for the sake of readability).
+
+
+1.	Using System;
+
+2.	public class HelloWorld
+
+3.	{
+
+4.	public static void Main()
+
+5.	{
+
+6.	// This is a single line comment
+
+7.	/* This is a
+
+8.	multiple
+
+9.	line comment */
+
+10.	Console.WriteLine("Hello World! ");
+
+11.	}
+
+12.	}
+
+•	The first thing to note about C# is that it is case-sensitive. You will therefore get compiler
+	errors if, for instance, you write 'console' rather than 'Console'. 
+
+•	The second thing to note is that every statement finishes with a semicolon (;) or else takes a code block within curly braces. 
+
+Explanation of Program
+Line 1 : using System;
+
+we are using the System namespace (namespaces are also covered in chapter 7). The point of this declaration is mostly to save ourselves time typing. Because the 'Console' object used in line 10 of the code actually belongs to the 'System' namespace, its fully qualified name is 'System.Console'. However, because in line 1 we declare that the code is using the System namespace, we can then leave off the 'System.' part of its name within the code. Line 2: public class HelloWorld
+ 
+
+12
+ 
+As C# is an object-oriented language, C# programs must be placed in classes (classes are discussed in chapter 5 but if you are new to object orientation we suggest that you first read some introductory material). This line declares the class to be named 'HelloWorld'. Line 4: public static void Main()
+
+When compiled and run, the program above will automatically run the 'Main' method declared and begun in this line. Note again C#'s case-sensitivity - the method is 'Main' rather than 'main'.
+Line 3,11 and 5,12 :
+These lines are uses the ‗{‗ for starting braces and ‗}‘ for closing braces of block. Lines 6-9 : Comments
+( ‗//‘ uses for single line and ‗/* -- - - */‘ uses for multiple line comments)
+
+These lines of the program are ignored by the compiler, being comments entered by the programmer for his own benefit.
+
+Line 6 shows a single line comment, in which everything on the line after the two forward slashes is ignored by the compiler.
+
+Lines 7-9 demonstrate a multi-line comment, in which everything between the opening /* and closing */ is ignored, even when it spans multiple lines.
+Line 10:
+The statement on this line calls the 'WriteLine' method of the Console class in the System namespace. It should be obvious how this works in the given example - it just prints out the given string to the 'Console' (on PC machines this will be a DOS prompt).
+
+Instruction for Saving the Program
+In order to run the program, it must first be saved in a file. Unlike in Java, the name of the class and the name of the file in which it is saved do not need to match up, although it does make things easier if you use this convention. In addition, you are free to choose any extension for the file, but it is usual to use the extension '.cs'.
+Writing program in Computer
+There are two ways of program writing in
+computer • Using Text Editor
+
+Using Visual Studio.NET
+
+2.2 Data Types. Identifiers, Variables, Constants and Literals
+
+Identifiers & Variables
+Identifiers refer to the names of variables, functions arrays, classes, etc. created by programmer. They are fundamental requirement of any language. Each language has its own rules for naming these identifiers.
+
+To name the variables of your program, you must follow strict rules. In fact, everything else in your program must have a name.
+
+There are some rules you must follow when naming your objects. On this site, here are the rules we will follow:
+•	The name must start with a letter or an underscore 
+•	After the first letter or underscore, the name can have letters, digits, and/or underscores 
+•	The name must not have any special characters other than the underscore 
+•	The name cannot have a space 
+
+C# is case-sensitive. This means that the names Case, case, and CASE are completely different. For example, the main function is always written Main.
+C# Keywords
+
+C# uses a series of words, called keywords, for its internal use. This means that you must avoid naming your objects using one of these keywords. They are:
+ 
+
+
+
+13
+ 
+							
+		abstract	const		extern		int	out	short		typeof
+														
+																																																				
+		as	continue			false			interface	override	sizeof		uint
+																
+																																																	
+		base	decimal		finally		internal	params	stackalloc		ulong
+																																																					
+																																													
+		bool	default		fixed		is	private	static		unchecked
+																																								
+		break	delegate		float		lock	protected	string		unsafe
+																																														
+																																			
+		byte	do		for		long	public	struct		ushort
+																														
+		case	double		foreach		namespace	readonly	switch		using
+																																				
+																								
+		catch		else			goto		new	ref	this		virtual
+																																
+																			
+		char	enum		if		null	return	throw		void
+															
+		checked	event			implicit		object	sbyte	true		volatile
+																				
+										
+		class	explicit		in		operator	sealed	try		while
+																
+
+
+Data types
+
+C# is a type-safe language. Variables are declared as being of a particular type, and each variable is constrained to hold only values of its declared type.
+
+Variables can hold either value types or reference types, or they can be pointers. Here's a quick recap of the difference between value types and reference types.
+
+-	where a variable v contains a value type, it directly contains an object with some value. No other variable v' can directly contain the object contained by v (although v' might contain an object with the same value).
+
+-	where a variable v contains a reference type, what it directly contains is something which refers to
+
+an object. Another variable v' can contain a reference to the same object referred to by v.
+Value Types
+
+C# defines the following value types:
+• Primitives	int i;
+• Enum	enum state { off, on }
+• Struct	struct Point{ int x, y; }
+
+It is possible in C# to define your own value types by declaring enumerations or structs. These user-defined types are mostly treated in exactly the same way as C#'s predefined value types, although compilers are optimized for the latter. The following table lists, and gives information about, the predefined value types. Because in C# all of the apparently fundamental value types are in fact built up from the (actually fundamental) object type, the list also indicates which System types in the .Net framework correspond to these pre-defined types.
+C#	.Net Framework	Signed?	Bytes	Possible Values
+Type	(System) type		Occupied	
+sbyte	System.Sbyte	Yes	1	-128 to 127
+short	System.Int16	Yes	2	-32768 to 32767
+int	System.Int32	Yes	4	-2147483648 to 2147483647
+long	System.Int64	Yes	8	-9223372036854775808 to
+				9223372036854775807
+byte	System.Byte	No	1	0 to 255
+ushort	System.Uint16	No	2	0 to 65535
+uint	System.UInt32	No	4	0 to 4294967295
+			14	
+ 
+							
+ulong	System.Uint64	No	8		0 to 18446744073709551615
+float	System.Single	Yes	4		Approximately ±1.5 x 10-45 to ±3.4
+							x 1038 with 7 significant figures
+double	System.Double	Yes	8		Approximately ±5.0 x 10-324 to ±1.7
+							x 10308 with 15 or 16 significant
+							figures
+decimal	System.Decimal	Yes	12		Approximately ±1.0 x 10-28 to ±7.9
+							x 1028 with 28 or 29 significant
+							figures
+char	System.Char	N/A	2		Any Unicode character (16 bit)
+bool	System.Boolean		N/A		1 / 2		true or false
+
+In the following lines of code, two variables are declared and set with integer values.
+
+int x = 10;
+
+
+int y = x;
+
+y = 20; // after this statement x holds value 10 and y holds value 20 Reference Types
+
+The pre-defined reference types are object and string, where object - is the ultimate base class of all other types. New reference types can be defined using 'class', 'interface', and 'delegate' declarations. There fore the reference types are :
+Predefined Reference Types
+	•	Object 
+•	String 
+User Defined Reference Types
+	•	Classes 
+•	Interfaces 
+•	Delegates 
+•	Arrays 
+
+Reference types actually hold the value of a memory address occupied by the object they reference. Consider the following piece of code, in which two variables are given a reference to the same object (for the sake of the example, this object is taken to contain the numeric property 'myValue').
+
+object x = new
+object(); x.myValue =
+10; object y = x ;
+
+y.myValue = 20; // after this statement both x.myValue // and y.myValue equal 20
+
+This code illustrates how changing a property of an object using a particular reference to it is reflected in all other references to it. Note, however, that although strings are reference types, they work rather more like value types. When one string is set to the value of another, eg
+
+
+string s1 = "hello";
+
+string s2 = s1;
+
+ 
+
+
+
+
+15
+ 
+Then s2 does at this point reference the same string object as s1. However, when the value of s1 is changed, for instance with
+
+
+s1 = "goodbye";
+
+
+
+what happens is that a new string object is created for s1 to point to. Hence, following this piece of code, s1 equals "goodbye", whereas s2 still equals "hello".
+
+The reason for this behaviour is that string objects are 'immutable'. That is, the properties of these objects can't themselves change. So in order to change what a string variable references, a new string object must be created.
+Boxing
+
+C# allows you convert any value type to a corresponding reference type, and to convert the resultant 'boxed' type back again. The following piece of code demonstrates boxing. When the second line executes, an object is initiated as the value of 'box', and the value held by i is copied across to this object. It is interesting to note that the runtime type of box is returned as the boxed value type; the 'is' operator thus returns the type of box below as 'int'.
+
+int i = 123;
+
+object box = i;
+
+if (box is int)
+
+{Console.Write("Box contains an int");} // this line is printed
+
+When boxing occurs, the contents of value type are copied from stack into memory allocated into the managed heap. The new reference type created contains a copy of the value type, and can be used by other types that expect an object reference. The value contained in the value type and the created reference types are not associated in any way (except that they contain the same values). If we change the original value type, the refernce type is not affected.
+
+
+The following code explicitly unboxes a reference type into a value type:
+
+
+
+
+object o;
+
+int i = (int) o;
+
+
+When unboxing occurs, memory is copied from the managed heap to the stack.
+
+2.3 Array and Strings
+
+Arrays
+
+An array is a group or collection of similar values. An array contains a number of variables, which are accessed through computed indices. The various value contained in an array are also called the elements of array. All elements of an array have to be of same type, and this type is called the element type of the array. The element of an array can be of any type including an array type.
+An array has a rank that determines the number of indices associated wth each array elements.
+The rank of an array is also referred as the dimension of the array. An array may be :
+	•	Single Dimensional 
+•	Multi Dimensional 
+ 
+
+
+
+16
+ 
+An array with a rank of one is called single-dimensional array, and an array with a rank greater than one is called a multi dimensional array.
+
+Each dimension of array has an associated length, which is an integer number greater than or equal to zero. For a dimension of length n, indices can range from 0 to n-1. in C#, array types are categorized under the reference types alongside with classes and interfaces.
+Single Dimensional Array
+
+Single -dimensional arrays have a single dimension (ie, are of rank 1). The process of creation of arrays is basically divided into three steps:
+1.	Declaration of Array
+2.	Memory Allocation for Array
+
+3.	Initialization of Array
+
+Declaration of Array
+
+To declare an array in C# place a pair of square brackets after the variable type. The syntax is given below :
+
+type[] arrayname;
+
+For Example:
+
+
+
+int[] a; float[]
+
+marks;
+
+double[] x;
+
+int[] m,n;
+
+
+
+You must note that we do not enter the size of the arrays in the declaration.
+
+Memory Allocation for Array
+
+After declaring an array, we need to allocate space and defining the size. Declaring arrays merely says what kind of values the array will hold. It does not create them. Arrays in C# are objects, and you use the new keyword to create them. When you create an array, yu must tell the compiler how many components will be stored in it. Here is given the syntax:
+
+arrayname = new type[size];
+
+For Example:
+
+
+
+a = new int[5];
+
+marks = new float[6];
+
+x = new double[10];
+
+m = int[100];
+
+n = int [50];
+
+
+
+
+
+
+It is also possible to combine the two steps, declaration and memory allocation of array, into one as shown below:
+ 
+
+17
+ 
+
+
+int[] num = new int [5];
+
+
+
+
+
+
+Initialization of Array
+
+This step involves placing data into the array. Arrays are automatically assigned the default values associated with their type. For example, if we have an array of numerical type, each element is set to number 0. But explicit values can be assigned as and when desired.
+
+Individual elements of an array are referenced by the array name and a number that represents their position in the array. He number you use to identify them are called subscripts or indexes into the array.
+
+Subscripts are consecutive integers beginning with 0. thus the array ―num‖ above has components num[0], num[1], num[2], num[3], and num[4].
+
+The initialization process is done using the array subscripts as shown:
+
+arrayname[subscript] = value;
+
+For Example:
+
+
+num[0] = 5;
+
+num[1] = 15;
+
+num[2] = 52;
+
+num[3] = 45;
+
+num[4] = 57;
+
+
+We can also initialize arrays automatically in the same way as the ordinary variables when they are declared, as shown below:
+
+type[] arrayname = { list of values };
+
+the list of variables separated by commas and defined on both ends by curly braces. You must note that no size is given in this syntax. The compiler space for all the elements specified in the list.
+
+For Example:
+
+int[] num = {5,15,52,45,57};
+
+
+You can combine all the steps, namely declaration, memory allocation and initialization of arrays like as:
+
+int[] num = new int [5] {5,15,52,45,57};
+
+
+You can also assign an array object to another. For Example
+
+int[] a = { 10, 20,
+
+30}; int[] b;
+
+b=a;
+
+The above example is valid in C#. Both the array will have same values.
+
+
+18
+ 
+Example
+using system;
+
+class Number
+{
+public static void Main()
+{
+int [] num = {10, 20, 30, 40,
+50}; int n = num.Length;
+
+//	Length is predefined attribute to access the size of array Console.Write(― Elements of array are :‖); for(int i=0; i<n; i++)
+
+{
+Console.WriteLine(num[i]);
+
+}
+
+int sum =0;
+
+for(int i=0; i<n; i++)
+{
+sum = sum + num[i]);
+}
+Console.WriteLine(― The sum of elements :‖+sum);
+
+}
+
+OUTPUT:
+
+Elements of array
+are: 10 20 30 40 50
+
+
+
+
+
+The sum of elements :150
+
+Multi Dimensional Array
+
+C# supports two types of multidimensional arrays:
+	•	Rectangular Array 
+
+•	Jagged Array  Rectangular Arrays 
+
+A rectangular array is a single array with more than one dimension, with the dimensions' sizes fixed in the array's declaration. The following code creates a 2 by 3 multi-dimensional array: 
+
+int[,] squareArray = new int[2,3];
+
+
+As with single-dimensional arrays, rectangular arrays can be filled at the time they are declared. For instance, the code
+
+int[,] squareArray = {{1, 2, 3}, {4, 5, 6}};
+
+creates a 2 by 3 array with the given values. It is, of course, important that the given values do fill out exactly a rectangular array.
+
+
+The System.Array class includes a number of methods for determining the size and bounds of arrays. These include the methods GetUpperBound(int i) and GetLowerBound(int i), which
+ 
+
+
+19
+ 
+return, respectively, the upper and lower subscripts of dimension i of the array (note that i is zero based, so the first array is actually array 0).
+
+For instance, since the length of the second dimension of squareArray is 3, the expression squareArray.GetLowerBound(1)
+
+
+returns 0, and the expression
+
+
+squareArray.GetUpperBound(1)
+
+returns 2.
+
+
+System.Array also includes the method GetLength(int i), which returns the number of elements in the ith dimension (again, zero based).
+
+The following piece of code loops through squareArray and writes out the value of its elements.
+
+
+for(int i = 0; i < squareArray.GetLength(0); i++)
+
+for (int j = 0; j < squareArray.GetLength(1); j++)
+
+Console.WriteLine(squareArray[i,j]);
+
+
+A foreach loop can also be used to access each of the elements of an array in turn, but using this construction one doesn't have the same control over the order in which the elements are accessed.
+Jagged Arrays
+
+Using jagged arrays, one can create multidimensional arrays with irregular dimensions. This flexibility derives from the fact that multidimensional arrays are implemented as arrays of arrays. The following piece of code demonstrates how one might declare an array made up of a group of 4 and a group of 6 elements:
+
+int[][] jag = new int[2][];
+
+jag[0] = new int [4];
+
+jag[1] = new int [6];
+
+The code reveals that each of jag[0] and jag[1] holds a reference to a single-dimensional int array. To illustrate how one accesses the integer elements: the term jag[0][1] provides access to the second element of the first group.
+
+To initialise a jagged array whilst assigning values to its elements, one can use code like the following:
+
+int[ ][ ] jag = new int[ ][ ] {new int[ ] {1, 2, 3, 4}, new int[ ] {5, 6, 7, 8, 9, 10}};
+
+Be careful using methods like GetLowerBound, GetUpperBound, GetLength, etc. with jagged arrays. Since jagged arrays are constructed out of single-dimensional arrays, they shouldn't be treated as having multiple dimensions in the same way that rectangular arrays do.
+
+To loop through all the elements of a jagged array one can use code like the following:
+
+
+for (int i = 0; i < jag.GetLength(0); i++)
+
+for (int j = 0; j < jag[i].GetLength(0);
+
+j++) Console.WriteLine(jag[i][j]);
+
+
+or
+
+
+for (int i = 0; i < jag.Length; i++)
+
+for (int j = 0; j < jag[i].Length; j++)
+
+Console.WriteLine(jag[i][j]);
+ 
+
+
+
+
+20
+ 
+Strings
+
+A string is an empty space, a character, a word, or a group of words that you want the compiler to consider "as is", that is, not to pay too much attention to what the string is made of, unless you explicitly ask it to. This means that, in the strict sense, you can put in a string anything you want. Primarily, the value of a string starts with a double quote and ends with a double-quote. An example of a string is "Welcome to the World of C# Programming!". You can include such a string in the Console.Write() method to display it on the console. Here is an example:
+
+Example using
+
+System; class
+
+BookClub
+
+{
+static void Main()
+{
+Console.WriteLine("Welcome to the World of C# Programming!");
+}
+}
+OUTPUT:
+
+Welcome to the World of C# Programming!
+
+Types of String
+
+There are two types of string in C#:
+
+1)	Immutable strings
+
+2)	Mutable strings
+
+The immutable strings are can‘t be modify and mutable strings are modifiable.C# also supports a
+
+feature of regular expression that can be used for complex strings manipulations and pattern matching.
+
+Strings
+
+
+
+		Immutable Strings		Regular		Mutable Strings	
+				Expression			
+		String class				StringBuilder
+						
+Handling of Strings				classs
+				number of ways. There are
+We can create immutable strings using string or String objects in	
+a some techniques to handling the immutable strings:		
+Assigning String					
+								
+		string s1;					
+		s1 = ―Welcome‖;					
+or								
+								
+								
+		string s1 = ―Welcome‖;					
+								
+
+ 
+
+
+21
+ 
+Copying String
+
+
+string s2 = s1;
+
+or
+
+
+string s2 = string.Copy(s1);
+
+Concatenating Strings
+
+
+string s3 = s1 + s2;
+
+or
+
+
+string s3 = string.Concat(s1,s2);
+
+Reading from Console
+
+string s1 = Console.ReadLine();
+
+Converting Number to String
+
+int num = 100;
+
+
+string s1= num.ToString();
+
+Inserting String
+
+string s1 = Wel;
+string s2 = s1.insert(3,‖come‖);
+
+// s2 = Welcome
+
+string s3 = s1.insert(3,‖don‖);
+
+//	s3 = Weldon;
+
+Comparing Strings
+
+int n = string. Compare(s1,s2);
+
+
+This statement will perform case-sensitive comparison and returns integer values for different conditions. Such as:
+
+	•	If s1 is equal to s2 it will return zero. 
+•	If s1 is greater than s2 it will return positive integer (1). 
+•	If s1 is less than s2 it will return negative integer(-
+1). Or you can use following statement: 
+
+bool a = s2.Equals(s1); bool
+
+b = string.Equal(s1,s2);
+
+Above statements will return a Boolean value true (if equal) or false(if not equal).
+
+
+Or you can also use the ―==‖ operator for comparing the strings. Like as:
+
+if ( s1 == s2)
+
+
+Console.Write(― both are equal‖);
+
+In this statement, it will return a Boolean value true (if equal) or false(if not equal).
+
+
+Mutable String
+
+Mutable strings are those strings, which can be modify dynamically. This type of strings are created using StringBuilder class. For Example:
+
+
+
+StringBuilder s1 = new StringBuilder(―Welcome‖); StringBuilder s2 = new StringBuilder( );
+
+ 
+
+
+
+
+22
+ 
+The string str1 is created with an initial size of seven characters and str2 is created as an empty string. They can grow dynamically as more character added to them. Mutual string are referred as a dynamic strings.
+
+The StringBuilder class supports many methods that are useful for manipulating dynamic strings. Some of the most common methods are listed below:
+
+Method	Operation
+Append( )	Append a string
+AppendFormat( )	Append string using specific format
+EnsureCapacity( )	Ensure sufficient size
+Insert( )	Insert a string at a specified position
+Remove( )	Remove specified character
+Replace( )	Removes previous string with new one
+
+StringBuilder also provides some attributes to access some properties of strings, such as:
+
+Attributes	Puspose
+Capacity	To retrieve or set the number of characters
+	the object can hold
+Length	To retrieve or set the length
+MaxCapacity	To retrieve maximum capacity of the object
+[ ]	To get or set a character at a specified
+	position
+
+Example
+using System.Text;	//For using StringBuilder
+
+using System;
+
+class StrMethod
+
+{
+public static void Main( )
+{
+
+StringBuilder s = new StringBuilder(―C‖); Console.WriteLine(― Stored String is :‖+ s); Console.WriteLine(―Length of string is :‖+s.Length);
+
+s.Append(―Sharp ‖);
+
+// appending the string s
+
+Console.WriteLine(― After Append String is :‖+ s); Console.WriteLine(―Length of string is :‖+s.Length);
+
+s.Insert(7,‖Language‖);
+
+// inserting the string at last in s
+
+Console.WriteLine(―After Insertion String is:‖+ s); Console.WriteLine(―Length of string is :‖+s.Length);
+
+int n = s.Length;
+
+s[n] = ―!‖;
+ 
+
+
+23
+ 
+Console.WriteLine(― At Last String is :‖+ s);
+
+}
+
+}
+
+OUTPUT:
+
+Stored String is : C
+
+Length of String is : 1
+
+After Append string is : CSharp
+
+After Insertion String is : CSharp Language
+
+At Last String is : CSharp Language!
+
+2.4 Object and Classes
+
+As we noted previously, one can create new reference types by defining classes. Classes provide 'templates' from which these direct instances are generated. Where we appeal to the relation between a class and its corresponding reference type instances we shall say that a class specifies the type (also that the class specifies the constitutive elements of the type).
+
+Any type is made up of elements, which we term type members. There are two main kinds of type members that a class can specify. Firstly, a class can specify other types - both value and reference. This idea, that types can contain other types, is known within the literature on object orientation as 'containment', or else 'aggregation'. Where a type contains another reference type, we shall call it the containing type of the latter.
+
+The second, main kind of type members that a class can specify are methods, functions designed for reading and manipulating the value and reference types an instance contains.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Objects in C# are created from types, just like a variable. This type of an object is known as class. we can use class definition to instantiate objects, which means to create a real named instance of a class.
+
+Declaration of Classes
+
+Class is an user-defined data type. To create a class, you start with the class keyword followed by a name and its body delimited by curly brackets. . The following is an example of a very simple class declaration
+
+
+class classname
+
+{
+// class-body
+}
+ 
+
+
+
+
+24
+ 
+The class-body contains the member data and member function of the class. C++ programmer must note that there is no semicolon after the closing brace of the class.
+Members of Class
+Class is a mechanism to implement the encapsulation, it bind the data and a function in a single unit. Therefore data and functions are the members of class, which is known as member data and member function.
+
+There is an example of full class :
+
+class Circle
+
+{
+double radius;
+public void get_radius(double r)
+{
+radius = r;
+}
+public double area()
+{
+return ( 3.14 * r *r);
+}
+
+}
+
+
+
+Member Access Modifiers
+
+Access modifiers provide the accessibility control for the members of classes to outside the class. They also provide the concept of data hiding. There are five member access modifiers provided by the C# Language.
+
+Modifier	Accessibility
+private	Members only accessible with in class
+	
+public	Members may accessible anywhere outside class
+	
+protected	Members only accessible with in class and
+	derived class
+internal	Members accessible only within assembly
+	
+protected internal	Members accessible in assembly, derived class
+	or containing program
+
+By default all member of class have private accessibility. If we want a member to have any other accessibility, then we must specify a suitable access modifier to it individually. For Example:
+
+class Demo
+
+{
+
+public int a;
+
+internal int x;
+protected	double d;
+float m;	// private by default
+
+}
+
+ 
+
+
+25
+ 
+We cannot declare more than one member data or member function under an accessibility modifier.
+
+Read Only Member
+
+When creating a member variable of a class, one of the decisions you make consists of deciding how the field would get its value(s). Sometimes you will allow the clients of the class to change the values of the field. In some other cases, you may want the field to only hold or present the value without being able to change it. This can still allow the clients to access the field and its value but on a read-only basis.
+
+To create a field whose value can only be read, precede its data type, during declaration, with the readonly keyword. Here is an example:
+
+
+public readonly double PI;
+
+After declaring the variable, you should initialize it. You have two main alternatives. You can initialize the field when declaring it. Here is an example:
+
+Example
+using System;
+namespace Geometry
+{
+class Circle
+{
+public double Radius;
+
+public Circle(double rad)
+
+{
+Radius = rad;
+
+}
+
+public readonly double PI = 3.14159;
+
+}
+class Exercise
+{
+static int Main()
+{
+
+Circle circ = new Circle(24.72);
+
+Console.WriteLine("Circle Characteristics");
+
+Console.WriteLine("Radius: {0}", circ.Radius);
+
+Console.WriteLine("PI:	{0}\n", circ.PI);
+
+return 0;
+
+}
+}
+
+}
+
+OUTPUT:
+
+Circle Characteristics
+Radius: 24.72
+
+PI:	3.14159
+ 
+
+26
+ 
+
+Object Creation
+
+In C# objects are created using the new keyword. Actually it new is an operator, creates an object of the specified class and returns a reference to that object. Here is an example :
+
+public class Exercise
+
+{
+public void Welcome()
+{
+Console.WriteLine("This is Exercise class");
+}
+
+}
+
+public class Class1
+
+{
+static void Main()
+{
+Exercise exo = new Exercise();
+}
+
+}
+
+
+
+
+Constructor and Destructor
+
+When you declare a variable of a class, a special method must be called to initialize the members of that class. This method is automatically provided for every class and it is called a constructor.
+Default Constructor
+
+Whenever you create a new class, a constructor is automatically provided to it. This particular constructor is called the default constructor. You have the option of creating it or not. Although a constructor is created for your class, you can customize its behavior or change it tremendously.
+
+A constructor holds the same name as its class and doesn't return any value, not even void. Here is an example:
+
+Like every method, a constructor can be equipped with a body. In this body, you can access any of the member variables (or method(s)) of the same class. When introducing classes other than the main class, we saw that, to use such a class, you can declare its variable and allocate memory using the new operator. You can notice that we always included the parentheses when declaring such a variable. Here is an example:
+
+public class Class1
+{
+static void Main()
+{
+Exercise exo = new Exercise();
+}
+
+}
+
+In this case, the parentheses indicate that we are calling the default constructor to instantiate the class.
+
+Consider the following Example:
+
+Example
+
+using System;
+
+27
+ 
+public class Exercise
+
+{
+public void Welcome()
+{
+Console.WriteLine("The wonderful world of C# programming");
+
+}
+
+public Exercise()
+
+{
+Console.WriteLine("The Exercise class is now available");
+}
+
+}
+
+public class Class1
+
+{
+static void Main()
+{
+Exercise exo = new Exercise();
+}
+}
+OUTPUT:
+The Exercise class is now available
+
+
+This shows that, when a class has been instantiated, its constructor is the first method to be called. For this reason, you can use a constructor to initialize a class, that is, to assign default values to its member variables. When a constructor is used to initialize a variable declared for a class. That constructor is referred to as an instance constructor.
+
+Parameterized Constructor
+
+In the previous section, we saw that there is always a default constructor for a new class that you create; you just the option of explicitly creating one or not. The default constructor as we saw it doesn't take arguments: this is not a rule, it is simply assumed. Instead of a default constructor, you may want to create a constructor that takes an argument. Here is an example:
+
+using System;
+public class Quadrilateral
+{   public   Quadrilateral(double   side)
+{…….
+}
+}
+public class Class1
+{
+static void Main()
+
+{
+
+Quadrilateral Square = new Quadrilateral(6.55);
+
+}
+
+}
+
+ 
+
+
+
+28
+ 
+Static Constructor
+
+Like the above described instance constructors, a static constructor is used to initialize a class. The main difference is that a static constructor works internally, in the class. Therefore, it is not used to initialize a variable of the class and you can never declare a variable of a class using a static constructor.
+
+To make a constructor static, when creating it, type the static keyword to its left. Here is an example:
+
+
+using System;
+
+public class Quadrilateral
+
+{
+static Quadrilateral()
+
+{
+
+}
+
+}
+
+public class Class1
+
+{
+static void Main()
+
+{
+
+/* Use the default constructor to initialize
+
+an instance of the class */
+
+Quadrilateral Square = new Quadrilateral();
+
+}
+}
+
+
+
+In the above class, a static constructor is created for the class but the default constructor is still available and it is used to instantiate the class.
+
+Constructor Overloading
+
+A constructor is the primary method of a class. It allows the programmer to initialize a variable of a class when the class is instantiated. A constructor that plays this role of initializing an instance of a class is also called an instance constructor. Most of the time, you don't even need to create a constructor, since one is automatically provided to any class you create. Sometimes too, as we have seen in some classes, you need to create your own class as you judge it necessary. And sometimes, a single constructor may not be sufficient. For example, when creating a class, you may decide, or find out, that there must be more than one way for a user to initialize a variable.
+
+Like any other method, a constructor can be overloaded. In other words, you can create a class and give it more than one constructor. The same rules used on overloading regular methods also apply to constructors: the different constructors must have different number of arguments or a different number of arguments.
+
+Example
+using System;
+public class Applicant
+{
+public string FullName;
+
+public string Address;
+
+public string City;
+
+public string State;
+ 
+
+29
+ 
+public string ZIPCode;
+
+public string Sex;
+
+public string
+DateOfBirth; public int
+Weight; public string
+Height; public int Race;
+
+//	The default constructor, used to initialize an
+
+//	Applicant instance without much information public Applicant()
+{
+
+this.FullName = "Unknown"; this.Sex = "Ungenerated";
+}
+
+//	A constructor that is passed only one argument public Applicant(string n)
+
+{
+this.FullName = n;
+}
+
+//	A constructor with more than one argument
+
+//	This type is suitable to completely initialize a variable public Applicant(string n, string s, string dob)
+{
+
+this.FullName = n; this.Sex = s; this.DateOfBirth = dob;
+
+}
+}
+
+public class Exercise
+
+{
+static Applicant RegisterPersonalInformation()
+
+{
+string name;
+
+char sex;
+
+string gender =
+null; string dob;
+
+
+Console.WriteLine(" ** Motor Vehicle Administration
+
+**"); Console.WriteLine("Applicant's Registration");
+
+Console.Write("Full Name: ");
+
+name = Console.ReadLine();
+
+do
+
+{
+Console.Write("Sex(F=Female/M=Male):
+
+"); sex = char.Parse(Console.ReadLine());
+
+if( (sex != 'f') && (sex != 'F') && (sex !=
+
+'m') && (sex != 'M') )
+
+Console.WriteLine("Please enter a valid character");
+
+}while( (sex != 'f') && (sex != 'F') &&
+
+(sex != 'm') && (sex != 'M') );
+
+if( (sex == 'f') || sex == 'F' )
+
+gender = "Female";
+ 
+
+30
+ 
+else if( (sex == 'm') || (sex == 'M') )
+
+gender = "Male";
+
+Console.Write("Date of Birth(mm/dd/yyyy): ");
+
+dob = Console.ReadLine();
+
+Applicant person = new Applicant(name, gender, dob);
+
+return person;
+
+}
+
+static void Show(Applicant person)
+
+{
+
+Console.WriteLine("\n ** Motor Vehicle Administration **"); Console.WriteLine(" --- Applicant's Personal Information ---"); Console.WriteLine("Full Name: {0}", person.FullName);
+Console.WriteLine("Sex:	{0}", person.Sex);
+
+Console.WriteLine("Date of Birth: {0}\n", person.DateOfBirth);
+
+}
+
+public static int Main()
+
+{
+Applicant App = new Applicant();
+
+App = RegisterPersonalInformation();
+
+Show(App);
+
+return 0;
+
+}
+}
+
+OUTPUT:
+
+**	Motor Vehicle Administration
+
+**	Applicant's Registration
+
+Full Name: Dominique Monay
+
+Sex(F=Female/M=Male): d
+
+Please enter a valid character
+
+Sex(F=Female/M=Male): M
+
+Date of Birth(mm/dd/yyyy): 06/10/1972
+
+** Motor Vehicle Administration **
+
+--- Applicant's Personal Information ---
+Full Name: Dominique Monay
+Sex: Male
+
+Date of Birth: 06/10/1972
+
+Destructor
+
+While a constructor is a method used to initialize an instance of a class, a destructor is used to destruct an instance of class when that variable is not used anymore. Like the constructor, the destructor has the same name as the class. To indicate that the method is a destructor, its name is preceded with a tilde.
+Example
+using System;
+
+class SampleClass
+
+31
+ 
+{
+
+// Constructor
+public SampleClass()
+{
+Console.WriteLine("SampleClass - Constructor");
+
+}
+
+~SampleClass()
+
+{
+Console.WriteLine("Destructor of SampleClass");
+}
+}
+
+public class NewProject
+
+{
+
+static void Main()
+
+{
+
+SampleClass Sample = new SampleClass();
+
+Console.WriteLine(―Welcome‖);
+
+}
+}
+OUTPUT:
+SampleClass -
+Constructor Welcome
+Destructor of SampleClass
+
+Like a (default) constructor, a destructor is automatically created for your class but you can also create it if you want. A class can have only one constructor. If you don't create it, the compiler would create it for your class. If you create it, the compiler would not create another. A destructor cannot have an access level. A destructor is called when the memory that a class was used is no longer needed. This is done automatically by the compiler. For this reason, you will hardly need to create a constructor, since its job is automatically taken care of behind the scenes by the compiler.
+
+2.5 Inheritance and Polymorphism
+
+Inheritance means taking an existing class and adding functionality by deriving a new class from it.
+
+The class you start with is called the base class, and the new class you create is called the derived class.
+
+When you derive a class from another class, the new class gets all the functionality of the base class plus whatever new features you add. You can add data members and functions to the new class, but you cannot remove anything from what the base class offers.
+
+In C# inheritance may be implemented in different combinations as illustrated in figure 6.1and they include :
+
+1)	Single Inheritance
+2)	Multilevel Inheritance
+3)	Multiple Inheritance
+4)	Hierarchical Inheritance
+
+ 
+
+Class A
+
+ 
+
+Class A
+ 
+
+
+
+Class A		Class A	32	Class A		Class A
+						
+ 
+
+
+
+
+Single inheritance	Hierarchical inheritance
+
+
+
+
+Class A		Class A		Class A
+				
+
+
+
+Class A
+
+
+
+
+	Class A			Class A	
+					
+			
+Multilevel inheritance	Multiple inheritance
+
+Figure
+
+The Multiple inheritance does not directly implemented by C#. But we can implement the concept of multiple inheritance using interface.
+Derived class definition
+
+A derived class can be defined with specifying its relationship with the base class. The syntax and general form of derived class is:
+
+class derived-class-name : base-class-name
+
+{
+members of
+
+class };
+
+Class Modifiers
+
+When implementing inheritance, it is important to understand how establish accessibility level for our classes and their members. Class modifier is used to decide which parts of the system can create class objects.
+Basically there are four different - optional - class modifiers. These are :
+	•	public 
+•	internal 
+•	protected 
+•	private 
+
+These are used to specify the access levels of the types defined by the classes. The following different access levels can be specified with above four modifiers:
+	•	protected internal 
+•	new 
+•	abstract 
+•	sealed 
+
+
+
+33
+ 
+public
+
+The 'public' keyword identifies a type as fully accessible to all other types. This is the implicit accessibility of enumeration members and interface members.
+internal
+
+If a class is declared as 'internal', the type it defines is accessible only to types within the same assembly (a self-contained 'unit of packaging' containing code, metadata etc.). This is the default access level of non-nested classes.
+protected
+
+If a class is declared as 'protected', its type is accessible by a containing type and any type that inherits from this containing type. This modifier should only be used for internal classes (ie. classes declared within other classes).
+private
+
+Where a class is declared as 'private', access to the type it defines is limited to a containing type only. This modifier should only be used for internal classes (ie. classes declared within other classes).
+protected internal
+The permissions allowed by this access level are those allowed by the 'protected' level plus those allowed by the 'internal' level. The access level is thus more liberal than its parts taken individually. This modifier should only be used for internal classes (ie. classes declared within other classes).
+
+new
+
+The 'new' keyword can be used for 'nested' classes. A nested class is one that is defined in the body of another class; it is in most ways identical to a class defined in the normal way, but its access level cannot be more liberal than that of the class in which it is defined. A nested class should be declared using the 'new' keyword just in case it has the same name as (and thus overrides) an inherited type.
+
+abstract
+
+A class declared as 'abstract' cannot itself be instanced - it is designed only to be a base class for inheritance.
+sealed
+A class declared as 'sealed' cannot be inherited from other classes.
+Abstract Classes
+
+In C#, you can create a class whose role is only meant to provide fundamental characteristics for other classes. This type of class cannot be used to declare a variable of the object. Such a class is referred to as abstract. Therefore, an abstract class can be created only to serve as a parent class for others. To create an abstract class, type the abstract keyword to the left of its name. Here is an example:
+
+abstract class Ball
+{
+
+protected int TypeOfSport;
+
+protected string Dimensions;
+
+}
+
+
+The important features of abstract class are:
+	•	The abstract class may contain the one or more abstract methods 
+•	The abstract class cannot be instantiate in the other classes 
+
+•	If your are inheriting the abstract class in other class, you should implement all the abstract methods in the derived class. 
+ 
+
+
+
+34
+ 
+Example
+
+using System;
+
+abstract class First
+
+{
+protected string s = ― ‖;
+public abstract void SayHello();
+
+}
+
+class Second : First
+
+{
+public override void SayHello()
+{
+
+s = ―Hello World‖;
+
+Console.WriteLine(―{0}‖,s);
+}
+
+}
+
+class mainclass
+
+{
+public static void Main()
+{
+
+Second S = new Second();
+
+S.SayHello();
+
+}
+
+}
+OUTPUT:
+Hello World
+
+In class First we define abstract method called SayHello(). But there is no implementation. The class Second derived from the class First and inherits the abstract class, where we overriding the SayHello() method. Overriding is discussed in the section of polymorphism in more detail.
+
+Sealed Class
+
+Any of the classes we have used so far in our lessons can be inherited from. If you create a certain class and don't want anybody to derive another class from it, you can mark it as sealed. In other words, a sealed class is one that cannot serve as base for another class.
+
+To mark a class as sealed, type the sealed keyword to its left. Here is an example: public sealed class Ball
+
+{
+
+public int TypeOfSport;
+
+public string Dimensions;
+
+}
+
+
+
+Polymorphism
+
+Polymorphism is a feature to use one name in many forms. There Polymorphism can be achieved in following ways in c#:
+•	Method Overloading 
+ 
+
+35
+ 
+	•	Method Overriding 
+•	Method Hiding 
+
+Method overloading ,discussed in chapter 5, means one method name with different arguments. Method overriding and hiding makes use of the following three method-head keywords
+	•	new 
+•	virtual, 
+•	override 
+
+The main difference between hiding and overriding relates to the choice of which method to call where the declared class of a variable is different to the run-time class of the object it references. This point is explained further below.
+Method Overriding
+
+Suppose that we define a Square class which inherits from a Rectangle class (a square being a special case of a rectangle). Each of these classes also specifies a 'getArea' instance method, returning the area of the given instance.
+
+For the Square class to 'override' the Rectangle class' getArea method, the Rectangle class' method must have first declared that it is happy to be overridden. One way in which it can do this is with the 'virtual' keyword. So, for instance, the Rectangle class' getArea method might be specified like this:
+
+
+public virtual double getArea()
+
+return length * width;
+
+}
+
+To override this method the Square class would then specify the overriding method with the 'override' keyword. For example:
+
+
+public override double getArea()
+
+{
+return length * length;
+
+}
+
+
+Note that for one method to override another, the overridden method must not be static, and it must be declared as either 'virtual', 'abstract' or 'override'. Furthermore, the access modifiers for each method must be the same.
+
+The major implication of the specifications above is that if we construct a new Square instance and then call its 'getArea' method, the method actually called will be the Square instance's getArea method. So, for instance, if we run the following code:
+
+Square sq = new Square(5);
+
+double area = sq.getArea();
+
+
+then the getArea method called on the second line will be the method defined in the Square class. There is, however, a more subtle point. To show this, suppose that we declare two variables in the following way:
+
+Square sq = new Square(4);
+
+Rectangle r = sq;
+
+
+Here variable r refers to sq as a Rectangle instance (possible because the Square class derives from the Rectangle class). We can now raise the question: if we run the following code
+
+double area = r.getArea();
+
+
+then which getArea method is actually called - the Square class method or the Rectangle class method?
+ 
+
+36
+ 
+The answer in this case is that the Square class method would still be called. Because the Square class' getArea method 'overrides' the corresponding method in the Rectangle class, calls to this method on a Square instance always 'slide through' to the overriding method.
+Method Hiding
+
+Where one method 'hides' another, the hidden method does not need to be declared with any special keyword. Instead, the hiding method just declares itself as 'new'. So, where the Square class hides the Rectangle class' getArea method, the two methods might just be written thus:
+
+public double getArea() // in Rectangle
+
+{
+return length * width;
+}
+
+
+
+
+public new double getArea() // in Square
+
+{
+return length * length;
+
+}
+
+
+
+Note that a method can 'hide' another one without the access modifiers of these methods being the same. So, for instance, the Square's getArea method could be declared as private, viz:
+
+private new double getArea()
+
+{
+return length * length;
+
+}
+
+
+
+This leads us to an important point. A 'new' method only hides a super-class method with a scope defined by its access modifier. Specifically, where the access level of the hiding method is 'private', as in the method just described, this method only hides the super-class method for the particular class in which it is defined.
+
+To make this point more concrete, suppose that we introduced a further class, SpecialSquare, which inherits from Square. Suppose further that SpecialSquare does not overwrite the getArea method. In this case, because Square's getArea method is defined as private, SpecialSquare inherits its getArea method directly from the Rectangle class (where the getArea method is public).
+
+The final point to note about method hiding is that method calls do not always 'slide through' in the way that they do with virtual methods. So, if we declare two variables thus:
+
+Square sq = new Square(4);
+
+Rectangle r = sq;
+
+
+then run the code
+
+
+double area = r.getArea();
+
+the getArea method run will be that defined in the Rectangle class, not the Square class.
+ 
+
+
+
+
+37
+ 
+
+Properties
+
+This Chapter teaches C# Properties. Our objectives are as follows:
+•	Understand What Properties Are For. 
+•	Implement a Property. 
+•	Create a Read-Only Property. 
+•	Create a Write-Only Property. 
+
+•	Create an auto-implemented property. 
+Overview of Properties
+Properties provide the opportunity to protect a field in a class by reading and writing to it through the property. In other languages, this is often accomplished by programs implementing specialized getter and setter methods. C# properties enable this type of protection while also letting you access the property just like it was a field.
+
+Another benefit of properties over fields is that you can change their internal implementation over time. With a public field, the underlying data type must always be the same because calling code depends on the field being the same. However, with a property, you can change the implementation. For example, if a customer has an ID that is originally stored as an int, you might have a requirements change that made you perform a validation to ensure that calling code could never set the ID to a negative value. If it was a field, you would never be able to do this, but a property allows you to make such a change without breaking code. Now, lets see how to use properties.
+
+Creating Read-Only Properties
+
+Properties can be made read-only. This is accomplished by having only a get accessor in the property implementation.
+
+Creating a Write-Only Property
+
+You can assign values to, but not read from, a write-only property. A write-only property only has a set accessor.
+Indexers
+
+Indexers are real easy. They allow your class to be used just like an array. On the inside of a class, you manage a collection of values any way you want. These objects could be a finite set of class members, another array, or some complex data structure. Regardless of the internal implementation of the class, its data can be obtained consistently through the use of indexers. Here's an example.
+
+An Example
+
+using System;
+
+///	<summary>
+
+///	A simple indexer example.
+///	</summary>
+class IntIndexer
+{
+
+private string[] myData;
+
+public IntIndexer(int size)
+
+{
+
+myData = new string[size];
+
+for (int i=0; i < size; i++)
+
+{
+
+38
+ 
+myData[i] = "empty";
+
+}
+}
+public string this[int pos]
+{
+get
+{
+return myData[pos];
+}
+set
+{
+myData[pos] = value;
+}
+
+}
+
+static void Main(string[] args)
+
+{
+
+int size = 10;
+
+IntIndexer myInd = new IntIndexer(size);
+
+myInd[9] = "Some Value";
+
+myInd[3] = "Another Value";
+
+myInd[5] = "Any Value";
+
+Console.WriteLine("\nIndexer Output\n");
+
+for (int i=0; i < size; i++)
+
+{
+Console.WriteLine("myInd[{0}]: {1}", i, myInd[i]);
+}
+}
+
+}
+
+Overloaded Indexers that accept different types
+
+Additionally, Indexers can be overloaded. In listing 11-2, we modify the previous program to accept overloaded Indexers that accept different types.
+
+Listing 11-2. Overloaded Indexers:
+OvrIndexer.cs using System;
+
+///	<summary>
+
+///	Implements overloaded indexers.
+///	</summary>
+class OvrIndexer
+{
+
+private string[] myData;
+
+private int arrSize;
+
+public OvrIndexer(int size)
+
+{
+ 
+
+39
+ 
+arrSize = size;
+
+myData = new string[size];
+
+for (int i=0; i < size; i++)
+
+{
+myData[i] = "empty";
+}
+
+}
+
+public string this[int pos]
+
+{
+get
+{
+return myData[pos];
+}
+set
+{
+myData[pos] = value;
+}
+
+}
+
+public string this[string data]
+
+{
+get
+{
+
+int count = 0;
+
+for (int i=0; i < arrSize; i++)
+
+{
+if (myData[i] == data)
+{
+count++;
+}
+}
+return count.ToString();
+}
+set
+{
+for (int i=0; i < arrSize; i++)
+{
+
+if (myData[i] == data)
+{
+myData[i] = value;
+}
+}
+}
+
+}
+
+static void Main(string[] args)
+
+{
+ 
+
+40
+ 
+int size = 10;
+
+OvrIndexer myInd = new OvrIndexer(size);
+
+myInd[9] = "Some Value";
+
+myInd[3] = "Another Value";
+
+myInd[5] = "Any Value";
+
+myInd["empty"] = "no value";
+
+Console.WriteLine("\nIndexer Output\n");
+
+for (int i=0; i < size; i++)
+
+{
+Console.WriteLine("myInd[{0}]: {1}", i, myInd[i]);
+
+}
+
+Console.WriteLine("\nNumber of \"no value\" entries: {0}", myInd["no value"]);
+
+}
+}
+An indexer with multiple parameters
+
+An Indexer signature is specified by the number and type of parameters in an Indexers parameter list. The class will be smart enough to figure out which Indexer to invoke, based on the number and type of arguments in the Indexer call. An indexer with multiple parameters would be implemented something like this:
+public object this[int param1, ..., int paramN]
+{
+get	{
+// process and return some class data	}
+set	{
+
+// process and assign some class data	}
+
+}
+ref ,out and params
+
+The out method parameter keyword on a method parameter causes a method to refer to the same variable that was passed into the method. Any changes made to the parameter in the method will be reflected in that variable when control passes back to the calling method.
+
+Declaring an out method is useful when you want a method to return multiple values. A method that uses an out parameter can still return a value. A method can have more than one out parameter.
+
+To use an out parameter, the argument must explicitly be passed to the method as an out argument. The value of an out argument will not be passed to the out parameter.
+
+A variable passed as an out argument need not be initialized. However, the out parameter must be assigned a value before the method returns.
+A property is not a variable and cannot be passed as an out parameter.
+
+An overload will occur if declarations of two methods differ only in their use of out. However, it is not possible to define an overload that only differs by ref and out. For example, the following overload declarations are valid:
+class MyClass
+{
+public void MyMethod(int i) {i = 10;}
+
+public void MyMethod(out int i) {i = 10;}
+ 
+
+41
+ 
+}
+
+while the following overload declarations are
+invalid: class MyClass
+{
+
+public void MyMethod(out int i) {i = 10;}
+
+public void MyMethod(ref int i) {i = 10;}
+
+}
+Example:
+
+// cs_out.cs
+
+using System; public
+
+class MyClass
+{
+public static int TestOut(out char i)
+{
+
+i = 'b';
+
+return -1;
+
+}
+
+public static void Main()
+
+{
+char i; // variable need not be initialized
+Console.WriteLine(TestOut(out i));
+Console.WriteLine(i);
+
+}
+}
+
+Output:
+
+-1
+
+B
+
+ref Keyword:
+
+The ref method parameter keyword on a method parameter causes a method to refer to the same variable that was passed into the method. Any changes made to the parameter in the method will be reflected in that variable when control passes back to the calling method.
+
+using System; public
+
+class MyClass
+{
+public static void TestRef(ref char i)
+{
+
+//	The value of i will be changed in the calling method i = 'b';
+
+}
+
+public static void TestNoRef(char i)
+
+{
+
+//	The value of i will be unchanged in the calling method i = 'c';
+
+}
+
+public static void Main()
+
+{
+ 
+
+42
+ 
+
+char i = 'a'; // variable must be initialized
+
+TestRef(ref i); // the arg must be passed as
+
+ref Console.WriteLine(i);
+TestNoRef(i);
+Console.WriteLine(i);
+}
+}
+
+OUTPUT:
+
+b
+b
+Parameter Arrays(Params)
+
+•	A parameter declared with a params modifier is a parameter array. If a formal parameter list includes a parameter array, it must be the last parameter in the list and it must be of a single-dimensional array type.
+
+•	For example, the types string[] and string[][] can be used as the type of a parameter array, but the type string[,] cannot.
+
+•	It is not possible to combine the params modifier with the modifiers ref and out.
+
+•	A parameter array permits arguments to be specified in one of two ways in a method invocation:
+
+– The argument given for a parameter array can be a single expression of a type that is implicitly convertible to the parameter array type.
+
+– Alternatively, the invocation can specify zero or more arguments for the parameter array, where each argument is an expression of a type that is implicitly convertible to the element type of the parameter array. In this case, the invocation creates an instance
+
+of the parameter array type with a length corresponding to the number of arguments, initializes the elements of the array instance with the given argument
+
+values, and uses the newly created array instance as the actual argument.
+
+using System;
+
+class Test {
+
+static void F(params int[] args) {
+Console.Write("Array contains {0} elements:",
+args.Length); foreach (int i in args)
+Console.Write(" {0}",
+i); Console.WriteLine();
+}
+static  void  Main()
+
+{ int[] arr = {1, 2, 3}; F(arr);
+
+F(10, 20, 30, 40); F();
+
+} }
+
+2.6 Operator Overloading
+
+Overloading
+
+Another important and exciting feature object-oriented programming is Operator overloading. C# supports the concept of operator overloading. Operator overloading is a concept in which operator
+
+43
+ 
+can defined to work with the user-defined data types such as structs and classes in the same way as the pre-defined data types.
+
+Example using
+
+System; public
+
+class Item
+
+{
+
+public int i;
+
+public Item( int j)
+{
+i = j;
+
+}
+
+public static Item operator + ( Item x , Item y)
+
+{
+
+System.Console.WriteLine(―operator +‖ + x.i +― ‖+ y.i); Item z = new Item(x.i+y.i);
+return z;
+}
+}
+
+public class Test
+
+{
+public static void Main()
+
+{ Item a = new Item(10); Item b = new Item(5); Item c;
+
+c = a + b ; System.Console.WriteLine(c.i);
+}
+
+}
+
+Output:
+
+operator + 10 5
+
+15
+
+
+There are many operators that cannot be overloaded. Which are listed below:
+
+•	Conditional Operator	& &, ||
+•	Compound Assignment	+=, -=, *=, /=, %=
+•	Other Operators	[], (), = , ?:, ->, new, sizeof,
+		types of, is, as
+
+2.7 Interfaces, Delegates and Events.
+
+Interface
+
+Imagine you start creating a class and, while implementing or testing it, you find out that this particular class can be instead as a general base that other classes can be derived from. An
+ 
+
+
+44
+ 
+interface is a special class whose purpose is to serve as a template that actual classes can be based on.
+
+An interface is primarily created like a class: it has a name, a body and can have members. To create an interface, instead of the class keyword, you use the interface keyword. By convention, the name of an interface starts with I. Here is an example:
+
+interface ICourtDimensions
+
+{
+
+}
+
+An interface is mostly used to lay a foundation for other classes. For this reason, it is the prime candidate for class derivation. To derive from an interface, use the same technique we have applied in inheritance so far. Here is an example of a class named SportBall that derives from an interface named ISportType:
+
+
+public class SportBall : ISportType
+
+{
+
+int players;
+
+string sport;
+
+}
+
+Just as you can derive a class from an interface, you can create an interface that itself is based on another interface. Here is an example:
+
+public interface ISportType : IBall
+{
+}
+
+The C# language doesn't allow multiple inheritance which is the ability to create a class based on more than one class. Multiple inheritance is allowed only if the bases are interfaces. To create multiple inheritance, separate the names of interface with a comma. Here is an example:
+
+public interface ISportType : IBall, ICourtDimensions
+{
+
+}
+
+You can also involve a class as parent in a multiple inheritance scenario but there must be only one class. Here is an example in which a class called Sports derives from one class and various interfaces:
+
+public interface Sports: Player, IBall, ICourtDimensions
+{
+
+}
+
+
+Example
+
+//	implementation of multiple interface using System;
+
+interface Add
+
+{
+int sum();
+}
+interface Multiply
+{
+int mul();
+
+}
+ 
+
+45
+ 
+
+class calculate : Add, Multiply
+
+{
+int a,b;
+public calculate( int x, int y)
+{
+a = x;
+b = y;
+}
+public int sum()
+{
+return ( a + b );
+}
+public int mul()
+{
+return ( a * b );
+}
+}
+class MyInterface
+{
+public static void Main()
+{
+
+calculate cal = new calculate(5,10);
+
+Add A = (Add) cal;	// casting
+
+Console.WriteLine(―Sum : ‖ + A.sum());
+
+Multiply M = (Multiply) cal;
+
+Console.WriteLine(―Multiplication :‖ + M.mul());
+
+}
+
+}
+
+OUTPUT:
+
+Sum : 15
+
+Multiplication : 50
+
+Delegates
+
+The C and C++ languages are having the concept of function pointer. This was even more useful when programming for the Microsoft Windows operating systems because the Win32 library relies on the concept of callback functions. Callback functions are used in Microsoft Windows programming to process messages. For this reason and because of their functionality, callback functions were carried out in the .NET Framework but they were defined with the name of delegate.
+
+A delegate is a special type of user-defined variable that is declared globally, like a class. In fact, a delegate is created like an interface but as a method. Based on this, a delegate provides a template for a method, like an interface provides a template for a class. Like an interface, a delegate is not defined. Its role is to show what a useful method would look like. To support this concept, a delegate can provide all the necessary information that would be used on a method. This includes a return type, no argument or one or more arguments.
+
+46
+ 
+
+Delegate Declaration and Instantiation
+
+Delegates can be specified on their own in a namespace, or else can be specified within another class. In each case, the declaration specifies a new class, which inherits from System.MulticastDelegate.
+
+Each delegate is limited to referencing methods of a particular kind only. The type is indicated by the delegate declaration - the input parameters and return type given in the delegate declaration must be shared by the methods its delegate instances reference. To illustrate this: a delegate specified as below can be used to refer only to methods which have a single String input and no return value:
+
+public delegate void Print (String s);
+
+Suppose, for instance, that a class contains the following method:
+
+
+public void realMethod (String myString)
+
+{
+// method code
+}
+
+Another method in this class could then instantiate the 'Print' delegate in the following way, so that it holds a reference to 'realMethod':
+
+Print delegateVariable = new Print(realMethod);
+
+We can note two important points about this example. Firstly, the unqualified method passed to the delegate constructor is implicitly recognised as a method of the instance passing it. That is, the code is equivalent to:
+
+Print delegateVariable = new Print(this.realMethod);
+
+We can, however, in the same way pass to the delegate constructor the methods of other class instances, or even static class methods. In the case of the former, the instance must exist at the time the method reference is passed. In the case of the latter (exemplified below), the class need never be instantiated.
+
+Print delegateVariable = new Print(ExampleClass.exampleMethod);
+
+
+Example
+
+using System;
+
+delegate int operation(int x, int y)
+{
+delegate int Operation(int x, int
+y); class MathOpr
+{
+public static int Add(int a, int b)
+{
+return(a + b);
+}
+public static int Sub(int a, int b)
+{
+return( a – b);
+}
+public static int Mul(int a, int b)
+{
+return( a * b);
+
+47
+ 
+}
+
+}
+class Test
+{
+
+Operation opr1 = new Operation (Mathopr.Add);
+
+Operation opr2 = new Operation (Mathopr.Sub);
+
+Operation opr3 = new Operation (Mathopr.Mul);
+
+//invoking of delegates int
+
+ans1 = opr1(200, 100); int
+
+ans2 = opr2(200, 100); int
+
+ans3 = opr3(20,10);
+
+Console.WriteLine(―\n Addition :‖+ ans1);
+
+Console.WriteLine(―\n Subtraction :‖+ ans2);
+
+Console.WriteLine(―\n multiplication :‖+ ans3);
+
+}
+
+}
+OUTPUT:
+Adiition : 300
+
+Subtraction :100
+
+Multiplication : 200
+
+Multicast Delegates
+
+The second thing to note about the example is that all delegates can be constructed in this fashion, to create a delegate instance which refers to a single method. However, as we noted before, some delegates - termed 'multicast delegates' - can simultaneously reference multiple methods. These delegates must - like our Print delegate - specify a 'void' return type.
+
+One manipulates the references of multicast delegates by using addition and subtraction .
+The following code gives some examples:
+
+
+Print s = null;
+
+s = s + new Print (realMethod);
+s += new Print (otherRealMethod);
+
+The - and -= operators are used in the same way to remove method references from a delegate. The following code gives an example of the use of multicast delegates.
+Example
+using System;
+delegate void
+MultiDel(); class MD
+
+{ static public void Hello()
+{
+Console.WriteLine(―Hello‖);
+}
+static public void Show()
+{
+Console.WriteLine(― Hi‖);
+}
+
+}
+ 
+
+
+48
+ 
+class Test
+
+{
+public static void Main()
+{
+//delegate instances
+
+MultiDel M1 = new MultiDel(MD.Display);
+
+MultiDel M2 = new MultiDel(MD.Show);
+
+//combine the delegates
+
+MultiDel M3 = M1 + M2;
+
+MultiDel M4 = M2 + M1;
+
+//extracting  the	delegates
+
+MultiDel M5 = M3 – M2;
+
+MultiDel M6 = M4 – M1;
+
+//invoking
+
+delegates M3();
+
+M4();
+M5();
+M6();
+}
+
+}
+
+OUTPUT:
+
+Hello
+Hi
+
+Hi
+
+Hello
+
+Hello
+
+Hi
+
+Events
+
+In object-oriented languages, objects expose encapsulated functions called methods. Methods are encapsulated functions which run when they are invoked.
+
+Sometimes, however, we think of the process of method invocation more grandly. In such a case, the method invocation is termed an 'event', and the running of the method is the 'handling' of the event. An archetypal example of an event is a user's selection of a button on a graphical user interface; this action may trigger a number of methods to 'handle' it.
+
+What distinguishes events from other method invocations is not, however, that they must be generated externally. Any internal change in the state of a program can be used as an event. Rather, what distinguishes events is that they are backed by a particular 'subscription-notification' model. An arbitrary class must be able to 'subscribe to' (or declare its interest in) a particular event, and then receive a 'notification' (ie. have one of its methods run) whenever the event occurs.
+
+Delegates (in particular multicast delegates) are essential in realizing this subscription-notification model. The following example describes how Class 2 subscribes to an event issued by Class 1.
+
+1. Class 1 is an issuer of E-events. It maintains a public multicast delegate D.
+ 
+
+49
+ 
+2.	Class 2 wants to respond to E-events with its event-handling method M. It therefore adds onto D a reference to M.
+
+3.	When Class 1 wants to issue an E-event, it calls D. This invokes all of the methods which have subscribed to the event, including M.
+
+The 'event' keyword is used to declare a particular multicast delegate (in fact, it is usual in the literature to just identify the event with this delegate). The code below shows a class EventIssuer, which maintains an event field myEvent. We could instead have declared the event to be a property instead of a field . To raise the myEvent event, the method onMyEvent is called (note that we are checking in this method to see if myEvent is null - trying to trigger a null event gives a run-time error).
+
+public class EventIssuer
+
+{
+
+public delegate void EventDelegate(object from, EventArgs args); public event EventDelegate myEvent;
+
+protected virtual void onMyEvent(EventArgs args)
+
+{
+
+if (myEvent!=null) myEvent(this, args);
+
+}
+
+
+A class which wanted to handle the events issued by an EventIssuer ei with its method handleEvents would then subscribe to these events with the code:
+
+ei.myEvent += new EventIssuer.EventDelegate(handleEvents);
+
+Tips For Events
+
+The code above demonstrates some points about event-handling which are not enforced by the language architecture, but are used throughout the .Net framework as good practice.
+
+1.	When you want to raise an event in code, you don't tend to trigger the class's event object directly. Rather, you call a 'protected, virtual' method to trigger it (cf. the onMyEvent method above).
+
+2.	By convention, when events are raised they pass two objects to their subscribers. The first is a reference to the class raising the event; the second is an instance of the System.EventArgs class which contains any arbitrary data about the event.
+
+3.	If an event is not interested in passing data to subscribers, then its defining delegate will still reference an EventArgs object (but a null value will be passed by the event). If an event should pass data to its subscribers, however, then it is standard to use a specific class which derives from the EventArgs class to hold this data.
+
+4.	When you write a class which inherits from an event-raising base class, you can 'intercept' an event by overriding the method used to raise it. The following code illustrates such an intercept - classes which subscribe to the event will never receive notifications about it.
+
+protected override void onMyEvent(EventArgs args)
+
+{
+Console.WriteLine("hello");  }
+
+If you want subscribers to continue to receive notifications despite such an 'intercepting' method, however, then you can call the base class method as in the following:
+
+protected override void onMyEvent(EventArgs
+
+args) { Console.WriteLine("hello");
+
+base.onMyEvent(args);  }
+ 
+
+50
+ 
+
+2.8 Type conversion
+
+There are two types of conversions:
+1.	Implicit Conversion
+2.	Explicit Conversion
+
+Implicit Conversion : In implicit conversion the compiler will make conversion for us without asking.
+
+char -> int -> float is an example of data compatibility. Complier checks for type compatibility at compilation.
+
+Explicit Conversion: In explicit conversion we specifically ask the compiler to convert the value into another data type.CLR checks for data compatibility at runtime.Explicit conversion is carried out using casts. When we cast one type to another, we deliberately force the compiler to make the transformation.Casting of big data type into small may lead to loosing of data.
+
+Microsoft .NET provides three ways of type conversion:
+
+1.	Parsing(int.Parse()
+2.	Convert Class(Convert.ToInt32())
+3.	Explicit Cast Operator ()
+
+Parsing
+
+Parsing is used to convert string type data to primitive value type. For this we use parse methods with value types.
+
+Convert Class: One primitive type to another primitive type.
+
+This class contains different static methods like ToInt32(), ToInt16(), ToString(), ToDateTime() etc used in type conversion.
+
+Boxing and unboxing
+
+Boxing and unboxing is an important concept in C# type system. With Boxing and unboxing one can link between value-types and reference-types by allowing any value of a value-type to be converted to and from type object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Boxing
+
+•	Boxing is a mechanism in which value type is converted into reference type.
+•	It is implicit conversion process in which object type (super type) is used.
+
+•	In this process type and value both are stored in object type
+
+
+
+51
+ 
+Unboxing
+
+•	Unboxing is a mechanism in which reference type is converted into value.
+•	It is explicit conversion process.
+Example
+int	i, j;
+object obj;
+string	s;
+i  = 32;
+
+obj = i;	// boxed copy!
+i	= 19;
+j	= (int) obj; // unboxed!
+s	= j.ToString();  // boxed!
+s	= 99.ToString(); // boxed!
+
+Difference Between Int32.Parse(), Convert.ToInt32(), and Int32.TryParse(),(int) Int32.Parse (string s) method converts the string representation of a number to its 32-bit signed integer equivalent.
+
+–  When s is a null reference, it will throw ArgumentNullException.
+
+– If s is other than integer value, it will throw FormatException.
+
+– When s represents a number less than MinValue or greater than MaxValue, it will throw OverflowException.
+
+•	(int) will only convert types that can be represented as an integer (ie double, long, float, etc) although some data loss may occur.
+
+•	string s1 = "1234";
+
+•	string s2 = "1234.65";
+
+•	string s3 = null;
+
+•	string s4 =123456789123456789123456789123456789123456789";
+
+•	int result;
+
+•	bool success;
+
+•	result = Int32.Parse(s1); //-- 1234
+
+•	result = Int32.Parse(s2); //-- FormatException
+
+•	result = Int32.Parse(s3); //-- ArgumentNullException
+
+•	result = Int32.Parse(s4); //-- OverflowException
+
+Convert.ToInt32(string):This method converts the specified string representation of 32-bit signed integer equivalent. This calls in turn Int32.Parse () method.
+
+– When s is a null reference, it will return 0 rather than throw ArgumentNullException.
+
+– If s is other than integer value, it will throwFormatException.
+
+– When s represents a number less than MinValue or greater than MaxValue, it will throw OverflowException. For example:
+
+•	result = Convert.ToInt32(s1); //-- 1234
+
+•	result = Convert.ToInt32(s2); //-- FormatException
+
+•	result = Convert.ToInt32(s3); //-- 0
+
+•	result = Convert.ToInt32(s4); //-- OverflowException
+
+Int32.TryParse(string, out int): This method converts the specified string representation of 32-bit signed integer equivalent to out variable, and returns true if it is parsed successfully, false otherwise.
+ 
+
+52
+ 
+– When s is a null reference, it will return 0 rather than throwArgumentNullException.
+
+– If s is other than an integer value, the out variable will have 0 rather thanFormatException.
+
+– When s represents a number less than MinValue or greater than MaxValue, the outvariable will have 0 rather than OverflowException.
+
+– success = Int32.TryParse(s1, out result); //-- success => true; result => 1234
+
+•	success = Int32.TryParse(s2, out result); //-- success => false; result => 0
+
+•	success = Int32.TryParse(s3, out result); //-- success => false; result => 0
+
+•	success = Int32.TryParse(s4, out result); //-- success => false; result => 0
+
+•	Convert.ToInt32 is better than Int32.Parse since it returns 0 rather than an exception. But again, according to the requirement, this can be used. TryParse will be the best since it always handles exceptions by itself.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+53

@@ -1,0 +1,116 @@
+To fully understand Java, one must understand the reasons behind its creation, the
+forces that shaped it, and the legacy that it inherits. Like the successful computer
+languages that came before, Java is a blend of the best elements of its rich heritage
+combined with the innovative concepts required by its unique mission. While the remaining
+chapters of this book describe the practical aspects of Java—including its syntax, key libraries,
+and applications—this chapter explains how and why Java came about, what makes it so
+important, and how it has evolved over the years.
+Although Java has become inseparably linked with the online environment of the
+Internet, it is important to remember that Java is first and foremost a programming language.
+Computer language innovation and development occurs for two fundamental reasons:
+• To adapt to changing environments and uses
+• To implement refinements and improvements in the art of programming
+As you will see, the development of Java was driven by both elements in nearly equal
+measure.
+Java’s Lineage
+Java is related to C++, which is a direct descendant of C. Much of the character of Java
+is inherited from these two languages. From C, Java derives its syntax. Many of Java’s
+object-oriented features were influenced by C++. In fact, several of Java’s defining
+characteristics come from—or are responses to—its predecessors. Moreover, the creation of
+Java was deeply rooted in the process of refinement and adaptation that has been occurring
+in computer programming languages for the past several decades. For these reasons, this
+section reviews the sequence of events and forces that led to Java. As you will see, each
+innovation in language design was driven by the need to solve a fundamental problem
+that the preceding languages could not solve. Java is no exception.
+3
+The Birth of Modern Programming: C
+The C language shook the computer world. Its impact should not be underestimated, because
+it fundamentally changed the way programming was approached and thought about. The
+creation of C was a direct result of the need for a structured, efficient, high-level language that
+could replace assembly code when creating systems programs. As you probably know, when
+a computer language is designed, trade-offs are often made, such as the following:
+• Ease-of-use versus power
+• Safety versus efficiency
+• Rigidity versus extensibility
+Prior to C, programmers usually had to choose between languages that optimized one set of
+traits or the other. For example, although FORTRAN could be used to write fairly efficient
+programs for scientific applications, it was not very good for system code. And while BASIC
+was easy to learn, it wasn’t very powerful, and its lack of structure made its usefulness
+questionable for large programs. Assembly language can be used to produce highly efficient
+programs, but it is not easy to learn or use effectively. Further, debugging assembly code
+can be quite difficult.
+Another compounding problem was that early computer languages such as BASIC,
+COBOL, and FORTRAN were not designed around structured principles. Instead, they
+relied upon the GOTO as a primary means of program control. As a result, programs
+written using these languages tended to produce “spaghetti code”—a mass of tangled
+jumps and conditional branches that make a program virtually impossible to understand.
+While languages like Pascal are structured, they were not designed for efficiency, and failed
+to include certain features necessary to make them applicable to a wide range of programs.
+(Specifically, given the standard dialects of Pascal available at the time, it was not practical
+to consider using Pascal for systems-level code.)
+So, just prior to the invention of C, no one language had reconciled the conflicting
+attributes that had dogged earlier efforts. Yet the need for such a language was pressing. By
+the early 1970s, the computer revolution was beginning to take hold, and the demand for
+software was rapidly outpacing programmers’ ability to produce it. A great deal of effort
+was being expended in academic circles in an attempt to create a better computer language.
+But, and perhaps most importantly, a secondary force was beginning to be felt. Computer
+hardware was finally becoming common enough that a critical mass was being reached.
+No longer were computers kept behind locked doors. For the first time, programmers
+were gaining virtually unlimited access to their machines. This allowed the freedom to
+experiment. It also allowed programmers to begin to create their own tools. On the eve
+of C’s creation, the stage was set for a quantum leap forward in computer languages.
+Invented and first implemented by Dennis Ritchie on a DEC PDP-11 running the UNIX
+operating system, C was the result of a development process that started with an older
+language called BCPL, developed by Martin Richards. BCPL influenced a language called
+B, invented by Ken Thompson, which led to the development of C in the 1970s. For many
+years, the de facto standard for C was the one supplied with the UNIX operating system
+and described in The C Programming Language by Brian Kernighan and Dennis Ritchie
+(Prentice-Hall, 1978). C was formally standardized in December 1989, when the American
+National Standards Institute (ANSI) standard for C was adopted.
+4 Part I: The Java Language
+Chapter 1: The History and Evolution of Java 5
+The creation of C is considered by many to have marked the beginning of the modern
+age of computer languages. It successfully synthesized the conflicting attributes that had
+so troubled earlier languages. The result was a powerful, efficient, structured language that
+was relatively easy to learn. It also included one other, nearly intangible aspect: it was a
+programmer’s language. Prior to the invention of C, computer languages were generally
+designed either as academic exercises or by bureaucratic committees. C is different. It was
+designed, implemented, and developed by real, working programmers, reflecting the way
+that they approached the job of programming. Its features were honed, tested, thought
+about, and rethought by the people who actually used the language. The result was a
+language that programmers liked to use. Indeed, C quickly attracted many followers
+who had a near-religious zeal for it. As such, it found wide and rapid acceptance in the
+programmer community. In short, C is a language designed by and for programmers.
+As you will see, Java inherited this legacy.
+C++: The Next Step
+During the late 1970s and early 1980s, C became the dominant computer programming
+language, and it is still widely used today. Since C is a successful and useful language, you
+might ask why a need for something else existed. The answer is complexity. Throughout the
+history of programming, the increasing complexity of programs has driven the need for better
+ways to manage that complexity. C++ is a response to that need. To better understand why
+managing program complexity is fundamental to the creation of C++, consider the following.
+Approaches to programming have changed dramatically since the invention of the
+computer. For example, when computers were first invented, programming was done by
+manually toggling in the binary machine instructions by use of the front panel. As long as
+programs were just a few hundred instructions long, this approach worked. As programs grew,
+assembly language was invented so that a programmer could deal with larger, increasingly
+complex programs by using symbolic representations of the machine instructions. As programs
+continued to grow, high-level languages were introduced that gave the programmer more tools
+with which to handle complexity.
+The first widespread language was, of course, FORTRAN. While FORTRAN was an
+impressive first step, it is hardly a language that encourages clear and easy-to-understand
+programs. The 1960s gave birth to structured programming. This is the method of programming
+championed by languages such as C. The use of structured languages enabled programmers
+to write, for the first time, moderately complex programs fairly easily. However, even with
+structured programming methods, once a project reaches a certain size, its complexity exceeds
+what a programmer can manage. By the early 1980s, many projects were pushing the structured
+approach past its limits. To solve this problem, a new way to program was invented, called
+object-oriented programming (OOP). Object-oriented programming is discussed in detail later in
+this book, but here is a brief definition: OOP is a programming methodology that helps organize
+complex programs through the use of inheritance, encapsulation, and polymorphism.
+In the final analysis, although C is one of the world’s great programming languages,
+there is a limit to its ability to handle complexity. Once the size of a program exceeds a
+certain point, it becomes so complex that it is difficult to grasp as a totality. While the
+precise size at which this occurs differs, depending upon both the nature of the program
+and the programmer, there is always a threshold at which a program becomes
+unmanageable. C++ added features that enabled this threshold to be broken, allowin

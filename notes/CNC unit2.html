@@ -1,0 +1,505 @@
+<html>
+<body>
+<div align="justify"><center><h2>Unit II</h2></center>
+
+
+<br><font size="5">1.public key encryption and hash functions Public Key Cryptography
+</font></br>
+<br>• Ciphers such as AES and DES are known as conventional,
+symmetric algorithms, or secret key algorithms
+</br>• In such algorithms, K = K−1, i.e., the encryption key and the
+decryption key are the same
+</br>• In public key or asymmetric cryptography, K 6= K−1. Furthermore,
+given K it is infeasible to find K−1
+Steven M. Bellovin October 3, 2005 1
+The History of Public Key Cryptography
+</br>• Generally credited to Diffie and Hellman’s paper “New Directions in
+Cryptography” (1976)
+</br>• Remarkable paper — created the academic field of cryptography
+</br>• However — public key crypto was actually invented by the British in
+1970, under the name “Non-Secret Encryption”
+</br>• Some claim that it was actually invented by the Americans in the
+mid-1960s to control nuclear weapons
+</br>• See the reading list for today
+Steven M. Bellovin October 3, 2005 2
+The Purpose of Public Key Cryptography
+</br>• If Alice and Bob want to exchange secret messages, they first have to
+share a key
+</br>• What if they’ve never met?
+</br>• What if they have exchanged keys, but run out?
+</br>• Key-handling is hard
+Steven M. Bellovin October 3, 2005 3
+Key-Handling
+. . . the judge asked the prosecution’s expert witness: “Why is it necessary
+to destroy yesterday’s . . . [key] . . . list if it’s never going to be used again?”
+The witness responded in shock: A used key, Your Honor, is the most
+critical key there is. If anyone can gain access to that, they can read your
+communications.”
+Steven M. Bellovin October 3, 2005 4
+The Problem of Key-Handling
+</br>• Reusing keys is dangerous — many cryptanalytic attacks work by
+looking for key reuse
+</br>• Friedman’s “Index of Coincidence” detects overlap from just the
+ciphertext of conventional ciphers.
+</br>• One of the ways Enigma was attacked: the British captured a German
+weather observation ship that had the next several months of keys
+</br> Note the other mistake: putting general-purpose keys in a
+vulnerable place
+</br>• The “Venona” project: the U.S. read years of Soviet communications
+when they discovered that the Soviets had reused one-time pads
+Steven M. Bellovin October 3, 2005 5
+One-Time Pads
+</br>• As noted last time for stream ciphers, must never be reused
+</br>• Producing so much true-random keying material is a strain
+</br>• During war-time, the Soviets couldn’t keep up
+</br>• Sometimes usable for point-to-point communication
+</br>• Doesn’t work well in groups: n
+2 keying problem. Worse yet, every set
+of keys for a one-time pad must be long enough to handle the
+maximum length of messages you’ll ever send
+</br>• Theoretically unbreakable but practically useless
+Steven M. Bellovin October 3, 2005 6
+The Solution: Public-Key Cryptography
+</br>• Alice publishes her encryption key K
+</br>• This isn’t secret; anyone can know it
+</br>• Glaring example: the Mossad—Israel’s Secret Intelligence
+Service—has a web page you can use to talk to them. The server
+uses public key cryptography
+Steven M. Bellovin October 3, 2005 7
+A First Approximation</br>
+• Alice has a public key KA, which she publishes, and a private key
+K−1
+A
+, which she keeps secret</br>
+• Bob wants to send her a message M</br>
+• Bob looks up her key and sends {M}KA</br>
+• Alice uses K−1</br>
+A
+to calculate {{M}KA
+}KA</br>
+−1 = M
+Steven M. Bellovin October 3, 2005 8
+That’s Too Expensive
+</br>• All known public key algorithms are far more expensive than
+symmetric algorithms
+</br>• The most common ones rely on exponentiation of very large numbers
+• New ones (elliptic curve cryptography) is cheaper, but still expensive</br>
+Steven M. Bellovin October 3, 2005 9
+A Better (But Not Good) Approach</br>
+• Alice has a public key KA, which she publishes, and a private key
+K−1
+A</br>
+, which she keeps secret
+• Bob wants to send her a message M</br>
+• Bob looks up her key</br>
+• Bob generates a random symmetric session key KS and sends
+{KS}KA</br>
+, {M}KS
+• That is, you use public key cryptography only to encrypt the session
+key. The session key is used for all bulk data.</br>
+• Alice uses K−1</br>
+A
+to calculate {{KS}KA
+}KA</br>
+−1 = KS</br>
+• Alice uses KS to calculate {{M}KS
+}KS</br>
+−1 = M
+Steven M. Bellovin October 3, 2005 10
+Why Isn’t it Good?</br>
+• Bob doesn’t know who sent the message</br>
+• Bob doesn’t know that KS is fresh, i.e., not previously used
+</br>• (Actually doing public key encryption is tricky)
+Steven M. Bellovin October 3, 2005 11
+RSA
+</br>• Pick two large primes, p and q
+</br>• Let n = pq
+</br>• Pick two keys, e and d, such that ed ≡ 1 mod (p − 1)(q − 1)
+</br>• e is the encryption (or public) key; d is the decryption (or private) key
+</br>• Encryption: C ≡ Me mod n
+</br>• Decryption: M ≡ Cd mod n
+</br>• That is, (Me)
+d ≡ M mod n
+</br>• Strength rests on difficulty of factoring n
+Steven M. Bellovin October 3, 2005 12
+Huh?
+• Remarkably, checking the primality of a large number can be done
+</br>efficiently
+• However, there are no known efficient algorithms for factoring large
+numbers
+</br>• For efficiency, usually e = 3
+</br>• Given e, p, q, calcuating d is easy via Euclid’s Algorithm
+</br>• If we could factor n, it is therefore easy to find d
+</br>• It is unknown if there is a way to recover d without factoring n
+</br>• All of this follows from (reasonably) elementary number theory
+Steven M. Bellovin October 3, 2005 13
+Turning it Around
+</br>• What if we encrypt with d?
+</br>• Why not? The equations are symmetric
+</br>• Only the possesor of the private key d can calculate Md mod n
+</br>• But e is public, so anyone can calculate (Md)
+e mod n ≡ M
+</br>• This is known as a digital signature
+Steven M. Bellovin October 3, 2005 14
+Digital Signatures
+• Only the key owner can calculate them</br>
+• Anyone can verify them</br>
+• Any change to the message will result in a different signature value
+Steven M. Bellovin October 3, 2005 15
+History of Digital Signatures
+• The British did not invent digital signatures, only public key encryption
+• There is reason to suspect that the Americans invented digital
+signatures but not public key encryption
+</br>• Diffie and Hellman invented both, but failed in an attempt to design
+suitable algorithms
+</br>• They came agonizingly close — they had the equation, but with a
+prime modulus
+</br>• It took Rivest, Shamir, and Adleman to solve both problems
+Steven M. Bellovin October 3, 2005 16
+Non-Repudiation
+</br>• Digital signatures provide non-repudiation
+</br>• “protection against false denial of involvement in a communication”
+[RFC 2828]
+</br>• Since anyone can verify the signature, a judge can, too
+Steven M. Bellovin October 3, 2005 17
+Digital versus Physical Signatures
+</br>• Physical signatures are strongly bound to the signer, and weakly
+bound to the message
+</br>•Digital signatures are strongly bound to the message, and weakly
+bound to the signer
+</br>• What if the private key leaks? What if the signer deliberately leaks
+the private key, to provide deniability?
+Steven M. Bellovin October 3, 2005 18
+Large Primes
+</br>• How large is “large”?
+</br>• Today, people commonly use 1024-bit moduli
+</br>• There are published designs for a $1,000,000 machine that can factor
+a 1024-bit key in a year
+</br>• As far as is known, no one has built such a thing, but. . .
+</br>• How long must the information remain secret? How long must a
+digital signature be verifiable? Mortgages commonly last for 30 years
+</br>• Prudence suggests 2048 or 3072-bit keys
+Steven M. Bellovin October 3, 2005 19
+The RSA Challenge
+</br>• A challenge encryption appeared in Scientific American in 1977
+</br>• The modulus was 129 digits, or 429 bits
+</br>• A large distributed effort solved in in 1993:
+THE MAGIC WORDS ARE SQUEAMISH OSSIFRAGE
+Steven M. Bellovin October 3, 2005 20
+Actually Using RSA
+</br>• There are many traps here, both obvious and subtle
+</br>• Example: let “yes” = 1, “no” = 0
+</br>• Encrypt your answer with RSA
+</br>• Oops. . .
+</br>• Must use mathematically sound padding. (Possible approach:
+Encrypt 1023 random bits, plus one bit of message)
+Steven M. Bellovin October 3, 2005 21
+Timing Attacks
+</br>• 1-bits in the exponent take longer than 0-bits (can shift over the 0-bits)
+• By having your target decrypt suitable RSA messages, you can learn</br>
+where the 1-bits are
+</br>• Implemented in 2003 by Boneh and Brumley against web servers
+Steven M. Bellovin October 3, 2005 22
+Common Objections
+</br>• The NSA can factor RSA moduli
+</br>• Who knows? But they use RSA, too. Besides, factoring has been a
+subject of mathematical attention for > 350 years
+</br>• The NSA can build a catalog of primes
+</br>• By the Prime Number Theorem, there are ≈ n/ log n primes less
+than n. For 512-bit p and q, that is about 10151. Even NSA doesn’t
+have that much disk space.
+• It’s magic and can’t work. . .</br>
+Steven M. Bellovin October 3, 2005 23
+I Cheated</br>
+• For encryption, I said “use symmetric algorithms; use RSA for the
+session key”</br>
+• For digital signatures, I said “sign the message”</br>
+• It’s still too expensive to do that</br>
+• We need cryptographic hash functions</br>
+• We sign H(M), not M</br>
+Steven M. Bellovin October 3, 2005 24
+Cryptogrpaphic Hash Functions</br>
+• Must be reasonably cheap</br>
+• Must take an arbitrary-length message and produce a fixed-length
+output</br>
+• Must be impossible to forge signatures by attacking the hash function
+Steven M. Bellovin October 3, 2005 25
+Properties of Cryptogrpaphic Hash Functions
+Collision resistance It is computationally infeasible to find x, y, x 6= y
+such that H(x) = H(y)
+Preimage resistance Given an output value y, it is computationally
+infeasible to find x such that H(x) = y
+Second preimage resistance Given an input x, it is computationally
+infeasible to find x
+′ such that H(x) = H(x
+′)
+Steven M. Bellovin October 3, 2005 26
+Hash Function Failures</br>
+• Second preimage resistance: forge a new document or message to
+match any hash</br>
+• Preimage resistance: similar, but you don’t get to see the input
+message</br>
+• Collision: trick someone into signing one document; show the other to
+the judge — see http://th.informatik.uni-mannheim.de/
+people/lucks/HashCollisions
+Steven M. Bellovin October 3, 2005 27
+Modern Hash Functions</br>
+• MD5 (128 bits) — Invented by Rivest</br>
+• SHA-1 (160 bits) — Invented by NSA; standardized by NIST
+☞ SHA-0 wasn’t as strong as it should have been; NSA made a mistake</br>
+• SHA-256, SHA-384, SHA-512 — Stronger variants of SHA-1</br>
+• Other, less common ones: RIPEMD160 (160-bit), Whirlpool (512 bits)
+Steven M. Bellovin October 3, 2005 28
+Status</br>
+• Only MD5 and SHA-1 are widely used</br>
+• SHA-256, SHA-384, SHA-512 are stronger (and slower) variants</br>
+• Last year, a collision-finding algorithm for MD5 was published by
+Wang et al.</br>
+• This year, she showed that SHA-1 is much weaker than it should be</br>
+• Can we switch? Should we?
+Steven M. Bellovin October 3, 2005 29
+Switching Hash Functions</br>
+• Do we need to switch now?</br>
+• Not quite — for many purposes, collision-resistance isn’t crucial</br>
+• We should immediately stop using MD5 for secure email</br>
+• But we can’t convert to anything stronger than SHA-1 — no one
+supports it, and the network protocols weren’t properly designed for
+upgrades</br>
+• There is as yet no agreement on what hash function to switch to
+Steven M. Bellovin October 3, 2005 30
+Other Important Algorithms</br>
+• Diffie-Hellman — used for key management</br>
+• Relies for its strength on the discrete logarithm problem: Given a and
+a
+b mod p, it is infeasible for find b</br>
+• DSA (Digital Signature Algorithm) — U.S. government standard for
+digital signatures; cannot be used for encryption</br>
+• Based on discrete log
+Steven M. Bellovin October 3, 2005 31</br>
+Algorithm Strengths</br>
+Hash functions need to have output twice as long as the symmetric key
+size for proper collision resistance
+</br>Symmetric Key Size Hash Output Size RSA or DH Modulus Size
+70 140 947
+80 160 1228
+90 180 1553
+100 200 1926
+150 300 4575
+200 400 8719
+250 500 14596
+</br>(Source: RFC 3766)
+Sizes based on estimated computational equivalence
+Steven M. Bellovin October 3, 2005 32
+Cost of Increasing Modulus Size
+For RSA, doubling the modulus length increases encryption time by ∼ 4×
+and increases decryption time by ∼ 8×.
+Modulus CPU Time
+</br>256 1.5 ms
+512 8.6
+1024 55.4
+2048 387.
+(Source: RFC 3766)
+
+</br>
+
+<br><font size"5">2.RSA Algorithm 
+</font></br>
+<br>RSA Algorithm in Cryptography
+RSA algorithm is asymmetric cryptography algorithm. Asymmetric actually means that it works on two different keys i.e. Public Key and Private Key. As the name describes that the Public Key is given to everyone and Private key is kept private.
+
+An example of asymmetric cryptography :
+
+A client (for example browser) sends its public key to the server and requests for some data.
+The server encrypts the data using client’s public key and sends the encrypted data.
+Client receives this data and decrypts it.
+Since this is asymmetric, nobody else except browser can decrypt the data even if a third party has public key of browser.
+
+The idea! The idea of RSA is based on the fact that it is difficult to factorize a large integer. The public key consists of two numbers where one number is multiplication of two large prime numbers. And private key is also derived from the same two prime numbers. So if somebody can factorize the large number, the private key is compromised. Therefore encryption strength totally lies on the key size and if we double or triple the key size, the strength of encryption increases exponentially. RSA keys can be typically 1024 or 2048 bits long, but experts believe that 1024 bit keys could be broken in the near future. But till now it seems to be an infeasible task.
+
+Let us learn the mechanism behind RSA algorithm :
+
+
+
+</br>
+
+>> Generating Public Key :
+Select two prime no's. Suppose P = 53 and Q = 59.
+Now First part of the Public key  : n = P*Q = 3127.
+</br>
+ We also need a small exponent say e : 
+But e Must be 
+
+An integer.
+
+Not be a factor of n.
+ 
+1 < e < Φ(n) [Φ(n) is discussed below], 
+Let us now consider it to be equal to 3.
+
+    
+Our Public Key is made of n and e
+>> Generating Private Key :
+
+We need to calculate Φ(n) :
+Such that Φ(n) = (P-1)(Q-1)     
+      so,  Φ(n) = 3016
+
+    </br>
+Now calculate Private Key, d : 
+d = (k*Φ(n) + 1) / e for some integer k
+For k = 2, value of d is 2011.
+Now we are ready with our – Public Key ( n = 3127 and e = 3) and Private Key(d = 2011)
+
+Now we will encrypt “HI” :
+
+Convert letters to numbers : H  = 8 and I = 9
+
+    </br>
+Thus Encrypted Data c = 89e mod n. 
+Thus our Encrypted Data comes out to be 1394
+
+</br>
+Now we will decrypt 1349 : 
+    
+Decrypted Data = cd mod n. 
+Thus our Encrypted Data comes out to be 89
+
+</br>
+<br><font size="5">3.Difie Hellman Key Exchange</font></br>
+
+Diffie-Hellman is a way of generating a shared secret between two people in such a way that the secret can't be seen by observing the communication. That's an important distinction: You're not sharing information during the key exchange, you're creating a key together.
+
+This is particularly useful because you can use this technique to create an encryption key with someone, and then start encrypting your traffic with that key. And even if the traffic is recorded and later analyzed, there's absolutely no way to figure out what the key was, even though the exchanges that created it may have been visible. This is where perfect forward secrecy comes from. Nobody analyzing the traffic at a later date can break in because the key was never saved, never transmitted, and never made visible anywhere.
+
+The way it works is reasonably simple. A lot of the math is the same as you see in public key crypto in that a trapdoor function is used. And while the discrete logarithm problem is traditionally used (the xy mod p business), the general process can be modified to use elliptic curve cryptography as well.
+
+But even though it uses the same underlying principles as public key cryptography, this is not asymmetric cryptography because nothing is ever encrypted or decrypted during the exchange. It is, however, an essential building-block, and was in fact the base upon which asymmetric crypto was later built.
+
+The basic idea works like this:</br>
+
+I come up with two prime numbers g and p and tell you what they are.
+You then pick a secret number (a), but you don't tell anyone. Instead you compute ga mod p and send that result back to me. (We'll call that A since it came from a).
+I do the same thing, but we'll call my secret number b and the computed number B. So I compute gb mod p and send you the result (called "B")
+Now, you take the number I sent you and do the exact same operation with it. So that's Ba mod p.
+I do the same operation with the result you sent me, so: Ab mod p.
+The "magic" here is that the answer I get at step 5 is the same number you got at step 4. Now it's not really magic, it's just math, and it comes down to a fancy property of modulo exponents. Specifically:
+</br>
+(ga mod p)b mod p = gab mod p
+(gb mod p)a mod p = gba mod p
+</br>
+Which, if you examine closer, means that you'll get the same answer no matter which order you do the exponentiation in. So I do it in one order, and you do it in the other. I never know what secret number you used to get to the result and you never know what number I used, but we still arrive at the same result.
+
+That result, that number we both stumbled upon in step 4 and 5, is our shared secret key. We can use that as our password for AES or Blowfish, or any other algorithm that uses shared secrets. And we can be certain that nobody else, nobody but us, knows the key that we created together.
+</br>
+
+
+<br><font size="5">4.Elliptic Curve Cryptography Message Authentication and Hash
+Functions Authentication Requirements.
+</font>
+</br>
+Compared with traditional power networks, smart grid networks can avoid excess electricity generation by adjusting the amount of electricity based on the customer’s real-time requirements. In general, the smart grid network can be divided into three levels: control center, substations and smart appliances [1]. In a smart grid network, smart appliances communicate with substations by using smart meters. The smart meters send user’s requirements to the substations, and then the substations transmit the requirements to the control center. Next, according to the received requirements, the control center can allocate adequate power supplies to customers. The Supervisory Control and Data Acquisition system is used to protect the communications between the control center and the substations [2], but the security problems between other two levels remain unsolved. Although the security mechanisms between substations and smart appliances have been researched in recent years, existing security protocols are not robust enough to resist several types of attacks. Therefore, a determined effort should be made to address the security issues associated with the communications between the substations and the smart appliances [3].
+
+As smart meters are used to transmit the real-time electricity demands from customers, the data transmission process could easily suffer from several types of security threats and attacks. To protect the transmitted data, an efficient authentication scheme should be provided. Compared with the authentication protocols designed for other scenarios such as VoIP and Ad Hoc networks, it is more challenging to provide a suitable authentication protocol for smart grids due to its complicated architecture and diverse security requirements. On one hand, the authentication protocols should secure against various types of possible attacks and provide several security features to satisfy the secure requirements of smart grids. For example, the user privacy should be fully considered especially the user’s identity protection, to prevent the adversary from obtaining the information about user’s daily patterns, which may not be important in other application environments. On the other hand, smart grid communications are more sensitive to transmission latency, and so existing security approaches with intensive computation are impractical in smart grid networks.
+
+Recently, several authentication protocols have been proposed  to protect the data transmission between communication entities. In an attempt to prevent the adversary from obtaining the daily habit of the customer through analyzing the electricity usage pattern, T.W. Chim et al. [4] designed an authentication protocol by using a tamper-resistant device at the smart appliance and a pseudo identity for the smart grid network to protect the privacy of the customer. However the proposed protocol was suffered from impersonation attacks. Since only substations could authenticate smart appliances, the adversary could easily impersonate the substations to cheat the smart appliances. Besides, their protocol failed to provide a key agreement function capable of protecting the communication between substations and smart appliances. Furthermore, since a timestamp was used in the signing module of their protocol, the clock synchronization problem could not be avoided. In order to reduce the computational cost, Mostafa et al. [5] proposed a message authentication mechanism by using the Computational Diffie-Hellman assumption for smart grids. In their protocol, mutual authentication and key agreement were realized by using Diffie-Hellman exchange protocol between the smart meters distributed at different hierarchical networks of the smart grid system, and the subsequent messages could be authenticated by using a shared session key established previously and the hash-based authentication code technique. However, the computational costs of both protocols were still very high due to the usage of expansive exponential operations. In the same year, Qing et al. [6] designed a multicast authentication protocol for smart grids by using one-time signature to reduce the storage cost and the signature size. Because the one-time signature-based multicast authentication could provide short authentication delay and low computation cost, their protocol achieved a good performance. However their work only focused on designing a light-weight authentication protocol, remained the key agreement issue unsolved.
+</br>
+In order to strengthen the security of smart grid communications, Soohyun Oh et al.  suggested a mutual authentication and key establishment mechanism based on public key certificates for smart grid. In their protocol, the data concentration unit’s public key certificate and pre-shared long-term key were used to realize the mutual authentication between the data concentration unit and the intelligent devices. But the problem of distributing the shared long-term key limited this protocol’s scalability and applicability. Biometric technique such as fingerprint was also adopted to achieve strong authentication for smart grids [10]. But these protocols are very complex due to the use of biometrics. In 2013, Binod Vaidya et al. proposed an authentication and authorization mechanism for smart grid networks [13]. They realized multi-factor authentication and attribute-based authorization in a smart grid environment by using public key certificates, zero-knowledge and access control technologies. But the heavy computational load could not be avoided since the implement of the public key certificates management and public key cryptography calculation. In the same year, Nicanfar et al. presented a password authenticated group key agreement protocol for smart grid [15]. Although the proposed protocol provided forward and backward secrecy and enhanced the security of communications among the devices, the usage of expansive exponential operations decreased the practical application of the protocol. To reduce the computational cost, a password authenticated key exchange based on Elliptic Curve Cryptography (ECC) was proposed [17]. Compared with previous studies, this protocol was more efficient due to the usage of ECC, but a primitive password should be preloaded between an appliance and the Home Area Network controller, which made this solution hard to scale and might arouse an intractable problem of password table maintenance. Recently, Li et al. proposed fault-diagnosable authentication architecture for advanced metering infrastructure in smart grid [19]. Since this work only focused on authentication, key negotiation was not considered in the proposed authentication mechanism.
+
+According to above analysis, protocol [4] was suffered from impersonate attacks and protocols  were vulnerable to eavesdropping since these protocols could not provide key agreement to protect the further communications. Moreover, protocol [17] faced some attacks associated with password. Although some of these protocols achieved good performance, they could not provide security at an acceptable level. Furthermore, other protocols such as [13, 15] were secure against several attacks, but the use of expansive exponential operations, the signature generation, and the verification lead to high computational overhead and communication delay. Therefore, these protocols are not suitable for smart grid. In general, the existing authentication protocols for smart grids mentioned above are insecure against some cryptographic attacks or impractical due to high computational costs. In addition, all the protocols discussed above could not provide privacy protection which is very important in smart grids. Based on these motivations, we proposed a robust and efficient authenticate protocol based on Elliptic Curve Cryptography (ECC) with identity protection for smart grids by using tamper-resistant attractive security properties. As ECC can achieve the same level security with a smaller key size, it offers better performance compared with other public key cryptosystems such as RSA or D-H. Thus, we adopted ECC to realize a mitigation authentication device at the smart appliance without involving time-consuming operations.
+
+Compared with other security approaches, public key cryptosystems can resist most of possible attacks and provide more security properties to achieve a good balance between performance and security. By using ECC, the proposed protocol can achieve the authenticated key agreement with privacy protection at a lower computational cost. Furthermore, according to the characteristics of the smart grid, the control center can be considered fully trustable since it is managed by the government administrators; the substations that have higher computational power are difficult to be compromised than smart appliances; the smart appliances with limited power are more vulnerable to various attacks, and it can be combined with a tamper-resist device to protect the stored information. Taking advantage of above features, in the proposed protocol, a tamper-resist device was used to store secret information to help providing privacy protection through the authentication process. In addition, the control center and the substations can cooperate to complete the initialization process of the authenticated key agreement protocol.
+
+In the proposed protocol, the smart meters are used to transmit the real-time electricity demands from customers intelligently. In order to protect the transmitted data, mutual authentication and a shared key should be provide to protect the further communication between the substation and the smart appliances. In the proposed protocol, the smart meters could control when the authentication protocol begins and which appliances need to be authenticated. Furthermore, the shared key updating could be realized by restarting the authentication process and the smart meter could also control the period of key updating during the communication. Therefore, the smart meter could manage the smart devices intelligently during the authentication process. In this paper, our study focused on the design of the authentication protocol with privacy protection, so the intelligent management of smart meters is beyond the scope of our work.
+
+</br>
+
+<br><font size="5">5. Message Authentication Codes
+</font></br>
+n cryptography, a message authentication code (MAC), sometimes known as a tag, is a short piece of information used to authenticate a message—in other words, to confirm that the message came from the stated sender (its authenticity) and has not been changed. The MAC value protects both a message's data integrity as well as its authenticity, by allowing verifiers (who also possess the secret key) to detect any changes to the message content.
+Informally, a message authentication code consists of three algorithms:
+
+A key generation algorithm selects a key from the key space uniformly at random.
+A signing algorithm efficiently returns a tag given the key and the message.
+A verifying algorithm efficiently verifies the authenticity of the message given the key and the tag. That is, return accepted when the message and tag are not tampered with or forged, and otherwise return rejected.
+For a secure unforgeable message authentication code, it should be computationally infeasible to compute a valid tag of the given message without knowledge of the key, even if for the worst case, we assume the adversary can forge the tag of any message except the given one.[1]
+
+Formally, a message authentication code (MAC) is a triple of efficient[2] algorithms (G, S, V) satisfying:
+
+G (key-generator) gives the key k on input 1n, where n is the security parameter.
+S (signing) outputs a tag t on the key k and the input string x.
+V (verifying) outputs accepted or rejected on inputs: the key k, the string x and the tag t. S and V must satisfy the following:
+
+</br>
+<br><font size="5">6.Hash Functions
+</font></br>
+A hash function that maps names to integers from 0 to 15. There is a collision between keys "John Smith" and "Sandra Dee".
+A hash function is any function that can be used to map data of arbitrary size to data of fixed size. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes. One use is a data structure called a hash table, widely used in computer software for rapid data lookup. Hash functions accelerate table or database lookup by detecting duplicated records in a large file. An example is finding similar stretches in DNA sequences. They are also useful in cryptography. A cryptographic hash function allows one to easily verify that some input data maps to a given hash value, but if the input data is unknown, it is deliberately difficult to reconstruct it (or equivalent alternatives) by knowing the stored hash value. This is used for assuring integrity of transmitted data, and is the building block for HMACs, which provide message authentication.
+
+Hash functions are related to (and often confused with) checksums, check digits, fingerprints, lossy compression, randomization functions, error-correcting codes, and ciphers. Although these concepts overlap to some extent, each has its own uses and requirements and is designed and optimized differently. The HashKeeper database maintained by the American National Drug Intelligence Center, for instance, is more aptly described as a catalogue of file fingerprints than of hash values.
+Hash tables
+Hash functions are used in hash tables,[1] to quickly locate a data record (e.g., a dictionary definition) given its search key (the headword). Specifically, the hash function is used to map the search key to a list; the index gives the place in the hash table where the corresponding record should be stored. Hash tables, also, are used to implement associative arrays and dynamic sets.[2]
+
+Typically, the domain of a hash function (the set of possible keys) is larger than its range (the number of different table indices), and so it will map several different keys to the same index which could result in collisions. So then, each slot of a hash table is associated with (implicitly or explicitly) a set of records, rather than a single record. For this reason, each slot of a hash table is often called a bucket, and hash values are also called bucket listing[citation needed] or a bucket index.
+
+Thus, the hash function only hints at the record's location. Still, in a half-full table, a good hash function will typically narrow the search down to only one or two entries.
+
+People who write complete hash table implementations choose a specific hash function—such as a Jenkins hash or Zobrist hashing—and independently choose a hash-table collision resolution scheme—such as coalesced hashing, cuckoo hashing, or hopscotch hashing.
+
+Caches
+Hash functions are also used to build caches for large data sets stored in slow media. A cache is generally simpler than a hashed search table, since any collision can be resolved by discarding or writing back the older of the two colliding items. This is also used in file comparison.
+
+Bloom filters
+Main article: Bloom filter
+Hash functions are an essential ingredient of the Bloom filter, a space-efficient probabilistic data structure that is used to test whether an element is a member of a set.
+
+Finding duplicate records
+Main article: Hash table
+When storing records in a large unsorted file, one may use a hash function to map each record to an index into a table T, and to collect in each bucket T[i] a list of the numbers of all records with the same hash value i. Once the table is complete, any two duplicate records will end up in the same bucket. The duplicates can then be found by scanning every bucket T[i] which contains two or more members, fetching those records, and comparing them. With a table of appropriate size, this method is likely to be much faster than any alternative approach (such as sorting the file and comparing all consecutive pairs).
+
+Protecting data
+Main article: Security of cryptographic hash functions
+A hash value can be used to uniquely identify secret information. This requires that the hash function is collision-resistant, which means that it is very hard to find data that will generate the same hash value. These functions are categorized into cryptographic hash functions and provably secure hash functions. Functions in the second category are the most secure but also too slow for most practical purposes. Collision resistance is accomplished in part by generating very large hash values. For example, SHA-1, one of the most widely used cryptographic hash functions, generates 160 bit values.
+
+Finding similar records
+Main article: Locality sensitive hashing
+Hash functions can also be used to locate table records whose key is similar, but not identical, to a given key; or pairs of records in a large file which have similar keys. For that purpose, one needs a hash function that maps similar keys to hash values that differ by at most m, where m is a small integer (say, 1 or 2). If one builds a table T of all record numbers, using such a hash function, then similar records will end up in the same bucket, or in nearby buckets. Then one need only check the records in each bucket T[i] against those in buckets T[i+k] where k ranges between −m and m.
+
+This class includes the so-called acoustic fingerprint algorithms, that are used to locate similar-sounding entries in large collection of audio files. For this application, the hash function must be as insensitive as possible to data capture or transmission errors, and to trivial changes such as timing and volume changes, compression, etc.[3]
+
+Finding similar substrings
+The same techniques can be used to find equal or similar stretches in a large collection of strings, such as a document repository or a genomic database. In this case, the input strings are broken into many small pieces, and a hash function is used to detect potentially equal pieces, as above.
+
+The Rabin–Karp algorithm is a relatively fast string searching algorithm that works in O(n) time on average. It is based on the use of hashing to compare strings.
+
+Geometric hashing
+This principle is widely used in computer graphics, computational geometry and many other disciplines, to solve many proximity problems in the plane or in three-dimensional space, such as finding closest pairs in a set of points, similar shapes in a list of shapes, similar images in an image database, and so on. In these applications, the set of all inputs is some sort of metric space, and the hashing function can be interpreted as a partition of that space into a grid of cells. The table is often an array with two or more indices (called a grid file, grid index, bucket grid, and similar names), and the hash function returns an index tuple. This special case of hashing is known as geometric hashing or the grid method. Geometric hashing is also used in telecommunications (usually under the name vector quantization) to encode and compress multi-dimensional signals.
+
+Standard uses of hashing in cryptography
+Main article: Cryptographic hash function
+Some standard applications that employ hash functions include authentication, message integrity (using an HMAC (Hashed MAC)), message fingerprinting, data corruption detection, and digital signature efficiency.
+
+</br>
+
+<br><font size="5">7.Security of Hash Functions
+</font>
+</br>
+<br>In cryptography, cryptographic hash functions can be divided into two main categories. In the first category are those functions whose designs are based on a mathematical problem and thus their security follows from rigorous mathematical proofs, complexity theory and formal reduction. These functions are called Provably Secure Cryptographic Hash Functions. However this does not mean that such a function could not be broken. To construct them is very difficult and only a few examples were introduced. The practical use is limited.
+
+In the second category are functions that are not based on mathematical problems but on an ad hoc basis, where the bits of the message are mixed to produce the hash. They are then believed to be hard to break, but no such formal proof is given. Almost all widely spread hash functions fall in this category. Some of these functions are already broken and are no longer in use.
+
+Generally, the basic security of cryptographic hash functions can be seen from three different angles: pre-image resistance, second pre-image resistance, and collision resistance.
+
+Pre-image resistance: given a hash {\displaystyle h} h it should be hard to find any message {\displaystyle m} m such that {\displaystyle h=hash(m)} {\displaystyle h=hash(m)}. This concept is related to that of the one-way function. Functions that lack this property are vulnerable to pre-image attacks.
+Second pre-image resistance: given an input {\displaystyle m_{1}} m_{1}, it should be hard to find another input, {\displaystyle m_{2}} m_{2} (not equal to {\displaystyle m_{1}} m_{1}) such that {\displaystyle hash(m_{1})=hash(m_{2})} {\displaystyle hash(m_{1})=hash(m_{2})}. This property is sometimes referred to as weak collision resistance. Functions that lack this property are vulnerable to second pre-image attacks.
+Collision resistance: it should be hard to find two different messages {\displaystyle m_{1}} m_{1} and {\displaystyle m_{2}} m_{2} such that {\displaystyle hash(m_{1})=hash(m_{2})} {\displaystyle hash(m_{1})=hash(m_{2})}. Such a pair is called a (cryptographic) hash collision. This property is sometimes referred to as strong collision resistance. It requires a hash value at least twice as long as what is required for pre-image resistance, otherwise collisions may be found by a birthday attack.
+The meaning of "hard"
+The basic question is the meaning of "hard". There are two approaches to answer this question. First is the intuitive/practical approach: "hard means that it is almost certainly beyond the reach of any adversary who must be prevented from breaking the system for as long as the security of the system is deemed important."
+
+The second approach is theoretical and is based on the computational complexity theory. If problem A is hard, there exists a formal security reduction from a problem which is widely considered unsolvable in polynomial time, such as integer factorization problem or discrete logarithm problem.
+
+However, non-existence of a polynomial time algorithm does not automatically ensure that the system is secure. The difficulty of a problem also depends on its size. For example, RSA public key cryptography relies on the difficulty of integer factorization. However, it is considered secure only with keys that are at least 1024 bits large.
+
+</br>
+</div>
+</body>
+</html>

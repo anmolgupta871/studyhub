@@ -1,0 +1,862 @@
+                                       Unite 5
+									   
+Software Testing and Cost Estimation
+
+Q.1	Explain System testing.
+
+Ans:	System Testing is the assurance of proper working or execution of the developed system from user‟s perspective using formal procedure.
+
+System Testing Process can be defined in the following steps (as shown in fig 11.1):
+
+a.	Function Testing: the system must perform functions specified in the requirements.
+
+b.	Performance Testing: the system must satisfy security, precision, load and speed constrains specified in the requirements.
+
+c.	Acceptance Testing: customers try the system to make sure that the system built is the system they had requested.
+
+d.	Installation Testing: the software is deployed and tested in the production environment.
+
+Q.2	Explain Component testing.
+
+Ans:	Component testing is also known as Unit testing. It refers to tests that verify the functionality of a specific section of code, usually at the
+
+function level. In an object-oriented environment, this is usually at the class level, and the minimal unit tests include the constructors and destructors. These types of tests are usually written by developers as they work on code (white-box testing), to ensure that the specific function is working as expected. Unit testing alone cannot verify the functionality of a piece of software, but rather is used to assure that the building blocks of the software work independently of each other.
+
+Q.3	Explain Test case design.
+
+Ans:	Test Case design includes the designing of test cases. A Test Case is a set of actions executed to verify a particular feature or functionality of your software application. A test case is a detailed procedure that fully tests a feature or an aspect of a feature. Whereas the test plan describes what to test, a test case describes how to perform a particular test. You need to develop a test case for each test listed in the test plan.
+
+A test case includes:
+
+The purpose of the test.
+
+Special hardware requirements, such as a modem.
+Special software requirements, such as a tool.
+Specific setup or configuration requirements.
+A description of how to perform the test.
+
+The expected results or success criteria for the test.
+
+Tips for writing test cases:
+
+1.	Test Cases need to be simple and transparent
+
+2.	Create Test Case with End User in mind
+
+3.	Avoid test case repetition
+
+4.	Do not Assume
+
+5.	Test Cases must be identifiable
+
+6.	Implement Testing Techniques
+
+7.	Peer Review
+
+Q.4	What is Test automation?
+
+Ans:	In software testing, test automation is the use of
+
+special software (separate from the software being tested) to control the
+
+execution of tests and the comparison of actual outcomes to predicted outcomes. Test automation can automate previous repetitive but necessary testing in a formalized testing process already in place, or add additional testing that would be difficult to perform manually.
+
+
+Q.5	What do you mean by Software productivity?
+
+Ans:	In standard economic terms, productivity is the ratio between the amount of goods or services produced and the labor or expense that goes into producing them. Software productivity is the ratio between the amount of software produced to the labor and expense of producing it. Some of the methods of measuring software productivity are Function Point Analysis, Constructive Cost Modeling, and Cyclomatic Complexity.
+
+Q.6	What is Algorithmic cost modeling.
+
+Ans:	It is formulaic approach based on historical cost information and which is generally based on the size of the software. In algorithmic cost modeling, cost is estimated as a mathematical function of product, project and process attributes whose values are estimated by project managers.
+
+Effort = A x SizeB  x M
+
+Where, A=organisation-dependent constant,
+
+B= disproportionate effort for large projects
+
+M=is a multiplier reflecting product, process and people attributes. (Most commonly used product attribute for cost estimation is code size)
+ 
+Most	models	are	basically
+ 
+similar
+ 
+but
+ 
+with
+ 
+different values for A, B and M
+ 
+Q.7	What do you mean by Project duration and staffing?
+
+Ans:	Managers are supposed to estimate the calendar time required to complete a project and the points when staff will be required. Calendar time can be estimated using a COCOMO 2 formula
+
+TDEV = 3 x (PM)(0.33+0.2*(B-1.01))
+Where,
+
+PM = effort computation
+B = exponent computed (E.g. B =1 for the early prototyping model)
+
+Staffing includes the following facts:
+
+The time requirement is independent of the number of people working on the project.
+
+Staff required can‟t be computed by diving the development time by the required schedule
+
+The number of people working on a project varies depending on the phase of the project
+
+The more people who work on the project, the more total effort is usually required
+
+A very rapid build-up of people often correlates with schedule slippage
+
+Q.8	What is COCOMO?
+
+Ans:	COCOMO is Constructive Cost Model and it is an empirical model based on project experience. It is well-documented, „independent‟ model which is not tied to a specific software vendor.
+
+COCOMO Versions
+1.	COCOMO 81” or COCOMO I (Base Model)
+
+2.	Cocomo II (circa 2000) (Current Version)
+3.	Commercial take-offs
+
+Costar (Softstarsystems.com)
+
+Cost Xpert (CostXpert.com)
+
+COCOMO I or COCOMO 81
+-	Proposed by B.W. Boehm in 1981
+-	Based on related data of 63 completed software projects.
+
+-	Developed for Cost Estimation i.e. for Person-Months and Development Time from size estimation
+
+-	It is a static model
+
+COCOMO II MODEL
+-	Successor of COCOMO 81
+
+-	Developed at University of Southern California in 1995 under the leadership of Dr. Barry Boehm
+
+-	Based on 83 projects
+
+-	COCOMO II takes into account new development processes, increased flexibility in software development, need for decision making with incomplete information and new data about projects.
+
+-	Provides more support for estimating modern software development processes and an updated project database.
+
+-	The need for the new model was raised due to updating and enhancement in dev. technology like desktop development, code reusability and the use of off-the-shelf software components.
+
+-	COCOMO II models require sizing information. Three different sizing options are available as part of the model hierarchy i.e.
+
+o OP, object points, o FP, function points,
+o  LOC, lines of source code.
+
+Quality Management
+
+
+Q.1	Explain process and product quality
+
+Ans:	Understanding, Modelling and Improving the Software Process is process improvement.
+
+-	Process quality and product quality are closely related
+
+-	A good process is usually required to produce a good product
+
+-	For manufactured goods, process is the principal quality determinant
+
+-	For design-based activity, other factors are also involved especially the capabilities of the designers
+
+Principal product quality factors are as shown in fig 12.1.
+
+Figure 12.1 Principal product quality factors
+
+-	For large projects with average capabilities, the development process determines product quality
+
+-	For small projects, the capabilities of the developers is the main determinant
+
+-	The development technology is particularly significant for small projects
+
+-	In all cases, if an unrealistic schedule is imposed then product quality will suffer
+
+
+Q.2	What do you mean by Quality assurance and its standards?
+
+Ans:	Quality assurance is establishing organisational procedures and standards for quality.
+
+Software Quality Assurance (SQA) Activities:
+
+•	Prepares an SQA plan for a project
+
+•	Participates in the development of the project's software process description
+
+•	Reviews software engineering activities to verify compliance with the defined software process
+
+•	Audits designated software work products to verify compliance with those defined as part of the software process
+
+•	Ensures that deviations in software work and work products are documented and handled according to a documented procedure
+
+•	Records any noncompliance and reports to senior management
+•	Coordinates the control and management of change
+
+•	Helps to collect and analyze software metrics
+
+
+Standards:
+-	Standards are the key to effective quality management
+
+-	They may be international, national, organizational or project standards
+
+
+-	Product standards define characteristics that all components should exhibit e.g. a common programming style
+
+-	Process standards define how the software process should be enacted
+
+Importance of standards:
+-	Encapsulation of best practice- avoids repetition of past mistakes
+
+-	Framework for quality assurance process - it involves checking standard compliance
+
+-	Provide continuity - new staff can understand the organisation by understand the standards applied
+
+
+Certification Standards:
+1.	ISO 9000
+
+2.	ISO 9001
+
+Q.3	What is Quality planning?
+
+Ans:	Quality planning is selecting applicable procedures and standards for a particular project and modify these as required.
+
+-	A quality plan sets out the desired product qualities and how these are assessed and define the most significant quality attributes
+
+-	It should define the quality assessment process
+
+-	It should set out which organisational standards should be applied and, if necessary, define new standards
+
+Quality plan structure:
+-	Product introduction
+-	Product plans
+
+-	Process descriptions
+-	Quality goals
+-	Risks and risk management
+-	Quality plans should be short, succinct documents
+
+Q.4	What is Quality control?
+
+Ans:	Quality control is ensuring that procedures and standards are followed by the software development team.
+
+Quality Control :
+
+•	Involves a series of inspections, reviews, and tests used throughout the software process
+
+•	Ensures that each work product meets the requirements placed on it
+
+•	Includes a feedback loop to the process that created the work product
+
+•	Combines measurement and feedback in order to adjust the process when product specifications are not met
+
+•	Requires all work products to have defined, measurable specifications to which practitioners may compare to the output of each process
+
+
+
+
+
+
+
+
+Multiple Choice Questions
+
+Chapter 1- Multiple Choice Questions
+
+Q1. A software is :
+(a)	A set of Instructions
+
+(b)	A set of functions
+(c)	A set of workspace
+(d)	None of the above
+
+
+Q2. A software doesn‟t-
+(a)	Face out
+(b)	Wear out
+(c)	Clean out
+
+(d)	None of the above
+
+Q3. Sixty to Eighty percent of effort goes to:
+
+(a)	Planning Phase
+(b)	Coding Phase
+(c)	Maintenance Phase
+(d)	None of the above
+
+Q4. System that analyzes the real world problems and meets strictly the timelines in execution are:
+(a)	Open Systems
+
+(b)	Real Time Systems
+(c)	Hard systems
+(d)	None of the above
+
+Q5. SE is the establishment & use of sound engineering principles in order to obtain an:
+(a)	Economic software
+
+(b)	Reliable software
+(c)	Efficient software
+(d)	All of the above
+
+Key:
+1.	(a)
+2.	(b)
+3.	(c)
+4.	(b)
+5.	(d)
+
+.
+
+Chapter 2-Multiple Choice Questions
+
+
+Q1. Simplest oldest process model:
+(a)	RAD Model
+
+(b)	Waterfall Model
+(c)	DOD Model
+(d)	None of the above
+
+Q2. A model in which a basic model is developed before the actual model-
+
+(a)	Prototype Model
+(b)	Waterfall Model
+
+(c)	DOD Model
+(d)	None of the above
+
+Q3. RAD is:
+
+(a)	Random Application Development
+(b)	Rigid Application Development
+(c)	Rapid Application Development
+(d)	None of the above
+
+Q4. Example of Evolutionary process model is:
+(a)	WINWIN Spiral Model
+
+(b)	Waterfall Model
+(c)	Prototype Model
+(d)	None of the above
+
+Q5. Spiral Model was introduced by:
+(a)	Peckner
+(b)	Boehm
+(c)	Albert
+
+(d)	None of the above
+
+Key:
+1.	(b)
+
+2.	(a)
+3.	(c)
+4.	(a)
+5.	(b)
+.
+
+Chapter 3- Multiple Choice Questions
+
+Q1. Reviewing datelines and use of the project completion schedules is:
+
+(a)	Project Design
+(b)	Project Planning
+
+(c)	Project Maintenance
+(d)	None of the above
+
+Q2. Project Planning can be done through:
+(a)	Prototype Model
+(b)	Waterfall Model
+(c)	Gantt Chart
+
+(d)	None of the above
+
+Q3. PERT is:
+(a)	Parallel Evaluation and Review Technique
+
+(b)	Program Evaluation and Review Technique
+(c)	Program Evaluation and Ready Technique
+(d)	None of the above
+
+Q4. CPM is:
+(a)	Critical Pan Method
+(b)	Critical Path Mode
+
+(c)	Critical Path Method
+(d)	None of the above
+
+Q5. Project Scheduling could be done through:
+
+(a)	Project Design
+(b)	PERT
+(c)	Gantt Chart
+(d)	None of the above
+
+Key:
+1.	(b)
+2.	(c)
+
+3.	(b)
+4.	(c)
+5.	(b)
+
+Chapter 4- Multiple Choice Questions
+
+Q1. Product capabilities are defined by:
+(a)	Functional Requirements
+(b)	Functional Planning
+
+(c)	Project Maintenance
+(d)	None of the above
+
+
+Q2. Requirements that specify the constraints and specifies systematic approach to maintain quality:
+
+(a)	Functional Requirements
+(b)	Non Functional Requirements
+(c)	User Requirements
+
+(d)	None of the above
+
+Q3. Interface specification includes:
+
+(a)	Description of requirements of the system
+(b)	Description of the interfaces of the system
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Q4. SRS includes the specification of:
+(a)	User requirement
+(b)	System requirement
+
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Key:
+1.	(a)
+2.	(b)
+3.	(b)
+
+4.	(c)
+
+
+Chapter 5- Multiple Choice Questions
+
+Q1. Process of Requirements elicitation; Requirements analysis; Requirements validation; Requirements management are included in:
+
+(a)	User Requirement
+(b)	Requirement Engineering
+(c)	Both (a) & (b)
+(d) None of the above
+
+Q2. SRS is:
+(a)	Software Requirement Source
+(b)	Software Requirement Specification
+(c)	System Requirement Source
+
+(d)	None of the above
+
+
+Q3. Ways of structuring the requirements to represent the perspectives of different stakeholders are:
+
+(a)	Gantt Chart
+(b)	PERT
+(c)	View Points
+(d)	None of the above
+
+Key:
+1.	(b)
+
+2.	(b)
+3.	(c)
+
+
+Chapter 6- Multiple Choice Questions
+
+Q1. To identify protection requirements that ensure that system failures do not cause injury or death or environmental damage is:
+(a)	Safety Specification
+(b)	Security Specification
+
+(c)	None of the above
+
+Q2. The possibility that the defined goals are not met is:
+(a)	Fear
+
+(b)	Risk
+(c)	Remedy
+(d)	None of the above
+
+Q3. The likelihood and consequences of the risks are assessed in:
+(a)	Planning
+(b)	Coding analysis
+(c)	Risk analysis
+
+(d)	None of the above
+
+Q4. Risk Projection is also known as:
+(a)	Risk Identification
+(b)	Risk Estimation
+(c)	Risk Specification
+(d)	None of the above
+
+Q5. Risk assessment is done during:
+(a)	Planning Phase
+(b)	Design Phase
+(c)	Coding Phase
+
+(d)	None of the above
+
+Key:
+1.	(a)
+2.	(b)
+3.	(c)
+4.	(b)
+5.	(a)
+
+Chapter 7- Multiple Choice Questions
+
+Q1. Provide the scale for quantifying qualities:
+(a)	Plan
+
+(b)	Metrics
+(c)	Risk
+(d)	None of the above
+
+Q2. Metrics that are used to check the progress of project development:
+(a)	Process metrics
+(b)	General metrics
+
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Q3. LOC is an example of:
+
+(a)	Proper measure
+(b)	Indirect measure
+(c)	Direct measure
+(d)	None of the above
+
+Q4. Complexity is an:
+(a)	Indirect measure
+(b)	Identified measure
+(c)	Unidentified measure
+(d)	None of the above
+
+Q5. RMMM is:
+
+(a)	Risk Mitigation, Monitoring and Management
+(b)	Risk Management, Monitoring and Modeling
+(c)	Risk Management, Mitigating and Modeling
+(d)	None of the above
+
+Key:
+1.	(b)
+2.	(a)
+3.	(c)
+4.	(a)
+5.	(a)
+
+
+Chapter 8- Multiple Choice Questions
+
+Q1. TPS is:
+(a)	Transport Processing system
+(b)	Transaction Processing system
+
+(c)	Transport Parallel system
+(d)	None of the above
+
+Q2. Which of the following is not an analysis technique?
+(a)	Ethnography
+(b)	Interviewing
+(c)	Planning
+
+(d)	None of the above
+
+Key:
+1.	(b)
+
+2.	(c)
+
+
+Chapter 9- Multiple Choice Questions
+
+Q1. Agile methods focus on:
+(a)	Design
+(b)	Code
+(c)	Code and design
+(d)	None of the above
+
+Q2. An act of developing new system through the usage of previously available components or other systems is:
+
+(a)	Software planning
+(b)	Software use
+(c)	Software reuse
+(d)	None of the above
+
+Q3. Collections of abstract and concrete classes that can be adapted and extended to create application systems are:
+
+(a)	Application systems
+(b)	Applications
+(c)	Application frameworks
+
+(d)	None of the above
+
+Key:
+1.	(b)
+2.	(c)
+3.	(c)
+
+Chapter 10- Multiple Choice Questions
+
+Q1. Provide the scale for quantifying qualities:
+(a)	Plan
+(b)	Metrics
+(c)	Risk
+
+(d)	None of the above
+
+Q2. Metrics that are used to check the progress of project development:
+(a)	Process metrics
+
+(b)	General metrics
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Q3. LOC is an example of:
+(a) Proper measure
+(b)	Indirect measure
+(c)	Direct measure
+(d)	None of the above
+
+Q4. Complexity is an:
+(a)	Indirect measure
+(b)	Identified measure
+(c)	Unidentified measure
+(d)	None of the above
+
+
+Q5. RMMM is:
+(a)	Risk Mitigation, Monitoring and Management
+(b)	Risk Management, Monitoring and Modeling
+(c)	Risk Management, Mitigating and Modeling
+(d)	None of the above
+
+Key:
+
+1.	(b)
+2.	(a)
+3.	(c)
+4.	(a)
+5.	(a)
+
+
+Chapter 11- Multiple Choice Questions
+
+Q1. COCOMO is:
+
+(a)	Constructive Code Model
+(b)	Constructive Cost Model
+(c)	Complexity Cost Model
+(d)	None of the above
+
+Q2. An algorithmic cost estimation method that computes effort, in person-months, from an estimate of size, measured in lines of code:
+
+(a)	Function Points
+
+(b)	COCOMO
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Q3. An algorithmic cost estimation method in which you count features of the requirements and use these to compute an estimate of the system's size:
+
+(a)	Function Points
+(b)	COCOMO
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Q4. Effort prediction model‟s general form:
+
+(a)	Effort = Productivity * solution
+(b)	Effort = Problem * solution
+(c)	Effort = Productivity * size
+(d)	None of the above
+
+Q5. Costar is:
+(a)	An example of COOCMO
+(b)	An example of Function Points
+
+(c)	An example of Object Points
+(d)	None of the above
+
+Q6. Application composition model is a submodel in:
+(a)	COOCMO I
+(b)	COOCMO II
+(c)	Prototype Model
+
+(d)	None of the above
+
+Q7. An example of theoretical multivariable dynamic model is:
+(a)	COOCMO I
+
+(b)	COOCMO II
+(c)	PUTNAM
+(d)	None of the above
+
+Key:
+1.	(b)
+2.	(b)
+3.	(a)
+4.	(c)
+5.	(a)
+6.	(c)
+7.	(d)
+
+Chapter 12- Multiple Choice Questions
+
+Q1. Establishing organizational procedures and standards for quality is:
+(a)	Testing
+(b)	Quality assurance
+
+(c)	Planning
+(d)	None of the above
+
+
+Q2. The plan which sets out and defines the desired product qualities and the way they are assessed:
+
+(a)	Test Plan
+(b)	SDS
+(c)	Quality Plan
+
+(d)	None of the above
+
+Q3. Quality Control involves a series of:
+
+(a)	Inspections & reviews
+(b)	Tests
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Q4. Software measurement is concerned with deriving a numeric value for an attribute of a:
+(a)	Software product
+
+(b)	Product effort
+(c)	Software process
+(d)	Both (a) & (c)
+
+Q5. LOC is:
+(a)	Lines of Code
+(b)	A metric
+
+(c)	A code
+(d)	Both (a) & (b)
+
+Key:
+
+1.	(b)
+2.	(c)
+3.	(c)
+4.	(d)
+5.	(d)
+
+Chapter 13- Multiple Choice Questions
+
+Q1. CMMI is:
+(a)	Capability Mathematic Model Integration
+(b)	Capability Maturity Model Integer
+
+(c)	Capability Maturity Model Integration
+(d)	None of the above
+
+
+Q2. The study of existing processes to understand the relationships between parts of the process and to compare them with other processes is:
+
+(a)	Test Planning
+(b)	Process analysis
+(c)	Process Planning
+
+(d)	None of the above
+
+Q3. Process analysis techniques:
+
+(a)	Inspections & reviews
+(b)	Questionnaires & interviews
+(c)	Both (a) & (b)
+(d)	None of the above
+
+Key:
+1.	(c)
+2.	(b)
+3.	(b)
+
+
+
+
+Case Studies
+
+Case Study 1:
+
+Consider a pen manufacturing industry, The HR department of the company wants to maintain the daily record of the employees of the manufacturing packaging department, accounts department and transportation department. HR department also wants the regular updation of the records. Suggest the best way to keep record of the data.
+
+Case Study 2:
+
+Consider again the case study 1, develop the model by using following model development paradigms:
+
+(a)	Waterfall
+
+(b)	RAD
+
+(c)	Prototype
+
+Compare the difference in the development.
+
+Case Study 3:
+
+Consider the development of the admission management system of a college. If you are a given to make changes in the existing system, then which development model you would prefer to make updations.
+
+Case Study 4:
+
+If a person is appointed to develop software for a car manufacturing company to provide an automated system to keep control on the speed of the car and other security measures. Suggest the best development model for the developer to avoid the expected risks to be met by the car system. Develop a flow chart for the same. Also design SRS for the same.
+
+Case Study 5:
+
+Consider again the case 4, if the developer follows the RAD model for the development of the required system, then state the expected advantages or disadvantages.
+
+Case Study 6:
+
+Consider case study1, HR department want to present the datelines of the step by step development of the system. Suggest the best method to guide for its scheduling
+
+Case Study 7:
+
+In a bulb manufacturing industry, a new system is deployed to keep check on the quality of the product. Suggest the measures to verify the quality of the system as a tester.
+
+Develop a test plan and check the system as per the designed plan
+ 
+93	Software Engineering
+
+Keywords
+
+
+Software, hardware, software development life cycle, failure curve, software myths,
+
+Management Myths, practitioners, Customer Myths, Practitioner‟s Myths, Software
+
+
+Engineering, System software, Real Time software, Business software, Engineering & Scientific software, Embedded software, Artificial Intelligence, Personal computer software, Web based software, expert system, knowledge-based systems, pattern recognition, Software Characteristics
+
+Software process models, Common Process Framework, Task sets, project mile stones, work products, Waterfall Model, Linear Sequential model, Prototype Model, RAD Model, Evolutionary process model, Incremental Model, Spiral Model, WINWIN Spiral Model, DOD Model, Concurrent model, NASA Model, Component Based Development Model, Formal Methods Model, software Integration & Testing, Customer Evaluation, System Design Review (SDR), System Software Review (SSR), Software Requirement Specification (SRS), Preliminary Design Review (PDR), Critical Design Review (CDR), Software Design Specification (SDS), Test Readline Review (TRR), Functional Configuration Audit (FCA), Physical Configuration Audit (PCA)
+
+Software project management, Proposal Writing, Project Planning & scheduling, Project Costing, Project monitoring & reviews, Personal Selection &
+
+Evaluation, Report Writing & Presentations, Quality Management, Configuration Management, four P‟s, Gantt charts, Work Breakdown Structure (WBS), activity network diagram, project plan, Program Evaluation and Review Technique (PERT), Critical Path Method (CPM), Risk Management, Functional requirements, Non-Functional Requirements, User requirements, System requirements
+
+System requirements, Interface specification, software requirement document Requirements Engineering Processes, Feasibility studies, Requirements elicitation and analysis, Requirements validation, Requirements management System Models, Critical Systems Specification, Risk-driven specification, Safety specification, Security specification, Software reliability specification Software Metrics, software Measures, Process Metrics, Project metrics, Software Project Planning, Empirical, Putnam, COCOMO. Risk Identification and Projection: RMMM, Project Scheduling
+ 

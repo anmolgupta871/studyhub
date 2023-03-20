@@ -1,0 +1,371 @@
+<html><body><div align="justify"><center><h2>Unit – V
+</h2></center>
+
+
+
+</br><font size="5">
+Q.1.	Explain JDBC Architecture?
+</br>
+Ans:-</font>	JDBC Architecture : The JDBC API supports both two-tier and three-tier processing models for database access.
+</br>
+Two-tier Architecture for Data Access :</br>
+
+In the two-tier model, a Java application talks directly to the data source. This requires a JDBC driver that can
+
+communicate with the particular data source being accessed. A user's commands are delivered to the database
+
+or other data source, and the results of those statements are sent back to the user. The data source may be located on another machine to which the user is connected via a network. This is referred to as a client/server configuration, with the user's machine as the client, and the machine housing the data source as the server. The network can be an intranet, which, for example, connects employees within a corporation, or it can be the Internet.
+
+In the three-tier model, commands are sent to a "middle tier" of services, which then sends the commands to the data source. The data source processes the commands and sends the results back to the middle tier, which then sends them to the user. MIS directors find the three-tier model very attractive because the middle tier makes it possible to maintain control over access and the kinds of updates that can be made to corporate data. Another advantage is that it simplifies the deployment of applications. Finally, in many cases, the three-tier architecture can provide performance advantages.
+
+Three-tier Architecture for Data Access :
+
+Until recently, the middle tier has often been written in languages such as C or C++, which offer fast performance. However, with the introduction of optimizing compilers that translate Java bytecode into efficient machine-specific code and technologies such as Enterprise JavaBeans™, the Java
+ 
+
+
+platform is fast becoming the standard platform for middle-tier development. This is a big plus, making it possible to take advantage of Java's robustness, multithreading, and security features.
+
+
+With enterprises increasingly using the Java programming language for writing server code, the JDBC API is being used more and more in the middle tier of a three-tier architecture. Some of the features that make JDBC a server technology are its support for connection pooling, distributed transactions, and disconnected rowsets. The JDBC API is also what allows access to a data source from a Java middle tier.
+</br><font size="5">
+Q.2.	What do you understand by JDBC API?</br>
+
+Ans:-</font>	Java Database Connectivity (JDBC) is an API for the Java programming language that defines how a client may access a database. It provides methods for querying and updating data in a database. JDBC is oriented towards relational databases.
+
+The Java 2 Platform, Standard Edition, version 1.4 (J2SE) includes the JDBC 3.0 API[1] together with a reference implementation JDBC-to-ODBC Bridge, enabling connections to any ODBC-accessible data source in the JVM host environment. This Bridge is native code (not Java), closed source, and only appropriate for experimental use and for situations in which no other driver is available.
+
+Overview : JDBC has been part of the Java Standard Edition since the release of JDK 1.1. The JDBC classes are contained in the Java package java.sql. Starting with version 3.0, JDBC has been developed under the Java Community Process. JSR 54 specifies JDBC 3.0 (included in J2SE 1.4), JSR 114</br>
+ 
+
+specifies the JDBC Rowset additions, and JSR 221 is the specification of JDBC 4.0.
+
+JDBC allows multiple implementations to exist and be used by the same application. The API provides a mechanism for dynamically loading the correct Java packages and registering them with the JDBC Driver Manager. The Driver Manager is used as a connection factory for creating JDBC connections.
+
+
+JDBC connections support creating and executing statements. These may be update statements such as SQL's CREATE, INSERT, UPDATE and DELETE, or they may be query statements such as SELECT. Additionally, stored procedures may be invoked through a JDBC connection. JDBC represents statements using one of the following classes :</br>
+
+•	Statement – the statement is sent to the database server each and every time.
+</br>
+•	PreparedStatement – the statement is cached and then the execution path is pre determined on the database server allowing it to be executed multiple times in an efficient manner.
+</br>
+•	CallableStatement – used for executing stored procedures on the database.
+</br>
+Update statements such as INSERT, UPDATE and DELETE return an update count that indicates how many rows were affected in the database. These statements do not return any other information.
+
+Query statements return a JDBC row result set. The row result set is used to walk over the result set. Individual columns in a row are retrieved either by name or by column number. There may be any number of rows in the result set. The row result set has metadata that describes the names of the columns and their types.
+
+There is an extension to the basic JDBC API in the javax.sql package that allows for scrollable result sets and cursor support among other things.
+</br>
+Example : The method Class.forName(String) is used to load the JDBC driver class.</br>
+ 
+
+</br>
+
+
+<font size="5">
+Q.3.	How can you work with the frames in Java Script?
+</br>
+Ans:-</font>	Some browsers (including the latest Netscape and Microsoft browsers) support frames, which enable you to divide the browser window into multiple panes. Each frame can contain a separate URL or the output of a script.
+
+Using JavaScript Objects for Frames : When a window contains multiple frames, each frame is represented in JavaScript by a frame object. This object is equivalent to a window object, but it is used for dealing with that frame. The frame object's name is the same as the NAME attribute you give it in the <frame> tag.
+</br>
+Keyword, parent, enables you to refer to the main window.
+</br>
+Each frame object in a window is a child of the  parent window object.</br>
+
+Suppose you define a set of frames using the HTML below:
+</br>
+<frameset ROWS="*,*" COLS="*,*">
+</br><!-----
+<frame NAME="topleft" SRC="topleft.htm"> <frame NAME="topright" SRC="topright.htm"> <frame NAME="bottomleft" SRC="botleft.htm"> <frame NAME="bottomright" SRC="botright.htm"> </frameset>--->
+</br>
+This simply divides the window into quarters. If you have a JavaScript program in the topleft.htm file, it would refer to the other windows as parent.topright, parent.bottomleft, and so on. The keywords window and self would refer to the topleft frame.
+</br>
+Note : If you use nested framesets, things are a bit more complicated. window still represents the current frame, parent represents the frameset containing the current frame, and top represents the main frameset that contains all the others.
+</br>
+The Frames Array : Rather than referring to frames in a document by name, you can use the frames array. This array stores information about each of the
+ 
+
+ </br>
+
+
+
+
+frames in the document. The frames are indexed starting with zero and beginning with the first <frame> tag in the frameset document.
+</br>
+For example, you could refer to the frames defined in the previous example using array references :</br>
+
+•	parent.frames[0] is equivalent to the topleft frame.
+</br>
+•	parent.frames[1] is equivalent to the topright frame.
+</br>
+•	parent.frames[2] is equivalent to the bottomleft frame.
+</br>
+•	parent.frames[3] is equivalent to the bottomright frame.
+</br>
+
+You can refer to a frame using either method interchangeably, and depending on your application, you should use the most convenient method. For example, a document with 10 frames would probably be easier to use by number, but a simple two-frame document is easier to use if the frames have meaningful names.
+
+</br></br><font size="5">
+Q.2.	What do you understand by Document Object Model?</br>
+
+Ans:-</font>	One advantage that JavaScript has over basic HTML is that scripts can manipulate the Web document and its contents. Your script can load a new page into the browser, work with parts of the browser window and document, open new windows, and even modify text within the page dynamically.
+
+To work with the browser and documents, JavaScript uses a hierarchy of parent and child objects called the Document Object Model, or DOM. These objects are organized into a tree-like structure, and represent all of the content and components of a Web document.
+
+Like other objects you've explored, the objects in the DOM have properties, which describe the Web page or document, and methods, which allow you to work with parts of the Web page.
+
+When you refer to an object, you use the parent object name followed by the child object name or names, separated by periods. For example, JavaScript stores objects to represent images in a document as children of the document object. For instance, the following refers to the image9 object, a child of the document object, which is a child of the window object:
+
+window.document.image9
+
+The window object is the parent object for all the objects.
+
+DOM Levels : The W3C (World-Wide Web Consortium) has recently developed the DOM level 1 standard. This standard defines not only basic
+ 
+objects, but an entire set of objects that encompass all parts of an HTML document. A level 2 DOM standard is also under development.
+
+The basic object hierarchy is informally referred to as DOM level 0, and the objects are included in the DOM level 1 standard.
+
+The Level 1 and Level 2 DOM objects allow you to modify a Web page in real time after it has loaded. This is called dynamic HTML (DHTML).
+
+
+<font size="5">
+Q.4.	How can you create Interactive Forms in Java Script?
+
+Ans:-</font>  Using the ‘form’ Object with JavaScript : Each form in your HTML page is
+
+represented in JavaScript by a form object, which has the same name as the NAME attribute in the <form> tag you used to define it.
+
+Alternately, you can use the forms array to refer to forms. This array includes an item for each form element, indexed starting with 0. For example, if the first form in a document has the name form1, you can refer to it in one of two ways:
+</br>
+document.form1
+</br>
+document.forms[0]</br>
+
+The ‘form’ Object's Properties : Along with the elements, each form object also has a list of properties, most of which are defined by the corresponding <form> tag. You can also set these from within JavaScript. They include the following :
+</br>
+•	Action is the form's ACTION attribute, or the program to which the form data will be submitted.
+</br>
+•	Encoding is the MIME type of the form, specified with the ENCTYPE attribute. In most cases, this is not needed.
+</br>
+•	Length is the number of elements in the form. You cannot change this property.
+</br>
+•	Method is the method used to submit the form, either GET or POST.
+</br>
+•	Target specifies the window in which the result of the form (from the CGI script) will be displayed. Normally, this is done in the main window, replacing the form itself.
+</br>
+Submitting and Resetting Forms : The form object has two methods, submit and reset. You can use these methods to submit the data or reset the form yourself, without requiring the user to press a button. One reason for this is to
+ </br>
+submit the form when the user clicks an image or performs another action that would not usually submit the form.
+</br>
+Note : If you use the submit method to send data to a server or by email, Netscape will prompt the user to verify that she wants to submit the information. There's no way to do this behind the user's back.
+</br>
+Detecting Form Events : The form object has two event handlers, onSubmit and onReset. You can specify a group of JavaScript statements or a function call for these events within the <form> tag that defines the form.
+
+
+If you specify a statement or function for the onSubmit event, the statement is called before the data is submitted to the CGI script. You can prevent the submission from happening by returning a value of false from the onSubmit event handler. If the statement returns true, the data will be submitted. In the same fashion, you can prevent a Reset button from working with an onReset event handler.
+
+Scripting Form Elements : The most important property of the form object is the elements array, which contains an object for each of the form elements. You can refer to an element by its own name or by its index in the array. For example, the following two expressions both refer to the first element in the order form, the name1 text field:
+
+document.order.elements[0]
+
+document.order.name1
+</br>
+</br><font size="5">
+Q.4.	Explain how Cookies are implemented in Java Script?
+</br>
+OR
+</br>
+What are Cookies?
+</br>
+Ans:-</font>	Cookies : Cookies were originally invented by Netscape to give 'memory' to web servers and browsers. The HTTP protocol, which arranges for the transfer of web pages to your browser and browser requests for pages to servers, is state-less, which means that once the server has sent a page to a browser requesting it, it doesn't remember a thing about it. So if you come to the same web page a second, third, hundredth or millionth time, the server once again considers it the very first time you ever came there.
+
+This can be annoying in a number of ways. The server cannot remember if you identified yourself when you want to access protected pages, it cannot remember your user preferences, it cannot remember anything. As soon as personalization was invented, this became a major problem.
+ 
+86
+
+ 
+
+
+
+Cookies were invented to solve this problem. There are other ways to solve it, but cookies are easy to maintain and very versatile.
+
+How Cookies work : A cookie is nothing but a small text file that's stored in your browser. It contains some data :
+</br>
+(1)	A name-value pair containing the actual data
+</br>
+(2)	An expiry date after which it is no longer valid
+</br>
+(3)	The domain and path of the server it should be sent to
+</br>
+
+As soon as you request a page from a server to which a cookie should be sent, the cookie is added to the HTTP header. Server side programs can then read out the information and decide that you have the right to view the page you requested or that you want your links to be yellow on a green background.
+
+So every time you visit the site the cookie comes from, information about you is available. This is very nice sometimes, at other times it may somewhat endanger your privacy. Fortunately more and more browsers give you the opportunity to manage your cookies.
+</br>
+</br><font size="5">
+Q.5	Write the procedure to create Custom Java Script Objects?
+</br>
+Ans:-</font>  How to create your own basic Object : Creating an object requires two steps:
+</br>
+•	First, declare the object by using an object function.
+</br>
+•	Lastly, instantiate the newly created object by using the "new" keyword.</br>
+
+Lets take this one step at a time. We will now proceed to create an object called "userobject", which, at this stage, does nothing :
+</br>
+Step 1 : Declare the object by using an object function
+
+The first step towards creating an object requires us to define an object function. An object function is virtually identical in syntax as a regular function, although there are some differences which will surface later on. The object function is used to define and declare an object :
+
+function userobject(parameter){
+
+}
+
+The parameter is optional, and with it, allows us to pass in values to an object. For example, in the pre-built object window.alert, the parameter is the text passed in to be alerted. Now, with just the above object function, we have in essence just created a new object called "userobject"! It does nothing at this
+stage, and will continue to do until we add in properties and methods. To use this object, all we have to do is instantiate it, by using the keyword "new".
+</br>
+Step 2 : Instantiate the newly created object by using the "new" keyword
+
+Once we've defined an object function, we have to instantiate it to actually use it. Instantiating an object function means using the keyword "new" in front of the object name, and then creating an instance of the object by assigning it to a variable :
+
+<!-----
+<script type="text/javascript">
+
+function userobject(parameter){
+
+}
+
+//myobject is now an object of type userobject!
+
+var myobject=new userobject("hi")
+
+</script>
+
+"myobject" is now an object...an instance of "userobject", to be exact.
+
+If you're a little confused at this stage, consider a more familiar example :
+
+var image1=new Image(20,20)
+
+The above should be review to us; we created an instance of the pre-built image object by assigning it to the variable image1. Well, this familiar process is exactly what we'll doing with the custom object above.
+
+If you're the kind that need to actually see and touch an object before you believe its an object, the window.alert method can help :
+
+<script type="text/javascript">
+--->
+function userobject(parameter)</br>
+
+{
+</br>
+}
+</br>
+//myobject is now an object of type userobject!
+
+var myobject=new userobject("hi")
+
+alert(myobject)
+
+</script>
+
+How to add properties to your own Object : Thus far, our object "userobject" cannot do anything but take up space in a document. With some properties, that should all change. To add properties to a user defined object, directly embed the properties into the object function, with each property proceeded
+ </br>
+88
+
+ 
+
+
+
+by the keyword "this" plus dot (.): In the below example, we'll extend "userobject" to contain two properties, each containing a string of text:</br>
+
+function userobject(parameter){ this.firstproperty=parameter this.secondproperty="This is the second property" }
+</br>
+Now, to use these properties, simply access them like accessing any other property:<!-----
+
+<script>
+
+var myobject=new userobject("hi there.")
+
+//alerts "hi there."
+
+alert(myobject.firstproperty)
+
+//writes "This is the second property"
+
+document.write(myobject.secondproperty)
+
+</script>
+---->
+How to add methods to your own object : Adding methods to a user defined object is a bit more complicated. We need to first declare and define a function for each method, then associate this function with the object function. For the sake of simplicity, we will simply call functions defined for methods "method functions." Lets get a clean start, and create a new object called "circle" that will contain methods that compute the area and diameter of a circle, respectively.
+</br>
+The first step to adding methods is to implement the method functions.
+</br>
+Method functions define what a method does :
+
+//first method function
+<</br></br>
+function computearea(){
+</br>
+var area=this.radius*this.radius*3.14
+</br>
+return area</br>
+
+}</br>
+
+//second method function
+</br>
+function computediameter(){</br>
+ 
+
+ 
+
+
+
+
+var diameter=this.radius*2
+</br>
+return diameter
+</br>
+}
+</br>
+In the above case, we've created two method functions, "computearea" and "computediamter", which calculates various aspects of a circle. The two functions, as you can see, are just functions, with one major distinction. Take the first one, for example :
+
+</br>
+function computearea(){
+</br>
+var area=this.radius*this.radius*3.14
+</br>
+return area
+</br>
+this.radius looks like a property of a custom object to me. Since a method function will eventually be connected to the custom object, it has access to the properties of the object. We haven't defined the properties yet, but we will, and the method functions will use them in its calculation.
+</br>
+We will now associate the two method functions above to the new object "circle", so they become methods of the object :
+</br>
+<script type="text/javascript">
+<!----
+/*the below creates a new object, and gives it the two methods defined earlier*/
+
+function circle(r){
+
+//property that stores the radius
+
+this.radius=r
+
+this.area=computearea
+
+this.diameter=computediameter
+
+}
+
+</script>--->
+
+Finally, to use these methods, instantiate the object, and access the methods just like any other method :</br>
+
+<script type="text/javascript">
+
+var mycircle=new circle(20)
+
+//alerts 1256
+ </div> </body> </html>

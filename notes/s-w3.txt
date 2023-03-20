@@ -1,0 +1,258 @@
+Unite 3
+
+
+Risk Management
+
+Q.1	What is Risk Projection?
+
+Ans:	Risk Projection also called risk estimation, attempts to rate each risk on the basis of Probability and Consequences.
+
+The risk drivers affecting each risk component are:
+
+•	classified according to their impact category
+
+•	potential consequences of each undetected software fault or unachieved project outcome are described
+
+
+Q.2	What is Risk Management?
+
+Ans: Risk Management can be defined as: “A logical process for identifying and analyzing leading to appropriate methods for handling and monitoring exposures to loss”.
+
+Risk management deals with:
+-	Systematic identification of an exposure to the risk of loss, &
+
+-	Making decisions on the best methods for handling these exposures to minimize losses
+
+Q.3	What is Risk Analysis with Risk Identification and Projection?
+
+Ans:	Risk Analysis includes:
+
+•	Risk identification
+•	Risk projection
+–   impact of risks/likelihood of risk actually happening
+
+•	Risk assessment
+–   what will change if risk becomes problem
+•	Risk mana
+
+
+Q.4	Explain RMMM? Give a brief overview of RMMM plan.
+
+Ans:	RMMM is Risk Mitigation, Monitoring, and Management An effective strategy must consider three issues:
+-	risk mitigation/reduction/avoidance,
+
+-	risk monitoring, and
+-	risk management and contingency(emergency) planning
+
+•	Risk Mitigation
+–   proactive planning for risk avoidance
+•	Risk Monitoring
+–   assessing whether predicted risks occur or not
+–   ensuring risk aversion steps are being properly applied
+–   collect information for future risk analysis
+–   determining which risks caused which problems
+
+•	Risk Management
+–   contingency planning
+
+– actions to be taken in the event that mitigation steps have failed and the risk has become a live problem
+
+
+Q.5	Give a brief overview of RMMM plan.
+
+Ans:	RMMM Plan:
+1.	Introduction
+1.1.    Scope and Purpose of Document
+1.2.    Overview of major risks
+1.3.    Responsibilities
+1.3.1.  Management
+
+1.3.2.  Technical staff
+2.	Project Risk Table
+2.1.    Description of all risks above cut-off
+
+2.2.	Factors influencing probability and impact
+3.	Risk Mitigation, Monitoring, Management
+
+3.1.1.	Mitigation
+3.1.1.1.	General strategy
+3.1.1.2.	Specific steps to mitigate the risk
+3.1.2.	Monitoring
+
+3.1.2.1.	Factors to be monitored
+
+3.1.2.2.	Monitoring approach 3.1.3.Management
+
+3.1.3.1.	Contingency plan
+
+3.1.3.2.	Special considerations
+4.	RMMM Plan Iteration Schedule
+5.	Summary
+
+Q.6  Explain Project Scheduling and Tracking?
+Ans:
+
+Software project scheduling is an activity that distributes estimated effort across the planed project duration by allocating the effort to specific software engineering tasks.
+
+First, a macroscopic schedule is developed. Then, a detailed schedule is redefined for each entry in the macroscopic schedule. A Project schedule evolves over time.
+
+Few guiding principles for software project scheduling are:
+
+-	Compartmentalization
+
+-	Interdependency
+-	Time allocation
+-	Effort allocation
+-	Effort validation
+
+-	Defined responsibilities
+-	Defined outcomes
+-	Defined milestones
+
+Two well known project scheduling methods are:
+-	Program Evaluation and Review Technique (PERT)
+-	Critical Path Method (CPM)
+
+Similarity between the two methods :
+
+Both methods are driven by information developed in earlier project planning activities:
+
+-	Estimates of effort
+-	A decomposition of product function
+
+-	The selection of the appropriate process model
+-	The selection of project type and task set
+
+Both methods allow a planner to do:
+
+-	determine the critical path
+-	time estimation
+-	calculate boundary times for each task
+
+Boundary times:
+-	the earliest time and latest time to begin a task
+-	the earliest time and latest time to complete a task
+-	the total float.
+
+Q.7	Explain Project Tracking?
+
+Ans:	The project schedule provides a road map for a software project manager. It defines the tasks and milestones.
+
+Several ways to track a project schedule:
+
+-	Conducting periodic project status meeting
+
+-	Evaluating the review results in the software process
+-	Determine if formal project milestones have been accomplished
+-	Compare actual start date to planned start date for each task
+
+-	Informal meeting with practitioners
+
+
+Quality Management
+
+
+Q.1	Explain process and product quality
+
+Ans:	Understanding, Modelling and Improving the Software Process is process improvement.
+
+-	Process quality and product quality are closely related
+
+-	A good process is usually required to produce a good product
+
+-	For manufactured goods, process is the principal quality determinant
+
+-	For design-based activity, other factors are also involved especially the capabilities of the designers
+
+Principal product quality factors are as shown in fig 12.1.
+
+Figure 12.1 Principal product quality factors
+
+-	For large projects with average capabilities, the development process determines product quality
+
+-	For small projects, the capabilities of the developers is the main determinant
+
+-	The development technology is particularly significant for small projects
+
+-	In all cases, if an unrealistic schedule is imposed then product quality will suffer
+
+
+Q.2	What do you mean by Quality assurance and its standards?
+
+Ans:	Quality assurance is establishing organisational procedures and standards for quality.
+
+Software Quality Assurance (SQA) Activities:
+
+•	Prepares an SQA plan for a project
+
+•	Participates in the development of the project's software process description
+
+•	Reviews software engineering activities to verify compliance with the defined software process
+
+•	Audits designated software work products to verify compliance with those defined as part of the software process
+
+•	Ensures that deviations in software work and work products are documented and handled according to a documented procedure
+
+•	Records any noncompliance and reports to senior management
+•	Coordinates the control and management of change
+
+•	Helps to collect and analyze software metrics
+
+
+Standards:
+-	Standards are the key to effective quality management
+
+-	They may be international, national, organizational or project standards
+
+
+-	Product standards define characteristics that all components should exhibit e.g. a common programming style
+
+-	Process standards define how the software process should be enacted
+
+Importance of standards:
+-	Encapsulation of best practice- avoids repetition of past mistakes
+
+-	Framework for quality assurance process - it involves checking standard compliance
+
+-	Provide continuity - new staff can understand the organisation by understand the standards applied
+
+
+Certification Standards:
+1.	ISO 9000
+
+2.	ISO 9001
+
+Q.3	What is Quality planning?
+
+Ans:	Quality planning is selecting applicable procedures and standards for a particular project and modify these as required.
+
+-	A quality plan sets out the desired product qualities and how these are assessed and define the most significant quality attributes
+
+-	It should define the quality assessment process
+
+-	It should set out which organisational standards should be applied and, if necessary, define new standards
+
+Quality plan structure:
+-	Product introduction
+-	Product plans
+
+-	Process descriptions
+-	Quality goals
+-	Risks and risk management
+-	Quality plans should be short, succinct documents
+
+Q.4	What is Quality control?
+
+Ans:	Quality control is ensuring that procedures and standards are followed by the software development team.
+
+Quality Control :
+
+•	Involves a series of inspections, reviews, and tests used throughout the software process
+
+•	Ensures that each work product meets the requirements placed on it
+
+•	Includes a feedback loop to the process that created the work product
+
+•	Combines measurement and feedback in order to adjust the process when product specifications are not met
+
+•	Requires all work products to have defined, measurable specifications to which practitioners may compare to the output of each process

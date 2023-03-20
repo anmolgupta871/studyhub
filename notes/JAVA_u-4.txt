@@ -1,0 +1,352 @@
+
+Unit - IV
+
+Applets : Introduction to Applet coding, Applet life cycle, Graphis facility, Color and Font, Passing parameters to applets, Apletcontext, Inter Applet Communication. Threading in Java : Fundamentals of Multi-threading Java coding with Thread classes, thread Management in Java, Implicit wait, Using Runnable interface, Thread Management in Java, Implicit wait, Using Runnable interface, Thread Synchronization, Inter thread communication.
+
+
+8.	Applets
+8.1Applets
+8.2Applet‘s Life Cycle
+8.3Passing Parameters to Applet
+8.4Inter Applet Communication
+
+
+
+Chapter-9
+
+Applets
+
+
+
+
+
+Q.1.	What are Applets?
+
+OR
+
+What are the advantages and disadvantages of Applet Programming?
+
+Ans.:	A Java applet is an applet delivered in the form of Java bytecode. Java applets can run in a Web browser using a Java Virtual Machine (JVM), or in Sun's AppletViewer, a stand-alone tool for testing applets. Java applets were introduced in the first version of the Java language in 1995. Java applets are usually written in the Java programming language but they can also be written in other languages that compile to Java bytecode such as Jython.
+
+Applets are used to provide interactive features to web applications that cannot be provided by HTML. Since Java's bytecode is platform independent, Java applets can be executed by browsers for many platforms, including Windows, Unix, Mac OS and Linux.There are open source tools like applet2app which can be used to convert an applet to a stand alone Java application/windows executable/linux executable. This has the advantage of running a Java applet in offline mode without the need for internet browser software.
+
+Technical Information : Java applets are executed in a sandbox by most web browsers, preventing them from accessing local data. The code of the applet is downloaded from a web server and the browser either embeds the applet into a web page or opens a new window showing the applet's user interface. The applet can be displayed on the web page by making use of the deprecated applet HTML element [1], or the recommended object element [2]. This specifies the applet's source and the applet's location statistics.
+
+A Java applet extends the class java.applet.Applet, or in the case of a Swing applet, javax.swing.JApplet. The class must override methods from the applet class to set up a user interface inside itself (Applet is a descendant of Panel which is a descendant of Container).
+
+Advantages : A Java applet can have any or all of the following advantages :
+ 
+66
+
+ 
+
+
+
+•	It is simple to make it work on Linux, Windows and Mac OS i.e. to make it cross platform.
+
+•	The same applet can work on "all" installed versions of Java at the same time, rather than just the latest plug-in version only. However, if an applet requires a later version of the JRE the client will be forced to wait during the large download.
+
+•	It is supported by most web browsers.
+
+•	It will cache in most web browsers, so will be quick to load when returning to a web page but may get stuck in the cache and have issues when new versions come out.
+
+•	It can have full access to the machine it is running on if the user agrees.
+
+•	It can improve with use: after a first applet is run, the JVM is already running and starts quickly, benefitting regular users of Java but the JVM will need to restart each time the browser starts fresh.
+
+•	It can run at a comparable (but generally slower) speed to other compiled languages such as C++, but many times faster than JavaScript.
+
+•	It can move the work from the server to the client, making a web solution more scalable with the number of users/clients.
+
+
+Disadvantages : A Java applet is open to any of the following disadvantages :
+
+•	It requires the Java plug-in, which isn't available by default on all web browsers.
+
+•	an implementation of the Sun Java plug-in does not exist for 64-bit processors.
+
+•	It cannot start until the Java Virtual Machine is running, and this may have significant startup time the first time it is used.
+
+•	If untrusted, it has severely limited access to the user's system - in particular having no direct access to the client's disk or clipboard.
+
+•	Some organizations only allow software installed by the administrators. As a result, many users cannot view applets by default.
+
+•	Applets may require a specific JRE.
+ 
+Core Java Programming	67
+
+ 
+
+
+
+
+Q.2.	How communication is possible in between Applications?
+
+OR
+
+What do you mean by Inter Applet Communication?
+
+Ans.:	Getting two or more applets within a single Web page to talk to each other has some benefits. Although this applet capability has been around since the earliest version of Java, it's not often used, because there's more emphasis placed on getting applets to communicate with servers.
+
+
+While this is understandable given the current fashion of client/server programming, it's still a valuable skill for developers to learn. Another reason the technique isn't used much is that complicated Web-borne applets are usually shown in a single window. If there's a lot of information to show, the designers simply make the applet larger.
+
+However, in terms of Web page design, it's better in some cases to place small bits of Java-based functionality in different parts of the page, leaving the rest to be filled with text and images. To do this, you need multiple applet windows that are, in some sense, part of the same program.
+
+Method : The secret of inter-applet communication (which we'll abbreviate to IAC) is the method AppletContext.getApplets(). This method provides us with an Enumeration of all the applets running on the same page as the calling applet. From this Enumeration, you can take actual Applet objects, allowing you to freely call methods on it.
+
+What we'll first give names to the applets on the page and then allow them to send text strings to each other using the names as destinations.
+
+Here's an API for this :
+
+public void send( String appletName, String message ); protected String rcv();
+
+the send() method sends a string to another applet with a given name; the rcv() method returns the next string that has been sent to you.
+
+
+Q.3.	Explain the life cycle of an Applet?
+
+Ans.:  An applet can react to major events in the following ways :
+
+•	It can initialize itself.
+
+•	It can start running.
+
+•	It can stop running.
+ 
+68
+
+ 
+
+
+
+•	It can perform a final cleanup, in preparation for being unloaded. All applets have the following four methods :
+
+public void init(); public void start(); public void stop(); public void destroy();
+
+They have these methods because their superclass, java.applet.Applet, has these methods.
+
+In the superclass, these are simply do-nothing methods.
+
+The init() method is called exactly once in an applet's life, when the applet is first loaded. It's normally used to read PARAM tags, start downloading any other images or media files you need, and set up the user interface. Most applets have init() methods.
+
+The start() method is called at least once in an applet's life, when the applet is started or restarted. In some cases it may be called more than once. Many applets you write will not have explicit start()methods and will merely inherit one from their superclass. A start() method is often used to start any threads the applet will need while it runs.
+
+The stop() method is called at least once in an applet's life, when the browser leaves the page in which the applet is embedded. The applet's start() method will be called if at some later point the browser returns to the page containing the applet. In some cases the stop() method may be called multiple times in an applet's life. Many applets you write will not have explicit stop()methods and will merely inherit one from their superclass. Your applet should use the stop() method to pause any running threads. When your applet is stopped, it should not use any CPU cycles.
+
+The destroy() method is called exactly once in an applet's life, just before the browser unloads the applet. This method is generally used to perform any final clean-up. For example, an applet that stores state on the server might send some data back to the server before it's terminated. many applets will not have explicit destroy() methods and just inherit one from their superclass.
+ 
+Core Java Programming	69
+
+ 
+
+
+
+
+Q.4.	How parameters are passed to Applets?
+
+Ans.:	Passing Parameters to Applets : Parameters are passed to applets in NAME=VALUE pairs in <PARAM> tags between the opening and closing APPLET tags. Inside the applet, you read the values passed through the PARAM tags with the getParameter() method of the java.applet.Applet class.
+
+The program below demonstrates this with a generic string drawing applet.
+
+The applet parameter "Message" is the string to be drawn.
+
+import java.applet.*;
+
+import java.awt.*;
+
+public class DrawStringApplet extends Applet { private String defaultMessage = "Hello!"; public void paint(Graphics g) {
+
+String inputFromPage = this.getParameter("Message");
+
+if (inputFromPage == null) inputFromPage = defaultMessage; g.drawString(inputFromPage, 50, 25);
+
+}
+
+}
+
+You also need an HTML file that references your applet. The following simple
+HTML file will do :
+
+<HTML>
+
+<HEAD>
+
+<TITLE> Draw String </TITLE>
+
+</HEAD>
+
+<BODY>
+
+This is the applet:<P>
+
+<APPLET code="DrawStringApplet" width="300" height="50"> <PARAM name="Message" value="Howdy, there!">
+This page will be very boring if your browser doesn't understand Java.
+
+</APPLET>
+
+</BODY>
+
+</HTML>
+ 
+70
+
+ 
+
+
+
+Of course you are free to change "Howdy, there!" to a "message" of your choice. You only need to change the HTML, not the Java source code. PARAMs let you customize applets without changing or recompiling the code.
+
+
+
+
+
+However rather than hardcoding the message to be printed it's read into the variable inputFromPage from a PARAM element in the HTML.
+
+You pass getParameter() a string that names the parameter you want. This string should match the name of a PARAM element in the HTML page. getParameter() returns the value of the parameter. All values are passed as strings. If you want to get another type like an integer, then you'll need to pass it as a string and convert it to the type you really want.
+
+The PARAM element is also straightforward. It occurs between <APPLET> and </APPLET>. It has two attributes of its own, NAME and VALUE. NAME identifies which PARAM this is. VALUE is the string value of the PARAM. Both should be enclosed in double quote marks if they contain white space.
+
+An applet is not limited to one PARAM. You can pass as many named PARAMs to an applet as you like. An applet does not necessarily need to use all the PARAMs that are in the HTML. Additional PARAMs can be safely ignored.
+
+
+□ □ □
+ 
+Core Java Programming	71
+ 
+
+
+
+
+Chapter-10
+
+Threading in Java
+
+
+
+
+
+Q.1.	What is Multithreading?
+
+OR
+
+What are Threads and how are they implemented in Java?
+
+OR
+
+Explain various states of life cycle of a Thread?
+
+Ans.:	Computer users take it for granted that their systems can do more than one thing at a time. They assume that they can continue to work in a word processor, while other applications download files, manage the print queue, and stream audio. Even a single application is often expected to do more than one thing at a time. For example, that streaming audio application must simultaneously read the digital audio off the network, decompress it, manage playback, and update its display.
+
+The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs.
+
+In concurrent programming, there are two basic units of execution: processes and threads. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.
+
+Processes : A process has a self-contained execution environment. A process generally has a complete, private set of basic run-time resources; in particular, each process has its own memory space.
+
+Processes are often seen as synonymous with programs or applications. However, what the user sees as a single application may in fact be a set of cooperating processes. To facilitate communication between processes, most operating systems support Inter Process Communication (IPC) resources, such as pipes and sockets.
+ 
+72
+
+ 
+
+
+
+
+Threads : Threads are sometimes called lightweight processes. Both processes and threads provide an execution environment, but creating a new thread requires fewer resources than creating a new process.
+
+Threads exist within a process — every process has at least one. Threads share the process's resources, including memory and open files. This makes for efficient, but potentially problematic, communication.
+
+
+Multithreaded execution is an essential feature of the Java platform. Every application has at least one thread — or several, if you count "system" threads that do things like memory management and signal handling. But from the application programmer's point of view, you start with just one thread, called the main thread.
+
+An application that creates an instance of Thread must provide the code that will run in that thread. There are two ways to do this:
+
+Provide a Runnable object. The Runnable interface defines a single method, run, meant to contain the code executed in the thread. The Runnable object is passed to the Thread constructor, as in the HelloRunnable example :
+
+public class HelloRunnable implements Runnable { public void run() {
+
+System.out.println("Hello from a thread!");
+
+}
+
+public static void main(String args[]) {
+
+(new Thread(new HelloRunnable())).start();
+
+}
+
+}
+
+
+Subclass Thread : The Thread class itself implements Runnable, though its run method does nothing. An application can subclass Thread, providing its own implementation of run, as in the HelloThread example :
+
+public class HelloThread extends Thread {
+
+public void run() {
+
+System.out.println("Hello from a thread!");
+
+}
+ 
+Core Java Programming	73
+
+ 
+
+
+
+
+public static void main(String args[]) {
+
+(new HelloThread()).start();
+
+}
+
+}
+
+Notice that both examples invoke Thread.start in order to start the new thread.
+
+
+The first idiom, which employs a Runnable object, is more general, because the Runnable object can subclass a class other than Thread. The second idiom is easier to use in simple applications, but is limited by the fact that your task class must be a descendant of Thread.
+
+The Thread class defines a number of methods useful for thread management. These include static methods, which provide information about, or affect the status of, the thread invoking the method. The other methods are invoked from other threads involved in managing the thread and Thread object.
+
+Stopping a Thread : Whenever we want to stop a thread from running further, we may do so by calling its stop() method which results in causing thread to dead state.
+
+Blocking a Thread : A thread can also be temporarily suspended or blocked from entering into the runnable and subsequently running state by using either of the following thread methods :
+
+sleep()	//blocked for a specified time
+
+
+suspend()	//blocked until further orders
+
+
+wait()	//blocked until certain conditions occurs.
+
+Life Cycle of a Thread : During the life time of a thread, there are many states it can enter. They include :
+
+(1)	Newborn State : When we create a thread object, the thread is born and is said to be in newborn state. The thread is not yet scheduled for running.
+
+(2)	Runnable State : It means that the thread is ready for execution and is waiting for the availability of the processor. That is , the thread has joined the queue of threads that are waiting for execution.
+ 
+74
+
+ 
+
+
+
+(3)	Running State : It means that the processor has given its time to the thread for its execution. The thread runs until it relinquishes control (using suspend(), sleep(), or notify() )on its own or it is preempted by a higher priority thread.
+
+(4)	Blocked State : A thread is said to be blocked when it is prevented from entering into the runnable state and subsequently the running state. This happens when the thread is suspended, sleeping, or waiting in order to satisfy certain requirements.
+
+(5)	Dead State : A running thread ends its life when it has completed executing its run() method.It is a natural death. However we can kill it by sending the stop message to it at any state thus causing a premature death to it.
+
+
+□	□ □
+
+ 
+Core Java Programming	75
+ 
+
+
+

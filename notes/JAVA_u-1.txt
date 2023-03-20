@@ -1,0 +1,205 @@
+﻿<html><body>Core Java Programming
+Unit – I
+Overview of Object Oriented Concepts in Java.
+Introduction: getting and installing the Java Development Kit, Java features like security, portability, byte code, java virtual machine, object oriented, robust, multithreading, architectural neutral, distributed and dynamic, Java programming language structure and syntax, control statements (The If statement, Logical Operators, The Conditional Operator, the Switch Statement, Variable Scope, Loops).
+
+	Content
+S.No.	Name of Topic
+1.	Introduction and Features of Java
+1.1	History of Java
+1.2	Features of Java
+1.3	JVM
+1.4	Java vs C++
+1.5	Java and WWW
+1.6	JDK Tools
+
+Chapter-1
+Introduction of Java
+
+Q.1	Write a note on History of Java?
+
+Ans.:	History of Java: James Gosling initiated Java language project in June 1991 for use in one of his many set top box projects. The language, initially called ‗Oak‘ after an oak tree that stood outside Gosling's office, also went by the name ‗Green‘ and ended up later being renamed as Java, from a list of random words. Sun released the first public implementation as Java 1.0 in 1995. It promised Write Once, Run Anywhere (WORA), providing no-cost run-times on popular platforms. On 13 November, 2006, Sun released much of Java as free and open source software under the terms of the GNU General Public License (GPL). On 8 May, 2007, Sun finished the process, making all of Java's core code free and open source, aside from a small portion of code to which Sun did not hold the copyright.
+
+Q.2.	What is java? Explain in detail.
+
+Ans.:	In the Java whitepaper (available for Sun‘s website http://java.sun.com), Sun describes Java as follows: Java is a simple, object-oriented, distributed, interpreted, robust, secure, architectural neutral, portable, high performance, multithreaded, and dynamic language. While this seems like a string of buzzwords, but the fact is that these buzzwords actually describe the language and its features. To get a feeling of why Java is important and interesting, let‘s look at the features behind some of these buzzwords. Java is Simple One of the design goals of Java was to make it much easier to write bug-free code. In order to help programmers with this, the language has to be simple. The simplicity of Java makes it fun to program with, and its programs are easy to write and read. If you have programmed in C or C++, you would know that half of the bugs in your programs are related to memory allocation. With Java you will not have this problem as the Java runtime environment provides automatic memory allocation and garbage collection. Java is Object-Oriented; Object-Oriented (OO) programming was the catch phrase of the 1990‘s. As a marketing strategy, many companies claim that their software is object oriented, when in fact they are not. An earlier 
+8
+
+computer scientist (S. King?) claimed that if someone wanted to sell his cat, he should not say it is clean, nice, beautiful….etc but rather it is object-oriented. The next time you go buy a toaster, make sure it is object-oriented!
+ 	You will do OO programming this term and more of it next term…. Java is
+
+Distributed As I mentioned earlier, the aim of the Green project was to build a distributed system that would allow all consumer electronic devices to talk to one another. Since this was a design goal, Java provides a lot of high-level support for networking. You will see more of this next year! Java is Interpreted Java is an interpreted language. This means that Java programs are not compiled into machine platform-dependant language. But rather they are compiled into byte-codes for the Java Virtual Machine (JVM). To run Java programs, you use the Java interpreter to run the Java byte-codes. Java byte codes are platform-independent, which means they can run on any platform with a Java interpreter. One catch of interpreted code is that it is a bit slower than machine code when it runs. However, with all the Java optimization techniques and Just In-Time Compilers technology (JIT), Java byte-codes will run as fast as C or C++ compiled code. Java is Robust Buggy software can be written in any language, and Java is no exception. However, Java eliminates certain types of programming errors and that makes it easier to write reliable software. Java is a strongly typed language and that allows for extensive compile-time checking. Also, the fact that Java does not have pointers eliminates another class of memory-related bugs.
+
+Q.3.	What are the basic features of Java Language?
+
+Ans.:	Java Features: Here we list the basic features that make Java a powerful and popular programming language :
+
+•	Platform Independence :
+
+oThe Write-Once-Run-Anywhere ideal has not been achieved (tuning for different platforms usually required), but closer than with other languages.
+
+•	Object Oriented :
+
+oObject oriented throughout - no coding outside of class definitions, including main().
+
+oAn extensive class library available in the core language packages.
+
+•	Compiler/Interpreter Combo :
+
+oCode is compiled to bytecodes that are interpreted by a Java virtual machines (JVM).
+ 
+Core Java Programming	9
+
+o	This provides portability to any machine for which a virtual machine has been written.
+
+o	The two steps of compilation and interpretation allow for extensive code checking and improved security.
+
+•	Robust :
+
+o	Exception handling built-in, strong type checking (that is, all data must be declared an explicit type), local variables must be initialized.
+
+•	Several dangerous features of C & C++ eliminated:
+
+o	No memory pointers
+
+o	No preprocessor
+
+o	Array index limit checking
+
+•	Automatic Memory Management
+
+o	Automatic garbage collection - memory management handled by JVM.
+
+•	Security
+
+o	No memory pointers
+
+o	Programs runs inside the virtual machine sandbox.
+
+o	Array index limit checking
+
+o	Code pathologies reduced by
+
+	bytecode verifier - checks classes after loading
+
+	class loader - confines objects to unique namespaces. Prevents loading a hacked "java.lang. Security Manager" class, for example.
+
+	security manager - determines what resources a class can access such as reading and writing to the local disk.
+
+•	Dynamic Binding
+
+o	The linking of data and methods to where they are located, is done at run-time.
+
+o	New classes can be loaded while a program is running. Linking is done on the fly.
+
+o	Even if libraries are recompiled, there is no need to recompile code that uses classes in those libraries.
+ 
+10
+
+This differs from C++, which uses static binding. This can result in fragile classes for cases where linked code is changed and memory pointers then point to the wrong addresses.
+
+•	Good Performance :
+
+oInterpretation of bytecodes slowed performance in early versions, but advanced virtual machines with adaptive and just-in-time compilation and other techniques now typically provide performance up to 50% to 100% the speed of C++ programs.
+
+•	Threading :
+
+oLightweight processes, called threads, can easily be spun off to perform multiprocessing.
+
+oCan take advantage of multiprocessors where available.
+
+oGreat for multimedia displays.
+
+•	Built-in Networking :
+
+oJava was designed with networking in mind and comes with many classes to develop sophisticated Internet communications.
+
+Features such as eliminating memory pointers and by checking array limits greatly help to remove program bugs. The garbage collector relieves programmers of the big job of memory management. These and the other features can lead to a big speedup in program development compared to C/C++ programming.
+
+
+Q.4.	What is JVM? Explain its architecture with diagram.
+
+Ans.:	Java Virtual Machine: A Java Virtual Machine (JVM) is a set of computer software programs and data structures which use a virtual machine model for the execution of other computer programs and scripts. The model used by a JVM accepts a form of computer intermediate language commonly referred to as Java bytecode. This language conceptually represents the instruction set of a stack-oriented, capability architecture.
+
+Java Virtual Machines operate on Java bytecode, which is normally (but not necessarily) generated from Java source code; a JVM can also be used to implement programming languages other than Java. For example, Ada source code can be compiled to Java bytecode, which may then be executed by a JVM. JVMs can also be released by other companies besides Sun (the
+ 
+
+Core Java Programming	11
+
+developer of Java) -- JVMs using the "Java" trademark may be developed by other companies as long as they adhere to the JVM specification published by Sun (and related contractual obligations).
+
+The JVM is a crucial component of the Java Platform. Because JVMs are available for many hardware and software platforms, Java can be both middleware and a platform in its own right — hence the expression "write once, run anywhere." The use of the same bytecode for all platforms allows Java to be described as "compile once, run anywhere", as opposed to "write once, compile anywhere", which describes cross-platform compiled languages. The JVM also enables such unique features as Automated Exception Handling which provides 'root-cause' debugging information for every software error (exception) independent of the source code.
+
+
+The JVM is distributed along with a set of standard class libraries which implement the Java API (Application Programming Interface). The virtual machine and API have to be consistent with each other and are therefore bundled together as the Java Runtime Environment.
+
+Architecture of JVM: JVM has various sub components internally. You can see all of them from the above diagram.
+
+1.	Class loader sub system: JVM's class loader sub system performs 3 tasks
+a.	It loads .class file into memory.
+b.	It verifies byte code instructions.
+c.	It allots memory required for the program.
+
+2.	Run time data area: This is the memory resource used by JVM and it is divided into 5 parts
+a.	Method area: Method area stores class code and method code.
+b.	Heap: Objects are created on heap.
+
+c.	Java stacks: Java stacks are the places where the Java methods are executed. A Java stack contains frames. On each frame, a separate method is executed.
+
+d.	Program counter registers: The program counter registers store memory address of the instruction to be executed by the micro processor.
+
+e.	Native method stacks: The native method stacks are places where native methods (for example, C language programs) are executed. Native method is a function, which is written in another language other than Java.
+ 
+12
+
+
+JVM Architecture
+
+3.	Native method interface: Native method interface is a program that connects native methods libraries (C header files) with JVM for executing native methods.
+
+4.	Native method library: holds the native libraries information.
+
+5.	Execution engine: Execution engine contains interpreter and JIT compiler, which covert byte code into machine code. JVM uses optimization technique to decide which part to be interpreted and which part to be used with JIT compiler. The HotSpot represents the block of code executed by JIT compiler.
+
+
+Q.5.	What are the Fundamental JDK Tools?
+
+Ans.:	These tools are the foundation of the JDK. They are the tools you use to create and build applications.
+ 
+Core Java Programming	13
+
+Tool Name		Brief Description
+				
+javac		The compiler for the Java programming language.
+		
+java
+ 
+The launcher for Java applications. In this release, a single launcher is used both for development and deployment. The old deployment launcher, jre, is no longer provided.
+ 
+javadoc		API documentation generator. See Javadoc Tool page for
+
+		doclet and taglet APIs.
+				
+apt		Annotation processing tool. See Annotation Processing Tool
+
+		for program annotation processing.
+				
+appletviewer		Run and debug applets without a web browser.
+		
+		
+jar		Create  and  manage  Java  Archive  (JAR)  files.  See  Java
+
+		Archive Files page for the JAR specification.
+
+				
+jdb		The Java Debugger. See JPDA for the debugger architecture
+
+		specifications.
+				
+javah		C header and stub generator. Used to write native methods.
+		
+		
+javap		Class file disassembler.
+				
+extcheck		Utility to detect Jar conflicts.
+	</body>	</html>

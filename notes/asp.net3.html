@@ -1,0 +1,860 @@
+<html><body>
+<div align="justify"><center><h2>Unit III</h2></center>
+</br>
+</br>  <font size="5">-Architecture of ADO.NET</font>
+</br>
+<br>ADO.NET provides a bridge between the front end controls and the back end database. The ADO.NET objects encapsulate all the data access operations and the controls interact with these objects to display data, thus hiding the details of movement of data.
+
+</br>
+The following figure shows the ADO.NET objects at a glance:
+</br>
+
+ADO.Net objects
+The DataSet Class
+The dataset represents a subset of the database. It does not have a continuous connection to the database. To update the database a reconnection is required. The DataSet contains DataTable objects and DataRelation objects. The DataRelation objects represent the relationship between two tables.
+
+</br>
+Following table shows some important properties of the DataSet class:
+
+</br>
+Properties	Description
+</br>CaseSensitive	Indicates whether string comparisons within the data tables are case-sensitive.
+Container	Gets the container for the component.
+DataSetName	Gets or sets the name of the current data set.</br>
+DefaultViewManager	Returns a view of data in the data set.</br>
+DesignMode	Indicates whether the component is currently in design mode.</br>
+EnforceConstraints	Indicates whether constraint rules are followed when attempting any update operation.
+Events	Gets the list of event handlers that are attached to this component.</br>
+ExtendedProperties	Gets the collection of customized user information associated with the DataSet.
+HasErrors	Indicates if there are any errors.
+
+</br>IsInitialized	Indicates whether the DataSet is initialized.</br>
+Locale	Gets or sets the locale information used to compare strings within the table.</br>
+Namespace	Gets or sets the namespace of the DataSet.</br>
+Prefix	Gets or sets an XML prefix that aliases the namespace of the DataSet.
+Relations	Returns the collection of DataRelation objects.</br>
+Tables	Returns the collection of DataTable objects.</br>
+The following table shows some important methods of the DataSet class:
+
+</br>
+Methods	Description
+AcceptChanges	Accepts all changes made since the DataSet was loaded or this method was called.
+BeginInit	Begins the initialization of the DataSet. The initialization occurs at run time.
+Clear	Clears data.</br>
+Clone	Copies the structure of the DataSet, including all DataTable schemas, relations, and constraints. Does not copy any data.</br>
+Copy	Copies both structure and data.</br>
+CreateDataReader()	Returns a DataTableReader with one result set per DataTable, in the same sequence as the tables appear in the Tables collection.
+CreateDataReader(DataTable[])
+</br>	Returns a DataTableReader with one result set per DataTable.
+EndInit	Ends the initialization of the data set.</br>
+Equals(Object)	Determines whether the specified Object is equal to the current Object.
+Finalize	Free resources and perform other cleanups</br>.
+GetChanges	Returns a copy of the DataSet with all changes made since it was loaded or the AcceptChanges method was called.
+GetChanges(DataRowState)	Gets a copy of DataSet with all changes made since it was loaded or the AcceptChanges method was called, filtered by DataRowState.
+GetDataSetSchema	Gets a copy of XmlSchemaSet for the DataSet.</br>
+GetObjectData	Populates a serialization information object with the data needed to serialize the DataSet.
+GetType	Gets the type of the current instance.</br>
+GetXML	Returns the XML representation of the data.</br>
+GetXMLSchema	Returns the XSD schema for the XML representation of the data.</br>
+HasChanges()	Gets a value indicating whether the DataSet has changes, including new, deleted, or modified rows.
+HasChanges(DataRowState)	Gets a value indicating whether the DataSet has changes, including new, deleted, or modified rows, filtered by DataRowState.
+IsBinarySerialized	Inspects the format of the serialized representation of the DataSet.</br>
+Load(IDataReader, LoadOption, DataTable[])	Fills a DataSet with values from a data source using the supplied IDataReader, using an array of DataTable instances to supply the schema and namespace information.
+Load(IDataReader, LoadOption, String[])	Fills a DataSet with values from a data source using the supplied IDataReader, using an array of strings to supply the names for the tables within the DataSet.
+
+</br>Merge()	Merges the data with data from another DataSet. This method has different overloaded forms.
+ReadXML()	Reads an XML schema and data into the DataSet. This method has different overloaded forms.</br>
+ReadXMLSchema(0)	Reads an XML schema into the DataSet. This method has different overloaded forms.</br>
+RejectChanges	Rolls back all changes made since the last call to AcceptChanges.</br>
+WriteXML()	Writes an XML schema and data from the DataSet. This method has different overloaded forms.
+WriteXMLSchema()</br>	Writes the structure of the DataSet as an XML schema. This method has different overloaded forms.
+The DataTable Class</br>
+The DataTable class represents the tables in the database. It has the following important properties; most of these properties are read only properties except the PrimaryKey property:
+
+</br>
+Properties	Description</br>
+ChildRelations	Returns the collection of child relationship.</br>
+Columns	Returns the Columns collection.
+Constraints	Returns the Constraints collection.
+DataSet	Returns the parent DataSet.</br>
+DefaultView	Returns a view of the table.</br>
+ParentRelations	Returns the ParentRelations collection.
+PrimaryKey	Gets or sets an array of columns as the primary key for the table.
+Rows	Returns the Rows collection.</br>
+The following table shows some important methods of the DataTable class:
+
+</br>
+Methods	Description
+AcceptChanges	Commits all changes since the last AcceptChanges.
+Clear	Clears all data from the table.</br>
+GetChanges	Returns a copy of the DataTable with all changes made since the AcceptChanges method was called.
+GetErrors	Returns an array of rows with errors.</br>
+ImportRows	Copies a new row into the table.</br>
+LoadDataRow	Finds and updates a specific row, or creates a new one, if not found any.
+Merge	Merges the table with another DataTable.</br>
+NewRow	Creates a new DataRow.</br>
+RejectChanges	Rolls back all changes made since the last call to AcceptChanges.
+Reset	Resets the table to its original state.</br>
+Select	Returns an array of DataRow objects.</br>
+The DataRow Class</br>
+The DataRow object represents a row in a table. It has the following important properties:
+
+</br>
+Properties	Description</br>
+HasErrors	Indicates if there are any errors.
+Items	Gets or sets the data stored in a specific column.
+ItemArrays	Gets or sets all the values for the row.
+Table	Returns the parent table.</br>
+The following table shows some important methods of the DataRow class:
+
+Methods	Description</br>
+AcceptChanges	Accepts all changes made since this method was called.
+BeginEdit	Begins edit operation.</br>
+CancelEdit	Cancels edit operation.</br>
+Delete	Deletes the DataRow.</br>
+EndEdit	Ends the edit operation.</br>
+GetChildRows	Gets the child rows of this row.
+GetParentRow	Gets the parent row.</br>
+GetParentRows	Gets parent rows of DataRow object.</br>
+RejectChanges	Rolls back all changes made since the last call to AcceptChanges.
+The DataAdapter Object</br>
+The DataAdapter object acts as a mediator between the DataSet object and the database. This helps the Dataset to contain data from multiple databases or other data source.
+
+The DataReader Object</br>
+The DataReader object is an alternative to the DataSet and DataAdapter combination. This object provides a connection oriented access to the data records in the database. These objects are suitable for read-only access, such as populating a list and then breaking the connection.
+
+DbCommand and DbConnection Objects</br>
+The DbConnection object represents a connection to the data source. The connection could be shared among different command objects.
+</br>
+The DbCommand object represents the command or a stored procedure sent to the database from retrieving or manipulating data.
+</br>
+Example
+So far, we have used tables and databases already existing in our computer. In this example, we will create a table, add column, rows and data into it and display the table using a GridView object.
+</br>
+The source file code is as given:
+</br>
+
+The code behind file is as given:
+
+</br>
+namespace createdatabase
+{</br>
+   public partial class _Default : System.Web.UI.Page
+   {</br>
+      protected void Page_Load(object sender, EventArgs e)
+      {</br>
+         if (!IsPostBack)
+         {</br>
+            DataSet ds = CreateDataSet();</br>
+            GridView1.DataSource = ds.Tables["Student"];</br>
+            GridView1.DataBind();</br>
+         }</br>
+      }</br>
+     
+</br> 
+      private DataSet CreateDataSet()
+      {</br>
+         //creating a DataSet object for tables
+         DataSet dataset = new DataSet();
+</br>
+         // creating the student table
+         DataTable Students = CreateStudentTable();</br>
+         dataset.Tables.Add(Students);</br>
+         return dataset;</br>
+      }</br>
+      
+      private DataTable CreateStudentTable()
+      {</br>
+         DataTable Students = new DataTable("Student");
+</br>
+         // adding columns
+     </br>    AddNewColumn(Students, "System.Int32", "StudentID");
+       </br>  AddNewColumn(Students, "System.String", "StudentName");
+       </br>  AddNewColumn(Students, "System.String", "StudentCity");
+
+</br>
+         // adding rows
+        </br> AddNewRow(Students, 1, "M H Kabir", "Kolkata");
+         </br>AddNewRow(Students, 1, "Shreya Sharma", "Delhi");
+        </br> AddNewRow(Students, 1, "Rini Mukherjee", "Hyderabad");
+        </br> AddNewRow(Students, 1, "Sunil Dubey", "Bikaner");
+</br>         AddNewRow(Students, 1, "Rajat Mishra", "Patna");
+
+         return Students;
+      }</br>
+
+      private void AddNewColumn(DataTable table, string columnType, string  columnName)
+      {</br>
+         DataColumn column = table.Columns.Add(columnName,  Type.GetType(columnType));
+      }</br>
+
+
+      //adding data into the table
+      private void AddNewRow(DataTable table, int id, string name, string city)
+      {</br>
+        </br> DataRow newrow = table.NewRow();</br>
+         newrow["StudentID"] = id;</br>
+         newrow["StudentName"] = name;</br>
+         newrow["StudentCity"] = city;</br>
+         table.Rows.Add(newrow);</br>
+      }</br>
+   }</br>
+}
+</br>
+When you execute the program, observe the following:
+
+The application first creates a data set and binds it with the grid view control using the DataBind() method of the GridView control.
+
+The Createdataset() method is a user defined function, which creates a new DataSet object and then calls another user defined method CreateStudentTable() to create the table and add it to the Tables collection of the data set.
+
+The CreateStudentTable() method calls the user defined methods AddNewColumn() and AddNewRow() to create the columns and rows of the table as well as to add data to the rows
+
+</br>
+
+<br>  <font size="5"> -Connected and Disconnected Database</font>
+</br>
+
+
+Connected Architecture of ADO.NET
+The architecture of ADO.net, in which connection must be opened to access the data retrieved from database is called as connected architecture. Connected architecture was built on the classes connection, command, datareader and transaction. 
+</br>
+Connected architecture is when you constantly make trips to the database for any CRUD (Create, Read, Update and Delete) operation you wish to do. This creates more traffic to the database but is normally much faster as you should be doing smaller transactions.
+</br>
+Disconnected Architecture in ADO.NET
+</br>
+The architecture of ADO.net in which data retrieved from database can be accessed even when connection to database was closed is called as disconnected architecture. Disconnected architecture of ADO.net was built on classes connection, dataadapter, commandbuilder and dataset and dataview.
+Disconnected architecture is a method of retrieving a record set from the database and storing it giving you the ability to do many CRUD (Create, Read, Update and Delete) operations on the data in memory, then it can be re-synchronized with the database when reconnecting. A method of using disconnected architecture is using a Dataset.
+</br>
+
+DataReader is Connected Architecture since it keeps the connection open until all rows are fetched one by one
+DataSet is DisConnected Architecture since all the records are brought at once and there is no need to keep the connection alive
+</br>Difference between Connected and disconnected architecture
+
+
+</br>
+Connected	Disconnected
+It is connection oriented.
+</br>It is dis_connection oriented.
+Datareader	DataSet
+</br>Connected methods gives faster performance	
+Disconnected get low in speed and performance.
+connected can hold the data of single table	disconnected can hold multiple tables of data
+connected you need to use a read only forward only data reader
+disconnected you cannot
+Data Reader can't persist the data
+Data Set can persist the data
+It is Read only, we can't update the data.
+We can update data
+</br>
+Example
+
+</br>
+<font size="5">Create Database “Student”</font></br>
+
+<br>CREATE TABLE [dbo].[Student]
+(
+</br>
+    [ID] [int] PRIMARY KEY IDENTITY(1,1) NOT NULL,
+</br>
+    [Name] [varchar](255) NULL,
+</br>
+    [Age] [int] NULL,
+</br>
+    [Address] [varchar](255) NULL
+)
+</br>
+<br>
+
+INSERT INTO Student([Name],[Age],[Address])VALUES('NAME 1','22','PUNE')
+</br>
+INSERT INTO Student([Name],[Age],[Address])VALUES('NAME 2','25','MUMBAI')
+</br>
+INSERT INTO Student([Name],[Age],[Address])VALUES('NAME 3','23','PUNE')
+</br>
+INSERT INTO Student([Name],[Age],[Address])VALUES('NAME 4','21','DELHI')
+</br>
+INSERT INTO Student([Name],[Age],[Address])VALUES('NAME 5','22','PUNE')
+</br>
+
+</br>
+HTML
+
+</br>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    
+</br><title>Untitled Pagetitle>
+</head>
+<body>
+    
+</br><form id="form1" runat="server">
+    <div>
+        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CC9966"
+</br>
+            BorderStyle="None" BorderWidth="1px" CellPadding="4">
+</br>
+            <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+</br>
+            <RowStyle BackColor="White" ForeColor="#330099" />
+</br>
+            <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+</br>
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+</br>
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+        
+</br></asp:GridView>
+        <br />
+        <asp:Button ID="Connected" runat="server" OnClick="Connected_Click" Text="Connected" />
+        <asp:Button ID="Disconnected" runat="server" EnableTheming="False" OnClick="Disconnected_Click"
+            Text="Disconnected" />
+    
+</br></div>
+    </form>
+</body>
+</html>
+
+Code Behind
+
+
+</br>
+String StrSQL = "", StrConnection = "";
+    </br>    protected void Page_Load(object sender, EventArgs e)
+        {</br>
+            StrSQL = "SELECT * FROM Student";
+            StrConnection = "Data Source=ServerName;Initial Catalog=Database;User ID=Username;Password=password";
+        }</br>
+
+        protected void Connected_Click(object sender, EventArgs e)
+        {</br>
+            using (SqlConnection objConn = new SqlConnection(StrConnection))
+            {</br>
+                SqlCommand objCmd = new SqlCommand(StrSQL, objConn);</br>
+                objCmd.CommandType = CommandType.Text;</br>
+                objConn.Open();</br>
+                SqlDataReader objDr = objCmd.ExecuteReader();</br>
+                GridView1.DataSource = objDr;</br>
+                GridView1.DataBind();</br>
+                objConn.Close();
+</br>            }
+        }
+
+</br>
+        protected void Disconnected_Click(object sender, EventArgs e)
+        {</br>
+            SqlDataAdapter objDa = new SqlDataAdapter();</br>
+            DataSet objDs = new DataSet();</br>
+            using (SqlConnection objConn = new SqlConnection(StrConnection))
+            {</br>
+                SqlCommand objCmd = new SqlCommand(StrSQL, objConn);
+                objCmd.CommandType = CommandType.Text;
+                objDa.SelectCommand = objCmd;</br>
+                objDa.Fill(objDs, "Student");</br>
+                GridView1.DataSource = objDs.Tables[0];</br>
+                GridView1.DataBind();</br>
+            }</br>
+        }</br>
+
+
+
+      
+</br>
+<br>
+ <font size="5"> -Create Connection using ADO.NET</font>
+</br>
+		This article demonstrates a simple way to get data out of a database in a very fast manner. If your application needs to modify data in non-trivial ways and update the database, you should consider using Entity Framework and using data binding to automatically sync user interface controls to changes in the underlying data.
+
+System_CAPS_ICON_important.jpg Important
+To keep the code simple, it doesn’t include production-ready exception handling.
+</br>
+In this topic
+</br>
+Set up the sample database
+</br>
+Create the forms and add controls
+</br>
+Store the connection string
+</br>
+Retrieve the connection string
+</br>
+Write the code for the forms
+</br>
+Test 
+</br>your application
+
+Prerequisites
+To create the application, you'll need:
+Visual Studio Community Edition.</br>
+
+SQL Server Express LocalDB.</br>
+
+The small sample database that you create by following the steps in Create a SQL database by using a script.
+</br>
+The connection string for the database after you set it up. You can find this value by opening SQL Server Object Explorer, opening the shortcut menu for the database, selecting Properties, and then scrolling to the ConnectionString property.
+
+</br>
+This topic assumes that you're familiar with the basic functionality of the Visual Studio IDE and can create a Windows Forms application, add forms to that project, put buttons and other controls on those forms, set properties of those controls, and code simple events. If you aren't comfortable with these tasks, we suggest that you complete the Getting Started with Visual C# and Visual Basic before you start this topic.
+</br>
+Set up the sample database
+The sample database for this walkthrough consists of the Customer and Orders tables. The tables contain no data initially, but you’ll add data when you run the application that you'll create. The database also has five simple stored procedures. Create a SQL database by using a script contains a Transact-SQL script that creates the tables, the primary and foreign keys, the constraints, and the stored procedures.
+
+</br>
+Create the forms and add controls
+Create a project for a Windows Forms application, and then name it SimpleDataApp.
+</br>
+Visual Studio creates the project and several files, including an empty Windows form that's named Form1.
+</br>
+Add two Windows forms to your project so that it has three forms, and then give them the following names:
+</br>
+Navigation
+</br>
+NewCustomer
+</br>
+FillOrCancel
+
+</br>
+For each form, add the text boxes, buttons, and other controls that appear in the following illustrations. For each control, set the properties that the tables describe.
+</br>
+System_CAPS_ICON_note.jpg Note
+The group box and the label controls add clarity but aren't used in the code.
+
+</br>
+Navigation form
+
+</br>
+Navigation dialog box
+
+</br>
+Controls for the Navigation form	Properties
+Button	Name = btnGoToAdd</br>
+Button	Name = btnGoToFillOrCancel</br>
+Button	Name = btnExit</br>
+NewCustomer form
+
+</br>
+Add  a new customer and place an order
+
+</br>
+Controls for the NewCustomer form	Properties
+TextBox	Name = txtCustomerName</br>
+TextBox	Name = txtCustomerID</br>
+
+</br>
+Readonly = True</br>
+Button	Name = btnCreateAccount</br>
+NumericUpdown	DecimalPlaces = 0</br>
+
+
+Maximum = 5000
+
+</br>
+Name = numOrderAmount
+</br>DateTimePicker	Format = Short
+
+</br>
+Name = dtpOrderDate</br>
+Button	Name = btnPlaceOrder</br>
+Button	Name = btnAddAnotherAccount</br>
+Button	Name = btnAddFinish</br>
+FillOrCancel form
+
+</br>
+fill or cancel orders
+
+</br>
+Controls for the FillOrCancel form	Properties
+TextBox	Name = txtOrderID</br>
+Button	Name = btnFindByOrderID</br>
+DateTimePicker	Format = Short</br>
+
+</br>
+Name = dtpFillDate</br>
+DataGridView	Name = dgvCustomerOrders
+
+Readonly = True</br>
+
+</br>
+RowHeadersVisible = False</br>
+Button	Name = btnCancelOrder</br>
+Button	Name = btnFillOrder</br>
+Button	Name = btnFinishUpdates</br>
+Store the connection string</br>
+
+When your application tries to open a connection to the database, your application must have access to the connection string. To avoid entering the string manually on each form, store the string in the App config file in your project, and create a method that returns the string when the method is called from any form in your application.
+</br>
+You can find the connection string in SQL Server Object Explorer by right-clicking the database, selecting Properties, and then finding the ConnectionString property. Use Ctrl+A to select the string.
+
+In Solution Explorer, select the Properties node under the project, and then select Settings.settings.
+
+</br>
+In the Name column, enter connString.
+
+In the Type list, select (Connection String).
+
+In the Scope list, select Application.
+
+</br>
+In the Value column, enter your connection string (without any outside quotes), and then save your changes.
+
+</br>
+System_CAPS_ICON_note.jpg Note
+In a real application, you should store the connection string securely, as described in Connection Strings and Configuration Files.
+
+</br>
+Retrieve the connection string
+On the menu bar, select Project > Add Reference, and then add a reference to System.Configuration.dll.
+
+</br>
+On the menu bar, select Project > Add Class to add a class file to your project, and then name the file Utility.
+
+</br>
+Visual Studio creates the file and displays it in Solution Explorer.
+
+</br>
+In the Utility file, replace the placeholder code with the following code. Notice the numbered comments (prefixed with Util-) that identify sections of the code. The table that follows the code calls out key points.
+
+</br>
+C#VB
+using System;</br>  
+using System.Collections.Generic;  </br>
+using System.Linq;  </br>
+using System.Text;  </br>
+using System.Threading.Tasks;  
+
+</br>//Util-1 More namespaces.  
+using System.Configuration;   
+
+</br>
+namespace SimpleDataApp  
+{  
+</br>
+    internal class Utility  
+    {
+</br>  
+
+        //Get the connection string from App config file.  
+     
+</br>   internal static string GetConnectionString()  
+        {  
+     
+</br>       //Util-2 Assume failure.  
+            string returnValue = null;  
+
+</br>
+            //Util-3 Look for the name in the connectionStrings section.  
+            ConnectionStringSettings settings =  
+            ConfigurationManager.ConnectionStrings["SimpleDataApp.Properties.Settings.connString"];  
+
+</br>
+            //If found, return the connection string.  
+            if (settings != null)  
+     
+</br>           returnValue = settings.ConnectionString;  
+
+     
+</br>       return returnValue;  
+        }  
+    
+</br>}  
+}  
+</br>
+
+Comment	Description</br>
+Util-1	Add the System.Configuration namespace.
+Util-2	Define a variable, returnValue, and initialize it to null (C#) or Nothing (Visual Basic).
+Util-3	Even though you entered connString as the name of the connection string in the Properties window, you must specify "SimpleDataApp.Properties.Settings.connString" (C#) or "SimpleDataApp.My.MySettings.connString" (Visual Basic) in the code.
+
+
+</br>
+
+
+
+<br>
+ <font size="5">Object Model<font>
+</br>
+The most basic object in ASP.NET is the page. You can access properties of the page object directly without any qualifying object. In the previous chapters, we have used some of the properties and methods of page object like Layout, RenderPage and RenderBody. WebPageBase Class is the base class for classes that represent an ASP.NET Razor page.
+
+Properties and Methods of Page Object Model
+Following are some of the most commonly used properties of Page Object.
+
+</br>
+S.No	Property & Description
+</br>
+1	
+IsPost
+
+Returns true if the HTTP data transfer method used by the client is a POST request.
+
+</br>
+2	
+Layout
+
+Gets or sets the path of a layout page.
+
+</br>
+3	
+Output
+
+Gets the current TextWriter object for the page.
+
+</br>
+4	
+Page
+
+Provides property-like access to data shared between pages and layout pages
+
+</br>
+5	
+Request
+
+Gets the HttpRequest object for the current HTTP request.
+
+</br>
+6	
+Server
+
+Gets the HttpServerUtility object that provides web-page processing methods.
+
+Following are some of the most commonly used methods of Page Object.
+
+</br>
+S.No	Method & Description
+</br>
+1	
+ConfigurePage
+
+When overridden in a derived class, configures the current web page based on the configuration of the parent web page.
+
+</br>
+2	
+DefineSection
+
+Called by content pages to create named content sections.
+
+</br>
+3	
+ExecutePageHierarchy()
+
+Executes the code in a set of dependent web pages.
+
+</br>
+4	
+GetOutputWriter
+
+Returns the text writer instance that is used to render the page.
+
+</br>
+5	
+href
+
+Builds a URL using the specified parameters
+
+</br>
+6	
+InitializePage
+
+Initializes the current page.
+
+</br>
+7	
+IsSectionDefined
+
+Returns a value that indicates whether the specified section is defined in the page.
+
+</br>
+8	
+PopContext
+
+Returns and removes the context from the top of the OutputStack instance.
+
+</br>
+9	
+PushContext
+
+Inserts the specified context at the top of the OutputStack instance.
+
+</br>
+10	
+RenderBody()
+
+Renders the portion of a content page that is not within a named section (In layout pages)
+
+</br>
+11	
+RenderPage(page)
+
+Renders the content of one page within another page
+
+
+</br>12	
+RenderSection(section)
+
+Renders the content of a named section (In layout pages)
+
+
+</br>13	
+Write(object)
+
+Writes the object as an HTML-encoded string
+
+
+</br>14	
+
+WriteLiteral
+
+Writes an object without HTML-encoding it first.
+
+Let’s have a look into a simple example of Page property of Page Object which provides property-like access to data shared between pages and layout pages. In this example, we will set the title of the page using the Page.Title property.
+
+Here is the implementation of MyLayoutPage.cshtml file in which we have set the page title.
+
+</br>
+@{
+   Layout = "~/_Layout.cshtml";
+   page.Title = "Layout Page";
+}
+<h1> H1 Heading from the Layout page </h1>
+<p> This is the Main Body part from the Layout page</p>
+Now we need to specify the same page title in the _Layout.cshtml page as shown in the following code.
+
+</br>
+@{ }
+<!DOCTYPE html>
+<html lang = "en">
+   
+   <head>
+      <title>@Page.Title</title>
+      <link href = "@Href("/Styles/Site.css")" rel = "stylesheet" type = "text/css" />
+   </head>
+   
+   <body>
+      @RenderPage("/Shared/_Header.cshtml")
+      <div id = "main">@RenderBody()</div>
+      @RenderPage("/Shared/_Footer.cshtml")
+   </body>
+
+</html>
+</br>
+Let’s run the application and specify the following url − http://localhost:46023/MyLayoutPage then you will see the following page.
+
+Layout Cshtm
+
+
+
+</br>
+<br> <font size="5"> -Database Accessing on web applications:</font>
+</br> 
+
+<br>Accessing Databases from Web Applications
+Data that is shared between Web components and is persistent between invocations of a Web application is usually maintained in a database. Web applications use the JDBC API to access relational databases. For information on this API, see
+
+
+</br>
+In the JDBC API, databases are accessed via DataSource objects. A DataSource has a set of properties that identify and describe the real world data source that it represents. These properties include information such as the location of the database server, the name of the database, the network protocol to use to communicate with the server, and so on.
+
+Web applications access a data source using a connection, and a DataSource object can be thought of as a factory for connections to the particular data source that the DataSource instance represents. In a basic DataSource implementation, a call to the getConnection method returns a connection object that is a physical connection to the data source. In the Application Server, a data source is referred to as a JDBC resource. See DataSource Objects and Connection Pools for further information about data sources in the Application Server.
+
+If a DataSource object is registered with a JNDI naming service, an application can use the JNDI API to access that DataSource object, which can then be used to connect to the data source it represents.
+
+To maintain the catalog of books, the Duke's Bookstore examples described in Chapters 11 through 22 use the PointBase evaluation database included with the Application Server.
+
+</br>
+This section describes how to
+
+</br>
+Populate the database with bookstore data
+Create a data source in the Application Server
+Specify a Web application's resource reference
+Map the resource reference to the data source defined in the Application Server
+Populating the Example Database
+To populate the database for the Duke's Bookstore examples, follow these steps:
+
+In a terminal window, go to <INSTALL>/j2eetutorial14/examples/web/bookstore/.
+Start the PointBase database server. For instructions, see Starting and Stopping the PointBase Database Server.
+Run asant create-db_common. This task runs a PointBase commander tool command to read the file books.sql and execute the SQL commands contained in the file.
+At the end of the processing, you should see the following output:
+
+</br>...
+[java] SQL> INSERT INTO books VALUES('207', 'Thrilled', 'Ben',
+</br>
+[java]  'The Green Project: Programming for Consumer Devices',
+
+</br>[java]  30.00, false, 1998, 'What a cool book', 20);
+[java] 1 row(s) affected
+</br>
+
+[java] SQL> INSERT INTO books VALUES('208', 'Tru', 'Itzal',
+
+</br>[java]  'Duke: A Biography of the Java Evangelist',
+
+</br>[java]  45.00, true, 2001, 'What a cool book.', 20);
+
+</br>[java] 1 row(s) affected 
+
+</br>Creating a Data Source in the Application Server
+Data sources in the Application Server implement connection pooling. To define the Duke's Bookstore data source, you use the installed PointBase connection pool named PointBasePool.
+
+</br>
+You create the data source using the Application Server Admin Console, following this procedure:
+
+</br>
+Expand the JDBC node.
+Select the JDBC Resources node.
+Click the New... button.
+Type jdbc/BookDB in the JNDI Name field.
+Choose PointBasePool for the Pool Name.
+Click OK.
+Specifying a Web Application's Resource Reference
+To access a database from a Web application, you must declare a resource reference in the application's Web application deployment descriptor (see Declaring Resource References). The resource reference specifies a JNDI name, the type of the data resource, and the kind of authentication used when the resource is accessed. To specify a resource reference for a Duke's Bookstore example using deploytool, follow these steps:
+
+</br>
+Select the WAR (created in Chapters 11 through 22).
+Select the Resource Ref's tab.
+Click Add.
+Type jdbc/BookDB in the Coded Name field.
+Accept the default type javax.sql.DataSource.
+Accept the default authorization Container.
+Accept the default Sharable selected.
+To create the connection to the database, the data access object database.BookDBAO looks up the JNDI name of the bookstore data source object:
+
+</br>
+public BookDBAO () throws Exception {
+  try  { 
+    Context initCtx = new InitialContext();
+    Context envCtx = (Context)
+     
+</br> initCtx.lookup("java:comp/env");
+    DataSource ds = (DataSource) envCtx.lookup("jdbc/BookDB");
+    con =  ds.getConnection();
+    System.out.println("Created connection to database.");
+  } 
+</br>catch (Exception ex) {
+    System.out.println("Couldn't create connection." + 
+      ex.getMessage());
+    throw new 
+      Exception("Couldn't open connection to database: "
+     
+</br> + ex.getMessage());
+  }  
+
+</br>Mapping the Resource Reference to a Data Source
+Both the Web application resource reference and the data source defined in the Application Server have JNDI names. See JNDI Naming for a discussion of the benefits of using JNDI naming for resources.
+
+To connect the resource reference to the data source, you must map the JNDI name of the former to the latter. This mapping is stored in the Web application runtime deployment descriptor. To create this mapping using deploytool, follow these steps:
+
+</br>
+Select localhost:4848 in the Servers list to retrieve the data sources defined in the Application Server.
+Select the WAR in the Web WARs list.
+Select the Resource Ref's tab.
+Select the Resource Reference Name, jdbc/BookDB, defined in the previous section.
+In the Sun-specific Settings frame, select jdbc/BookDB from the JNDI Name drop-down list.
+
+
+
+
+
+
+</br>
+</div>
+</body>
+</html>

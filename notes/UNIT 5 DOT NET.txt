@@ -1,0 +1,584 @@
+UNIT-5
+
+Assemblies and Attributes
+
+5.1 Assemblies
+
+What is an assembly?
+	•	An Assembly is a logical unit of code 
+
+•	Assembly physically exist as DLLs or EXEs 
+•	One assembly can contain one or more files 
+
+•	The constituent files can include any file types like image files, text files etc. along with DLLs or EXEs 
+
+•	When you compile your source code by default the exe/dll generated is actually an assembly 
+
+•	Unless your code is bundled as assembly it can not be used in any other application 
+
+•	When you talk about version of a component you are actually talking about version of the assembly to which the component belongs. 
+
+•	Every assembly file contains information about itself. This information is called
+
+What is assembly manifest?
+	•	Assembly manifest is a data structure which stores information about an assembly 
+
+•	This information is stored within the assembly file(DLL/EXE) itself 
+•	The information includes version information, list of constituent files etc. 
+What is private and shared assembly?
+The assembly which is used only by a single application is called as private assembly. Suppose you created a DLL which encapsulates your business logic. This DLL will be used by your client application only and not by any other application. In order to run the application properly your DLL must reside in the same folder in which the client application is installed. Thus the assembly is private to your application.
+
+Suppose that you are creating a general purpose DLL which provides functionality which will be used by variety of applications. Now, instead of each client application having its own copy of DLL you can place the DLL in 'global assembly cache'. Such assemblies are called as shared assemblies.
+
+What is Global Assembly Cache?
+
+Global assembly cache is nothing but a special disk folder where all the shared assemblies will be kept. It is located under <drive>:\WinNT\Assembly folder.
+
+How assemblies avoid DLL Hell?
+As stated earlier most of the assemblies are private. Hence each client application refers assemblies from its own installation folder. So, even though there are multiple versions of same assembly they will not conflict with each other. Consider following example :
+
+	• You created assembly Assembly1 
+
+•	You also created a client application which uses Assembly1 say Client1 
+•	You installed the client in C:\MyApp1 and also placed Assembly1 in this folder 
+•	After some days you changed Assembly1 
+•	You now created another application Client2 which uses this changed Assembly1 
+•	You installed Client2 in C:\MyApp2 and also placed changed Assembly1 in this folder 
+
+•	Since both the clients are referring to their own versions of Assembly1 everything goes on smoothly 
+
+109
+ 
+Now consider the case when you develop assembly that is shared one. In this case it is important to know how assemblies are versioned. All assemblies has a version number in the form:
+major.minor.build.revision
+If you change the original assembly the changed version will be considered compatible with existing one if the major and minor versions of both the assemblies match.
+
+When the client application requests assembly the requested version number is matched against available versions and the version matching major and minor version numbers and having most latest build and revision number are supplied.
+How do I create shared assemblies?
+Following steps are involved in creating shared assemblies :
+3)	Create your DLL/EXE source code
+4)	Generate unique assembly name using SN utility
+5)	Sign your DLL/EXE with the private key by modifying AssemblyInfo file
+6)	Compile your DLL/EXE
+
+7)	Place the resultant DLL/EXE in global assembly cache using GAC utility
+How do I create unique assembly name?
+
+Microsoft now uses a public-private key pair to uniquely identify an assembly. These keys are generated using a utility called SN.exe (SN stands for shared name). The most common syntax of is :
+sn -k mykeyfile.snk
+
+Where k represents that we want to generate a key and the file name followed is the file in which the keys will be stored.
+How do I sign my DLL/EXE?
+
+Before placing the assembly into shared cache you need to sign it using the keys we just generated. You mention the signing information in a special file called AssemblyInfo. Open the file from VS.NET solution explorer and change it to include following lines :
+
+[assembly:AssemblyKeyFile("file_path")] Now recompile the project and the assembly will be signed for you.
+
+Note : You can also supply the key file information during command line compilation via /a.keyfile switch.
+How do I place the assembly in shared cache?
+Microsoft has provided a utility called AL.exe to actually place your assembly in shared cache.
+GACUtil /i my_dll.dll
+
+Now your dll will be placed at proper location by the utility.
+Hands On...
+
+Now, that we have understood the basics of assemblies let us apply our knowledge by developing a simple shared assembly.
+
+In this example we will create a C#.NET component called SampleGAC ( GAC stands for Global Assembly Cache). We will also create a key file named sample.snk. We will sign our component with this key file and place it in Global Assembly Cache.
+
+•	Step 1 : Creating our sample component
+Here is the code for the component. It just includes one method which returns a string. using System;
+namespace BAJComponents
+{
+public class Sample
+{
+public string GetData()
+{
+return "hello world";
+ 
+
+110
+ 
+}
+
+}
+}
+•	Step 2 : Generate a key file
+
+To generate the key file issue following command at command prompt. sn -k sample.snk
+This will generate the key file in the same folder
+
+•	Step 3 : Sign your component with the key using System;
+
+[assembly:AssemblyKeyFile(―C:\Sample.snk‖)] namespace BAJComponents
+{
+public class Sample
+{
+public string GetData()
+{
+return "hello world";
+}
+}
+}
+•	Step 4 : Compile your file again
+csc /out:sampleGAC.dll /target:library sampleGAC.cs
+
+•	Step 4 : Host the signed assembly in Global Assembly Cache We will use GAC utility to place the assembly in Global Assembly Cache. GACUtil /i sampleGAC.dll
+
+After hosting the assembly just go to WINNT\Assembly folder and you will find your assembly listed there. Note how the assembly folder is treated differently that normal folders.
+•	Step 5 : Test that our assembly works
+
+Now, we will create a sample client application which uses our shared assembly. Just create a sample code as listed below :
+using System;
+
+using BAJComponents;
+
+public class SampleTest
+
+{
+public static void Main()
+{
+
+Sample x = new sample()
+
+string s =x.GetData()
+
+Console.WriteLine(s)
+
+}
+}
+
+Compile above code using :
+
+csc sampletest.cs /t:exe /r:<assembly_dll_path_here>
+
+Now, copy the resulting EXE in any other folder and run it. It will display "Hello World" indicating that it is using our shared assembly.
+
+ 
+
+
+
+
+
+
+111
+ 
+5.2 GENERICS
+
+Generics are a new feature in the .Net framework 2.0+ which make it possible to design classes and methods that do not specify data types until the class or method is declared and instantiated by client code.
+
+Generics are supplied by the System.Collection.Generics namesapce.
+Nullable Types
+System.Nullable<int> a;
+―a‖ can have an int value as well as ―null‖ value.
+Means: a = null; // valid statement.
+You can test nullable types like
+as: if( a == null)
+{
+}
+OR
+if( a.HasValue)
+{
+}
+
+The short hand of System.Nullable<int> is simply int? . So you can use like as: int? a; instead of System.Nullable<int> a;
+Some problem with
+code: int? op1 = 5;
+
+int result = op1 * 2;
+
+will not compile.
+
+To get result use following
+code: int? op1 = 5;
+int result = (int) op1 *
+2; or
+int result = op1.Value * 2;
+-----------------------------------
+
+int? op1 = null;
+
+int? op2 = 5;
+
+int? result = op1 * op2;
+result = null
+
+By using a generic type parameter you can write a single class that other client code can use without incurring the cost or risk of casts or boxing operations.
+The ?? Operator (null coalescing operator)
+
+it is a binary operator that enables you to supply an alternative value to use for expresions that might evaluate null
+
+op1 ?? op2;
+
+equivalent
+
+op1 == null ? op2 : op1 ;
+
+int? op1 = null;
+
+int result = op1 * 2 ??
+5; result = 10
+
+GENERIC METHOD
+
+using System;
+
+using System.Collections.Generic;
+ 
+
+
+112
+ 
+class Generics
+
+{
+static void Main(string[] args)
+{
+
+//	create arrays of various types int[] intArray = { 1, 2, 3, 4, 5, 6 };
+
+double[] doubleArray = { 1.0, 2.0, 3.0, 4.0, 5.0 }; char[] charArray = { 'A', 'B', 'C', 'D', 'E' };
+
+DisplayArray(intArray);
+
+DisplayArray(doubleArray);
+
+DisplayArray(charArray);
+
+Console.ReadLine();
+
+}
+
+//	generic method displays array of any type static void DisplayArray<E>(E[] array)
+
+{
+
+Console.WriteLine("Display array of type " + array.GetType() + ":"); foreach (E element in array)
+
+Console.Write(element + " ");
+}
+}
+
+GENERIC CLASS
+
+using System;
+
+using System.Collections.Generic;
+
+class Generics
+
+{
+static void Main(string[] args)
+{
+
+MyGeneric<int> mygenericint = new MyGeneric<int>(); mygenericint.GenericField = 13; mygenericint.GenericMethod(42);
+
+MyGeneric<string> mygenericstring = new MyGeneric<string>(); mygenericstring.GenericField = "xxx"; mygenericstring.GenericMethod("xxx");
+
+//	These lines will cause a compile error
+
+MyGeneric<int> mygenericint2 = new MyGeneric<int>(); mygenericint2.GenericField = "xxx"; mygenericint2.GenericMethod("xxx");
+
+}
+}
+
+public class MyGeneric<T>
+
+{
+ 
+
+113
+ 
+public T GenericField;
+
+public void GenericMethod(T t)
+{
+Console.WriteLine("GenericMethod parameter type: " + t.GetType());
+}
+
+}
+
+
+
+
+5.3 Attributes
+
+Introduction
+
+Usinng an attribute is a way to add special meaning to our method and cause it to act in a certain way. Before this was available, developers didn't have a way to define their own attributes. DotNet paved the way for developers and opened new horizons to conquer. Attributes are like adding behaviours to methods, classes, properties structures, events, modules, and so forth. It means we can enforce certain constraints on those methods, classes, properties and vice-versa to behave in the way specify to them.
+
+One more added feature is that, before DotNet, if we made a class or DLL and a newer version came along, the older version that should be removed or should not be used still exists. This causes a problem called DLL Hell. DotNet solved this problem by the concept of versioning. This means that the same DLL with the same name, containing some new methods with older methods can co-exist with a different version number.
+
+Let us start to learn to use attributes in C# code:
+Case 1
+
+I had a method in my old DLL. Now, I have updated my DLL and added two new methods and one new method that is the upgraded version of previous DLL.
+
+What should happen is that my previous programs that use this DLL should work properly. Or, if I intend to use the old method in the new program, it should tell me that the old method is obsolete and I should use the new method.
+
+Before DotNet, this wasn't possible. DotNet has removed this hurdle from the path of developers. Let us see how can we do this stuff:
+
+Using System;
+
+Namespace MyExample
+
+{
+Class MyAttribute
+{
+[Obsolete()]
+public static void SaySomething(string str)
+{
+Console.WriteLine(str);
+}
+public static void Talk(string str)
+{
+Console.WriteLine(str);
+
+}
+
+static void Main()
+
+{
+SaySomething("Hello to Sufyan");
+ 
+
+114
+ 
+Console.ReadLine();
+
+}
+}
+}
+
+Here, when we call SaySomething("Hello to Sufyan"), it will execute the code but in the output window a warning message will be displayed, showing us that the SaySomething method is obsolete.
+
+Still, it doesn't ask us to use the new talk method SaySomething instead. To display a customized message, we will customize the obsolete attribute like this: [Obsolete("SaySomething() method is now
+Obsolete. Please use Talk()")]
+By using this approach, we can add additional meaning to our attribute.
+
+Note: We can have multiple attribute statements before a method or class. In such cases, if one of the statements is true, it will allow access to that particular method.
+There are many attributes that come with DotNet.
+	•	Conditional 
+
+•	DllImport 
+•	Obsolete 
+	• Serializable  Conditional attribute 
+
+By using the Conditional attribute, we are following a scenario that if a particular condition is true, the user will have access to that specific method. Suppose you wanted your specific method to run only if Internet Explorer is found on the system. Applying this type of security on a
+method was not easy in the past. Now, it is possible by applying conditional attributes.  Case 2 
+
+Suppose you want a method to run if program is in Debug mode. We will write the conditional  statement as follows:
+
+[Conditional(.DEBUG.)]
+
+public static void Help(String str)
+{
+Console.WriteLine(str);
+}
+
+If one calls this method in Main(), it will run only if the program is in Debug mode. If you turn it off in the release mode, it will not run.
+
+DLL Import
+
+Before DotNet, if one wanted to access the core Windows API, he could add a reference and use the library provided by Windows SDK. In DotNet, if we want to access those core features of DotNet, we use DllImport. Component DLLs aren't accessed this way. They are accessed by making a reference to them. Normal DLLs are accessed by using the DllImport attribute.
+
+Case 3
+
+using System; System.Runtime.InteropServices; class Beeper
+
+{
+[DllImport(.kernel32.dll.)]
+
+Public static extern bool Beep(int frequency,int duration); static void Main()
+
+{
+
+Beep(1000,111);
+
+}
+ 
+
+115
+ 
+}
+
+So far, we have learned how to use attributes in DotNet. Still, we haven't learn how to create our own custom attributes with specified behaviour that we assign.
+Steps in Creating a Custom Attribute
+1.	Define the attribute's usage.
+2.	Extend our class with AttributeClass.
+
+3.	Define the behaviours to the class. Attribute behaviours can be of these types:
+	• All—Any application element 
+
+• Assembly—Attribute can be applied to an assembly  • Class—Attribute can be applied to a class 
+• Constructor—Attribute can be applied to a constructor  • Delegate—Attribute can be applied to a delegate 
+• Enum—Attribute can be applied to an enumeration  • Event—Attribute can be applied to an event 
+• Field—Attribute can be applied to a field 
+• Interface—Attribute can be applied to an interface  • Method—Attribute can be applied to a method 
+• Module—Attribute can be applied to a module 
+• Parameter—Attribute can be applied to a parameter  • Property—Attribute can be applied to a property 
+• ReturnValue—Attribute can be applied to a return value  • Struct—Attribute can be applied to a structure 
+
+The second step is to extend the class with the Attribute class. Basically, our attribute is a class that defines the behaviours of our attribute. For example: ...
+
+public class
+MySpecialAttribute:Attribute {...
+A point to be noted here is that the name of Attribute we are going to make is MySpecial.
+We didn't suffix the word Attribute after MySpecial. DotNet automatically suffixed it.
+Let us create a sample custom attribute that will execute the method if the regKey provided to
+the Attribute parameter is correct:
+using System;
+namespace RegKeyAttributeTestor
+{
+[AttributeUsage(AttributeTargets.Method|AttributeTargets.Struct,
+
+AllowMultiple=false,Inherited=false]
+
+public class MyAttribute:Attribute
+
+{
+
+private string regKey="a12nf";
+
+public MyAttribute(string regKey)
+
+{
+if(this.regKey==regKey)
+{
+Console.WriteLine("Permitted to use this App");
+}
+else
+{
+Console.WriteLine("Not registered to use this
+
+App"); 116
+ 
+}
+
+}
+
+} //End Attribute class code class useAttrib
+
+{
+[MyAttribute("hello")]
+public static string SayHello(string str)
+{
+return str;
+}
+static void Main()
+{
+
+Console.WriteLine(SayHello("Hello to Sufyan")); Console.ReadLine();
+
+}
+
+}
+
+}
+
+AttributeUsage(AttributeTargets.Method|AttributeTargets.Struct,
+
+AllowMultiple=false, Inherited=false)]
+
+Here, multiple Attribute targets are declared by using "|" between different targets. Allows multiple=false means multiple attributes can be used with this attribute. Inherited=false shows that if some class extends a class that uses this attribute and calls a method that is bound to this attribute, that class has no access to this attribute unless this property is set to true.
+Reading Metadata from Assemblies
+We first write our custom
+
+attribute: using System;
+
+namespace Sufyan
+
+{
+[AttributeUsage(AttributeTargets.Method,AllowMultiple=false,
+Inherited=false)]
+public class RegKeyAttribute : Attribute
+{
+
+private string regKey;
+
+public RegKeyAttribute(string VRegKey)
+
+{
+
+this.regKey = VRegKey;
+
+if (this.regKey==.hello.)
+
+{
+Console.WriteLine("Aha! You're Registered");
+}
+else
+{
+Console.WriteLine("Oho! You're not Registered");
+}
+}
+}
+
+}
+ 
+
+117
+ 
+Now, we shall write our code to reference it through Assembly;.
+
+Steps
+First, compile the first example as a Class library; it will generate a .dll file. We will place this
+.dll file in the bin folder of our second example we are going to make now.
+using System;
+
+using System.Reflection;
+
+using Sufyan;
+
+namespace AdvancedDotNet1
+
+{
+class Classic
+{
+static void Main(string[] args)
+{
+Assembly suf = Assembly.Load("RegKey");
+
+Type KIA=suf.GetType();
+
+[]KO=Attribute.GetCustomAttributes(KIA);
+
+Object Regist =KO[0];
+
+Console.WriteLine("Registeration Code is :"+
+
+Regist.ToString() );
+
+Console.ReadLine();
+}
+}
+}
+System.Reflection is used to retrieve info from the assembly metadata.
+
+To use this in another class, verify that a specific method will execute if that particular developer is registered with me and I have issued him the license key to use. class useAttrib
+
+{
+[RegKeyAttribute ("hello")]
+public static string SayHello(string str)
+{
+return str;
+}
+static void Main()
+{
+Console.WriteLine(SayHello("Hello to
+Sufyan")); Console.ReadLine();
+}
+}
+
+Have a close look at this code. I have provided the Hello string as a parameter to the attribute. When we run this application, if we pass a string other then "hello", it will say that you are not registered. We can further modify it according to our need.
+
+
+
+
+
+
+
+
+
+
+118

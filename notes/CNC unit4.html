@@ -1,0 +1,283 @@
+<html>
+<body><div align="justify"><Center><h2>Unit IV</h2></center>
+
+<br><font size="5">1.Authentication Applications</font></br>
+<br>
+Authentication is the act of establishing identity via the presentation of information that allows the verifier to know the presenter is who or what it claims. This identity could be any number of things, including:
+</br>
+People
+Systems
+Applications
+Messages</br>
+Why would one want to verify an identity in the first place? Hopefully, most people reading this recognize that as sarcastic humor. If not, here are a few common reasons:
+</br>
+To control access to a system or application
+To bind some sensitive data to an individual, such as for encryption
+To establish trust between multiple parties to form some interaction with them
+To assure that a piece of information is genuine
+Within an application, one or all of these aspects may apply. This article presents different types of authentication and ways of adding it to your applications.
+</br>
+Types of Authentication
+There are many different types of authentication that can be used in an application. The selection of the most appropriate type of authentication will depend on the needs of the application; use this guide to determine which makes the most sense for your application.
+</br>
+Basic, single-factor authentication
+Multi-factor authentication
+Cryptographic authentication
+Post a comment
+Email Article
+Print Article
+ Share Articles
+Data Center Expansion Download Now
+These authentication types apply to all classes of entity that require authentication: systems, users, messages, and applications.
+</br>
+Basic Authentication
+Basic authentication is a commonly used term that most people probably understand already. It refers to password-based authentication. A password can be any information that is used to verify the identity of a presenter. Common examples that fall into this category are:
+</br>
+The common password
+Host or system names
+Application names
+Numerical IDs
+Authentication entails the validation of a single credential pair—the presenter's identity reference and their password. The authentication process typically takes the password and compares it to that which is stored in the authentication database. This comparison is often done as a plain text comparison where the provided password exactly matches that expected password, or with some permutation function where the password first undergoes an alteration such as hashing or encryption and the resulting data is then compared. The storage of the password is the next piece that is also often in plaintext or some permutation based on the aforementioned cryptographic function. Basic authentication has the following benefits. It is:
+</br>
+Easy to manage within an application
+Easy to deploy across applications
+Easy for end users to use
+There are some important caveats when using basic authentication of which every developer should be aware:
+</br>
+Passwords are commonly weakly specified
+Identities can be spoofed and impersonated
+Passwords can be susceptible to theft
+Requires considerable effort to provide strong security
+Can be difficult to scale across distributed and large environments
+Related Articles</br>
+Ten Aspects of Security to Improve Application Strength
+Object-level Access Control in Applications
+Security in Application Design</br>
+Basic authentication often entails the transmission of a name (username or system name), and the password, which can be easily stolen and compromised if they're transmitted unprotected across the network. Here are some of the ways to increase the strength of Basic authentication:
+</br>
+Use digest authentication—hash or encrypt the password prior to transmission
+Use pass phrases (longer passwords) and set minimum password lengths
+Enforce the usage of diverse character sets that include alpha-numeric, special characters, and mixed-case passwords that are not in a dictionary
+Add security to the connection wherein the password is not transmitted in the clear across the network, such as TLS/SSL
+Do not store passwords in plaintext in whatever mechanism is used—database, file system, directory
+Multi-Factor Authentication
+Multi-factor authentication is the use of a combination of authentication methods to validate identity. The most commonly used description of multi-factor authentication is the use of information that is known only by the person, combined with something in his or her possession. These are typically:
+</br>
+The name and password
+Some form of token
+A token is a hardware component that is used during the authentication process; it typically provides another piece of information that cannot be ascertained without physical control of the token. Different types of tokens used in multi-factor authentication are:
+</br>
+Smart cards
+One-time password/phrases
+Single-use PINs or pseudo-random numbers
+Biometric information
+Multi-factor authentication provides the following additional benefits:
+</br>
+Difficult to spoof and impersonate
+Easy to use
+As security components are layered, the complexity also rises. The following potential drawbacks are had with multi-factor authentication—each environment is different; therefore, the influence of these on the decision-making process will vary:
+</br>
+Deployment can be difficult
+Tokens easily can be stolen
+Management of the tokens can be challenging, especially in the event of lost or stolen tokens
+Cryptographic Authentication
+The final form of authentication outlined here is that which utilizes cryptography. This includes the following forms:
+</br>
+Public Key Authentication
+Digital Signatures
+Message Authentication Code
+Password permutation
+Public Key Authentication
+Public key authentication occurs when the owner of a key pair (private and public) communicates the public key, in some form, to the authenticating party, at which point it is verified to be true. There are a couple of methods for public key authentication worth discussing:
+</br>
+The use of the public key itself
+Public key certificates
+To verify the identity of the presenter of the public key, a nonce is encrypted using the public key. If the nonce can be decrypted and returned to the sender, that means the owner of the public key also has possession of the corresponding private key.
+</br>
+The use of public-key certificates builds on this relationship between the public and private key. Verification of a public key, alone, may indicate that the identity is as expected, but there is still a bit missing—trust. How does one know whether the party presenting the keys has not stolen them from the legitimate owner? Also, just because a person, system, or application may be truly who or what it says it is, how does the authenticating party know it can or should trust it? A public key certificate adds a trust relationship between a mutually known and trusted third party. The certificate is created when a mutually trusted third-party signs a public key with its own key. The authenticating party then can verify the identity of the presenter's key and also know that it can be trusted because of the shared relationship with the certificate signer. In the event that the keys are stolen, the trusted third party easily can revoke its trust of the keys and notify its trustees that they are no longer trustworthy.
+</br>
+Digital Signatures
+Digital signatures are another piece of the cryptographic puzzle. A digital signature is made when the owner of a key pair (an individual or a system) uses its private key to "sign" a message. This signature can be verified only by the corresponding public key.
+</br>
+This is most recognizable with the signed public key certificate—wherein the Certificate Authority, or trusted third party, signs a public key. The party doing the authentication can verify that the presenter of a public key has possession of the private key, and that a mutually trusted party vouches that the holder of the key is true. Digital signatures are also commonly used on messages such as e-mail, so that the recipient can have some trust that the e-mail message was sent by the person they expect.
+</br>
+Message Authentication Codes (MACs)
+A message authentication code is created when a secret key is used in combination with the message or information to be proved authentic. The MAC can be generated by using a hashing algorithm or symmetric encryption. MACs can be used to provide integrity verification as well as authenticity to those possessing the secret key.
+</br>
+Password Permutation
+I cannot discuss cryptographic methods without showing the relationship to basic authentication and its differences. As discussed above, in basic authentication, many passwords are typically encrypted or hashed, and then during the process of authentication, the password goes through the same transformation as that which is stored and then compared. This should not be confused as a method of strong authentication simply because of its use of cryptographic functionality (hashing, encryption). Password schemes are still weak because the cryptography used is only for the storage and comparison piece, but has no relationship to the presenter's authenticity. They are easily stolen and impersonated.
+</br>
+Collaboration Between Authenticating Entities
+With the widespread creation and deployment of distributed applications, authentication is critical, but also requiring some attention is the concept of Single Sign-On (SSO). Single sign-on is the mechanism that allows a person, system, or application to identify itself and be authenticated once and, through various methods, have that authentication work across all other related components and applications. A simple example is an application that authenticates a person at the Web interface and then uses the provided credentials to transparently authenticate the person at all other applications within the service. Single sign-on can be done in any of the following ways:
+</br>
+Simple transparent caching and re-use of provided credentials
+Stateful session information such as cookies and tokens
+Complex authentication services such as Kerberos
+The goal of single sign-on is to increase ease-of-use while maintaining some higher degree of security. In cases where different applications are used to provide a single service, the lack of single sign-on could require an individual or application to go authenticate several times to receive a desired service. A more easily used service is one that allows an entity to authenticate once at the outset and transparently gain access to all of the applications required to provide the intended service, on demand.
+</br>
+If several different applications are being hooked together to provide a single service, and if each requires some level of authentication, single sign-on may be a valuable component. Common architectures for single sign-on include proxying authentication information and generating stateful session information.
+
+Proxying authentication information means that one or more applications are caching that data. This has the following potential pitfalls:
+
+Multiple copies of sensitive credential data are in memory, in different locations and subject to compromise.
+Does not easily handle the case where authentication information differs at each juncture in the service.
+Does not reflect a tight integration between related applications and introduces weaknesses at each level, including identity spoofing and theft of credentials.
+Caching of data must handle synchronization safely, or be susceptible to cache corruption and stale information.
+Stateful session information is information that has the following aspects:
+</br>
+Is generated as a result of successful, initial authentication
+Can be verified
+Can be trusted
+Maintains sequencing to avoid insertion, replaying and spoofing
+This means that an entity authenticates at the start of a session, and as a result some form of information is generated—this could be a cookie or token—which then can be uniquely identified and verified to have been generated by a known trusted component that is part of the service. This token information then can be passed around to all applications as needed and verified.
+</br>
+
+<br><font size="5">2.IP Security</font></br>
+<br>
+In computing, Internet Protocol Security (IPsec) is a network protocol suite that authenticates and encrypts the packets of data sent over a network. IPsec includes protocols for establishing mutual authentication between agents at the beginning of the session and negotiation of cryptographic keys to use during the session. IPsec can protect data flows between a pair of hosts (host-to-host), between a pair of security gateways (network-to-network), or between a security gateway and a host (network-to-host).[1] Internet Protocol security (IPsec) uses cryptographic security services to protect communications over Internet Protocol (IP) networks. IPsec supports network-level peer authentication, data-origin authentication, data integrity, data confidentiality (encryption), and replay protection.
+</br>
+IPsec is an end-to-end security scheme operating in the Internet Layer of the Internet Protocol Suite, while some other Internet security systems in widespread use, such as Transport Layer Security (TLS) and Secure Shell (SSH), operate in the upper layers at the Transport Layer (TLS) and the Application layer (SSH). IPsec can automatically secure applications at the IP layer.
+</br>
+US NIST developed a set of security protocols for the Internet. One of these, Security Protocol at layer-3 (SP3) was implemented in IP encryption devices sold by Motorola. The IPsec Encapsulating Security Payload (ESP) is a direct derivative of the SP3 protocol. In 1992, both research and implementation began at the US Naval Research Laboratory (NRL) on IP encryption. Later, in December 1993, the Software IP Encryption protocol swIPe (protocol) was researched on SunOS at Columbia University and AT&T Bell Labs by John Ioannidis and others. Funded by the White House in 1993, Wei Xu at Trusted Information Systems took over this research, enhanced the IP security protocols, and developed the plug-and-play Triple DES hardware encryption on the BSDI platform in July 1994, which successfully enabled the IP Security capable of the commercial products integrated with Gauntlet Firewall at the throughput over T1 speed. Practically, it was first time in history securing networks between the US East and West coasts since December 1994. These achievements ultimately led to the IP Security protocols standardized by the Internet Engineering Task Force (IETF) between 1995 and 1998.
+</br>
+In July 1992, the IETF started to create an open, freely available set of security extensions to the Internet protocol. This became the IETF IP Security (IPsec) Working Group in 1995. The SDNS project had defined a Security Protocol Layer 3 (SP3) that had been published by NIST and was also the basis of the ISO Network Layer Security Protocol (NLSP).[2] Key management for SP3 was provided by the Key Management Protocol (KMP) that provided a baseline of ideas for subsequent work in the IPsec committee.
+</br>
+IPsec is officially standardised by the Internet Engineering Task Force (IETF) in a series of Request for Comments documents addressing various components and extensions. The original IETF specifications are in RFC-1825 through RFC-1827, which published in 1995. The official spelling of the protocol name is IPsec.[3]
+</br>
+Security architecture
+The IPsec suite is an open standard. IPsec uses the following protocols to perform various functions:[4][5]
+</br>
+Authentication Headers (AH) provides connectionless data integrity and data origin authentication for IP datagrams and provides protection against replay attacks.[6][7]
+Encapsulating Security Payloads (ESP) provides confidentiality, data-origin authentication, connectionless integrity, an anti-replay service (a form of partial sequence integrity), and limited traffic-flow confidentiality.[1]
+Security Associations (SA) provides the bundle of algorithms and data that provide the parameters necessary for AH and/or ESP operations. The Internet Security Association and Key Management Protocol (ISAKMP) provides a framework for authentication and key exchange,[8] with actual authenticated keying material provided either by manual configuration with pre-shared keys, Internet Key Exchange (IKE and IKEv2), Kerberized Internet Negotiation of Keys (KINK), or IPSECKEY DNS records.[9][10][11][12]
+Authentication Header
+The Security Authentication Header (AH) is derived partially from previous IETF standards work for authentication of the Simple Network Management Protocol (SNMP) version 2. Authentication Header (AH) is a member of the IPsec protocol suite. AH ensures connectionless integrity by using a hash function and a secret shared key in the AH algorithm. AH also guarantees the data origin by authenticating IP packets. Optionally a sequence number can protect the IP sec packet's contents against replay attacks,[13] using the sliding window technique and discarding old packets.
+</br>
+In IPv4, AH prevents option-insertion attacks. In IPv6, AH protects both against header insertion attacks and option insertion attacks.
+In IPv4, the AH protects the IP payload and all header fields of an IP datagram except for mutable fields (i.e. those that might be altered in transit), and also IP options such as the IP Security Option (RFC 1108). Mutable (and therefore unauthenticated) IPv4 header fields are DSCP/ToS, ECN, Flags, Fragment Offset, TTL and Header Checksum.[7]
+In IPv6, the AH protects most of the IPv6 base header, AH itself, non-mutable extension headers after the AH, and the IP payload. Protection for the IPv6 header excludes the mutable fields: DSCP, ECN, Flow Label, and Hop Limit.[7]
+AH operates directly on top of IP, using IP protocol number 51.[14]
+</br>
+The following AH packet diagram shows how an AH packet is constructed and interpreted:[6][7]
+</br>
+Authentication Header format</br>
+Offsets	Octet16	0	1	2	3
+Octet16	Bit10	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22	23	24	25	26	27	28	29	30	31
+0	0	Next Header	Payload Len	Reserved
+4	32	Security Parameters Index (SPI)
+8	64	Sequence Number
+C	96	Integrity Check Value (ICV)
+…</br>
+…	…
+Next Header (8 bits)</br> 
+Type of the next header, indicating what upper-layer protocol was protected. The value is taken from the list of IP protocol numbers.
+Payload Len (8 bits) </br>
+The length of this Authentication Header in 4-octet units, minus 2. For example, an AH value of 4 equals 3×(32-bit fixed-length AH fields) + 3×(32-bit ICV fields) − 2 and thus an AH value of 4 means 24 octets. Although the size is measured in 4-octet units, the length of this header needs to be a multiple of 8 octets if carried in an IPv6 packet. This restriction does not apply to an Authentication Header carried in an IPv4 packet.
+Reserved (16 bits) </br>
+Reserved for future use (all zeroes until then).</br>
+Security Parameters Index (32 bits) </br>
+Arbitrary value which is used (together with the destination IP address) to identify the security association of the receiving party.
+Sequence Number (32 bits) </br>
+A monotonic strictly increasing sequence number (incremented by 1 for every packet sent) to prevent replay attacks. When replay detection is enabled, sequence numbers are never reused, because a new security association must be renegotiated before an attempt to increment the sequence number beyond its maximum value.[7]
+Integrity Check Value (multiple of 32 bits) 
+Variable length check value. It may contain padding to align the field to an 8-octet boundary for IPv6, or a 4-octet boundary for IPv4.
+Encapsulating Security Payload</br>
+The IP Encapsulating Security Payload (ESP)[15] was researched at the Naval Research Laboratory starting in 1992 as part of a DARPA-sponsored research project, and was openly published by IETF SIPP[16] Working Group drafted in December 1993 as a security extension for SIPP. This ESP was originally derived from the US Department of Defense SP3D protocol, rather than being derived from the ISO Network-Layer Security Protocol (NLSP). The SP3D protocol specification was published by NIST in the late 1980s, but designed by the Secure Data Network System project of the US Department of Defense. Encapsulating Security Payload (ESP) is a member of the IPsec protocol suite. It provides origin authenticity through source authentication, data integrity through hash functions and confidentiality through encryption protection for IP packets. ESP also supports encryption-only and authentication-only configurations, but using encryption without authentication is strongly discouraged because it is insecure.[17][18][19]
+</br>
+Unlike Authentication Header (AH), ESP in transport mode does not provide integrity and authentication for the entire IP packet. However, in Tunnel Mode, where the entire original IP packet is encapsulated with a new packet header added, ESP protection is afforded to the whole inner IP packet (including the inner header) while the outer header (including any outer IPv4 options or IPv6 extension headers) remains unprotected. ESP operates directly on top of IP, using IP protocol number 50.[14]
+</br>
+
+
+
+<br><font size="5">3.Web Security</font></br>
+
+</br>Web Security, Your Site and Your Network
+Web sites are unfortunately prone to security risks. And so are any networks to which web servers are connected. Setting aside risks created by employee use or misuse of network resources, your web server and the site it hosts present your most serious sources of security risk.
+</br>
+Web servers by design open a window between your network and the world. The care taken with server maintenance, web application updates and your web site coding will define the size of that window, limit the kind of information that can pass through it and thus establish the degree of web security you will have.
+</br>
+ 
+
+Is Your Site or Network at Risk?
+"Web security" is relative and has two components, one internal and one public. Your relative security is high if you have few network resources of financial value, your company and site aren't controversial in any way, your network is set up with tight permissions, your web server is patched up to date with all settings done correctly, your applications on the web server are all patched and updated, and your web site code is done to high standards.
+</br>
+Your web security is relatively lower if your company has financial assets like credit card or identity information, if your web site content is controversial, your servers, applications and site code are complex or old and are maintained by an underfunded or outsourced IT department. All IT departments are budget challenged and tight staffing often creates deferred maintenance issues that play into the hands of any who want to challenge your web security.
+</br>
+Web Security Risk - Should You Be Worried?
+If you have assets of importance or if anything about your site puts you in the public spotlight then your web security will be tested. We hope that the information provided here will prevent you and your company from being embarrassed - or worse.
+</br>
+It's well known that poorly written software creates security issues. The number of bugs that could create web security issues is directly proportional to the size and complexity of your web applications and web server. Basically, all complex programs either have bugs or at the very, least weaknesses. On top of that, web servers are inherently complex programs. Web sites are themselves complex and intentionally invite ever greater interaction with the public. And so the opportunities for security holes are many and growing.
+</br>
+Technically, the very same programming that increases the value of a web site, namely interaction with visitors, also allows scripts or SQL commands to be executed on your web and database servers in response to visitor requests. Any web-based form or script installed at your site may have weaknesses or outright bugs and every such issue presents a web security risk.
+</br>
+Contrary to common knowledge the balance between allowing web site visitors some access to your corporate resources through a web site and keeping unwanted visitors out of your network is a delicate one. There is no one setting, no single switch to throw that sets the security hurdle at the proper level. There are dozens of settings if not hundreds in a web server alone, and then each service, application and open port on the server adds another layer of settings. And then the web site code... you get the picture.
+</br>
+Add to that the different permissions you will want to grant visitors, prospects, customers, partners and employees. The number of variables regarding web security rapidly escalates.
+</br>
+A web security issue is faced by site visitors as well. A common web site attack involves the silent and concealed installation of code that will exploit the browsers of visitors. Your site is not the end target at all in these attacks. There are, at this time, many thousands of web sites out there that have been compromised. The owners have no idea that anything has been added to their sites and that their visitors are at risk. In the meantime visitors are being subject to attack and successful attacks are installing nasty code onto the visitor's computers.
+</br>
+Web Server Security
+The world's most secure web server is the one that is turned off. Simple, bare-bones web servers that have few open ports and few services on those ports are the next best thing. This just isn't an option for most companies. Powerful and flexible applications are required to run complex sites and these are naturally more subject to web security issues.
+</br>
+Any system with multiple open ports, multiple services and multiple scripting languages is vulnerable simply because it has so many points of entry to watch.
+</br>
+If your system has been correctly configured and your IT staff has been very punctual about applying security patches and updates your risks are mitigated. Then there is the matter of the applications you are running. These too require frequent updates. And last there is the web site code itself.
+</br>
+Web Site Code and Web Security
+You site undoubtedly provides some means of communication with its visitors. In every place that interaction is possible you have a potential web security vulnerability. Web sites often invite visitors to:
+</br>
+Load a new page containing dynamic content
+Search for a product or location
+Fill out a contact form
+Search the site content
+Use a shopping cart
+Create an account
+Logon to an account
+ </br>
+
+In each case noted above your web site visitor is effectively sending a command to or through your web server - very likely to a database. In each opportunity to communicate, such as a form field, search field or blog, correctly written code will allow only a very narrow range of commands or information types to pass - in or out. This is ideal for web security. However, these limits are not automatic. It takes well trained programmers a good deal of time to write code that allows all expected data to pass and disallows all unexpected or potentially harmful data.
+</br>
+And there lies the problem. Code on your site has come from a variety of programmers, some of whom work for third party vendors. Some of that code is old, perhaps very old. Your site may be running software from half a dozen sources, and then your own site designer and your webmaster has each produced more code of their own, or made revisions to another's code that may have altered or eliminated previously established web security limitations.
+</br>
+Add to that the software that may have been purchased years ago and which is not in current use. Many servers have accumulated applications that are no longer in use and with which nobody on your current staff is familiar. This code is often not easy to find, is about as valuable as an appendix and has not been used, patched or updated for years - but it may be exactly what a hacker is looking for!
+</br>
+Known Web Security Vulnerabilities and Unknown Vulnerabilities
+As you know there are a lot of people out there who call themselves hackers. You can also easily guess that they are not all equally skilled. As a matter of fact, the vast majority of them are simply copycats. They read about a KNOWN technique that was devised by someone else and they use it to break into a site that is interesting to them, often just to see if they can do it. Naturally once they have done that they will take advantage of the site weakness to do malicious harm, plant something or steal something.
+</br>
+A very small number of hackers are actually capable of discovering a new way to overcome web security obstacles. Given the work being done by tens of thousands of programmers worldwide to improve security, it is not easy to discover a brand new method of attack. Hundreds, sometimes thousands of man-hours might be put into developing a new exploit. This is sometimes done by individuals, but just as often is done by teams supported by organized crime. In either case they want to maximize their return on this investment in time and energy and so they will very quietly focus on relatively few, very valuable corporate or governmental assets. Until their new technique is actually discovered, it is considered UNKNOWN.
+</br>
+Countering and attempting to eliminate any return on this hacking investment you have hundreds if not thousands of web security entities. These public and private groups watch for and share information about newly discovered exploits so that an alarm can be raised and defense against unknown exploits can be put in place quickly. The broad announcement of a new exploit makes it a KNOWN exploit.
+</br>
+The outcome of this contest of wills, so to speak, is that exploits become known and widely documented very soon after they are first used and discovered. So at any one time there are thousands (perhaps tens of thousands) of known vulnerabilities and only a very, very few unknown. And those few unknown exploits are very tightly focused onto just a very few highly valuable targets so as to reap the greatest return before discovery. Because once known the best defended sites immediately take action to correct their flaws and erect better defenses.
+</br>
+Your Greatest Web Security Risks: Known or Unknown?
+Your site is 1,000 times more likely to be attacked with a known exploit than an unknown one. And the reason behind this is simple: There are so many known exploits and the complexity of web servers and web sites is so great that the chances are good that one of the known vulnerabilities will be present and allow an attacker access to your site.
+</br>
+The number of sites worldwide is so great and the number of new, as of yet undocumented and thus unknown exploits so small that your chances of being attacked with one is nearly zero - unless you have network assets of truly great value.
+</br>
+If you don't attract the attention of a very dedicated, well financed attack, then your primary concern should be to eliminate your known vulnerabilities so that a quick look would reveal no easy entry using known vulnerabilities.
+</br>
+Web Security Defense Strategy
+There are two roads to accomplish excellent security. On one you would assign all of the resources needed to maintain constant alert to new security issues. You would ensure that all patches and updates are done at once, have all of your existing applications reviewed for correct security, ensure that only security knowledgeable programmers do work on your site and have their work checked carefully by security professionals. You would also maintain a tight firewall, antivirus protection and run IPS/IDS.
+</br>
+Your other option: use a web scanning solution to test your existing equipment, applications and web site code to see if a KNOWN vulnerability actually exists. While firewalls, antivirus and IPS/IDS are all worthwhile, it is simple logic to also lock the front door. It is far more effective to repair a half dozen actual risks than it is to leave them in place and try to build higher and higher walls around them. Network and web site vulnerability scanning is the most efficient security investment of all.
+</br>
+If one had to walk just one of these roads, diligent wall building or vulnerability testing, it has been seen that web scanning will actually produce a higher level of web security on a dollar for dollar basis. This is proven by the number of well defended web sites which get hacked every month, and the much lower number of properly scanned web sites which have been compromised.
+</br>
+Web Security Using a Web Site Security Audit
+Your best defense against a attack on your web site is to regularly scan a competently set up domain that is running current applications and whose web site code was done well.
+</br>
+Web site testing, also known as web scanning or auditing, is a hosted service provided by Beyond Security called WSSA - Web Site Security Audit. This service requires no installation of software or hardware and is done without any interruption of web services.
+</br>
+Beyond Security staff has been accumulating known issues for many years and have compiled what is arguably the world's most complete database of security vulnerabilities. Each kind of exploit has a known combination of web site weaknesses that must be present to be accomplished. Thus by examining a server for the open port, available service and/or code that each known exploit requires, it is a simple matter to determine if a server is vulnerable to attack using that method.
+</br>
+In a matter of hours, WSSA can run through its entire database of over ten thousand vulnerabilities and can report on which are present and better yet, confirm the thousands that are not. With that data in hand you and your staff can address your actual web security vulnerabilities and, when handled, know that your site is completely free of known issues regardless of what updates and patches have been done and what condition your code is in or what unused code may reside, hidden, on your site or web server.
+</br>
+Then, WSSA can be run on a regular basis so that your site will be tested against new vulnerabilities as they become known and provide you with solid data as to whether action is vital, needed or low priority. You will also be alerted if new code has been added to the site that is insecure, a new port has been opened that was unexpected, or a new service has been loaded and started that may present an opportunity to break in.
+</br>
+In complex, large systems it may be that daily web scanning is the ONLY way to ensure that none of the many changes made to site code or on an application may have opened a hole in your carefully established security perimeter!
+</br>
+
+</div>
+</body>
+</html>

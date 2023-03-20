@@ -1,0 +1,176 @@
+﻿Unite 2
+
+
+
+Software Requirements Analysis
+
+
+Q.1	What are Functional and non-functional requirements?
+
+Ans: Functional requirements are the statements of services the system should provide, how the system should react to particular inputs and how the system should behave in particular situations. Functional requirements are the product capabilities, or things that a product must do for its users. Functional requirements define how software behaves to meet user needs.
+
+
+Non-Functional Requirements are the constraints on the services or functions offered by the system such as timing constraints, constraints on the development process, standards, etc. Non-Functional Requirements in Software Engineering presents a systematic approach to `building quality into' software systems.
+
+
+Q.2	What are User requirements?
+
+Ans: User requirements are the statements in natural language with diagrammatic representations of the services, the system provides and its operational constraints.
+
+Q.3	What are System requirements?
+
+Ans: System requirements are the structured document specification containing detailed descriptions of the system‟s functions, services and operational constraints.
+
+Q.4	What are Interface specification?
+
+Ans: Interface specification includes the description of interfaces of the system and its subsystems. Such interface specification of subsystems allows independent development of the different subsystems. Interfaces may be defined as abstract data types or object classes.
+
+Q.5	What is software requirement document?
+
+Ans: The requirements document is the formal and official statement of what is required of the system developers. It includes both a definition of user
+
+
+requirements and a specification of the system requirements; it specifies “what” the system should do rather than “how” it should do.
+
+
+Requirement Engineering Process
+
+
+Q.1	What do you mean by Requirement Engineering Process.
+
+Ans: The processes used for Requirement Engineering mainly depend on the application domain, the people involved and the organization involved and responsible for developing the requirements. Also, there are a number of general activities common to all processes like, Requirements elicitation; Requirements analysis; Requirements validation; Requirements management. Figure 5.1 explains the Requirement Engineering Process.
+
+
+
+Figure 5.1 Requirement Engineering Process
+
+
+Q.2	What do you mean by feasibility study?
+
+Ans:	A feasibility study decides whether or not the proposed system is fruitful to develop. Feasibility study checks: If the system contributes to organizational objectives; If the system can be engineered using current technology and within budget; If the system can be integrated with other systems that are used.
+
+Three types of feasibility studies are:
+
+
+
+
+1.	Technical feasibility
+2.	Operational Feasibility
+
+3.	Economical Feasibility
+
+Q.3	What do you mean by Requirement elicitation and analysis?
+
+
+Ans:	Requirement elicitation is also known as requirements discovery. It involves:
+
+-	Technical staff working with customers to find out about the application domain,
+
+-	The services that the system should provide and the system‟s operational constraints.
+
+-	May involve send-users, managers, engineers involved in maintenance, domain experts, trade unions, etc., called as stakeholders.
+
+Q.4	What are the Problems of requirements analysis?
+
+Ans:	Few problems of requirements analysis are:
+
+-	Stakeholders don‟t know what they really want.
+-	Stakeholders express requirements in their own terms.
+
+-	Different stakeholders may have conflicting requirements.
+-	Organizational and political factors may influence the system requirements.
+-	The requirements change during the analysis process.
+- New stakeholders may emerge and the business environment change.
+
+Q.5	What are viewpoints?
+
+Ans: Viewpoints are the way of structuring the requirements to represent the viewpoints of different stakeholders.
+
+Q.6	What are the types of viewpoints?
+
+Ans:	Three Types of viewpoints are:
+
+Interactor viewpoints: Here, People or other systems interact directly with the system. In an ATM, the customer‟s and the account database are the interactor viewpoints.
+
+Indirect viewpoints: Here, Stakeholders who do not use the system themselves but influence the requirements. In an ATM, management and security staff are indirect viewpoints.
+
+Domain viewpoints: Here, domain characteristics and constraints that influence the requirements. In an ATM, standards for inter-bank communication.
+
+
+software System Specifications
+
+
+
+Q.1	What is Risk-driven specification?
+
+Ans:	Critical systems specifications are risk-driven, as risks create a threat to the system. This approach has been widely used in safety and security-critical systems. The aim of the specification process should be to understand the risks (safety, security, etc.) faced by the system and to define requirements that reduce these risks.
+
+
+Figure 6.1 Risk Driven Specification
+
+Stages of risk-based analysis:
+
+•	Risk identification
+–   Identify potential risks that may arise.
+•	Risk analysis and classification
+–   Assess the seriousness of each risk.
+
+•	Risk decomposition
+–   Decompose risks to discover their potential root causes.
+•	Risk reduction assessment
+
+– Define how each risk must be taken into eliminated or reduced when the system is designed.
+
+Software Engineering
+
+
+
+
+
+
+
+Q.2	What are Safety specifications?
+
+Ans:	Safety specifications are:
+
+•	Identifying protection requirements that ensure that system failures do not cause injury or death or environmental damage.
+•	Risk identification is equivalent to Hazard identification
+•	Risk analysis is equivalent to Hazard assessment
+•	Risk decomposition is equivalent to Hazard analysis
+
+•	Risk reduction is equivalent to safety requirements specification
+
+Hazard identification
+•	Identify the hazards that may threaten the system.
+
+•	Hazard identification may be based on different types of hazard:
+
+•	Physical hazards
+•	Electrical hazards
+•	Biological hazards
+•	Service failure hazards
+
+•	Etc.
+
+
+Hazard assessment
+•	Estimate the hazard probability and the hazard severity.
+
+•	It is not normally possible to do this precisely so relative values are used such as „unlikely‟, „rare‟, „very high‟, etc.
+
+•	The aim is to make sure that the system can handle hazards that are likely to arise or that have high severity.
+
+Hazard analysis
+•	Concerned with discovering the root causes of risks in a particular system.
+•	Techniques have been mostly derived from safety-critical systems and can be
+
+– Inductive, bottom-up techniques. Start with a proposed system failure and assess the hazards that could arise from that failure;
+
+– Deductive, top-down techniques. Start with a hazard and deduce what the causes of this could be.
+
+Risk reduction
+
+•	The aim of this process is to identify dependability requirements that specify how the risks should be managed and ensure that accidents/incidents do not arise.
+
+•	Risk reduction strategies
+–   Risk avoidance;

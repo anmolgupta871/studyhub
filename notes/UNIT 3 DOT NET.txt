@@ -1,0 +1,1662 @@
+Unit-III
+
+C# Using Libraries
+3.1 Namespace- System
+
+System Namespace in fundamental namespace for c# application. It contain all the fundamental classes and base classes which are required in simple C# application. These classes and sub classes defines reference data type, method and interfaces. Some classes provide some other feature like data type conversion, mathematical function.
+Some functionality provided by System namespace
+•	Commonly-used value 
+•	Mathematics 
+•	Remote and local program invocation 
+•	Application environment management 
+•	Reference data types 
+•	Events and event handlers 
+•	Interfaces Attributes Processing exceptions 
+•	Data type conversion 
+•	Method parameter manipulation 
+Some Classes provide by System namespace
+•	AccessViolationException 
+•	Array 
+•	ArgumentNullException 
+•	AttributeUsageAttribute 
+•	Buffer 
+•	Console 
+•	Convert 
+•	Delegate 
+•	Exception 
+
+•	InvalidCastException 
+Some interfaces provided by System namespace
+•	Public interface ICloneable 
+•	Public interface IComparable 
+•	Public interface IComparable<T> 
+•	Public interface IConvertible 
+•	Public interface ICustomFormatter 
+•	Public interface IDisposable 
+•	Public interface IEquatable<T> 
+
+•	Public interface IFormatProvider MATH EXAMPLE 
+
+using System; class Pythagorean { static void Main() {
+
+	double s1;  double s2; double hypot;
+
+	string str; 
+
+Console.WriteLine("Enter length of first side: "); str = Console.ReadLine(); 
+s1 = Double.Parse(str); 
+
+Console.WriteLine("Enter length of second side: "); 
+ 
+
+54
+ 
+str = Console.ReadLine();
+
+s2 = Double.Parse(str);
+
+hypot = Math.Sqrt(s1*s1 + s2*s2);
+
+Console.WriteLine("Hypotenuse is " + hypot);
+
+}
+
+}
+Sorting and Searching,Reverse,Copy Arrays
+
+Using Sort( ), you can sort an entire array, a range within an array, or a pair of arrays that contain corresponding key/value pairs. Once an array has been sorted, you can efficiently search it using BinarySearch( ).
+
+using System; class
+
+SortDemo { static
+
+void Main() {
+
+int[] nums = { 5, 4, 6, 3, 14, 9, 8, 17, 1, 24, -1, 0
+}; Console.Write("Original order: ");
+foreach(int i in nums)
+Console.Write(i + " "); Console.WriteLine();
+Array.Sort(nums);
+Console.Write("Sorted order: ");
+foreach(int i in nums)
+Console.Write(i + " ");	Console.WriteLine();
+int idx = Array.BinarySearch(nums, 14);
+Console.WriteLine("Index of 14 is " + idx); } }
+
+The IComparable and IComparable<T> Interfaces
+
+•	Many classes will need to implement either the IComparable or IComparable<T> interface because they enable one object to be compared to another (for the purpose of ordering) by various methods defined by the .NET Framework
+
+•	IComparable is especially easy to implement because it consists of just this one method:
+
+•	int CompareTo(object obj)
+
+•	This method compares the invoking object against the value in obj. It returns greater than zero if the invoking object is greater than obj, zero if the two objects are equal, and less than zero if the invoking object is less than obj.
+
+StringBuilder in C#
+
+Once created a string cannot be changed. A StringBuilder can be changed as many times as necessary. It yields astonishing performance improvements. It eliminates millions of string copies. Many C# programs append or replace strings in loops. There the StringBuilder type becomes a necessary optimization. It uses the new keyword for StringBuilder. Use the new keyword to make your StringBuilder. This is different from regular strings. StringBuilder has many overloaded constructors. continuing on it calls the instance Append method. This method adds the contents of its arguments to the buffer in the StringBuilder. Every argument to StringBuilder will automatically have its ToString method called. It calls AppendLine, which does the exact same thing as Append, except with a new line on the end. Next, Append and Append Line call themselves. This shows terse syntax with StringBuilder. Finally ToString returns the buffer. You will almost always want ToString. It will return the contents as a string.
+ 
+
+
+
+55
+ 
+Example
+
+using System;
+
+using System.Text;
+
+class Program
+
+{
+static void Main()
+{
+
+StringBuilder builder = new StringBuilder();
+
+//	Append to StringBuilder. for (int i = 0; i < 10; i++)
+{
+builder.Append(i).Append(" ");
+}
+Console.WriteLine(builder);
+}
+
+}
+
+3.2 Input-Output
+
+C# programs perform I/O through streams. A stream is an abstraction that either produces or consumes information. A stream is linked to a physical device by the I/O system. All streams behave in the same manner, even if the actual physical devices they are linked to differ. Thus, the I/O classes and methods can be applied to many types of devices. For example, the same methods that you use to write to the console can also be used to write to a disk file.
+
+Byte Streams and Character Streams
+
+At the lowest level, all C# I/O operates on bytes. This makes sense because many devices are byte oriented when it comes to I/O operations. Frequently, though, we humans prefer to communicate using characters. Recall that in C#, char is a 16-bit type, and byte is an 8-bit type. If you are using the ASCII character set, then it is easy to convert between char and byte; just ignore the high-order byte of the char value. But this won‘t work for the rest of the Unicode characters, which need both bytes (and possibly more). Thus, byte streams are not perfectly suited to handling character-based I/O. To solve this problem, the .NET Framework defines several classes that convert a byte stream into a character stream, handling the translation of byte-to-char and char-to-byte for you automatically.
+
+The Predefined Streams
+
+Three predefined streams, which are exposed by the properties called Console.In, Console.Out, and Console.Error, are available to all programs that use the System namespace. Console.Out refers to the standard output stream. By default, this is the console. When you call Console.WriteLine( ), for example, it automatically sends information to Console.Out. Console.In refers to standard input, which is, by default, the keyboard. Console.Error refers to the standard error stream, which is also the console by default. However, these streams can be redirected to any compatible I/O device. The standard streams are character streams. Thus, these streams read and write characters.
+
+System.IO Namespace
+
+– BinaryReader Class: Reads primitive data types as binary values in a specific encoding.
+
+– BinaryWriter Class : Writes primitive types in binary to a stream and supports writing strings in a specific encoding.
+
+– BufferedStream Class : Adds a buffering layer to read and write operations on another stream. This class cannot be inherited.
+ 
+
+56
+ 
+– Directory Class: Exposes static methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+
+– DirectoryInfo Class: Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited.
+
+– File Class:Provides static methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of FileStream objects.
+
+– FileInfo :Provides properties and instance methods for the creation, copying, deletion, moving, and opening of files, and aids in the creation of FileStream objects. This class cannot be inherited.
+
+– FileStream: Exposes a Stream around a file, supporting both synchronous and asynchronous read and write operations.
+
+– IOException Class
+– Path Class
+– Stream Class: Provides a generic view of a sequence of bytes.
+
+– StreamReader: Implements a TextReader that reads characters from a byte stream in a particular encoding.
+
+– StreamWriter : Implements a TextWriter for writing characters to a stream in a particular encoding.
+
+– StringReader :Implements a TextReader that reads from a string.
+
+– StringWriter: Implements a TextWriter for writing information to a string. The information is stored in an underlying StringBuilder.
+
+– TextReader: Represents a reader that can read a sequential series of characters.
+
+– TextWriter:Represents a writer that can write a sequential series of characters. This class is abstract.
+
+–
+Creating and writing text on a File
+namespace IOTest{
+
+class Program  {
+static void Main(string[] args)	{
+StreamWriter sw;
+
+sw= File.CreateText("d:/workspace/Hello.txt"); sw.WriteLine("Hello Mca Students This is your basic IO"); //sw.Flush();
+
+//sw.Close();
+Console.WriteLine("Please show the file in d drive ");
+
+} } }
+
+class TextFileWriter {
+
+static void Main(string[] args)	{
+TextWriter tw = new StreamWriter("date.txt");
+tw.WriteLine(DateTime.Now);
+tw.Close();
+} }
+class TextFileReader {
+
+static void Main(string[] args)	{
+Textreader tr = new StreamReader("date.txt");
+
+Console.WriteLine(tr.ReadLine()); tr.Close();
+
+}
+}
+ 
+
+57
+ 
+Listing A Directory
+
+class DirTest1{
+
+static void Main(){
+
+System.Console.WriteLine("sub directries in this directory "); string[] dirs = Directory.GetDirectories("C:\\");
+
+int count = dirs.Length;
+
+for (int i=0; i<count; i++)
+
+System.Console.WriteLine(dirs[i]);
+
+System.Console.WriteLine("Files in this dierectory are"); string[] files = Directory.GetFiles("C:\\");
+
+int count1 = files.Length;
+
+for (int i=0; i<count1; i++)
+
+System.Console.WriteLine(files[i]);
+
+}}
+
+Formatted Strings in C#
+
+The parameter placeholder {0}, {1} etc in Console.Write is handled by the string formatting. The placeholder has to have the index of the parameter but can also include formatting information. This is used in Console.WriteLine and also string.format hence its inclusion here.
+Layout of the PlaceHolder
+The three parts are
+
+index, alignment : format
+
+So {0:X} (x means Hexadecimal) or {0,10} meaning output in a width of 10. The alignment value specifies teh width and left or right alignment by using - (left aligned) or + (right aligned) numbers. 10 Means right aligned in a width of 10, -6 means left aligned in a width of 6. Alignment is ignored if the output exceeds the width.
+
+This provides a large number of formatting examples.
+List of Numeric Formats
+•	C or C - For Currency. Uses the cultures currency symbol. 
+•	D or D - Integer types. Add a number for 0 padding eg D5. 
+•	E or e - Scientific notation. 
+•	F or f - Fixed Point. 
+•	G or g - Compact fixed-point/scientific notation. 
+•	N or n - Number. This can be enhanced by a NumberFormatInfo object. 
+•	P or p - Percentage. 
+•	R or r - Round-trip. Keeps exact digits when converted to string and back. 
+•	X or x - Hexadecimal. x - uses abcdef, X use ABCDEF. 
+Dates can also be specified either using Standard Format strings
+•	O or o - YYYY-MM-dd:mm:ss:ffffffffzz 
+•	R or r - RFC1123 eg ddd, dd MMM yyyy HH:ss GMT 
+
+•	s - sortable . yyyy-MM-ddTHH:mm:ss 
+
+•	u - Universal Sort Date - yyyy-MM-dd HH:mm:ssZ or Format specifiers. 
+
+Example
+
+using System;
+
+using System.Text;
+using System.Globalization;
+ 
+
+
+58
+ 
+
+// or output direct
+// or output direct with leading 0
+namespace ex6
+
+{
+class Program
+{
+static void Main(string[] args)
+{
+//	Numeric Formatting Examples
+//	integer
+int i = 5678;
+string s = string.Format("{0,10:D}", i); // Into a string right aligned 10 width
+
+Console.WriteLine("{0,10:D}", i); Console.WriteLine("{0,10:D7}", i);
+
+
+
+
+//	double and currency in various formats double d=47.5;
+double bigd = 19876543.6754;
+
+Console.WriteLine("{0,15:C2}", d); // In Uk = £47.50 right aligned in 15 width
+
+Console.WriteLine("{0,15:N10}", bigd); // Number Console.WriteLine("{0,15:E3}", d); // Scientific 4.750E+001 Console.WriteLine("{0,15:F5}", d); // Fixed Point 47.50000 Console.WriteLine("{0,15:G4}", d); // Compact 47.5 Console.WriteLine("{0,10:P2}", d/100.0); // % Console.WriteLine("{0,15:R}", bigd); // Roundtrip - not a digit lost
+
+//	Hex-a-diddly-decimal Console.WriteLine("{0,10:x8}", i); // lowercase 0000162e Console.WriteLine("{0,10:X8}", i); // uppercase 0000162E
+
+
+//	Date formats
+
+DateTime dt = DateTime.Now;
+
+// Standards
+
+Console.WriteLine("{0:O}", dt); // O or o yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffffffzz Console.WriteLine("{0:R}", dt); // R or r ddd, dd MMM yyyy HH':'mm':'ss 'GMT' Console.WriteLine("{0:s}", dt); // s yyyy'-'MM'-'dd'T'HH':'mm':'ss Console.WriteLine("{0:u}", dt); // u yyyy'-'MM'-'dd HH':'mm':'ss'Z'
+
+//	Using date/time specifiers Console.WriteLine("{0:t}", dt); // short time Console.WriteLine("{0:T}", dt); // long time Console.WriteLine("{0:d}", dt); // short date Console.WriteLine("{0:D}", dt); // long date Console.WriteLine("{0:f}", dt); // long date / short time Console.WriteLine("{0:F}", dt); // long date / long time Console.WriteLine("{0:g}", dt); // short date / short time Console.WriteLine("{0:G}", dt); // short date / long time Console.WriteLine("{0:o}", dt); // Round Trip
+
+//	roll your own...
+ 
+
+59
+ 
+Console.WriteLine("{0:dd/mm/yyyy HH:MM:ss}", dt);//custom - what most people use (UK)!
+
+Console.WriteLine("{0:mm/dd/yyyy HH:MM:ss}", dt);//custom - what most people use (US)!
+
+Console.WriteLine("{0:yyyy/mm/dd HH:MM:ss}", dt);//custom - (Japan) Good for sorting!
+
+Console.WriteLine("{0:dd MMM yyyy HH:MM:ss}", dt); // custom - month (UK)
+
+Console.WriteLine("{0:MMM dd yyyy HH:MM:ss}", dt); // custom - month (US)
+
+Console.WriteLine("{0:yyyy MMM dd HH:MM:ss}", dt); // custom - (Japan)
+
+Console.ReadKey();
+}
+}
+}
+
+3.3 Multi-Threading
+
+Thread :
+•	A thread is defined as the execution path of a program. Each thread defines a unique flow of
+
+control. If your application involves complicated and time consuming operations then it is often helpful to set different execution paths or threads, with each thread performing a
+	particular job. 
+
+•	Threads are lightweight processes. One common example of use of thread is implementation of concurrent programming by modern operating systems. Use of threads saves wastage of CPU cycle and increase efficiency of an application. 
+
+Thread Life Cycle
+
+The life cycle of a thread starts when an object of the System.Threading.Thread class is created and ends when the thread is terminated or completes execution. Following are the various states in the life cycle of a thread:
+
+•	The Unstarted State: it is the situation when the instance of the thread is created but the Start method has not been called. 
+
+	•   The Ready State: it is the situation when the thread is ready to run and waiting CPU cycle. 
+
+•	The Not Runnable State: a thread is not runnable, when: 
+
+o	Sleep method has been called o Wait method has been called o Blocked by I/O operations
+
+•	The Dead State: it is the situation when the thread has completed execution or has been aborted. 
+The Main Thread
+
+In C#, the System.Threading.Thread class is used for working with threads. It allows creating and accessing individual threads in a multithreaded application. The first thread to be executed in a process is called the main thread.
+
+When a C# program starts execution, the main thread is automatically created. The threads created using the Thread class are called the child threads of the main thread. You can access a thread using the CurrentThread property of the Thread class. The following program demonstrates main thread
+execution: using System;
+
+using System.Threading;
+
+namespace MultithreadingApplication
+
+{
+class MainThreadProgram
+
+{
+ 
+
+60
+ 
+static void Main(string[] args)
+
+{
+Thread th = Thread.CurrentThread;
+th.Name = "MainThread";
+Console.WriteLine("This is {0}",
+th.Name); Console.ReadKey();
+}
+}
+}
+OUTPUT:
+
+This is MainThread
+
+Creating Threads:Threads are created by creating the object of Thread. The extended Thread class then calls the Start()method to begin the child thread execution. The following program demonstrates the concept:
+
+using System;
+
+using System.Threading;
+
+namespace MultithreadingApplication
+
+{
+class ThreadCreationProgram
+{
+public static void CallToChildThread()
+{
+Console.WriteLine("Child thread starts");
+
+}
+
+static void Main(string[] args)
+
+{
+ThreadStart childref = new
+ThreadStart(CallToChildThread); Console.WriteLine("In
+Main: Creating the Child thread"); Thread childThread =
+new Thread(childref); childThread.Start();
+Console.ReadKey();
+}
+}
+
+}
+OUTPUT:
+In Main: Creating the Child
+
+thread Child thread starts
+
+Managing Threads
+
+The Thread class provides various methods for managing threads.
+The following example demonstrates the use of the sleep() method for making a thread pause for
+a specific period of time.
+using System;
+
+using System.Threading;
+
+namespace MultithreadingApplication
+ 
+
+61
+ 
+{
+
+class ThreadCreationProgram
+{
+public static void CallToChildThread()
+{
+Console.WriteLine("Child thread starts");
+//	the thread is paused for 5000
+
+milliseconds int sleepfor = 5000; Console.WriteLine("Child Thread Paused for {0}
+
+seconds", sleepfor / 1000); Thread.Sleep(sleepfor); Console.WriteLine("Child thread resumes");
+
+}
+
+static void Main(string[] args)
+
+{
+ThreadStart childref = new
+ThreadStart(CallToChildThread); Console.WriteLine("In
+Main: Creating the Child thread"); Thread childThread =
+new Thread(childref); childThread.Start();
+Console.ReadKey();
+}
+}
+}
+OUTPUT:
+In Main: Creating the Child
+thread Child thread starts
+Child Thread Paused for 5
+seconds Child thread resumes
+
+Destroying Threads
+
+The Abort() method is used for destroying threads. The runtime aborts the thread by throwing a ThreadAbortException. This exception cannot be caught, the control is sent to the finally block, if any.
+
+The following program illustrates this:
+
+using System;
+
+using System.Threading;
+
+namespace MultithreadingApplication
+
+{
+class ThreadCreationProgram
+{
+public static void CallToChildThread()
+{
+try
+
+{
+
+Console.WriteLine("Child thread starts");
+ 
+
+62
+ 
+// do some work, like counting to 10
+
+for (int counter = 0; counter <= 10; counter++)
+{
+Thread.Sleep(500);
+Console.WriteLine(counter);
+}
+Console.WriteLine("Child Thread Completed");
+
+}
+
+catch (ThreadAbortException e)
+{
+Console.WriteLine("Thread Abort Exception");
+}
+finally
+{
+Console.WriteLine("Couldn't catch the Thread Exception");
+
+}
+
+}
+
+static void Main(string[] args)
+
+{
+ThreadStart childref = new
+ThreadStart(CallToChildThread); Console.WriteLine("In
+Main: Creating the Child thread"); Thread childThread =
+new Thread(childref); childThread.Start();
+
+//stop the main thread for some
+time Thread.Sleep(2000);
+//now abort the child
+Console.WriteLine("In Main: Aborting the Child
+thread"); childThread.Abort();
+Console.ReadKey();
+}
+}
+}
+
+When the above code is compiled and executed, it produces the following result: In Main: Creating the Child thread
+
+Child thread
+starts 0 1 2
+
+
+In Main: Aborting the Child
+thread Thread Abort Exception
+Couldn't catch the Thread Exception
+
+
+ThreadPriority and ThreadState:
+
+A thread‘s Priority property determines how much execution time it gets relative to other active threads in the operating system, on the following scale:
+ 
+
+
+63
+ 
+This becomes relevant only when multiple threads are simultaneously active.Think carefully
+before elevating a thread‘s priority — it can lead to problems such as resource starvation for
+other threads.Elevating a thread‘s priority doesn‘t make it capable of performing real-time work,
+because it‘s still throttled by the application‘s process priority. To perform real-time work, you
+must also elevate the process priority using the Process class in System.Diagnostics (we didn‘t
+tell you how to do this):
+public enum ThreadPriority
+
+{ Highest, AboveNormal, Normal, BelowNormal, Lowest,
+
+}
+
+Thread States: You can query a thread's execution status via its ThreadState property. This returns a flags enum of type ThreadState, which combines three ―layers‖ of data in a bitwise fashion. Most values, however, are redundant, unused, or deprecated. The following diagram shows one ―layer‖
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public enum ThreadState {
+
+Background,
+
+Unstarted,
+
+Running,
+
+WaitSleepJoin,
+
+SuspendRequested,
+
+Suspended,
+
+AbortRequested,
+
+Stopped
+
+}
+
+The following code strips a ThreadState to one of the four most useful values: Unstarted, Running, WaitSleepJoin, and Stopped:
+
+public static ThreadState SimpleThreadState (ThreadState ts)
+{
+return ts & (ThreadState.Unstarted |
+ThreadState.WaitSleepJoin
+| ThreadState.Stopped);
+
+}
+ 
+
+64
+ 
+The ThreadState property is useful for diagnostic purposes, but unsuitable for synchronization, because a thread‘s state may change in between testing ThreadState and acting on that information.
+
+Foreground and Background Threads
+
+A foreground thread runs indefinitely, whereas a background thread stops as soon as the last foreground thread has stopped. You can use the IsBackground property to determine or change the background status of a thread.
+
+Multithreading with Forms and Controls
+
+While multithreading is best suited to running procedures and class methods, you can also use it with forms and controls. If you do so, be aware of the following points:
+
+•	Whenever possible, execute the methods of a control only on the thread with which it was created. If you must call a method of a control from another thread, you must use Invoke
+
+	to call the method. 
+
+•	Do not use the SyncLock (Visual Basic) or lock (C#) statement to lock threads that manipulate controls or forms. Because the methods of controls and forms sometimes call back to a calling procedure, you can end up inadvertently creating a deadlock—a situation in which two threads wait for each other to release the lock, causing the application to halt. 
+
+Synchronizing threads
+Synchronization constructs can be divided into four categories:
+1.	Simple blocking methods: These wait for another thread to finish or for a period of time to elapse. Sleep, Join, and Task.Wait are simple blocking methods.
+
+2.Locking constructs: These limit the number of threads that can perform some activity or execute a section of code at a time. Exclusive locking constructs are most common—these allow just one thread in at a time, and allow competing threads to access common data without interfering with each other. The standard exclusive locking constructs are lock (Monitor.Enter/Monitor.Exit), Mutex, and SpinLock. The nonexclusive locking constructs are Semaphore, SemaphoreSlim, and the reader/writer locks.
+
+3.	Signaling constructs: These allow a thread to pause until receiving a notification from another, avoiding the need for inefficient polling. There are two commonly used signaling devices: event wait handles and Monitor‘s Wait/Pulse methods. Framework 4.0 introduces the CountdownEvent and Barrier classes.
+
+4.	Nonblocking synchronization constructs: These protect access to a common field by calling upon processor primitives. The CLR and C# provide the following nonblocking constructs: Thread.MemoryBarrier, Thread.VolatileRead, Thread.VolatileWrite, the volatile keyword, and the Interlocked class.
+
+The lock
+
+The lock (C#) and SyncLock (Visual Basic) statements can be used to ensure that a block of code runs to completion without interruption by other threads. This is accomplished by obtaining a mutual-exclusion lock for a given object for the duration of the code block.
+
+A lock or SyncLock statement is given an object as an argument, and is followed by a code block that is to be executed by only one thread at a time. For example: public class TestThreading
+
+{
+private System.Object lockThis = new System.Object();
+
+public void Process()
+
+{
+ 
+
+
+65
+ 
+lock (lockThis)
+
+{
+// Access thread-sensitive resources.
+}
+
+}
+
+}
+
+The argument provided to the lock keyword must be an object based on a reference type, and is used to define the scope of the lock.
+
+Monitors
+
+Like the lock and SyncLock keywords, monitors prevent blocks of code from simultaneous execution by multiple threads. The Enter method allows one and only one thread to proceed into the following statements; all other threads are blocked until the executing thread calls Exit. This is just like using thelock keyword. For example:
+
+lock (x)
+{
+DoSomething();
+}
+This is equivalent to:
+
+System.Object obj = (System.Object)x;
+
+System.Threading.Monitor.Enter(obj);
+
+try
+
+{
+DoSomething();
+}
+finally
+
+{
+System.Threading.Monitor.Exit(obj);
+}
+
+Using the lock (C#) keyword is generally preferred over using the Monitorclass directly, both because lock is more concise, and because lock insures that the underlying monitor is released, even if the protected code throws an exception. This is accomplished with the finally keyword, which executes its associated code block regardless of whether an exception is thrown.
+
+Synchronization Events and Wait Handles
+
+Using a lock or monitor is useful for preventing the simultaneous execution of thread-sensitive blocks of code, but these constructs do not allow one thread to communicate an event to another. This requiressynchronization events, which are objects that have one of two states, signaled and un-signaled, that can be used to activate and suspend threads. Threads can be suspended by being made to wait on a synchronization event that is unsignaled, and can be activated by changing the event state to signaled. If a thread attempts to wait on an event that is already signaled, then the thread continues to execute without delay.
+
+There are two kinds of synchronization events: AutoResetEvent, and ManualResetEvent. They differ only in that AutoResetEvent changes from signaled to unsignaled automatically any time it activates a thread. Conversely, a ManualResetEvent allows any number of threads to be activated by its signaled state, and will only revert to an unsignaled state when its Reset method is called.
+
+Threads can be made to wait on events by calling one of the wait methods, such as WaitOne, WaitAny, orWaitAll. WaitHandle.WaitOne() causes the thread to wait until a single event becomes signaled,WaitHandle.WaitAny() blocks a thread until one or more indicated events become
+ 
+
+66
+ 
+signaled, andWaitHandle.WaitAll() blocks the thread until all of the indicated events become signaled. An event becomes signaled when its Set method is called.
+
+In the following example, a thread is created and started by the Main function. The new thread waits on an event using the WaitOne method. The thread is suspended until the event becomes signaled by the primary thread that is executing the Main function. Once the event becomes signaled, the auxiliary thread returns. In this case, because the event is only used for one thread activation, either the AutoResetEventor ManualResetEvent classes could be used.using System; using System.Threading;
+
+class ThreadingExample
+
+{
+
+static AutoResetEvent autoEvent;
+
+static void DoWork()
+
+{
+
+Console.WriteLine(" worker thread started, now waiting on event..."); autoEvent.WaitOne();
+Console.WriteLine("  worker thread reactivated, now exiting...");
+
+}
+
+static void Main()
+
+{
+autoEvent = new AutoResetEvent(false);
+
+Console.WriteLine("main thread starting worker
+
+thread..."); Thread t = new Thread(DoWork);
+
+t.Start();
+
+Console.WriteLine("main thread sleeping for 1 second..."); Thread.Sleep(1000);
+
+Console.WriteLine("main thread signaling worker
+
+thread..."); autoEvent.Set();
+
+}
+
+}
+Mutex Object
+
+A mutex is similar to a monitor; it prevents the simultaneous execution of a block of code by more than one thread at a time. In fact, the name "mutex" is a shortened form of the term "mutually exclusive." Unlike monitors, however, a mutex can be used to synchronize threads across processes. A mutex is represented by the Mutex class.
+
+When used for inter-process synchronization, a mutex is called a named mutex because it is to be used in another application, and therefore it cannot be shared by means of a global or static variable. It must be given a name so that both applications can access the same mutex object.
+
+Although a mutex can be used for intra-process thread synchronization, using Monitor is generally preferred, because monitors were designed specifically for the .NET Framework and therefore make better use of resources. In contrast, the Mutex class is a wrapper to a Win32 construct. While it is more powerful than a monitor, a mutex requires interop transitions that are more computationally expensive than those required by the Monitor class
+ 
+
+
+
+67
+ 
+Interlocked Class
+
+You can use the methods of the Interlocked class to prevent problems that can occur when multiple threads attempt to simultaneously update or compare the same value. The methods of this class let you safely increment, decrement, exchange, and compare values from any thread.
+ReaderWriter Locks
+
+In some cases, you may want to lock a resource only when data is being written and permit multiple clients to simultaneously read data when data is not being updated. The ReaderWriterLock class enforces exclusive access to a resource while a thread is modifying the resource, but it allows non-exclusive access when reading the resource. ReaderWriter locks are a useful alternative to exclusive locks, which cause other threads to wait, even when those threads do not need to update data.
+Deadlocks
+
+Thread synchronization is invaluable in multithreaded applications, but there is always the danger of creating a deadlock, where multiple threads are waiting for each other and the application comes to a halt. A deadlock is analogous to a situation in which cars are stopped at a four-way stop and each person is waiting for the other to go. Avoiding deadlocks is important; the key is careful planning. You can often predict deadlock situations by diagramming multithreaded applications before you start coding.
+
+3.4 Networking and sockets
+
+The .NET framework provides two namespaces, System.Net and System.Net.Sockets for network programming. The classes and methods of these namespaces help us to write programs, which can communicate across the network. The communication can be either connection oriented or connectionless. They can also be either stream oriented or data-gram based. The most widely used protocol TCP is used for stream-based communication and UDP is used for data-grams based applications.
+
+The System.Net.Sockets.Socket is an important class from the System.Net.Sockets namespace. A Socket instance has a local and a remote end-point associated with it. The local end-point contains the connection information for the current socket instance.
+
+There are some other helper classes like IPEndPoint, IPADdress, SocketException etc, which we can use for Network programming. The .NET framework supports both synchronous and asynchronous communication between the client and server. There are different methods supporting for these two types of communication. A synchronous method is operating in blocking mode, in which the method waits until the operation is complete before it returns. But an asynchronous method is operating in non-blocking mode, where it returns immediately, possibly before the operation has completed.
+
+Dns Class
+
+The System.net namespace provides this class, which can be used to creates and send queries to obtain information about the host server from the Internet Domain Name Service (DNS). Remember that in order to access DNS, the machine executing the query must be connected to a network. If the query is executed on a machine, that does not have access to a domain name server, a System.Net.SocketException is thrown. All the members of this class are static in nature. The important methods of this class are given below.
+
+
+public static IPHostEntry GetHostByAddress(string address);
+
+
+Where address should be in a dotted-quad format like "202.87.40.193". This method returns an IPHostEntry instance containing the host information. If DNS server is not available, the method returns a SocketException.
+
+ 
+
+68
+ 
+public static string GetHostName();
+
+
+This method returns the DNS host name of the local machine.
+
+
+In my machine Dns.GetHostName() returns Arora which is the DNS name of my machine. public static IPHostEntry Resolve(string hostname);
+
+
+This method resolves a DNS host name or IP address to a IPHostEntry instance. The host name should be in a dotted-quad format like 127.0.01 or www.microsoft.com.
+
+IPHostEntry Class
+This is a container class for Internet host address information. This class makes no thread safety guarantees. The following are the important members of this class.
+
+•	AddressList property: Gives an IPAddress array containing IP addresses that resolve to the host name. 
+
+•	Aliases property: Gives a string array containing DNS name that resolves to the IP addresses in AddressList property. 
+
+The following program shows the application of the above two classes.
+
+
+using System;
+
+using System.Net;
+
+using System.Net.Sockets;
+
+class MyClient
+
+{
+public static void Main()
+
+{
+
+IPHostEntry IPHost = Dns.Resolve("www.hotmail.com");
+
+Console.WriteLine(IPHost.HostName);
+
+string []aliases = IPHost.Aliases;
+
+Console.WriteLine(aliases.Length);
+
+IPAddress[] addr = IPHost.AddressList;
+
+Console.WriteLine(addr.Length);
+
+for(int i= 0; i < addr.Length ; i++)
+
+{
+Console.WriteLine(addr[i]);
+}
+}
+
+}
+
+IPEndPoint Class
+
+This class is a concrete derived class of the abstract class EndPoint. The IPEndPoint class represents a network end point as an IP address and a port number. There is couple of useful constructors in this class:
+
+IPEndPoint(long addresses, int port);
+
+IPEndPoint (IPAddress addr, int port);
+
+IPHostEntry IPHost = Dns.Resolve("www.c-
+sharpcorner.com"); Console.WriteLine(IPHost.HostName);
+string []aliases = IPHost.Aliases;
+
+IPAddress[] addr = IPHost.AddressList;
+
+Console.WriteLine(addr[0]);
+ 
+
+69
+ 
+EndPoint ep = new IPEndPoint(addr[0],80);
+
+Socket Programming: Synchronous Clients
+
+The steps for creating a simple synchronous client are as follows.
+1.	Create a Socket instance.
+2.	Connect the above socket instance to an end-point.
+3.	Send or Receive information.
+4.	Shutdown the socket
+5.	Close the socket
+
+The Socket class provides a constructor for creating a Socket instance.
+
+public Socket (AddressFamily af, ProtocolType pt, SocketType st)
+
+
+Where AddressFamily, ProtocolType and SocketTYpe are the enumeration types declared inside the Socket class.
+
+The AddressFamily member specifies the addressing scheme that a socket instance must use to resolve an address. For example AddressFamily.InterNetwork indicates that an IP version 4 addresses is expected when a socket connects to an end point.
+
+The SocketType parameter specifies the socket type of the current instance. For example SocketType.Stream indicates a connection-oriented stream and SocketType.Dgram indicates a connectionless stream.
+
+The ProtocolType parameter specifies the ptotocol to be used for the communication. For example ProtocolType.Tcp indicates that the protocol used is TCP and ProtocolType.Udp indicates that the protocol using is UDP.
+
+public Connect (EndPoint ep);
+
+
+The Connect() method is used by the local end-point to connect to the remote end-point. This method is used only in the client side. Once the connection has been established the Send() and Receive() methods can be used for sending and receiving the data across the network.
+
+The Connected property defined inside the class Socket can be used for checking the connection. We can use the Connected property of the Socket class to know whether the current Socket instance is connected or not. A property value of true indicates that the current Socket instance is connected.
+
+
+IPHostEntry IPHost = Dns.Resolve("www.yahoo.com"); Console.WriteLine(IPHost.HostName); string []aliases = IPHost.Aliases;
+
+IPAddress[] addr = IPHost.AddressList;
+
+Console.WriteLine(addr[0]);
+
+EndPoint ep = new IPEndPoint(addr[0],80);
+
+Socket sock = new Socket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp); sock.Connect(ep);
+
+if(sock.Connected)
+
+Console.WriteLine("OK");
+
+The Send() method of the socket class can be used to send data to a connected remote socket.
+
+
+public int Send (byte[] buffer, int size, SocketFlags flags);
+
+
+Where byte[] parameter storing the data to send to the socket, size parameter containing the number of bytes to send across the network. The SocketFlags parameter can be a bitwise
+
+ 
+
+70
+ 
+combination of any one of the following values defined in the System.Net.Sockets.SocketFlags enumerator.
+
+SocketFlags.None
+SocketFlags.DontRoute
+SocketFlags.OutOfBnd
+
+The method Send() returns a System.Int32 containing the number of bytes send.Remember that there are other overloaded versions of Send() method as follows.
+
+public int Send (byte[] buffer, SocketFlags
+flags); public int Send (byte[] buffer);
+
+public int Send (byte[] buffer,int offset, int size, SocketFlags flags);
+
+The Receive() method can be used to receive data from a socket.
+
+
+public int Receive(byte[] buffer, int size, SocketFlags flags);
+
+Where byte[] parameter storing the data to send to the socket, size parameter containing the number of bytes to send across the network. The SocketFlags parameter can be a bitwise combination of any one of the following values defined in the System.Net.Sockets.SocketFlags enumerator explained above.
+
+The overloaded versions of Receive() methods are shown below. public int Receive (byte[] buffer, SocketFlags flags); public int Receive (byte[] buffer);
+
+public int Receive (byte[] buffer,int offset, int size, SocketFlags flags);
+
+When the communication across the sockets is over, the connection between the sockets can be terminated by invoking the method ShutDown()
+
+public void ShutDown(SocketShutdown how);
+
+Where ‗how‘ is one of the values defined in the SocketSHutdown enumeration. The value SoketShutdown.Send means that the socket on the other end of the connection is notified that the current instance would not send any more data. The value SoketShutdown.Receive means that the socket on the other end of the connection is notified that the current instance will not receive any more data and the value SoketShutdown.Both means that both the action are not possible. Remember that the ShutDown() method must be called before the Close(0 method to ensure that all pending data is sent or received.
+
+A socket can be closed by invoking the method
+
+Close(). public void Close();
+
+This method closes the current instance and releases all managed and un-managed resources allocated by the current instance. This method internally calls the Dispose() method with an argument of ‗true‘ value, which frees both managed and un-managed resources used by the current instance.
+
+protected virtual void Dispose(bool);
+
+The above method closes the current instance and releases the un-managed resources allocated by the current instance and exceptionally release the managed resources also. An argument value of ‗true‘ releases both managed and un-managed resources and a value of ‗false‘ releases only un-managed resources.
+
+The following program can send an HTTP request to a web server and can read the response from the web server.
+ 
+
+
+
+
+71
+ 
+Example
+
+using System;
+
+using System.Net;
+
+using System.Net.Sockets;
+
+using System.Text;
+
+class MyClient{
+public static void Main(){
+
+IPHostEntry IPHost = Dns.Resolve("www.google.com"); Console.WriteLine(IPHost.HostName);
+
+string []aliases = IPHost.Aliases;
+
+IPAddress[] addr = IPHost.AddressList;
+
+Console.WriteLine(addr[0]);
+
+EndPoint ep = new IPEndPoint(addr[0],80);
+
+Socket sock = new Socket(AddressFamily.InterNetwork,SocketType.Stream,ProtocolType.Tcp); sock.Connect(ep);
+if(sock.Connected)
+
+Console.WriteLine("OK");
+
+Encoding ASCII = Encoding.ASCII;
+
+string Get = "GET / HTTP/1.1\r\nHost: " + "www. google.com" + "\r\nConnection:
+Close\r\n\r\n"; Byte[] ByteGet = ASCII.GetBytes(Get);
+
+Byte[] RecvBytes = new Byte[256];
+
+sock.Send(ByteGet, ByteGet.Length, 0);
+
+Int32 bytes = sock.Receive(RecvBytes, RecvBytes.Length, 0);
+
+Console.WriteLine(bytes);
+
+String strRetPage = null;
+
+strRetPage = strRetPage + ASCII.GetString(RecvBytes, 0, bytes); while (bytes > 0) {
+
+bytes = sock.Receive(RecvBytes, RecvBytes.Length, 0); strRetPage = strRetPage + ASCII.GetString(RecvBytes, 0, bytes); Console.WriteLine(strRetPage );
+
+}
+sock.ShutDown(SocketShutdown.Both);
+sock.Close();
+
+}}
+
+
+3.5 Managing Console I/O Operations
+
+Console Input
+
+In previous Chapters, we saw that the Console class allows using the Write() and the WriteLine() functions to display things on the screen. While the Console.Write() method is used to display something on the screen, the Console class provides the Read() method to get a value from the user. To use it, the name of a variable can be assigned to it. The syntax used is:
+
+VariableName = Console.Read();
+
+
+This simply means that, when the user types something and presses Enter, what the user had typed would be given (the word is assigned) to the variable specified on the left side of the assignment operator.
+
+ 
+
+72
+ 
+Read() doesn't always have to assign its value to a variable. For example, it can be used on its own line, which simply means that the user is expected to type something but the value typed by the user would not be used for any significant purpose. For example some versions of C# (even including Microsoft's C# and Borland C#Builder) would display the DOS window briefly and disappear. You can use the Read() function to wait for the user to press any key in order to close the DOS window.
+
+Besides Read(), the Console class also provides the ReadLine() method. Like the WriteLine() member function, after performing its assignment, the ReadLine() method sends the caret to the next line. Otherwise, it plays the same role as the Read() function.
+
+string FirstName;
+
+Console.Write("Enter First Name: ");
+
+FirstName = Console.ReadLine();
+
+
+In C#, everything the user types is a string and the compiler would hardly analyze it without your explicit asking it to do so. Therefore, if you want to get a number from the user, first request a string. After getting the string, you must convert it to a number. To perform this conversion, each data type of the .NET Framework provides a mechanism called Parse. To use Parse(), type the data type, followed by a period, followed by Parse, and followed by parentheses. In the parentheses of Parse, type the string that you requested from the user. Here is an example:
+
+
+using System;
+
+namespace GeorgetownCleaningServices
+{
+class OrderProcessing
+{
+static void Main()
+{
+
+int Number;
+
+string strNumber;
+
+strNumber = Console.ReadLine();
+
+Number = int.Parse(strNumber);
+
+}
+}
+
+}
+
+
+Console Output
+
+Instead of using two Write() or a combination of Write() and WriteLine() to display data, you can convert a value to a string and display it directly. To do this, you can provide two strings to the Write() or WriteLine() and separate them with a comma:
+
+1.	The first part of the string provided to Write() or WriteLine() is the complete string that would display to the user. This first string itself can be made of different sections:
+
+a.	One section is a string in any way you want it to display
+
+b.	Another section is a number included between an opening curly bracket "{" and a closing curly bracket "}". This combination of "{" and "}" is referred to as a placeholder
+
+c.	You can put the placeholder anywhere inside of the string. The first placeholder must have number 0. The second must have number 1, etc. With this technique, you can create the string anyway you like and use the placeholders anywhere inside of the string
+ 
+
+73
+ 
+The second part of the string provided to Write() or WriteLine() is the value that you want to display. It can be one value if you used only one placeholder with 0 in the first string. If you used different placeholders, you can then provide a different value for each one of them in this second part, separating the values with a comma
+
+Example using
+
+System; class
+
+Exercise{
+
+static void Main() {
+String FullName = "Anselme
+Bogos"; int Age = 15;
+
+double HSalary = 22.74;
+
+Console.WriteLine("Full Name: {0}", FullName);
+
+Console.WriteLine("Age: {0}", Age);
+
+Console.WriteLine("Distance: {0}", HSalary);
+
+Console.WriteLine();
+
+}}
+OUTPUT:
+Full Name: Anselme
+Bogos Age: 15
+Distance: 22.74
+
+As mentioned already, the numeric value typed in the curly brackets of the first part is an ordered number. If you want to display more than one value, provide each incremental value in its curly brackets. The syntax used is:
+Write("To Display {0} {1} {2} {n}", First, Second, Third, nth);
+
+You can use the sections between a closing curly bracket and an opening curly bracket to create a meaningful sentence.
+
+The System namespace provides a specific letter that you can use in the Write() or WriteLine()'s placeholder for each category of data to display. To format a value, in the placeholder of the variable or value, after the number, type a colon and one of the appropriate letter from the following table. If you are using ToString(), then, in the parentheses of ToString(), you can include a specific letter or combination inside of double-quotes. The letters and their meanings are:
+Character	Used For
+c	C	Currency values
+d	D	Decimal numbers
+e	E	Scientific numeric display such as 1.45e5
+f	F	Fixed decimal numbers
+g	G	General and most common type of numbers
+n	N	Natural numbers
+r	R	Roundtrip formatting
+x	X	Hexadecimal formatting
+p	P	Percentages
+
+Example
+
+using System;
+
+class Exercise
+
+{
+static void Main()
+{
+ 
+
+74
+ 
+double Distance =
+
+248.38782; int Age = 15;
+int NewColor = 3478;
+
+double HSal = 22.74, HrsWork = 35.5018473;
+
+double WeeklySal = HSal * HrsWork;
+
+Console.WriteLine("Distance: {0}", Distance.ToString("E"));
+
+Console.WriteLine("Age: {0}", Age.ToString());
+
+Console.WriteLine("Color: {0}", NewColor.ToString("X"));
+
+Console.WriteLine("Weekly Salary: {0} for {1} hours", WeekSal.ToString("c"), HrsWork.ToString("F"));
+Console.WriteLine();
+}
+}
+OUTPUT:
+Distance:
+2.483878E+002 Age: 15
+Color: D96
+
+Weekly Salary: $807.31 for 35.50 hours
+
+To specify the amount of space used to display a string, you can use its placeholder in Write() or WriteLine(). To do this, in the placeholder, type the 0 or the incrementing number of the placer and its formatting character if necessary and if any. Then, type a comma followed by the number of characters equivalent to the desired width. Here are examples:
+
+using System;
+
+class Exercise{
+
+static void Main() {
+String FullName = "Anselme Bogos";
+int Age = 15;
+double Marks = 22.74;
+Console.WriteLine("Full Name: {0,20}", FullName);
+
+Console.WriteLine("Age:{0,14}", Age.ToString()); Console.WriteLine("Marks:{0:C,8}", Marks.ToString());
+
+Console.WriteLine();
+}
+}
+OUTPUT:
+Full Name:	Anselme Bogos
+
+Age:	15
+Marks: 22.74
+
+The sign you provide for the width is very important. If it is positive, the line of text is aligned to the right. This should be your preferred alignment for numeric values. If the number is negative, then the text is aligned to the left.
+
+3.6 Windows Forms
+
+The Windows Forms is a collection of classes and types that encapsulate and extend the Win32 API in an organized object model. In other words, the components used to create Windows GUI applications are provided as .NET classes and types that form part of an orderly hierarchy.
+ 
+
+
+
+75
+ 
+This hierarchy is defined by inheritance: Simple reusable classes such as Component are provided, and then used as a base from which more sophisticated classes are derived. We can draw a useful overview by representing the inheritance hierarchy in a treelike diagram. Figure 8.1 summarizes at a high level the classes that include Windows Forms and GDI+.
+
+
+
+
+
+
+Figure : A Summary of Window Forms and GDI+ Classes
+
+
+
+Object
+
+
+
+
+
+Components
+
+
+
+
+
+
+
+
+
+Control
+
+
+
+
+
+
+Container	Windows	Windows	GDI+ Classes
+Hosting Child	Forms	Forms	•	Graphics
+Control	Control	Component	•	Pen
+•	Forms	•	Lable	•	Timer	•	Brush
+•	Panels	•	Button	•	Main Menu	•	Bitmap
+•	TabPage	•	Text Box	•	Image List	•	…..
+•	GroupBox	•	Check Box	•	…..		
+•	UserControl	•	List Box				
+•	…….	•	…..				
+			System.Window.Forms	System.Drawing
+	Sub Classes		Custom Controls				
+	Forms						
+	&		Drawn with GDI+				
+	User Controls						
+ 
+
+
+76
+ 
+
+
+
+
+
+
+The arrows represent inheritance: Control assumes all the functionality of Component, which assumes all the functionality of Object. Following Table provides a quick and practical summary of the four essential classes on which the Windows Forms types are based.
+
+Class	Role	Why We Need It
+Object	Acts as a base class for all types in	For a tidy unified type system, and to provide
+	the .NET Framework.	core functionality available to all types (such as
+		ToString).
+Component	Provides the basics of	So Visual Studio‘s Designer can host a wide
+	containership, facilitates hosting	variety of controls and components in a generic
+	in a visual designer, and defines a	way, to provide a base from which you can
+	protocol for resource disposal.	write nonvisual components, and to allow the
+		cleanup of Windows handles and file handles in
+		a timely and reliable manner.
+Control	Provides the core functionality for	As a common superclass for all controls, such
+	a visual control that responds to	as textboxes, labels, and buttons, allowing them
+	mouse and keyboard messages,	to be treated in a consistent manner, as well as
+	accepts focus, and can participate	providing a base from which you can derive
+	in drag-and-drop operations.	your own custom controls.
+Form	Defines a class representing a	To provide a base class with standard
+	window to which you can add	windowing and containership functionality that
+	controls.	you can subclass to create forms in your
+		application.
+Table : Core Classes
+Creating a Windows Forms application is largely just a matter of instantiating and extending the
+
+Windows Forms and GDI+ classes. In a nutshell, you typically complete the following steps:
+
+1.	Create a new project defining the structure of a Windows Forms application.
+
+2.	Define one or more Forms (classes derived from the Form class) for the windows in your application.
+
+3.	Use the Designer to add controls to your forms (such as textboxes and checkboxes), and then configure the controls by setting their properties and attaching event handlers.
+
+4.	Add other Designer-managed components, such as menus or image lists.
+5.	Add code to your form classes to provide functionality.
+6.	Write custom controls to meet special requirements, using GDI+ classes to handle
+low-level graphics.
+
+The first step to building a Windows Forms application is creating a project. A Windows Forms project is just like any other type of project in that it consists of a grouping of source code files, a list of references to required .NET code libraries, and an appropriate configuration of compilation and debugging options. When you use Visual Studio to create a project from a template, it sets all of this up for you, providing a ―skeleton‖ appropriate to the template you‘ve selected. In the case of Windows Forms, this consists of the following:
+ 
+
+
+ 
+
+•	A project of Output Type Windows Application. You can view or change this in the 
+Project | Properties dialog box. 
+ 
+
+
+77
+ 
+•	References to the .NET assemblies required for typical Windows Forms applications (covering most of the types in the Windows Forms namespace). You can see a list of
+	the project references in the Solution Explorer. 
+
+•	A blank form, called Form1 (a C# class with the structure required for a visually editable form). 
+•	A Main method in Form1 that instantiates and displays the form. 
+
+Let‘s start the walkthrough by creating a new Windows Forms project. From the main menu, choose File | New | Project, click Visual C# Projects , and choose the Windows Application template (see Figure 8.2). Change the project name to SimpleApp and click OK.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 8.2 Creating a New Windows Forms Project
+
+Adding Controls
+
+Once we‘ve created the project, Visual Studio opens the main form (Form1) in the Designer—the visual editor for our C# form class. Basically, a form created in Visual Studio is just a C# file, defining a class based on System.Windows.Forms.Form, containing code to add and configure the controls created visually. Visual Studio is a ―two-way tool‖ meaning that we can work with the same code either visually (using the Designer) or programmatically (in the Code Editor).
+
+Let‘s use the Designer to add a few controls to Form1. We can add controls and components from the toolbox window and then configure them using the Properties window.
+
+1.	From the toolbox, add a Label control to the form. By default, Visual Studio will name the control Label1.
+
+2.	From the Properties Window (F4) change label1‘s Text property to Favorite CD, and change its AutoSize property to True .This tells the control to size itself according to the metrics of the font and width of the text.
+
+3.	Now add a TextBox from the toolbox onto the form, and position it below the label. Enlarge it horizontally and clear its Text property.
+
+4.	Add another label to the form, setting its Text property to Favorite Style, and AutoSize property to True.
+ 
+
+
+
+78
+ 
+5.	Add a ComboBox and position it below the Favorite Style label. Clear its Text property.
+
+6.	Select the combo‘s Items property, and then click the ellipses on the right to open the String Collection Editor. Type in a few styles of music—each on a separate line
+
+7.	Click OK, and then press F5 to save, compile, and run the application.
+Adding an Event Handler
+Let‘s add some functionality to the form.
+1.	Add a Button and ListBox to the form.
+
+2.	Select the button, and change its Text property to Update. Then click the lightning icon in the Properties window to switch to the Events View.
+
+Think of these events as ―hooks‖ into which we can attach our own methods. You can either double-click on an event to create a new event-handling method, or use the drop-down list to connect into an existing compatible method.
+
+3.	Double-click on the Click event. Visual Studio will write a skeleton event-handling method, wiring it to the event. It will then place you in the Code Editor, inside the empty method definition:
+private void button1_Click(object sender, System.EventArgs e)
+
+{
+
+
+}
+
+
+The .NET convention for event handling requires two parameters: a sender parameter of type object, and an event arguments parameter of type EventArgs—or a descendant of EventArgs. The sender parameter tells us which control fired the event (this is useful when many controls have been wired to the same event-handling method). The second parameter is designed to supply special data about the event. In the case of Click, we have a standard EventArgs object, and this contains no useful information—it‘s just there to meet the protocol required to support more sophisticated events (such as KeyPress or MouseDown).
+
+The actual name for this method (button1_Click ) is just a convenient identifier generated by Visual Studio; Windows Forms doesn‘t impose any particular naming convention.
+
+4.	Add the following code to the event handler:
+private void button1_Click(object sender, System.EventArgs e)
+{
+listBox1.Items.Clear();
+
+listBox1.Items.Add ("Fav CD: " + textBox1.Text);
+
+listBox1.Items.Add ("Fav Style: " + comboBox1.Text);
+
+}
+
+Here we‘re manipulating our list box through its Items property. Items returns a collection object, having methods to add and remove items from its list. Note how we access each control through its name—this is possible because the Designer creates class fields matching the names of each control. You can see these declarations at the top of the class definition.
+
+5.	Press F5 to compile and run the program
+
+Adding Controls at Runtime
+
+Sometimes it‘s necessary to add controls without the help of the Designer. For instance, you might want some controls to appear on a form only when a particular button is clicked.
+
+In reading how to programmatically add controls, it‘s very helpful to examine a visually created form in the Code Editor. If you expand the Designer Generated Code region, you‘ll see a method
+ 
+
+79
+ 
+called InitializeComponent containing all the code that creates and configures each of the form‘s visual components.
+
+Here are the four steps to programmatically adding a control or component:
+1.	Add a class field declaration for the new control.
+2.	Instantiate the control.
+3.	Configure the control by setting its properties and adding event handlers, if required.
+
+4.	Add the control to the form‘s Controls collection (or alternatively, to the Controls collection of a container control, such as a GroupBox).
+
+
+Example: Create a new form, add a button, and then have a textbox appear when the user clicks the button:
+
+1.	Create a new Windows Forms project called SimpleApp2 and add a Button control from the toolbox onto the new form.
+
+2.	Press F7 to open the Code Editor, and locate button1‘s declaration. Below this, add a similar declaration for our new textbox, as follows (you can exclude the System.Windows.Forms prefix if your form has the appropriate using statement):
+
+private System.Windows.Forms.Button button1;
+private System.Windows.Forms.TextBox myTextBox;
+You need to understand that this declaration doesn‘t actually create a textbox. All it does is instruct the compiler, once our form is instantiated, to create a field that can reference (point to) a textbox object—one that does not yet exist. This declaration exists so as to provide a convenient way to refer to the control throughout the lifetime of the form. In the cases where we don‘t need to explicitly reference the control after its been created, we can do away with this declaration.
+
+3.	Return to the Designer, and double-click on the button. This is a quick way to attach an event handler to the button‘s default event (Click).
+
+4.	Add the following code to the button‘s event handler:
+
+private void button1_Click(object sender, System.EventArgs e)
+{
+
+//	Create the actual textbox and assign its reference to myTextBox this.myTextBox = new TextBox();
+
+//	Position the control
+
+myTextBox.Location = new Point (30, 20);
+
+//	Put the control on the form. this.Controls.Add (myTextBox);
+
+}
+
+5. Press F5 to test the application
+
+Attaching an Event Handler at Runtime
+
+Let‘s suppose we want to set up our newly created textbox so that when it‘s right-clicked, a message box appears. We need to add an event handler to the textbox at runtime, and there are two steps to this:
+•	Writing the event-handling method. 
+•	Attaching the method to the control‘s event. 
+
+•	In our case, we‘ll need to attach to the textbox‘s MouseDown event (because there‘s no specific right-click event). First, we need to write the event-handling method, with 
+ 
+
+
+80
+ 
+parameters of the correct type for a MouseDown event. You can determine an event‘s signature in two ways:
+
+• Look for the event in the Microsoft documentation, and then click on its delegate (in our case,   MouseEventHandler). 
+
+•	Using the Designer, add a dummy control of the type we‘re attaching to, create an appropriate event handler, and then delete the dummy control. The event-handling method will still be there—with the correct signature. All we need to do is rename it. 
+
+
+
+
+1.
+
+
+void myTextBox_MouseDown (object sender, MouseEventArgs e)
+{
+if (e.Buttons == MouseButtons.Right)
+
+//	Show is a static method of System.Windows.Forms.MessageBox MessageBox.Show ("Right Click!");
+
+}
+
+2.	Next, we attach this method to myTextBox‘s MouseDown event. Return to the button1_Click method and add the following line of code:
+
+
+myTextBox.MouseDown += new MouseEventHandler (myTextBox_MouseDown) On the left-hand side, myTextBox.MouseDown is the event to which we‘re attaching, using the += operator. On the right-hand side, we‘re creating a new MouseEventHandler delegate instance: in other words, an object containing a pointer to a method (myTextBox_MouseDown) conforming to MouseEventHandler‘s signature.
+
+3. Test the application.
+
+3.7 Error Handling
+
+There are no exceptions in C and in C++ one can get away from using them with error handling functions such as exit() and terminate(). In C# these functions are absent and we introduce exceptions which take their place. The exception handling in C#, and Java is quite similar. When a program has a bug we can intercept it in the flow of execution by inserting an error handling statement. To catch a particular type of exception in a piece of code, you have to first wrap it in a 'try' block and then specify a 'catch' block matching that type of exception. When an
+
+exception occurs in code within the 'try' block, the code execution moves to the end of the try box and looks for an appropriate exception handler. For instance, the following piece of code demonstrates catching an exception specifically generated by division by zero:
+
+
+try{
+
+int zero = 0;
+res = (num / zero);
+}
+
+catch (System.DivideByZeroException e){ Console.WriteLine("Error: an attempt to divide by zero");
+
+}
+
+You can specify multiple catch blocks (following each other), to catch different types of exception. A complication results, however, from the fact that exceptions form an object hierarchy, so a particular exception might match more than one catch box. What you have to do here is put catch boxes for the more specific exceptions before those for the more general exceptions. At most one
+
+ 
+
+81
+ 
+catch box will be triggered by an exception, and this will be the first (and thus more specific)
+
+catch box reached.
+
+.
+Example
+//first exception handling
+program using System;
+class OutOfRange: Exception
+{
+}
+
+class Demo
+
+{ int n;
+
+public int []array;
+
+public Demo ( int n)	{
+
+this.array = new int[n];
+this.n = n;
+
+}
+
+public void show_element (int i)	{
+
+try	{
+if (i == 0) throw ( new OutOfRange());	}
+catch (Exception e)	{
+Console.WriteLine("Exception : {0}", e);	}
+Console.WriteLine (array [i]);
+}
+}
+class Test {
+public static void Main() {
+Demo test = new Demo (3);
+test.array [1] = 2;
+
+test.array [2] = 3;
+
+test.show_element (0);
+
+}
+
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+82
+ 
+Exception	When Occured
+System.ArithmeticExcepti	A base class for exceptions that occur during arithmetic operations,
+on	such as System.DivideByZeroException and
+	System.OverflowException.
+System.ArrayTypeMismat	Thrown when a store into an array fails because the actual type of
+chException	the stored element is incompatible with the actual type of the array.
+System.DivideByZeroExc	Thrown when an attempt to divide an integral value by zero occurs.
+eption	
+System.IndexOutOfRange	Thrown when an attempt to index an array via an index that is less
+Exception	than zero or outside the bounds of the array.
+System.InvalidCastExcept	Thrown when an explicit conversion from a base type or interface
+ion	to a derived type fails at run time.
+System.NullReferenceExc	Thrown when a null reference is used in a way that causes the
+eption	referenced object to be required.
+System.OutOfMemoryExc	Thrown when an attempt to allocate memory (via new) fails.
+eption	
+System.OverflowExceptio	Thrown when an arithmetic operation in a checked context
+n	overflows.
+System.StackOverflowEx	Thrown when the execution stack is exhausted by having too many
+ception	pending method calls; typically indicative of very deep or
+	unbounded recursion.
+System.TypeInitialization	Thrown when a static constructor throws an exception, and no
+Exception	catch clauses exists to catch it.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+83

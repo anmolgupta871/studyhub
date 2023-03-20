@@ -1,0 +1,344 @@
+
+Unit - III
+
+Java utilities like java.lang, java.util, java.io, GUI in Java using AWT and Swing, Event Handling Mechanisms, AWT based effective GUI in Java : Detailed overview of AWT classes, Graphics primitives and UI Components, Layout features, Standalone GUI applications, Layout Managers, Implementation of event driven mechanism, Delegation of even model, Listeners and Adapters, Inner classes.
+
+
+3.	Classes and Objects
+3.1	Objects
+3.2	Static Members
+
+Chapter-3
+
+Classes and Objects
+
+
+
+
+
+Q.1.	What is an Object?
+
+Ans.:	Objects are key to understanding object-oriented technology. Look around right now and you'll find many examples of real-world objects: your dog, your desk, your television set, your bicycle.
+
+So, anything that exists in real world is an object. In other words an object is a real life entity.
+
+Real-world objects share two characteristics: They all have state and behavior. Dogs have state (name, color, breed, hungry) and behavior (barking, fetching, wagging tail). Bicycles also have state (current gear, current pedal cadence, current speed) and behavior (changing gear, changing pedal cadence, applying brakes). Identifying the state and behavior for real-world objects is a great way to begin thinking in terms of object-oriented programming.
+
+Take a minute right now to observe the real-world objects that are in your immediate area. You'll notice that real-world objects vary in complexity; your desktop lamp may have only two possible states (on and off) and two possible behaviors (turn on, turn off), but your desktop radio might have additional states (on, off, current volume, current station) and behavior (turn on, turn off, increase volume, decrease volume, seek, scan, and tune). You may also notice that some objects, in turn, will also contain other objects. These real-world observations all translate into the world of object-oriented programming.
+ 
+Core Java Programming	25
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A software object.
+
+Software objects are conceptually similar to real-world objects: they too consist of state and related behavior. An object stores its state in fields (variables in some programming languages) and exposes its behavior through methods (functions in some programming languages). Methods operate on an object's internal state and serve as the primary mechanism for object-to-object communication. Hiding internal state and requiring all interaction to be performed through an object's methods is known as data encapsulation — a fundamental principle of object-oriented programming.
+
+Consider a bicycle, for example:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A bicycle modeled as a software object.
+
+By attributing state (current speed, current pedal cadence, and current gear) and providing methods for changing that state, the object remains in control of how the outside world is allowed to use it. For example, if the bicycle only has 6 gears, a method to change gears could reject any value that is less than 1 or greater than 6.
+ 
+26
+
+ 
+
+
+
+Q.2.	What is a Class?
+
+Ans.:	In the real world, you'll often find many individual objects all of the same kind.
+
+All the objects that have similar properties and similar behaviour are grouped together to form a class.
+
+
+In other words we can say that a class is a user defined data type and objects are the instance variables of class.
+
+There may be thousands of other bicycles in existence, all of the same make and model. Each bicycle was built from the same set of blueprints and therefore contains the same components. In object-oriented terms, we say that your bicycle is an instance of the class of objects known as bicycles. A class is the blueprint from which individual objects are created.
+
+The following Bicycle class is one possible implementation of a bicycle :
+
+class Bicycle {
+
+int cadence = 0;
+
+int speed = 0;
+
+int gear = 1;
+
+void changeCadence(int newValue) {
+
+cadence = newValue;
+
+}
+
+void changeGear(int newValue) {
+
+gear = newValue;
+
+}
+
+void printStates() {
+
+System.out.println("cadence:"+cadence+" speed:"+speed+" gear:"+gear);
+
+}
+
+}
+
+The fields cadence, speed, and gear represent the object's state, and the methods (changeCadence, changeGear, speedUp etc.) define its interaction with the outside world.
+
+You may have noticed that the Bicycle class does not contain a main method. That's because it's not a complete application; it's just the blueprint for bicycles that might be used in an application..
+ 
+Core Java Programming	27
+
+ 
+
+
+
+
+Here's a BicycleDemo class that creates two separate Bicycle objects and invokes their methods :
+
+class BicycleDemo {
+
+public static void main(String[] args) {
+
+//	Create two different Bicycle objects Bicycle bike1 = new Bicycle(); Bicycle bike2 = new Bicycle();
+
+//	Invoke methods on those objects bike1.changeCadence(50); bike1.changeGear(2); bike1.printStates(); bike2.changeCadence(50); bike2.changeGear(2); bike2.changeCadence(40); bike2.changeGear(3); bike2.printStates();
+
+}
+
+}
+
+The output of this test prints the ending pedal cadence, speed, and gear for the two bicycles:
+
+cadence:50 speed:10 gear:2
+
+cadence:40 speed:20 gear:3
+
+
+Q.3.	What do you mean by Garbage Collection?
+
+OR
+
+What do you mean by Memory Management in Java?
+
+Or
+
+How Memory Heaps are avoided by Garbage Collection Process?
+
+Ans.:	The name "garbage collection" implies that objects no longer needed by the program are "garbage" and can be thrown away. A more accurate and up-to-date metaphor might be "memory recycling." When an object is no longer referenced by the program, the heap space it occupies can be recycled so that
+ 
+28
+
+ 
+
+
+
+the space is made available for subsequent new objects. The garbage collector must somehow determine which objects are no longer referenced by the program and make available the heap space occupied by such unreferenced objects. In the process of freeing unreferenced objects, the garbage collector must run any finalizers of objects being freed.
+
+In addition to freeing unreferenced objects, a garbage collector may also combat heap fragmentation. Heap fragmentation occurs through the course of normal program execution. New objects are allocated, and unreferenced objects are freed such that free portions of heap memory are left in between portions occupied by live objects. Requests to allocate new objects may have to be filled by extending the size of the heap even though there is enough total unused space in the existing heap. This will happen if there is not enough contiguous free heap space available into which the new object will fit. On a virtual memory system, the extra paging (or swapping) required to service an ever growing heap can degrade the performance of the executing program. On an embedded system with low memory, fragmentation could cause the virtual machine to "run out of memory" unnecessarily.
+
+
+Garbage collection relieves you from the burden of freeing allocated memory. Knowing when to explicitly free allocated memory can be very tricky. Giving this job to the Java virtual machine has several advantages. First, it can make you more productive. When programming in non-garbage-collected languages you can spend many late hours (or days or weeks) chasing down an elusive memory problem. When programming in Java you can use that time more advantageously by getting ahead of schedule or simply going home to have a life.
+
+A second advantage of garbage collection is that it helps ensure program integrity. Garbage collection is an important part of Java's security strategy. Java programmers are unable to accidentally (or purposely) crash the Java virtual machine by incorrectly freeing memory.
+
+A potential disadvantage of a garbage-collected heap is that it adds an overhead that can affect program performance. The Java virtual machine has to keep track of which objects are being referenced by the executing program, and finalize and free unreferenced objects on the fly. This activity will likely require more CPU time than would have been required if the program explicitly freed unnecessary memory. In addition, programmers in a garbage-collected environment have less control over the scheduling of CPU time devoted to freeing objects that are no longer needed.
+
+
+Q.4.	What do you mean by Static Members of a Class?
+ 
+Core Java Programming	29
+
+ 
+
+
+
+
+Ans.:	Static Members of Classes : In addition to (instance) members, a Java class can include static members that are attached to the class rather than instances of the class. We have already seen how static final fields provide a simple way to define constants.
+
+The static members of a class are not included in the template used to create class instances. There is only one copy of a static field for an entire class-- regardless of how many instances of the class are created (possibly none). Similarly, the code in a static method cannot refer to this or to the fields of this because there is no class instance to serve as the receiver for such an access. Of course, a static method can invoke an instance method (or extract an instance field) of class if it explicitly specifies a receiver for the invocation.
+
+
+Static methods are useful because we occasionally need to write methods where the primary argument is either a primitive value or an object from a class that we cannot modify. For example, the library method Integer.toString (int i) converts an int to the corresponding String. Since an int is not an object, there is no int class to hold such a method. Consequently, the Java library provides a static method toString (int i) in the class Integer.
+
+Finally, all operations on arrays must be expressed in static (procedural) form because array types do not have conventional class definitions; they are built-in to the Java virtual machine.
+
+Q.5.	What do you mean by Wrapper Classes?
+
+Ans.:	Wrapper classes are used to represent primitive values when an Object is required. The wrapper classes are used extensively with Collection classes in the java.util package and with the classes in the java.lang.reflect reflection package.
+
+Wrapper classes has the following features :
+
+•	One for each primitive type: Boolean, Byte, Character, Double, Float, Integer, Long, and Short.
+
+•	Byte, Double, Float, Integer and Short extend the abstract Number class.
+
+•	All are public final i.e. cannot be extended.
+
+•	Get around limitations of primitive types.
+
+•	Allow objects to be created from primitive types.
+
+•	All the classes have two constructor forms :
+ 
+30
+
+ 
+
+
+
+	a constructor that takes the primitive type and creates an object eg Character(char), Integer(int).
+
+	a constructor that converts a String into an object eg Integer("1"). Throws a NumberFormatException if the String cannot be converted to a number.
+
+NOTE : The character class does not have a constructor that takes a String argument
+
+
+•	All, except Character, have a valueOf(String s) method which is equivalent to new Type(String s)
+
+•	All have a typeValue() method which returns the value of the object as it's primitive type. These are all abstract methods defined in Number and overridden in each class
+
+	public byte byteValue()
+
+	public short shortValue()
+
+	public int intValue()
+
+	public long longValue()
+
+	public float floatValue()
+
+	public double doubleValue()
+
+•	All the classes override equals(), hashCode() and toString() in Object
+
+	equals() returns true if the values of the compared objects are the same.
+
+	hashCode() returns the same hashcode for objects of the same type having the same value.
+
+	toString() returns the string representation of the objects value.
+
+•	All have a public static final TYPE field which is the Class object for that primitive type.
+
+•	All have two static fields MIN_VALUE and MAX_VALUE for the minimum and maximum values that can be held by the type.
+
+Void :
+
+•	There is also a wrapper class for Void which cannot be instantiated.
+
+NOTE : The constructors and methods described above do NOT exist for the Void class although it does have the TYPE field.
+
+Character :
+ 
+Core Java Programming	31
+
+ 
+
+
+
+
+•	Contains two methods for returning the numeric value of a character in the various number systems :
+
+	public static int digit(char ch, int radix)
+
+	public static int getNumber(char ch)
+
+•	And one method to return the character value of a number :
+
+	public static char forDigit(int digit, int radix)
+
+•	Has two case conversion methods :
+
+	public static char toLowerCase(char ch)
+
+	public static char toUpperCase(char ch)
+
+•	Also contains a variety of other methods to test wether a character is of a specific type eg isLetter(), isDefined(), isSpaceChar(), etc.
+
+•	GetType() returns an int that defines a character's Unicode type.
+
+Integer, Short, Byte and Long :
+
+•	All have parseType methods eg parseInt(), parseShort(), etc that take a String and parse it into the appropriate type.
+
+•	The Integer and Long classes also have the static methods toBinaryString(), toOctalString() and toHexString() which take an integer value and convert it to the appropriate String representation.
+
+
+Float and Double :
+
+•	Both classes have static fields which define POSITIVE_INFINITY, NEGATIVE_INFINITY, and NaN.
+
+•	And the following methods to test a value :
+
+	public boolean isNan()
+
+	public static boolean isNaN(type value)
+
+	public boolean isInfinite()
+
+	public static boolean isInfinite(type value)
+
+•	Float also has a constructor that takes a double value.
+
+•	both classes have methods to convert a value into a bit pattern or vice versa :
+
+	public static int floatToIntBits(float value)
+
+	public static float intBitsToFloat(int bits)
+
+	public static long doubleToLongBits(double value)
+ 
+32
+
+ 
+
+
+
+	public static double longBitsToDouble(long bits)
+
+ 
+Core Java Programming
+33
+	
+
+

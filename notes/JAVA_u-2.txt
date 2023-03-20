@@ -1,0 +1,427 @@
+<html><body>Unit – II
+
+Java arrays, Java Strings, Operations on Strings and String Buffer Objects, Class, Objects, Methods and Problem solving using classes, objects and relationships. Inheritance, types of Inheritance, packages and interface, exception handling.
+
+
+
+2.	Language Features
+
+2.1	Data Types
+2.2	Operators
+2.3	Type, Casting and Conversion
+2.4	Control Flow
+
+
+
+Chapter-2
+
+Language Features
+
+
+
+
+
+
+
+
+
+Q.1	Explain data types in Java?
+
+OR
+
+How many primitive data types are there in Java?
+
+Ans.:	The Java programming language is strongly-typed, which means that all variables must first be declared before they can be used. This involves stating the variable's type and name:
+
+int gear = 1;
+
+Doing so tells your program that a field named "gear" exists, holds numerical data, and has an initial value of "1". A variable's data type determines the values it may contain, plus the operations that may be performed on it. In addition to int, the Java programming language supports seven other primitive data types. A primitive type is predefined by the language and is named by a reserved keyword. Primitive values do not share state with other primitive values.
+ 
+Core Java Programming	15
+
+The eight primitive data types supported by the Java programming language are :
+
+•	Byte : The byte data type is an 8-bit signed two's complement integer. It has a minimum value of -128 and a maximum value of 127 (inclusive).
+
+•	Short : The short data type is a 16-bit signed two's complement integer. It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive). As with
+
+•	Int : The int data type is a 32-bit signed two's complement integer. It has a minimum value of -2,147,483,648 and a maximum value of 2,147,483,647 (inclusive). For integral values, this data type is generally the default choice unless there is a reason (like the above) to choose something else
+
+•	Long : The long data type is a 64-bit signed two's complement integer. It has a minimum value of -9,223,372,036,854,775,808 and a maximum
+ 
+16
+
+ 
+
+
+
+value of 9,223,372,036,854,775,807 (inclusive). Use this data type when you need a range of values wider than those provided by int.
+
+•	Float : The float data type is a single-precision 32-bit IEEE 754 floating point As with the recommendations for byte and short, use a float (instead of double) if you need to save memory in large arrays of floating point numbers. This data type should never be used for precise values, such as currency.
+
+•	Double : The double data type is a double-precision 64-bit IEEE 754 floating point. For decimal values, this data type is generally the default choice. As mentioned above, this data type should never be used for precise values, such as currency.
+
+•	Boolean : The boolean data type has only two possible values: true and false. Use this data type for simple flags that track true/false conditions. This data type represents one bit of information, but its "size" isn't something that's precisely defined.
+
+•	Char : The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).
+
+
+In addition to the eight primitive data types listed above, the Java programming language also provides special support for character strings via the java.lang.String class.
+
+
+Q.2.	Mention the different types of operators in Java?
+
+Ans.:	Operators are special symbols that perform specific operations on one, two, or three operands, and then return a result.
+
+The operators in the following table are listed according to precedence order Operators with higher precedence are evaluated before operators with relatively lower precedence. Operators on the same line have equal precedence. When operators of equal precedence appear in the same expression, a rule must govern which is evaluated first. All binary operators except for the assignment operators are evaluated from left to right; assignment operators are evaluated right to left.
+ 
+Core Java Programming	17
+
+
+
+
+
+Operator Precedence
+
+Operators		Precedence
+		
+		
+postfix		expr++ expr--
+		
+		
+unary		++expr --expr +expr -expr ~ !
+		
+	
+multiplicative		* / %
+		
+	
+additive		+ -
+		
+	
+shift		<< >> >>>
+		
+		
+relational		< > <= >= instanceof
+		
+	
+equality		== !=
+		
+	
+bitwise AND		&
+		
+		
+Operators		Precedence
+		
+	
+bitwise exclusive OR		^
+		
+	
+bitwise inclusive OR		|
+		
+	
+logical AND		&&
+		
+		
+Operators		Precedence
+		
+	
+logical OR		||
+		
+	
+ternary		? :
+		
+	
+assignment		= += -= *= /= %= &= ^= |= <<= >>= >>>=
+		
+ 
+18
+
+ 
+
+
+
+Q.3	Explain type Casting?
+
+OR
+
+What is the process of Automatic Type Conversion?
+
+Ans.:	It is sometimes necessary to convert a data item of one type to another type. For example when it is necessary to perform some arithmetic using data items of different types (so called mixed mode arithmetic). Under certain circumstances Type conversion can be carried out automatically, in other cases it must be "forced" manually (explicitly).
+
+
+Automatic Conversion : In Java type conversions are performed automatically when the type of the expression on the right hand side of an assignment operation can be safely promoted to the type of the variable on the left hand side of the assignment. Thus we can safely assign: byte -> short -
+
+>	int -> long -> float -> double For example :
+
+//64 bit long integer long myLongInteger; //32 bit long integer int myInteger; myLongInteger=myInteger;
+
+The extra storage associated with the long integer, in the above example, will simply be padded with extra zeros.
+
+Explicit Conversion (Casting) : The above will not work the other way round. For example we cannot automatically convert a long to an int because the first requires more storage than the second and consequently information may be lost. To force such a conversion we must carry out an explicit conversion (assuming of course that the long integer will fit into a standard integer). This is done using a process known as a type cast: myInteger = (int) myLongInteger.
+
+This tells the compiler that the type of myLongInteger must be temporarily changed to a int when the given assignment statement is processed. Thus, the cast only lasts for the duration of the assignment. Java type casts have the following form: (T) N where T is the name of a numeric type and N is a data item of another numeric type. The result is of type T.
+ 
+Core Java Programming	19
+
+ 
+
+
+
+
+Q.4.	What are the basic control structures in Java?
+
+OR
+
+What are the different control constructs?
+
+OR
+
+Explain the looping constructs?
+
+
+OR
+
+Explain the conditional constructs?
+
+OR
+
+What is the functioning of ‘break and continue’ statements?
+
+Ans.:	A Java program is a set of statements, which are normally executed sequentially in the order in which they appear. However, in practice, we have a number of situations, where we may have to change the order of execution of statements based on certain conditions, or repeat a group of statements until certain specified conditions are met.
+
+Java language possesses decision making capabilities and supports the following statements known as control or decision making statements :
+
+(1)	if statement : It allows the computer to evaluate the expression first and then, depending on whether the value of the expression is ‗true‘ or ‗false‘.
+
+The general form is :
+
+if (test expression)
+
+The if statement may be implemented in different forms :
+
+a)	Simple if statement
+
+The general form is :	if (test expression)
+
+{
+
+statement-block;
+
+}
+
+statement-x;
+
+b)	The if---else statement
+
+The general form is :	if(test expression)
+
+{
+ 
+20
+
+ 
+
+
+
+true block statements;
+
+}
+
+else
+
+{
+
+false block statements;
+
+
+}
+
+statement-x;
+
+c)	Nested if---else statement
+
+The general form is :	if (test condition1)
+
+{
+
+if(test condition2)
+
+{
+
+statement-1;
+
+}
+
+else
+
+{
+
+statement-2;
+
+}
+
+statement-x;
+
+d)	Else if ladder
+
+The general form is :	if (condition1)
+
+statement-1;
+
+else if (condition2)
+
+statement-2;
+
+else if (condition)
+
+statement-n;
+
+else
+
+default-statement;
+
+statement-x;
+ 
+Core Java Programming	21
+
+ 
+
+
+
+
+(2)	Switch Statement : When one of the many alternatives is to be selected, we can design a program using if statements to control the selection. However, when the number of alternatives increases, the program becomes difficult to read and follow. Then we can use switch statement in such situations.
+
+The general form is :
+
+
+Switch (expression)
+
+{
+
+case value1:
+
+block-1;
+
+break;
+
+case value-2:
+
+block-2;
+
+break;
+default:
+
+default-block;
+
+break;
+
+}
+
+statement-x;
+
+
+(3)	? : operator :
+
+The general form is :
+
+Conditional expression ? expression1:expression2
+
+The process of repeatedly executing a block of statements is known as looping. The statements in the block may be executed any number of times, from zero to infinite number.
+
+(a)	The while statement : The simplest of all looping structures in Java is the while statement.
+ 
+22
+
+ 
+
+
+
+
+The general format is :
+
+Initialization;
+
+while (test condition)
+
+{
+
+
+body of the loop
+
+}
+
+(b)	The do statement : In this construct the body of the loop will execute first and the test condition is evaluated.
+
+Initialization;
+
+do
+
+{
+
+body of the loop
+
+}
+
+while(test condition);
+
+(c)	The for statement : This is another entry-controlled loop like while loop. The general format is:
+
+For (initialization; test condition; increment/decrement)
+
+{
+
+body of the loop
+
+}
+
+Jumps in Loops : Loops perform a set of operations repeatedly until the control variable fails to satisfy the test condition. Sometimes, it becomes desirable to skip a part of the loop or to leave the loop as soon as a certain condition occurs.
+
+Jumping out of a loop---We can use the break statement which will immediately exited and the program continues with the statement immediately following the loop.
+
+e.g. while(………)
+
+{ ………….
+
+if(condition)
+
+break;
+ 
+Core Java Programming	23
+
+ 
+
+
+
+
+…………….
+
+……………
+
+}
+
+……………
+
+Skipping a part of loop---During the loop operation it may be necessary to skip a part of the body of the loop under certain conditions. We can use continue statement for this.
+
+
+e.g. while(………..)
+
+{……………
+
+if(………..)
+
+continue;
+
+……………
+
+}
+
+The statements below continue statement are skipped and control jumps to header part of loop.
+
+
+□ □ □
+ 
+24
+ 
+</body>
+</html>

@@ -1,0 +1,1451 @@
+Unit-4:
+
+Advance Features using C#
+4.1 Web Services
+
+Web service is simply an application that exposes a Web-accessible API. That means you can invoke this application programmatically over the Web. Using SOAP Protocol XML+HTTP =SOAP (Simple Object Access protocol)
+
+Web services allow applications to share data. Web services can be called across platforms and operating systems regardless of programming language. .NET is Microsoft's platform for XML Web services.
+Web Service Application
+
+Like Pay per view T.V. Channel we can make Software as pay per use, using Web service. For example, let say Infovision Inc developed Expensive Software for 3D Virtual Modeling. Lot of company does not want acquire the licensee because it is expensive and they need to pay for Support etc… instead of this if Infovision makes this software as a WebService, most of the company will use as pay per use.
+
+Another example Credit card validation we can expose as a webservice. (Good example for webService)
+
+Using VisualStudio.NET we can easily create WebServices. ASP.NET WebService this project type will be used to create WebService.
+
+The client of a Web service can be a rich Windows application created using Windows Forms, WPF, Silverlight, or an ASP.NET application using Web Forms. A Windows PC, a UNIX system, or a mobile device can be used to consume (use) the Web service. With the .NET Framework, Web services can be consumed in every application type.
+There are several web service available with .Net Framework, such as:
+1)	Validation Controls such as:
+1.	E-mail address validator,
+2.	Regular expression validator,
+3.	Range Validator, etc.
+2)	Login Controls such as:
+1.	Create user
+2.	Delete user
+3.	Manage users, etc.
+
+Some Web services are also available on internet , which are free and offer application-components like:
+	•	Currency Conversion, 
+
+•	Weather Reports, 
+•	Language Translation, 
+•	Search Engines, 
+•	Document Convertor, etc. 
+Some are paid and can be use by authorised sites, such as:
+	•	Credit and Debit card payment 
+•	Net Banking, etc. 
+
+
+
+
+84
+ 
+
+
+
+
+Web Services Architecture
+
+			WEB SERVER	
+IE Browser							
+						Web Service	
+							
+							
+Windows Apps			SOAP			
+					Web Service	
+			Request				
+							
+			Handler			
+Java Platform						
+							
+							
+						Web Service	
+Other Platform							
+							
+							
+							
+
+Web Service Architecture
+
+Creating Web Service
+To create and expose ASP.NET Web Servies by authoring and saving text files with the file extension ―asmx‖ within the virtual path of an ASP.NET Web Application.
+
+To understand the concept of Web Services we have given an example of Web Service, which provides the current time of day on its machine.
+Declaring WebMethod methods
+A WebMethod represents a method for web. WebMethod has six properties they are :
+1)	Description
+2)	MessageName
+3)	EnableSession
+4)	CacheDuration
+5)	TransactionOption
+
+6)	BufferResponse
+
+[WebMethod]
+
+Public string SayHello ()
+{
+return "Hello
+Neeraj Tripathi";
+
+}
+
+
+Description
+
+Both the [WebService], and [WebMethod] attributes have a Description Property. With this property we can associate documentation with our web Service and WebMethod. For example you can use Description Attribute to describe the Webmethod.
+
+
+
+
+
+
+
+85
+ 
+[WebMethod (Description="This method will add three integer")] Public int Add (int a, int b, int c)
+
+{
+return a+b+c;
+}
+
+
+MessageName
+
+This is property useful, when we want to overload the WebMethod.
+
+For Example
+
+[WebMethod]
+Public int Add (int a, int b, int c)
+{
+return a+b+c;
+}
+[WebMwthod (MessageName=‖Add‖)]
+
+public int Add(int a)
+
+{
+int s = 0 ;
+for(int i = 1; i <= a;
+i++) s = s + i;
+return s;
+
+}
+
+
+EnableSession
+
+This Property used for to enable the session in WebServices.
+
+(Remember WebServiecs uses HTTP protocol this is stateless) .if we want to maintain the state between client and server we need to use this property. Default Enablesession is false
+
+[WebMethod (EnableSession=true)]
+
+Public string SayHiToMS ()
+{
+return " Hello to .NET ";
+
+}
+
+
+CacheDuration
+
+When we cache the previously accessed result. Next time the same user or different user asks we can serve from cache. Here result cached 60 milliseconds. if we invoke this method with in 60 milliseconds it will print same time . This will increase the Web Service performance.
+
+[WebMethod (CacheDuration =
+60)] Public string ShowTime()
+{
+
+return
+
+DateTime.Now.ToShortTimeString();
+
+}
+
+
+TransactionOption
+
+TransactionOption Can be one of five modes:
+	•	Disabled 
+•	NotSupported 
+ 
+
+86
+ 
+	•	Supported 
+•	Required 
+•	RequiresNew 
+
+Even though there are five modes, web methods can only participate as the root object in a transaction. This means both Required and RequiresNew result in a new transaction being created for the web method. The Disabled, NotSupported, and Supported settings result in no transaction being used for the web method. The TransactionOption property of a web method is set to Disabled by default.
+
+BufferResponse
+
+This property is boolean control. WebMethod whether or not to buffer the method's response.
+
+4.2 Window Service
+
+
+Windows Services is previously called as NT Service. The Idea of creating a windows service application is two fold one is to create a long running application and the other is service applications are the application that run directly in the windows session itself (This can be verified by accessing the current or home directory of the service application which default to
+
+.winnt\system32). One more advantage of the Windows Service Application, which makes it more useful, compared to other application is that, Service application can be made to run in the security context of a specific user account.
+
+There are basically two types of Services that can be created in .NET Framework. Services that are only service in a process are assigned the type Win32OwnProcess. Services that share a process with another service are assigned the type Win32ShareProcess.The type of the service can be queried. There are other types of services which are occasionally used they are mostly for hardware, Kernel, File System.
+
+Lifecycle of the Service Application.
+
+In a typical application the Main method is the entry pointand for what ever instantiation has to happen will happen here matters. In Caseof Service, the Main method remains to the entry module by the actual functionality of the service application start only in the Main method by triggering a overridden method called OnStart() which actually starts the Service. Prior to OnStart() method another significant variance is compared to the other application is service should be installed onto the system on which it will run. This process executes the installers for the service project and loads the service into the Services Control Manager for that computer. The Services Control Manager is the central utility provided by Windows to administer services following which the main and Onstart() is followed to fall inline.
+
+A Service application can be in any one of the states listed they are viz., Running, Paused or Stopped. The Services also has the capability to queue the commands and also remain in those states. Such states can be queried, some of the significant states are like ContinuePending, which means continue command is in queue and yet to get executed. Similarly StartPending, StopPending, PausePending.
+
+Window SERVICE application development can be divided to two phases. One is the development of Service functionality and the last phases is about the development. The 3 Main classes involved in Service development are:
+ 
+
+87
+ 
+	•	System.ServiceProcess.ServiceBase 
+	•	System.ServiceProcess.ServiceProcessInstaller 
+		
+	•	ServiceController 
+
+System.ServiceProcess.ServiceBase , is the class in which we override the methods for implementation, Table 9.1 shows some methods which are provide for override.
+
+Method	Override to
+OnStart	Indicate what actions should be taken when your service starts running.
+	You must write code in this procedure for your service to perform useful
+	work.
+OnPause	Indicate what should happen when your service is paused.
+OnStop	Indicate what should happen when your service stops running.
+OnContinue	Indicate what should happen when your service resumes normal
+	functioning after being paused.
+OnShutDown	Indicate what should happen just prior to your system shutting down, if
+	your service is running at that time.
+OnCustomCommand	Indicate what should happen when your service receives a custom
+	command. For more information on custom commands.
+OnPowerEvent	Indicate how the service should respond when a power management event
+	is received, such as a low battery or suspended operation.
+Run	The main entry point for the service, u sally in the Main method
+
+Developing Window Service
+
+To develop and run a Window Service application on .NET frame, you have to follow the following steps.
+
+Step 1: Create Skeleton of the Service
+
+Step 2: Add functionality to your service
+
+Step 3: Install and Run the Service
+
+Step 4: Start and Stop the Service
+
+Create Skeleton of the Service
+
+To create a new Window Service, pick Windows Service option from your Visual C# Projects, give your service a name, and click OK, see figure 9.2.
+ 
+
+
+
+
+
+
+
+
+
+
+88
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 9.2 Create New Window Service
+
+
+
+
+
+The result looks like figure 9.3. The Wizard adds WinService1.cs class to your project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+89
+ 
+Figure 9.3 WinService1.cs
+
+
+Set your ServiceName to your own name so it would be easier to recognize your service during testing see figure 9.4, OR you can set this property programmatically using this line
+
+this.ServiceName = "mcWinService"; (This is the name you will be looking for later ).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 9.4 Setting the name of Service
+
+The default code of WinService1.cs added by the Wizard looks like here
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+90
+ 
+namespace mcWebService
+
+{
+using System;
+using System.Collections;
+
+using System.Core;
+
+using System.ComponentModel;
+
+using System.Configuration;
+
+using System.Data;
+
+using System.Web.Services;
+
+using System.Diagnostics;
+
+using System.ServiceProcess;
+
+public class WinService1 : System.ServiceProcess.ServiceBase {
+//	<summary>
+//	Required designer variable.
+//	</summary>
+
+private System.ComponentModel.Container components;
+
+public WinService1()
+
+{
+
+//	This call is required by the WinForms Component Designer. InitializeComponent();
+
+//	TODO: Add any initialization after the InitComponent call
+
+}
+
+//	The   main   entry   point   for   the
+
+process static void Main()
+{
+System.ServiceProcess.ServiceBase[] ServicesToRun;
+
+//	More than one user Service may run within the same process. To add
+
+//	another service to this process, change the following line to
+//	create a second service object. For example,
+//
+
+// ServicesToRun = New System.ServiceProcess.ServiceBase[] {new WinService1(), new MySecondUserService()};
+
+//
+ServicesToRun = new System.ServiceProcess.ServiceBase[] { new WinService1() }; System.ServiceProcess.ServiceBase.Run(ServicesToRun);
+
+}
+
+//	<summary>
+
+//	Required method for Designer support - do not modify
+//	the contents of this method with the code editor.
+//	</summary>
+
+private void InitializeComponent()
+{
+
+components = new System.ComponentModel.Container(); this.ServiceName = "WinService1";
+}
+
+//	<summary>
+
+//	Set things in motion so your service can do its work.
+//	</summary>
+
+ 
+
+91
+ 
+protected override void OnStart(string[] args)
+
+{
+//	TODO: Add code here to start your service.
+
+}
+
+//	<summary>
+
+//	Stop this service.
+//	</summary>
+
+protected override void OnStop()
+
+{
+
+//	TODO: Add code here to perform any tear-down necessary to stop your service.
+
+}
+}
+
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+92
+ 
+Add functionality to your service
+
+
+As you saw WebService1.cs, there are two overridden functions OnStart and OnStop. The OnStart function executes when you start your service and the OnStop function gets execute when you stop a service. I write some text to a text file when you start and stop the service.
+
+
+protected override void OnStart(string[] args)
+
+{
+
+FileStream fs = new FileStream(@"c:\temp\mcWindowsService.txt" , FileMode.OpenOrCreate, FileAccess.Write);
+
+StreamWriter m_streamWriter = new StreamWriter(fs);
+m_streamWriter.BaseStream.Seek(0, SeekOrigin.End);
+m_streamWriter.WriteLine(" mcWindowsService: Service Started
+\n"); m_streamWriter.Flush();
+
+m_streamWriter.Close();
+
+}
+
+//	<summary>
+
+//	Stop this service.
+//	</summary>
+protected override void OnStop()
+{
+
+FileStream fs = new FileStream(@"c:\temp\mcWindowsService.txt" , FileMode.OpenOrCreate, FileAccess.Write);
+StreamWriter m_streamWriter = new StreamWriter(fs);
+m_streamWriter.BaseStream.Seek(0, SeekOrigin.End);
+m_streamWriter.WriteLine(" mcWindowsService: Service Stopped
+\n"); m_streamWriter.Flush();
+m_streamWriter.Close();
+
+}
+
+
+
+
+Install and Run the Service
+
+
+Build of this application makes one exe, mcWinService.exe. You need to call installutil to register this service from command line.
+
+
+
+
+installutil C:\mcWebService\bin\Debug\mcWebService.exe
+
+
+
+
+You can use /u option to uninstall the service.
+
+ 
+
+
+
+
+93
+ 
+
+installutil /u
+
+C:\mcWebService\bin\Debug\mcWebService.exe
+
+
+
+
+Now Run the application.
+
+Start and Stop the Service
+
+For start and stop the service you need to go to the Computer Management. You can use Manage menu item by right clicking on My Computer, see figure 9.5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 9.5 Computer Management
+
+
+Under Services and Applications, you will see the service mcWinService. Start and Stop menu item starts and stops the service, see figure 9.6.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+94
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure 9.6 Start the Service
+
+4.3ASP.NET and Web controls
+
+ASP.NET is a compiled, .NET-based environment; you can author applications in any .NET compatible language, including Visual Basic .NET, C#, and JScript .NET. Additionally, the entire
+
+.NET Framework is available to any ASP.NET application. Developers can easily access the benefits of
+
+these technologies, which include the managed common language runtime environment, type safety, inheritance, and so on.
+
+FEATURES OF ASP.NET
+ASP.NET has better language support, a large set of new controls, XML-based components, and better user authentication. ASP.NET provides increased performance by running compiled code. ASP.NET code is not fully backward compatible with ASP. Instead of that ASP.NET having following major features:
+
+•	Better language support
+•	Programmable controls
+•	Event-driven programming
+•	XML-based components
+•	User authentication, with accounts and roles
+•	Higher scalability
+•	Increased performance - Compiled code
+•	Easier configuration and deployment
+
+•	Not fully ASP compatible
+
+95
+ 
+Language Support
+
+ASP.NET uses ADO.NET.
+ASP.NET supports full Visual Basic, not
+VBScript. ASP.NET supports C# (C sharp) and
+
+C++. ASP.NET supports JScript.
+ASP.NET Controls
+
+ASP.NET contains a large set of HTML controls. Almost all HTML elements on a page can be defined as ASP.NET control objects that can be controlled by scripts.
+
+ASP.NET also contains a new set of object-oriented input controls, like programmable list-boxes and validation controls.
+
+A new data grid control supports sorting, data paging, and everything you can expect from a dataset control.
+
+ASP.NET EXECUTION MODEL
+When the client requests a Web page for the first time, the following set of events take place:
+1.	The client browser issues a GET HTTP request to the server.
+
+2.	The ASP.NET parser interprets the source code.
+
+3.	If the code was not already compiled into a dynamic-link library (DLL), ASP.NET invokes the compiler.
+
+4.	Runtime loads and executes the Microsoft intermediate language (MSIL) code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the user requests the same Web page for the second time, the following set of events take place:
+
+1.	The client browser issues a GET HTTP request to the server.
+
+2.	Runtime loads and immediately executes the MSIL code that was already compiled during the user's first access attempt.
+
+ASP.NET PAGE LIFE CYCLE
+The lifetime of an ASP.NET page is filled with events. A .NET technical interview might begin with this question. A series of processing steps takes place during this page life cycle. Following tasks are performed:
+• Initialization
+• Instantiation of controls
+• Restoration and Maintainance of State
+• Running Event Handlers
+• Rendering of data to the browser
+
+The life cycle may be broken down into Stages and Events. The stages reflect the broad spectrum of tasks performed. The following stages take place:
+ 
+
+
+
+96
+ 
+1.	Page Request: This is the first stage, before the page life cycle starts. Whenever a page is requested, ASP.NET detects whether the page is to be requested, parsed and compiled or whether the page can be cached from the system.
+
+2.	Start: In this stage, properties such as Request and Response are set. Its also determined at
+
+this stage whether the request is a new request or old, and thus it sets the IsPostBack property in the Start stage of the page life cycle.
+
+3.	Page Initialization: Each control of the page is assigned a unique identification ID. If there are themes, they are applied. Note that during the Page Initialization stage, neither postback data is loaded, nor any viewstate data is retrieved.
+
+4.	Load: If current request is a postback, then control values are retrieved from their viewstate.
+
+5.	Validation: The validate method of the validation controls is invoked. This sets the IsValid property of the validation control.
+
+6.	PostBack Event Handling: Event handlers are invoked, in case the request is a postback.
+
+7.	Rendering: Viewstate for the page is saved. Then render method for each control is called. A textwriter writes the output of the rendering stage to the output stream of the page's Response property.
+8.	Unload: This is the last stage in the page life cycle stages. It is invoked when the page
+is completely rendered. Page properties like Respone and Request are unloaded.
+
+Note that each stage has its own events within it. These events may be used by developers to handle their code. Listed below are page events that are used more frequently.
+
+•	PreInit: Checks the IsPostBack property. To create or recreate dynamic controls. To set master pages dynamically. Gets and Sets profile propety values.
+
+•	Init: Raised after all controls are initialized, and skin properties are set.
+
+•	InitComplete: This event may be used, when we need to be sure that all initialization tasks are complete.
+
+•	PreLoad: If processing on a control or a page is required before the Load event.
+
+•	Load: invokes the OnLoad event on the page. The same is done for each child control on the page. May set properties of controls, create database connections.
+
+•	Control Events: These are the control specific events, such as button clicks, listbox item selects etc.
+
+•	LoadComplete: To execute tasks that require that the complete page has been loaded.
+
+•	PreRender: Some methods are called before the PreRenderEvent takes place, like EnsureChildControls, data bound controls that have a dataSourceId set also call the DataBind method. Each control of the page has a PreRender event. Developers may use the prerender event to make final changes to the controls before it is rendered to the page.
+
+•	SaveStateComplete: ViewState is saved before this event occurs. However, if any changes
+
+to the viewstate of a control is made, then this is the event to be used. It cannot be used to make changes to other properties of a control.
+
+•	Render: This is a stage, not an event. The page object invokes this stage on each control of the page. This actually means that the ASP.NET server control's HTML markup is sent to the browser.
+
+•	Unload: This event occurs for each control. It takes care of cleanup activities like wiping the database connectivities.
+
+WEB FORM
+
+Web Forms are the heart and soul of ASP.NET. Web Forms are the User Interface (UI) elements that give your Web applications their look and feel. Web Forms are similar to Windows Forms in that they provide properties, methods, and events for the controls that are placed onto them.
+
+However, these UI elements render themselves in the appropriate markup language required by the request, e.g., HTML. If you use Microsoft Visual Studio® .NET, you will also get the familiar drag-and drop interface used to create your UI for your Web application. Web Forms are made up
+ 
+
+
+97
+ 
+of two components: the visual portion (the ASPX file), and the code behind the form, which resides in a separate class file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The Purpose of Web Forms
+
+Web Forms and ASP.NET were created to overcome some of the limitations of ASP. These new strengths include:
+•	Separation of HTML interface from application logic
+
+•	A rich set of server-side controls that can detect the browser and send out appropriate markup language such as HTML
+
+•	Less code to write due to the data binding capabilities of the new server-side .NET controls
+•	Event-based programming model that is familiar to Microsoft Visual Basic programmers
+
+•	Compiled code and support for multiple languages, as opposed to ASP which was interpreted as Microsoft Visual Basic Scripting (VBScript) or Microsoft Jscript.
+
+•Allows third parties to create controls that provide additional functionality
+
+The categories of controls available are as follows:
+
+•	Standard: Common controls that make up 90 percent of all pages.
+•	Data: Controls used to connect to data sources (databases or XML files).
+
+•	Validation: Controls that can be added to a page to validate user input (for example, to ensure that certain text boxes contain data or that data has been entered in the correct format).
+
+•	Navigation: Controls used to provide a simple and quick solution to making a site navigable (for example, dynamic menus and breadcrumbs of hyperlinks).
+
+•	Login: A set of controls that make it simple to move from a completely open site to one that has personalized areas.
+
+•	WebParts: Controls that make it possible to create Sharepoint-style sites with dragand-
+
+droppable sections, known as Web Parts, which enable the user to rearrange their view of a site.
+
+•	HTML: Simple HTML elements. 12.2. STANDARD CONTROLS
+
+Standard Controls are basic controls which are used for designing user interface for webpages. User can input data through various controls on a user interface at the client browser and can display output through these controls received from the server.
+
+Here are some of the most commonly used controls which are grouped under the standard tab Toolbox:
+
+•	TextBox control: Used for entering text on a page, commonly seen on order forms on shopping sites, or for logging in to a site.
+ 
+
+
+
+98
+ 
+•	Button control: From submitting an order to changing preferences on a web site, clicking a button on a page normally causes information to be sent to the server, which reacts to that information and displays a result.
+
+•	Label control: Used for displaying simple text in a specified position on a page. The Label control is an easy way to change the text on part of a page in response to user interaction.
+
+•	Hyperlink control: Used for providing hyperlink functionality on a page that enables navigation to other parts of a site, or to other resources on the Internet.
+
+•	Image control: Used for displaying images on a page. The server can change the image that is displayed in the control programmatically in response to user input.
+
+•	DropDown List control: Used for offering the user a list of options to choose from; collapses when not in use to save space.
+
+•	Listbox control: Used for offering a fixed-size list of items to choose from.
+•	CheckBox and Radio Button controls: Used for selecting options with either a yes/no or
+―this one out of many‖ style, respectively.
+VALIDATION CONTROLS
+
+These controls make page validation much easier and reduce the amount of code that the developer must write to perform page validation. The ASP.NET team reviewed numerous Web sites to determine the most common types of validation that were taking place on the Web. Most developers were reinventing the wheel to perform validation, so the ASP.NET team decided that Web developers needed a set of validation controls to add to their toolbox. From the start, these controls were designed to detect the version of the browser when used in client-side validation and then render the correct version of HTML for that client browser. These research efforts lead to the development of the six controls covered in this chapter. The examples in this chapter will take a look at each control and explain the most commonly used properties for each control. However, keep in mind that all of the controls share basic properties, such as font, fore color, back color, and so on, so this chapter won‘t discuss those properties in detail. Everything in the
+.NET Framework is a class, and the validation controls are no exception.
+
+All validation controls in the .NET Framework are derived from the BaseValidator class. This class serves as the base abstract class for the validation controls and provides the core implementation for all validation controls that derive from this class. Validation controls always perform validation checking on the server. Validation controls also have complete client-side implementation that allows browsers that support DHTML to perform validation on the client. Client-side validation enhances the validation scheme by checking user input as the user enters data. This allows errors to be detected on the client before the form is submitted, preventing the round trip necessary for server -side validation. In addition, more than one validator may be used on a page to validate different aspects.
+
+1.	RequiredFieldValidator Control
+
+Use the RequiredFieldValidator control when a value is required for an input element on the Web page. This control checks whether the value of the associated input control is different from its initial value.
+
+2.	CompareValidator Control
+
+Use the CompareValidator control to make sure that a value matches a specified value. This control compares the value of an input control to another input control or a constant value using a variety of operators and types. You can also use this control to make sure that your input value is of a specific type: integer, string, and so on.
+3.	RangeValidator Control
+
+Use the RangeValidator control to determine whether a value falls within the specified range. It checks whether the value of the associated input control is within some minimum and maximum, which can be a constant value or the value of another control.
+4.	RegularExpressionValidator Control
+ 
+
+99
+ 
+Use the RegularExpressionValidator control to check a value against a regular expression. It checks whether the value of the associated input control matches the pattern of a regular expression.
+
+5.	CustomValidator Control
+
+Use the CustomValidator control to perform user-defined custom validation. This control allows custom code to perform validation on the client and/or server.
+
+6.	ValidationSummary Control
+
+Use the ValidationSummary control to capture all the validation errors from the other controls and display them on the page as a list, a bulleted list, or in single paragraph format. The errors can be displayed inline and/or in a pop-up message box.
+
+4.4 ADO.NET
+
+ADO.NET is the new database technology used in .NET platform. ADO.NET is the next step in the evolution of Microsoft ActiveX Data Objects (ADO). It does not share the same programming model, but shares much of the ADO functionality. The ADO.NET as a marketing term that covers the classes in the System.Data namespace. ADO.NET is a set of classes that expose the data access services of the .NET Framework. ADO.NET is a natural evolution of ADO and is built around N-Tier
+
+application development. ADO.NET has been created with XML at its core.
+CONNECTED VS DISCONNECTED
+
+For much of the history of computers, the only environment available was the connected environment. With the advent of the Internet, disconnected work scenarios have become commonplace, and with the increasing use of handheld devices, disconnected scenarios are becoming nearly universal. Laptop, notebook, and other portable computers allow you to use applications when you are disconnected from servers or databases. In many situations, people do not work entirely in a connected or disconnected environment, but rather in an environment that combines the two approaches.
+
+Connected
+A connected environment is one in which a user or an application is constantly connected to a data source. A connected scenario offers the following advantages:
+•	A secure environment is easier to maintain.
+•	Concurrency is easier to control.
+
+•	Data is more likely to be current than in other scenarios. A connected scenario has the following disadvantages:
+
+•	It must have a constant network connection.
+•	Scalability
+Disconnected
+
+A disconnected environment is one in which a user or an application is not constantly connected to a source of data. Mobile users who work with laptop computers are the primary users in disconnected environments. Users can take a subset of data with them on a disconnected computer, and then merge changes back into the central data store.
+A disconnected environment provides the following advantages:
+
+•	You can work at any time that is convenient for you, and can connect to a data source at any time to process requests.
+
+•	Other users can use the connection.
+•	A disconnected environment improves the scalability and performance of applications.
+A disconnected environment has the following disadvantages:
+•	Data is not always up to date.
+
+•	Change conflicts can occur and must be resolved.
+
+ADVANTAGES OF ADO.NET
+ADO.NET provides the following advantages over other data access models and components:
+ 
+
+100
+ 
+Interoperability. ADO.NET uses XML as the format for transmitting data from a data source to a local in-memory copy of the data.
+
+Maintainability. When an increasing number of users work with an application, the increased use can strain resources. By using n-tier applications, you can spread application logic across additional tiers. ADO.NET architecture uses local in-memory caches to hold copies of data, making it easy for additional tiers to trade information.
+
+Programmability. The ADO.NET programming model uses strongly typed data. Strongly typed data makes code more concise and easier to write because Microsoft Visual Studio .NET provides statement completion.
+
+Performance. ADO.NET helps you to avoid costly data type conversions because of its use of strongly typed data.
+
+Scalability. The ADO.NET programming model encourages programmers to conserve system resources for applications that run over the Web. Because data is held locally in in memory caches, there is no need to retain database locks or maintain active database connections for extended periods.
+
+.NET DATA PROVIDER
+
+A .NET data provider is used for connecting to a database, executing commands, and retrieving results. Those results are either processed directly, or placed in an ADO.NET DataSet in order to be exposed to the user in an ad-hoc manner, combined with data from multiple sources, or remoted between tiers. The .NET data provider is designed to be lightweight, creating a minimal layer between the data source and your code, increasing performance without sacrificing functionality. The ADO.NET object model includes the following data provider classes:
+1.	SQL Server .NET Data Provider
+2.	OLE DB .NET Data Provider
+3.	Oracle .NET Data Provider
+4.	ODBC .NET Data Provider
+5.	Other Native .NET Data Provider
+
+1.	SQL Server Data Provider: To use the SQL Server .NET Data Provider, you need to include the System.Data.SqlClient namespace in your applications. Using this provider is more efficient than using the OLE DB .NET Data Provider because it does not pass through an OLE DB or Open Database Connectivity (ODBC) layer. It provides optimized access to SQL Server 2000 and SQL Server 7.0 databases.
+
+2.	OLE DB Data Provider: To use the OLE DB .NET Data Provider, you need to include
+
+the System.Data.OleDb namespace in your applications. .NET Provides access to SQL Server versions 6.5 and earlier. It also provides access to other databases, such as Oracle, Sybase, DB2/400, and Microsoft Access.
+
+3.	Oracle .NET Data Provider: To use the Oracle Database, a native Oracle .NET data driver is the best choice. To use the Oracle .NET Data Provider, you need to include the System.Data.OracleClient namespace in your applications. Oracle itself also provides a .NET data provider, referenced as Oracle.DataAccess.Client. This is a separate download that you have to get from Oracle. Whether you use a .NET data provider from the database vendor or just use the one provided with the .NET framework is your choice.
+
+4.	ODBC .NET Data Provider: If you have a data source for which no native or OLE DB
+
+provider is available, the ODBC .NET data provider is good alternative because most database provide an ODBC interface. It is referenced with this using directive: System.Data.Odbc
+
+5.	Other Native .NET Data Provider: If there is a native .NET data provider available specifically for your database, then you may want to use that .NET data provider instead. Many other database vendors and third-party companies provide native
+
+.NET data providers; the choice between using the native providers and using something generic like the ODBC provider will depend on your circumstances. If you value portability over
+ 
+
+101
+ 
+performance, then go generic. If you want to get the best performance or make the best use of a particular database‘s features, go native.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Program to Display the content of
+Database using System;
+using System.Data;
+
+using System.Data.OleDb;
+
+class test
+
+{
+
+public static void Main()
+{
+
+OleDbConnection conn = new OleDbConnection(@‖Provider = Microsoft.Jet.OLEDB.4.0; Data Source=c:\lalit\data.mdb‖); OleDbDataAdapter adp= new OleDbDataAdapter(―Select * from emp‖,conn); DataTable tbl =new DataTable();
+adp.Fill(tbl);
+
+foreach(DataRow row in tbl.Rows) Console.WriteLine(―{0,10}{1,10}{2,10}‖,row[0],row[1],row[2]);
+}
+}
+
+4.5 Distributed Applications
+
+Distributed applications are those applications which uses distributed components. Distributed components can be accessed across the network, even thogh it may be different types of application (Web, standalone, PDA‘s etc.). You can increase the scalability of your application by making component distributed. Commonly, we have three steps to construct a simple distributed application using C#:
+
+1.	Create remoting objects, which will either inherit MarshalByRefObject or be serialized.
+
+2.	Make a host (server) who will provide remoting server using channel for remoting client to call for.
+
+3.	Make clients who will call the remote objects on server, which will establish a connection channel to the appointed port on server and then using the Well- Known objects.
+ 
+
+102
+ 
+
+Remote Object
+
+A remote object is implemented in a class that derives from System.MarshalByRefObject. A client doesn‘t call the methods directly; instead a proxy object is used to invoke methods on the remote object. Every public method that we define in the remote object class is available to be called from clients. All the objects passed by value must be serializable.
+
+To create MyRemoteObject.dll Take .NET IDE New Project->YourName.Samples (for example, RemotingSamples.cs). (By Default.,Class1.cs will come. Change that file name MyRemoteObject.cs.)
+
+using System;
+
+using System.Runtime.Remoting;
+
+using System.Runtime.Remoting.Channels;
+
+using System.Runtime.Remoting.Channels.Tcp;
+
+namespace RemotingSamples
+
+{
+public class RemoteObject : MarshalByRefObject
+{
+///////////////////////////////////////////////////constructor
+public RemoteObject()
+{
+Console.writeline(―Remote object activated‖);
+}
+////////////////////////////////////////////////return message
+reply public String ReplyMessage(String msg)
+{
+
+Console.WriteLine(―Client : ―+msg);
+
+//print given message on console
+
+return ―Server : Yeah! I‘m here‖;
+
+}
+}
+
+}
+
+The remote object must be compiled as follows to generate remoteobject.dll which is used to generate server and client executable.
+
+csc /t:library /debug /r:System.Runtime.Remoting.dll RemotingSamples.cs
+
+Server
+
+The remote object needs a server process where it will be instantiated. This server has to create a channel and put it into listening mode so that clients can connect to this channel. For creating server, Take .NET IDE-> New Project named ―server‖. This is console application is the server application used to register remote object to be access by client application. First, of all choose channel to use and register it, supported channels are HTTP, TCP and SMTP. We have used here TCP. Then register the remote object specifying its type.
+
+using System;
+
+using System.Runtime.Remoting;
+using System.Runtime.Remoting.Channels;
+
+using System.Runtime.Remoting.Channels.Tcp;
+
+namespace RemotingSamples
+
+103
+ 
+{
+
+public class Server
+{
+//////////////////////////////////////////////////////////
+///constructor
+public Server()
+{
+}
+//////////////////////////////////////////////////////////
+///main method
+public static int Main(string [] args)
+{
+
+//select channel to communicate TcpChannel
+
+chan = new TcpChannel(8085);
+
+ChannelServices.RegisterChannel(chan); //register channel //register remote object
+
+RemotingConfiguration.RegisterWellKnownServiceType( Type.GetType(―RemotingSamples.RemoteObject,object‖),
+
+―RemotingServer‖, WellKnownObjectMode.SingleCall); //inform console
+
+Console.WriteLine(―Server
+Activated‖); return 0;
+}
+}
+}
+
+The server must be compiled as follows to produce server.exe.
+
+csc /debug /r:remoteobject.dll /r:System.Runtime.Remoting.dll server.cs
+
+Client
+
+This is the client application and it will call remote object method. First, of all client must select the channel on which the remote object is available, activate the remote object and then call proxy‘s object method return by remote object activation.
+
+using System;
+using System.Runtime.Remoting;
+
+using System.Runtime.Remoting.Channels;
+
+using System.Runtime.Remoting.Channels.Tcp;
+
+using RemotingSamples;
+
+namespace RemotingSamples
+{
+public class Client
+{
+///////////////////////////////////////////////////////////
+///constructor
+public Client()
+{
+}
+//////////////////////////////////////////////////////////
+///main method
+public static int Main(string [] args)
+
+{
+ 
+
+104
+ 
+//select channel to communicate with server
+
+TcpChannel chan = new TcpChannel();
+
+ChannelServices.RegisterChannel(chan);
+
+RemoteObject remObject = (RemoteObject)
+
+Activator.GetObject(typeof(RemotingSamples.RemoteObject),
+
+―tcp://localhost:8085/RemotingServer‖);
+
+if (remObject==null)
+Console.WriteLine(―cannot locate
+server‖); else
+remObject.ReplyMessage(―You
+there?‖); return 0;
+}
+}
+}
+
+The client must be compiled as follows in order to produce client.exe csc/debug/r:remoteobject.dll /r:System.Runtime.Remoting.dll client.cs
+
+Advantage and Disadvantage of Remoting
+
+Lease-Based Lifetime
+
+Distributed garbage collection of objects is managed by a system called ‗leased based lifetime‘. Each object has a lease time, and when that time expires the object is disconnected from the
+
+.NET runtime remoting infrastructure. Net remoting takes a lease-base lifetime of the object that is scalable.
+
+Call Context
+
+Additional information can be passed with every method call that is not part of the argument with the help of SOAP Header.
+Distributed Identities
+If we pass a reference to a remote object, we will access the same object using this reference.
+Advantage Over Web Services
+1.	It works using purely Common Type System.
+2.	It supports high speed binary over top/ip communication.
+Advantage Over COM/DCOM
+1.	It does no have extra interface language (IDL)
+2.	It works using purely managed code
+3.	It‘s using Common Type System. No Safearrays etc
+Disadvantages
+1.	It is not an open standard like web services.
+2.	It is not as widespread and established ad DCOM.
+
+3.	Less support for transactions, load balancing compared with DCOM.
+
+4.6 Unsafe Mode
+
+When you want to compile program using command line switch you type the program name after the compiler name; for example if your program name is prog1.cs then you will compile this:
+csc prog1.cs
+
+This works fine for safe code while you are programming. Microsft added one more switch to command line compiler of C# for writing unsafe code. Now if you want to write unsafe code then you have to specify the /unsafe command line switch with command line compiler otherwise the compiler gives an error. if you want to write unsafe code in your program then you compile your programas follows:
+ 
+
+105
+ 
+csc /unsafe prog1.cs
+
+Here prog1.cs is the name of the program. If you compile your program which has unsafe code without using the /unsafe switch then compiler gives error.
+
+To set this compiler option in the Visual Studio development environment following steps are required :
+
+	• Open the project's Properties page. 
+	• Click the Build property page. 
+	
+	• Select the Allow Unsafe Code check box. 
+	
+	
+4.7  GDI APPLICATIONS
+
+Using Graphical Device Interface (GDI) objects in earlier versions of Visual Studio was a pain. In Visual Studio .NET, Microsoft has taken care of most of the GDI problems and have made it easy to use. GDI+ is the next evolution of GDI in .NET Visual Studio. GDI+ resides in System.Drawing.dll assembly. All GDI+ classes are reside in the System.Drawing, System.Text, System.Printing, System.Internal, System.Imaging, System.Drawing2D and System.Design namespaces.
+
+The first class we must discuss is the Graphics class. After the Graphics class, we will discuss other useful GDI+ classes and structures such as Pen, Brush, and Rectangle.
+The Graphics Class
+
+The Graphics class encapsulates GDI+ drawing surfaces. Before drawing any object ( for example circle, or rectangle ) we have to create a surface using Graphics class. Generally we use Paint event of a Form to get the reference of the graphics. Another way is to override OnPaint method.
+
+Here is how you get a reference of the Graphics object:
+
+private void form1_Paint(object sender, PaintEventArgs e)
+
+{
+Graphics g = e.Graphics;
+}
+OR
+protected override void OnPaint(PaintEventArgs e)
+{
+Graphics g = e.Graphics;
+
+}
+
+Once you have the Graphics reference, you can call any of this class‘s members to draw various objects. Here are some of Graphics class‘s methods:
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+After creating a Graphics object, you can use it draw lines, fill shapes, draw text and so on.
+
+The major objects are:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Example of Drawing an Arc
+
+DrawArc function draws an arc. This function takes four arguments. First is the Pen. You create a pen by using the Pen class. The Pen constructor takes at least one argument, the color or the brush of the pen. Second argument width of the pen or brush is optional.
+
+Pen pn = new Pen(Color.Blue); or Pen pn = new Pen(Color.Blue, 100);
+
+
+
+
+
+107
+ 
+The second argument is a rectangle. You can create a rectangle by using Rectangle structure. The Rectangle constructor takes four int type arguments and they are left and right corners of the rectangle.
+
+Rectangle rect = new Rectangle(50, 50, 200, 100);
+protected override void OnPaint(PaintEventArgs pe)
+
+{
+
+Graphics g = pe.Graphics ;
+
+Pen pn = new Pen( Color.Blue );
+
+Rectangle rect = new Rectangle(50, 50, 200, 100);
+g.DrawArc( pn, rect, 12, 84 );
+}	The output looks like figure
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+108

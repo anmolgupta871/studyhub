@@ -1,0 +1,576 @@
+COMPUTER AND NETWORK SECURITY NOTES
+
+BCA 6TH SEMESTER
+
+
+UNIT 1
+
+The meaning of computer security
+
+The meaning of the term computer security has evolved in recent years. Before the problem of data security became widely publicized in the media, most people’s idea of computer security focused on the physical machine. Traditionally, computer facilities have been physically protected for three reasons:
+
+To prevent theft of or damage to the hardware
+
+To prevent theft of or damage to the information
+
+To prevent disruption of service
+
+
+The field covers all the processes and mechanisms by which digital equipment, information and services are protected from unintended or unauthorized access, change or destruction, and are of growing importance in line with the increasing reliance on computer systems of most societies worldwide. It includes physical security to prevent theft of equipment, and information security to protect the data on that equipment. It is sometimes referred to as "cyber security" or "IT security", though these terms generally do not refer to physical security (locks and such).
+
+Some important terms used in computer security are:
+
+Vulnerability
+
+Vulnerability is a weakness which allows an attacker to reduce a system's information assurance. Vulnerability is the intersection of three elements: a system susceptibility or flaw, attacker access to the flaw, and attacker capability to exploit the flaw. To exploit vulnerability, an attacker must have at least one applicable tool or technique that can connect to a system weakness. In this frame, vulnerability is also known as the attack surface.
+
+Vulnerability management is the cyclical practice of identifying, classifying, remediating, and mitigating vulnerabilities. This practice generally refers to software vulnerabilities in computing systems.
+
+Backdoors
+
+A	backdoor in a computer system, is a method of bypassing normal authentication, securing remote access to a computer, obtaining access to plaintext, and so on, while attempting to remain undetected.
+ 
+
+The backdoor may take the form of an installed program (e.g., Back Orifice), or could be a modification to an existing program or hardware device. It may also fake information about disk and memory usage.
+
+Denial-of-service attack
+
+Unlike other exploits, denials of service attacks are not used to gain unauthorized access or control of a system. They are instead designed to render it unusable. Attackers can deny service to individual victims, such as by deliberately entering a wrong password enough consecutive times to cause the victim account to be locked, or they may overload the capabilities of a machine or network and block all users at once. These types of attack are, in practice, very hard to prevent, because the behaviour of whole networks needs to be analyzed, not only the behaviour of small pieces of code. Distributed denial of service (DDoS) attacks are common, where a large number of compromised hosts (commonly referred to as "zombie computers", used as part of a botnet with, for example; a worm, trojan horse, or backdoor exploit to control them) are used to flood a target system with network requests, thus attempting to render it unusable through resource exhaustion.
+
+Direct-access attacks
+
+An unauthorized user gaining physical access to a computer (or part thereof) can perform many functions, install different types of devices to compromise security, including operating system modifications, software worms, key loggers, and covert listening devices. The attacker can also easily download large quantities of data onto backup media, for instance CD- R/DVD-R, tape; or portable devices such as key drives, digital cameras or digital audio players. Another common technique is to boot an operating system contained on a CD-ROM or other bootable media and read the data from the hard drive(s) this way. The only way to defeat this is to encrypt the storage media and store the key separate from the system. Direct-access attacks are the only type of threat to Standalone computers (never connect to internet), in most cases.
+
+Eavesdropping
+
+Eavesdropping is the act of surreptitiously listening to a private conversation, typically between hosts on a network. For instance, programs such as Carnivore and NarusInsight have been used by the FBI and NSA to eavesdrop on the systems of internet service providers.
+
+
+Spoofing
+
+Spoofing of user identity describes a situation in which one person or program successfully masquerades as another by falsifying data and thereby gaining an illegitimate advantage.
+
+Tampering
+
+Tampering describes an intentional modification of products in a way that would make them harmful to the consumer.
+ 
+
+Principle of security
+
+There are five principles of security. They are as follows:
+
+Confidentiality:
+
+The principle of confidentiality specifies that only the sender and the intended recipient should be able to access the content of the message.
+
+
+A   B 
+
+
+
+
+Integrity:
+
+The confidential information sent by A to B which is accessed by C without the permission or knowledge of A and B.
+
+
+A   B
+
+
+C
+
+Authentication:
+Authentication mechanism helps in establishing proof of identification.
+
+Non-repudiation:
+
+Access control:
+Access control specifies and control who can access what.
+
+Availability:
+It means that assets are accessible to authorized parties at appropriate times.
+
+Attacks
+
+We want our security system to make sure that no data are disclosed to unauthorized parties. Data should not be modified in illegitimate ways Legitimate user can access the data
+
+Types of attacks
+
+Attacks are grouped into two types:
+
+Passive attacks: does not involve any modification to the contents of an original message
+
+Active attacks: the contents of the original message are modified in some ways.
+ 
+Repudiation
+
+Repudiation describes a situation where the  authenticity of a signature is being challenged.
+
+Teardrop is a program that sends IP fragments to a machine connected to the Internet or a network. Teardrop exploits an overlapping IP fragment bug present in Windows 95, Windows NT and Windows 3.1 machines. The bug causes the TCP/IP fragmentation re-assembly code to improperly handle overlapping IP fragments. This attack has not been shown to cause any significant damage to systems, and a simple reboot is the preferred remedy. It should be noted, though, that while this attack is considered to be non-destructive, it could cause problems if there is unsaved data in open applications at the time that the machine is attacked. The primary problem with this is a loss of data.
+
+Symptoms of Attack
+
+When a Teardrop attack is run against a machine, it will crash (on Windows machines, a user will likely experience the Blue Screen of Death), or reboot. If you have protected yourself from the winnuke and ssping DoS attacks and you still crash, then the mode of attack is probably teardrop or land. If you are using IRC, and your machine becomes disconnected from the network or Internet, but does not crash, the mode of attack is probably
+
+Information disclosure
+
+Information Disclosure (Privacy breach or Data leak) describes a situation where information, thought as secure, is released in an untrusted environment.
+
+Elevation of privilege
+
+Elevation of Privilege describes a situation where a person or a program want to gain elevated privileges or access to resources that are normally restricted to him/it.
+
+Exploits
+
+An exploit is a piece of software, a chunk of data, or sequence of commands that takes advantage of a software "bug" or "glitch" in order to cause unintended or unanticipated behaviour to occur on computer software, hardware, or something electronic (usually computerized). This frequently includes such things as gaining control of a computer system or allowing privilege escalation or a denial of service attack. The term "exploit" generally refers to small programs designed to take advantage of a software flaw that has been discovered, either remote or local. The code from the exploit program is frequently reused in Trojan horses and computer viruses.
+
+Indirect attacks
+
+An indirect attack is an attack launched by a third-party computer. By using someone else's computer to launch an attack, it becomes far more difficult to track down the actual attacker. There have also been cases where attackers took advantage of public anonymizing systems, such as the tor onion router system.
+
+Computer crime: Computer crime refers to any crime that involves a computer and a network.
+ 
+Threats, Vulnerabilities, and Attacks
+
+
+Now that we have reviewed some of the TCP/IP basics, we can proceed in our discussion of threats, vulnerabilities, and attacks. It is important to understand the difference between a threat, vulnerability, or an attack in the context of network security.
+
+The terms threat and attack are commonly used to mean more or less the same thing and the actual definitions are
+
+Threat: A potential for violation of security, which exists when there is a circumstance, Capability, action, or event that could breach security and cause harm. That is, a threat is a possible danger that might exploit vulnerability.
+
+Threats
+
+A threat is anything that can disrupt the operation, functioning, integrity, or availability of a network or system. This can take any form and can be malevolent, accidental, or simply an act of nature.
+
+Attack: An assault on system security that derives from an intelligent threat; that is, an Intelligent act that is a deliberate attempt (especially in the sense of a method or technique) to evade security services and violate the security policy of a system.
+
+Security Attacks:
+
+Security attacks, used both in X.800 and RFC 2828, are classified as passive attacks and active attacks.
+
+A passive attack attempts to learn or make use of information from the system but does not affect system resources.
+
+An active attack attempts to alter system resources or affect their operation.
+
+Passive Attacks:
+
+Passive attacks are in the nature of eavesdropping on, or monitoring of, transmissions. The goal of the opponent is to obtain information that is being transmitted. Two types of passive attacks are release of message contents and traffic analysis.
+
+The release of message contents is easily understood. A telephone conversation, an electronic mail message, and a transferred file may contain sensitive or confidential information. To prevent an opponent from learning the contents of these transmissions.
+
+A second type of passive attack, traffic analysis, is subtler (Figure 1.3b). Suppose that we had a way of masking the contents of messages or other information traffic so that opponents, even if they captured the message, could not extract the information from the message. The common technique for masking contents is encryption. If we had encryption protection in place, an opponent might still be able to observe the pattern of these messages. The opponent Could determine the location and identity of communicating hosts and could observe the frequency and length of messages being exchanged. This information might be useful in guessing the nature of the communication that was taking place.
+
+Passive attacks are very difficult to detect because they do not involve any alteration of the data. Typically, the message traffic is sent and received in an apparently normal fashion and neither the sender nor receiver is aware that a third party has read the messages or observed the traffic pattern. However, it is feasible to prevent the success of these attacks, usually by
+ 
+means of encryption. Thus, the emphasis in dealing with passive attacks is on prevention rather than detection.
+
+Active Attacks:
+
+Active attacks involve some modification of the data stream or the creation of a false stream and can be subdivided into four categories: Masquerade, Replay, Modification of messages, and Denial of service
+
+A masquerade takes place when one entity pretends to be a different entity (Figure 1.4a). A masquerade attack usually includes one of the other forms of active attack. For example, authentication sequences can be captured and replayed after a valid authentication sequence has taken place, thus enabling an authorized entity with few privileges to obtain extra privileges by impersonating an entity that has those privileges.
+
+Replay involves the passive capture of a data unit and its subsequent retransmission to produce an unauthorized effect (Figure 1.4b).
+
+Modification of messages simply means that some portion of a legitimate message is altered, or that messages are delayed or reordered, to produce an unauthorized effect For example, a message meaning "Allow John Smith to read confidential file accounts" is modified to mean "Allow Fred Brown to read confidential file accounts."
+
+The denial of service prevents or inhibits the normal use or management of communications facilities (Figure 1.4d). This attack may have a specific target; for example, an entity may suppress all messages directed to a particular destination (e.g., the security audit service). Another form of service denial is the disruption of an entire network, either by disabling the network or by overloading it with messages so as to degrade performance.
+
+
+The Difference between passive and Active Attacks are summarized as follows
+
+Passive Attacks	Active Attacks
+Very Difficult to Detect and	Very easy to Detect and Very
+Measures are Available to	difficult to Prevent.
+prevent their Success	The Attacker needs to gain
+2 The Attacker merely needs to be	Physical control of a portion of
+able to observe Transmissions.	the link and be able to Insert and
+.	Capture Transmission.
+3 The Entity is unaware of the	The Entity gets aware of it, when
+Attack.	attacked.
+.	4  Don’t  involve  any  modification  Involve
+4  Don’t  involve  any  modification  Involve	modification of the
+modification of the of the contents of original	
+message. original contents	
+	The Attacks may be
+	_ Masquerade
+5 No Such changes	_ Modification
+	_ Replay
+	_ DOS
+	
+ 
+1.	AUTHENTICATION: The assurance that the communicating entity is the one that it claims to be.
+
+_ Peer Entity Authentication: Used in association with a logical connection to provide confidence in the identity of the entities connected.
+
+_ Data Origin Authentication: In a connectionless transfer, provides assurance that the source of received data is as claimed.
+
+2.	ACCESS CONTROL: The prevention of unauthorized use of a resource (i.e., this service controls who can have access to a resource, under what conditions access can occur, and what those accessing the resource are allowed to do).
+
+3.	DATA CONFIDENTIALITY: The protection of data from unauthorized disclosure.
+_ Connection Confidentiality: The protection of all user data on a connection.
+_ Connectionless Confidentiality: The protection of all user data in a single data block
+
+_ Selective-Field Confidentiality: The confidentiality of selected fields within the user Data on a connection or in a single data block.
+
+_ Traffic Flow Confidentiality: The protection of the information that might be Derived from observation of traffic flows.
+
+4.	DATA INTEGRITY: The assurance that data received are exactly as sent by an authorized entity (i.e., contain no modification, insertion, deletion, or replay).
+
+_ Connection Integrity with Recovery: Provides for the integrity of all user data on a connection and detects any modification, insertion, deletion, or replay of any data within an entire data sequence, with recovery attempted.
+
+_ Connection Integrity without Recovery: As above, but provides only detection without recovery.
+
+_ Selective-Field Connection Integrity: Provides for the integrity of selected fields within the user data of a data block transferred over a connection and takes the form of determination of whether the selected fields have been modified, inserted, deleted, or replayed.
+
+_ Connectionless Integrity: Provides for the integrity of a single connectionless data
+
+block and may take the form of detection of data modification. Additionally, a limited form of replay detection may be provided.
+
+_ Selective-Field Connectionless Integrity: Provides for the integrity of selected fields within a single connectionless data block; takes the form of determination of whether the selected fields have been modified.
+
+5.	NONREPUDIATION: Provides protection against denial by one of the entities involved
+in a communication of having participated in all or part of the communication.
+_ Nonrepudiation, Origin: Proof that the message was sent by the specified party.
+_ Nonrepudiation, Destination: Proof that the message was received by the specified party.
+
+Vulnerabilities
+
+A vulnerability is an inherent weakness in the design, configuration, implementation, or management of a network or system that renders it susceptible to a threat. Vulnerabilities are what make networks susceptible to information loss and downtime. Every network and system has some kind of vulnerability.
+
+Attacks
+
+An attack is a specific technique used to exploit a vulnerability. For example, a threat could be a denial of service. A vulnerability is in the design of the operating system, and an attack could be a "ping of death." There are two general categories of attacks, passive and active.
+ 
+Passive attacks are very difficult to detect, because there is no overt activity that can be monitored or detected. Examples of passive attacks would be packet sniffing or traffic analysis. These types of attacks are designed to monitor and record traffic on the network. They are usually employed for gathering information that can be used later in active attacks.
+
+Active attacks, as the name implies, employ more overt actions on the network or system. As a result, they can be easier to detect, but at the same time they can be much more devastating to a network. Examples of this type of attack would be a denial-of-service attack or active probing of systems and networks.
+
+Networks and systems face many types of threats. There are viruses, worms, Trojan horses, trap doors, spoofs, masquerades, replays, password cracking, social engineering, scanning, sniffing, war dialing, denial-of-service attacks, and other protocol-based attacks. It seems new types of threats are being developed every month. The following sections review the general types of threats that network administrators face every day, including specific descriptions of a few of the more widely known attacks.
+
+Viruses
+
+According to Computer Economics, Inc. , a computer research and analysis group, over $12 billion was spent worldwide in 1999 as a result of computer viruses. A virus, a parasitic program that cannot function independently, is a program or code fragment that is self-propagating. It is called a virus, because like its biological counterpart, it requires a "host" to function. In the case of a computer virus the host is some other program to which the virus attaches itself. A virus is usually spread by executing an infected program or by sending an infected file to someone else, usually in the form of an e-mail attachment.
+
+There are several virus scanning programs available on the market. Most are effective against known viruses. Unfortunately, however, they are incapable of recognizing and adapting to new viruses.
+
+In general, virus scanning programs rely on recognizing the "signature" of known viruses, turning to a database of known virus signatures that they use to compare against scanning results. The program detects a virus when a match is found. If the database is not regularly updated the virus scanner can become obsolete quickly. As one would expect, there is usually some lag time between the introduction of a new virus and a vendor updating its database. Invariably, someone always has the dubious distinction of being one of the early victims of newly released virus.
+
+Worm
+
+A worm is a self-contained and independent program that is usually designed to propagate or spawn itself on infected systems and to seek other systems via available networks. The main difference between a virus and a worm is that a virus is not an independent program.
+
+However, there are new breeds of computer bugs that are blurring the difference between viruses and worms. The Melissa virus is an example of this new hybrid. In 1999 the Melissa virus attacked many users of Microsoft products. It was spread as an attachment, but the virus spread as an active process initiated by the virus. It was not a passive virus passed along by unsuspecting users.
+
+One of the first and perhaps the most famous worms was the Internet Worm created and released by Robert Morris. In 1986, Morris wrote his worm program and released it onto the Internet. The worm's functioning was relatively benign, but it still had a devastating effect on
+ 
+the Internet. The worm was designed to simply reproduce and infect other systems. Once released, the program would spawn another process. The other process was simply another running copy of the program. Then the program would search out other systems connected to the infected system and propagate itself onto the other systems on the network. The number of processes running grew geometrically. An example below illustrates how the Internet worm grew and spread: One process spawned to become two processes. Two processes spawned to become four processes. Four processes spawned to become eight. It didn't take very long for the spawning processes to consume all the CPU and memory resources until the system crashed. In addition, each time the processes spawned another, the processes would seek outside connections. The worm was designed to propagate, seek out other systems to infect them, and then repeat the process. Stopping the processes from growing was a simple matter of rebooting the system. However, system administrators found that they would reboot their systems and get them functioning again only to find them being reinfected by another system on the Internet. To stop the worm from reinfecting systems on the network, all of the systems had to be shut down at the same time or taken off-line. The cost to clean up the Internet worm was estimated to be in the tens of millions of dollars. Morris was arrested, prosecuted, and convicted for his vandalism.
+
+Trojan Horses
+
+A Trojan horse is a program or code fragment that hides inside a program and performs a disguised function. This type of threat gets its name from Greek mythology and the story of the siege of Troy. The story tells of how Odysseus and his men conquered Troy by hiding within a giant wooden horse. A Trojan horse program hides within another program or disguises itself as a legitimate program. This can be accomplished by modifying the existing program or by simply replacing the existing program with a new one. The Trojan horse program functions much the same way as the legitimate program, but usually it also performs some other function, such as recording sensitive information or providing a trap door.
+
+An example would be a password grabber program. A password grabber is a program designed to look and function like the normal login prompt that a user sees when first accessing a system. For example, in the screen depicted in Figure the user has entered the username john and the correct password. However, the system tells the user that the login is incorrect. When the user tries again it
+works and he or she is able to log on.
+Trojan horse login.
+
+ 
+In this example a Trojan horse designed to steal passwords is actually controlling the interaction. The standard login.exe has been replaced with a Trojan horse program. It looks like the standard login prompt, but what is actually occurring is that the first login prompt is the Trojan horse. When the username and password is entered that information is recorded and stored. Then the Trojan horse program displays the "login incorrect" message and passes the user off to the real login program, so that he or she can actually log on to the system. The user simply assumes that he or she mistyped the password the first time never knowing that her or his username and password have just been stolen.
+
+Trap Doors
+
+A trap door or back door is an undocumented way of gaining access to a system that is built into the system by its designer(s). It can also be a program that has been altered to allow someone to gain privileged access to a system or process.
+
+There have been numerous stories of vendors utilizing trap doors in disputes with customers.
+One example is the story of a consultant who was contracted to build a system for a company.
+The consultant designed a trap door into the delivered system. When the consultant and the
+
+company got into a dispute over payment, the consultant used the trap door to gain access to
+the system and disable the system. The company was forced to pay the consultant to get its
+system turned back on again.
+Logic Bombs
+
+A logic bomb is a program or subsection of a program designed with malevolent intent. It is referred to as a logic bomb, because the program is triggered when certain logical conditions are met. This type of attack is almost always perpetrated by an insider with privileged access to the network. The perpetrator could be a programmer or a vendor that supplies software.
+
+As an example, I once heard a story about a programmer at a large corporation who engineered this type of attack. Apparently, the programmer had been having some trouble at the company at which he worked and was on probation. Fearing that he might be fired and with vengeance in mind, he added a subroutine to another program. The subroutine was added to a program that ran once a month and was designed to scan the company's human resources employee database to determine if a termination date had been loaded for his employee record. If the subroutine found that a termination date had been loaded, then it was designed to wipe out the entire system by deleting all files on the disk drives. The program ran every month and so long as his employee record did not have a termination date then nothing would happen. In other words, if he were not fired the program would do no damage.
+
+Sure enough this stellar employee was fired, and the next time the logic bomb that he created ran it found a termination date in his employee record and wiped out the system. This is an example of how simple it can be, for one with privileged access to a system, to set up this type of attack.
+
+Port Scanning
+
+Like a burglar casing a target to plan a break-in, a hacker will often case a system to gather information that can later be used to attack the system. One of the tools that hackers often use for this type of reconnaissance is a port scanner. A port scanner is a program that listens to well-known port numbers to detect services running on a system that can be exploited to break into the system.
+
+There are several port-scanning programs available on the Internet at various sites. They are not difficult to find. Organizations can monitor their system log files to detect port scanning as a prelude to an attack. Most intrusion detection software monitors for port scanning. If you
+ 
+find that your system is being scanned you can trace the scan back to its origination point and perhaps take some pre-emptive action. However, some scanning programs take a more stealthy approach to scanning that is very difficult to detect. For example, some programs use a SYN scan, which employs a SYN packet to create a half-open connection that doesn't get logged. SYN packets and half-open connections will be detailed later in this chapter.
+
+Spoofs
+
+Spoofs cover a broad category of threats. In general terms, a spoof entails falsifying one's identity or masquerading as some other individual or entity to gain access to a system or network or to gain information for some other unauthorized purpose. There are many different kinds of spoofs, including, among many others, IP address spoofing, session high jacking, domain name service (DNS) spoofing, sequence number spoofing, and replay attacks.
+
+IP Address Spoofing
+
+Every device on a TCP/IP network has a unique IP address. The IP address is a unique identification of the device, and no two devices on the network can have the same IP address. IP addresses are formatted as four decimal numbers separated by dots (e.g., 147.34.28.103). IP address spoofing takes advantage of systems and networks that rely on the IP address of the connecting system or device for authentication. For example, packet-filtering routers are sometimes used to protect an internal network from an external untrusted network. These routers will only allow specified IP addresses to pass from the external network to the internal network. If a hacker is able to determine an IP address that is permitted access through the router, he or she can spoof the address on the external network to gain access to the internal network. The hacker in effect masquerades as someone else.
+
+Sequence Number Spoofing
+
+TCP/IP network connections use sequence numbers. The sequence numbers are part of each transmission and are exchanged with each transaction. The sequence number is based upon each computer's internal clock, and the number is predictable because it is based on a set algorithm.
+
+By monitoring a network connection, a hacker can record the exchange of sequence numbers and predict the next set of sequence numbers. With this information, a hacker can insert himself or herself into the network connection and, effectively, take over the connection or insert misinformation.
+
+The best defense against sequence number spoofing is to encrypt a connection. Encrypting a connection prevents anyone who may be monitoring the network from being able to determine the sequence numbers or any other useful information.
+
+Session Highjacking
+
+Session high jacking is similar to sequence number spoofing. In this process, a hacker takes over a connection session, usually between a client user and a server. This is generally done by gaining access to a router or some other network device acting as a gateway between the legitimate user and the server and utilizing IP spoofing. Since session high jacking usually requires the hacker to gain privileged access to a network device, the best defense to take is to properly secure all devices on the network.
+
+DNS
+
+Domain Name Service (DNS) is a hierarchical name service used with TCP/IP hosts that is distributed and replicated on servers across the Internet. It is used on the Internet and on
+ 
+intranets for translating IP addresses into host names. The host names can be used in URLs. DNS can be thought of as a lookup table that allows users to specify remote computers by host names rather than their IP addresses. The advantage of DNS is that you don't have to know the IP addresses for all the Internet sites to access the sites. DNS can be configured to use a sequence of name servers, based on the domains in the name being sought, until a match is found. The most commonly deployed DNS server software on the Internet is BIND. DNS is subject to several different spoofs. Two common ones are the man in the middle (MIM) and DNS poisoning. Redirects, another less common attack, rely on the manipulation of the domain name registry itself to redirect a URL.
+
+Man in the Middle Attack (MIM)
+
+In a MIM attack, a hacker inserts himself or herself between a client program and a server on a network. By doing so the hacker can intercept information entered by the client, such as credit card numbers, passwords, and account information. Under one execution of this scheme, a hacker would place himself or herself between a browser and a Web server. The MIM attack, which is also sometimes called Web spoofing, is usually achieved by DNS or hyperlink spoofing.
+
+There are several ways a hacker can launch a MIM attack. One way is to register a URL that is very similar to an existing URL. For example, a hacker could register a URL like www.microsoft.com. When someone who wants to go to the Microsoft Web site at www.microsoft.com mistakenly types in www.microsoft.com they would be brought to a Web site set up by the hacker to look like the Microsoft Web site. Figure 2.5 illustrates how the process works.
+
+
+
+
+
+
+
+
+
+To Web surfers everything would look normal. They would interact with the counterfeit Web site just as they would with the real site. As the Web surfer enters in choices and information the hacker's Web site can even pass it onto the real site and pass back to the Web surfer the screens that the real site returns.
+
+DNS Poisoning
+
+Another method that can be used to launch this attack is to compromise a DNS server. One method for doing so is known as DNS poisoning. DNS poisoning exploits a vulnerability in early versions of the Berkeley Internet Name Daemon (BIND). BIND, the most commonly deployed DNS software on the Internet, was developed for BSD UNIX. A network of Internet BIND servers translates native Internet IP addresses to the commonly used names such as www.ggu.edu for Golden Gate University. Prior to version 8.1 of BIND, it was possible to "poison" the table entries of a DNS server with false information.
+
+The information could include a false IP address for a DNS entry in the server's table. The result could be that when someone used that DNS server to "resolve" the URL name, he or she would be directed to the incorrect IP address.
+
+By compromising a DNS server, a hacker can make a legitimate URL point to the hacker's Web site. The Web surfer might enter in www.amazon.com expecting to go to the Amazon.com Web site to purchase a book. The URL www.amazon.com normally points to xxx.xxx.xxx.xxx, but the hacker has compromised a DNS server to point that URL to his or her server. As a result, the Web surfer is brought to the hacker's site and not to Amazon.com. Redirects
+ 
+Under another method of DNS attack, hackers compromise a link on someone else's page or set up their own page with false links. In either case, the link could state that it is for a legitimate site, but in reality the link brings the Web surfer to a site set up and controlled by the hacker that looks like the site the Web surfer was expecting.
+
+If all other attempts fail, a hacker can try manipulating the domain name registry system originally maintained by the Inter NIC. In 1999, on at least three occasions, hackers were able to transfer domain names or redirect Internet surfers to sites other than the ones they were attempting to access. In one case Network Solutions' own DNS entry was altered, so that when users entered in the Network Solutions URL they were redirected to another site.
+
+In at least three other cases hackers were able to transfer ownership of domain names to other IP addresses. Once the ownership was transferred and the NSI database altered, anyone attempting to access those domains would be redirected to the new sites. In one case the domain for excite.com was transferred to an unsuspecting site that found itself inundated with the millions of hits that excite.com normally receives. In other cases the ownership of the domains for the Ku Klux Klan and another site opposed to homosexuality called godhatesfags.com were transferred. Ownership of the Ku Klux Klan site was transferred to a site dedicated to fighting bigotry. Ironically, the godhatesfags.com domain was transferred to a site with the domain godlovesfags.com, a site that went on-line to appeal for tolerance. No individuals from the sites to which the domain were redirected were involved with the manipulation of the domain name registry system.
+
+When employing the MIM attack, a hacker's false or counterfeit site can actually pass the client's requests onto the real site and return to the client the requested pages from the real site. All the while the hacker is monitoring and recording the interaction between the client and the server.
+
+There is really no effective countermeasure to MIM. This attack can even be successful when encryption, such as SSL, is being employed. It only requires the hacker to obtain a valid digital certificate to load on his or her server, so that SSL can be enabled. Web surfers need only to be careful about where they are browsing, confirming links and only trusting links from a secure and trusted site.
+
+Note that there are other methods to execute a redirect or MIM attack. For example, certain operating systems such as Microsoft's Windows 95, 98, and 2000 and Sun's Solaris have an inherent vulnerability in their implementation of the Internet Control Message Protocol (ICMP) Router Discovery Protocol (IRDF); ICMP is an integral part of the TCP/IP suite protocols. Hackers can exploit this vulnerability by rerouting or modifying outbound traffic as they choose. A key limitation on an attack using this vulnerability is that the attacker must be on the same network as the targeted system.
+
+Replay Attack
+
+A hacker executes a replay attack by intercepting and storing a legitimate transmission between two systems and retransmitting it at a later time. Theoretically, this attack can even be successful against encrypted transmissions. The best defense to this attack is to use session keys, check the time stamp on all transmissions, and employ time-dependent message digests.
+
+Password Cracking
+
+Password cracking is sometimes called a dictionary-based attack. Password crackers are programs that decipher password files. Password-cracking programs are available for most network and computer operating systems. They are able to decipher password files by utilizing the same algorithm used to create the encrypted password. They generally employ a dictionary of known words or phrases, which are also encrypted with the password algorithm.
+ 
+The password crackers compare each record in the password file against each record in the dictionary file to find a match. When a match is found, a password is found.
+
+The source code for password-cracking programs for most computer and network operating systems (NOSs) is easily available on the Web at sites such as http://www.L0pht.com. Some of the programs available on the Web include Brute, CrackerJack, John The Ripper, and New Hack Sniffing
+
+Network sniffing or packet sniffing is the process of monitoring a network in an attempt to gather information that may be useful in an attack. With the proper tools a hacker can monitor the network packets to obtain passwords or IP addresses. Many vendors manufacture hardware and software for legitimate purposes that can be abused by hackers. The only comforting fact about these products is that hackers usually can't afford them. They can, however, steal them. There are also some common utilities available and programs that can be downloaded from hacker sites such as tcp mon, tcp dump, or gobbler. Network Associates' Sniffer Pro is an example of a commercially available product.
+
+Password sniffing is particularly a threat for users who log into Unix systems over a network. Telnet or rlogin is usually employed when logging onto a Unix systems over a network. Telnet and rlogin do not encrypt passwords. As a result, when a user enters in his or her password, it is transmitted in the clear, meaning anyone monitoring the network can read it. In contrast, both Novel and Windows NT workstations encrypt passwords for transmission.
+
+
+Denial of Service
+
+Denial-of-service attacks are designed to shut down or render inoperable a system or network. The goal of the denial-of-service attack is not to gain access or information but to make a network or system unavailable for use by other users. It is called a denial-of-service attack, because the end result is to deny legitimate users access to network services. Such attacks are often used to exact revenge or to punish some individual or entity for some perceived slight or injustice. Unlike real hacking, denial-of-service attacks do not require a great deal of experience, skill, or intelligence to succeed. As a result, they are usually launched by nerdy, young programmers who fancy themselves to be master hackers.
+
+
+There are many different types of denial-of -service attacks. The following sections present four examples: ping of death, "synchronize sequence number" (SYN) flooding, spamming.
+
+SYN Flooding
+
+SYN flooding is a denial-of-service attack that exploits the three-way handshake that TCP/IP uses to establish a connection. Basically, SYN flooding disables a targeted system by creating
+
+many half-open connections. Figure illustrates how a typical TCP/IP connection is established.
+
+
+
+
+
+
+
+
+
+
+
+Figure Normal TCP/IP handshake.
+
+In Figure the client transmits to the server the SYN bit set. This tells the server that the client wishes to establish a connection and what the starting sequence number will be for the client. The server sends back to the client an acknowledgment (SYN-ACK) and confirms its starting
+ 
+sequence number. The client acknowledges (ACK) receipt of the server's transmission and begins the transfer of data.
+
+With SYN flooding a hacker creates many half- open connections by initiating the connections to a server with the SYN number bit. However, the return address that is associated with the SYN would not be a valid address. The server would send a SYN-ACK back to an invalid address that would not exist or respond. Using available programs, the hacker would transmit many SYN packets with false return addresses to the server. The server would respond to each SYN with an acknowledgment and then sit there with the connection half-open waiting for the final acknowledgment to come back. Figure illustrates how SYN flooding works.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Figure SYN flooding exchange.
+
+The result from this type of attack can be that the system under attack may not be able to accept legitimate incoming network connections so that users cannot log onto the system. Each operating system has a limit on the number of connections it can accept. In addition, the SYN flood may exhaust system memory, resulting in a system crash. The net result is that the system is unavailable or nonfunctional.
+
+One countermeasure for this form of attack is to set the SYN relevant timers low so that the system closes half-open connections after a relatively short period of time. With the timers set low, the server will close the connections even while the SYN flood attack opens more.
+
+SPAM
+
+SPAM is unwanted e-mail. Anyone who has an e-mail account has received SPAM. Usually it takes the form of a marketing solicitation from some company trying to sell something we don't want or need. To most of us it is just an annoyance, but to a server it can also be used as
+
+a	denial-of-service attack. By inundating a targeted system with thousands of e-mail messages, SPAM can eat available network bandwidth, overload CPUs, cause log files to grow very large, and consume all available disk space on a system. Ultimately, it can cause a system to crash.
+
+SPAM can be used as a means to launch an indirect attack on a third party. SPAM messages can contain a falsified return address, which may be the legitimate address of some innocent unsuspecting person. As a result, an innocent person, whose address was used as the return address, may be spammed by all the individuals targeted in the original SPAM.
+
+E-mail filtering can prevent much unwanted e- mail from getting through. Unfortunately, it frequently filters out legitimate e-mail as well.
+
+Smurf Attack
+ 
+The smurf attack is named after the source code employed to launch the attack (smurf.c). The smurf attack employs forged ICMP echo request packets and the direction of those packets to IP network broadcast addresses. The attack issues the ICMP ECHO_REQUEST to the broadcast address of another network. The attack spoofs as the source address the IP address of the system it wishes to target. Figure illustrates how a smurf attack works.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+When the systems on the network to whose broadcast address the ECHO_REQUEST is sent receive the packet with the falsified source address (i.e., the return address), they respond, flooding the targeted victim with the echo replies. This flood can overwhelm the targeted victim's network. Both the intermediate and victim's networks will see degraded performance. The attack can eventually result in the inoperability of both networks.
+
+There are steps that the intermediate network can take to prevent from being used in this way. The steps include configuring network devices not to respond to ICMP ECHO_REQUESTs and disabling IP directed broadcasts from passing the network routers. There are really no steps that the targeted victim can take to prevent this kind of attack. The only defense is contacting the intermediate network to stop the ECHO_REQUESTs from being relayed, once an organization determines that it is the victim of an attack.
+
+Denial-of-service attacks are the most difficult to defend against, and, of the possible attacks, they require the least amount of expertise to launch. In general, organization should monitor for anomalous traffic patterns, such as SYN-ACK but no return ACKs. Since most routers filter incoming and outgoing packets, router-based filtering is the best defense against denial-of-service attacks. Organizations should use packet filters that filter based on destination and sender address. In addition, they should always use SPAM/send mail filters.
+
+Keep in mind there is a tradeoff with packet and mail filtering. The filtering that is performed
+
+to detect denial-of -service attacks will slow network performance, which may frustrate an
+
+organization's end users and slow its applications. In addition, mail filtering will bounce some
+
+e-mails that really should be allowed through, which may also aggravate end users.
+
+and smurfing. These are examples only and are not necessarily the most frequently used
+
+forms of denial-of-service attacks.
+
+
+Buffer Overflow Attack
+
+
+The buffer overflow attack was discovered in hacking circles. It uses input to a poorly
+
+implemented,	but	(in	intention)	completely  harmless	application,	typically  with	root	/
+ 
+administrator privileges. The buffer overflow attack results from input that is longer than the implementer intended. The buffer overflow has long been a feature of the computer security landscape. In fact the first self-propagating Internet worm—1988's Morris Worm—used a buffer overflow in the Unix finger daemon to spread from machine to machine. Twenty-seven years later, buffer overflows remain a source of problems. Windows infamously revamped its security focus after two buffer overflow-driven exploits in the early 2000s. And just this May, a buffer overflow found in a Linux driver left (potentially) millions of home and small office routers vulnerable to attack.
+
+At its core, the buffer overflow is an astonishingly simple bug that results from a common practice. Computer programs frequently operate on chunks of data that are read from a file, from the network, or even from the keyboard. Programs allocate finite-sized blocks of memory—buffers—to store this data as they work on it. A buffer overflow happens when more data is written to or read from a buffer than the buffer can hold.
+
+On the face of it, this sounds like a pretty foolish error. After all, the program knows how big the buffer is, so it should be simple to make sure that the program never tries to cram more into the buffer than it knows will fit. You'd be right to think that. Yet buffer overflows continue to happen, and the results are frequently a security catastrophe.
+
+Definition - What does Network Scanning mean?
+
+Network scanning is a procedure for identifying active hosts on a network, either for the purpose of attacking them or for network security assessment. Scanning procedures, such as ping sweeps and port scans, return information about which IP addresses map to live hosts that are active on the Internet and what services they offer. Another scanning method, inverse mapping, returns information about what IP addresses
+
+do not map to live hosts; this enables an attacker to make assumptions about viable addresses. Network scanning refers to the use of a computer network to gather information regarding computing systems. Network scanning is mainly used for security assessment, system maintenance, and also for performing attacks by hackers.
+
+The purpose of network scanning is as follows:
+
+
+•	Recognize available UDP and TCP network services running on the targeted hosts
+
+•	Recognize filtering systems between the user and the targeted hosts
+
+•	Determine the operating systems (OSs) in use by assessing IP responses
+
+•	Evaluate the target host's TCP sequence number predictability to determine sequence prediction attack and TCP spoofing
+ 
+Network scanning consists of network port scanning as well as vulnerability scanning.
+
+Network port scanning refers to the method of sending data packets via the network to a computing system's specified service port numbers (for example, port 23 for Telnet, port 80 for HTTP and so on). This is to identify the available network services on that particular system. This procedure is effective for troubleshooting system issues or for tightening the system's security.
+
+Vulnerability scanning is a method used to discover known vulnerabilities of computing systems available on a network. It helps to detect specific weak spots in an application software or the operating system (OS), which could be used to crash the system or compromise it for undesired purposes.
+
+Network port scanning as well as vulnerability scanning is an information-gathering technique, but when carried out by anonymous individuals, these are viewed as a prelude to an attack.
+
+Network scanning processes, like port scans and ping sweeps, return details about which IP addresses map to active live hosts and the type of services they provide. Another network scanning method known as inverse mapping gathers details about IP addresses that do not map to live hosts, which helps an attacker to focus on feasible addresses.
+
+Network scanning is one of three important methods used by an attacker to gather information. During the footprint stage, the attacker makes a profile of the targeted organization. This includes data such as the organization's domain name system (DNS) and e-mail servers, in addition to its IP address range. During the scanning stage, the attacker discovers details about the specified IP addresses that could be accessed online, their system architecture, their OSs and the services running on every computer. During the enumeration stage, the attacker collects data, including routing tables, network user and group names, Simple Network Management Protocol (SNMP) data and so on.
+
+
+
+Definition - What does Port Scanning mean?
+
+Port scanning refers to the surveillance of computer ports, most often by hackers for malicious purposes. Hackers conduct port-scanning techniques in order to locate holes within specific computer ports. For an intruder, these weaknesses represent opportunities to gain
+
+access for an attack. There are 65,535 ports in each IP address, and hackers may scan each and every one to find any that are not secure.
+
+
+While port scanning can be conducted for legitimate computer security reasons, it is also considered an open-door hacking technique, which can easily be performed for malicious
+ 
+reasons when a specific computer or operating system is the target. Conducted in stealth mode or strobe, malicious port scanning is typically conducted on ports after the 1,024 mark because the ports prior to that are usually affiliated with more standard port services. The ports following that mark are more susceptible to malicious port scanning due to their availability for probes.
+
+
+ping sweep (ICMP sweep) definition
+
+
+A ping sweep (also known as an ICMP sweep) is a basic network scanning technique used to determine which of a range of IP addresses map to live hosts (computers). Whereas a single ping will tell you whether one specified host computer exists on the network, a ping sweep consists of ICMP (Internet Control Message Protocol) ECHO requests sent to multiple hosts. If a given address is live, it will return an ICMP ECHO reply. Ping sweeps are among the older and slower methods used to scan a network.
+
+There are a number of tools that can be used to do a ping sweep, such as fping, gping, and nmap for UNIX systems, and the Pinger software from Rhino9 and Ping Sweep from SolarWinds for Windows systems. Both Pinger and Ping Sweep send multiple packets at the same time and allow the user to resolve host names and save output to a file.
+
+To disable ping sweeps on a network, administrators can block ICMP ECHO requests from outside sources. However, ICMP TIMESTAMP and Address Mask Requests can be used in a similar manner.
+
+TEARDROP ATTACK
+
+
+
+Teardrop attack is a denial-of-service (DoS) attack that involves sending fragmented packets to a target machine. Since the machine receiving such packets cannot reassemble them due to a bug in TCP/IP fragmentation reassembly, the packets overlap one another, crashing the target network device. This generally happens on older operating systems such as Windows 3.1x, Windows 95, Windows NT and versions of the Linux kernel prior to 2.1.63.
+
+One of the fields in an IP header is the “fragment offset” field, indicating the starting position, or offset, of the data contained in a fragmented packet relative to the data in the original packet. If the sum of the offset and size of one fragmented packet differs from that of the next fragmented packet, the packets overlap. When this happens, a server vulnerable to teardrop attacks is unable to reassemble the packets - resulting in a denial-of-service condition.
+ 
+Implementations of TCP/IP differ slightly from platform to platform. With some operating systems there is a weakness in the handling of IP packets that can be exploited using a teardrop attack. In this attack, the client sends a packet of information that is intentionally malformed in a specific way to exploit the error that occurs when the packet is reassembled. The result could be a fatal crash in the operating system or application that handles the packet.
+
+
+By default the F5 BIG-IP system handles these attacks correctly by precisely checking the incoming packet's frame alignment and discarding improperly formatted packets. In this way teardrop packets are dropped and the attack is mitigated before the packets can pass into the protected network.
+
+Teardrop attacks exploit the reassembly of fragmented IP packets. In the IP header, one of the fields is the fragment offset field, which indicates the starting position, or offset, of the data contained in a fragmented packet relative to the data of the original unfragmented packet
+
+When the sum of the offset and size of one fragmented packet differ from that of the next fragmented packet, the packets overlap, and the server attempting to reassemble the packet can crash, especially if it is running an older operating system that has this vulnerability.
+
+Figure Teardrop Attacks

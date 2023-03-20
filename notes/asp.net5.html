@@ -1,0 +1,355 @@
+  </html>
+  </body>
+  <div align="justify"><center><h2>Unit V</h2></center></br>
+
+
+  <font size="5">Overview of C#, C# and .NET</font></br>
+   
+ <br>  C# is a modern, general-purpose, object-oriented programming language developed by Microsoft and approved by European Computer Manufacturers Association (ECMA) and International Standards Organization (ISO).
+
+C# was developed by Anders Hejlsberg and his team during the development of .Net Framework.
+
+C# is designed for Common Language Infrastructure (CLI), which consists of the executable code and runtime environment that allows use of various high-level languages on different computer platforms and architectures.
+
+The following reasons make C# a widely used professional language −
+</br>
+
+It is a modern, general-purpose programming language
+It is object oriented.
+It is component oriented.
+It is easy to learn.
+It is a structured language.
+It produces efficient programs.
+It can be compiled on a variety of computer platforms.
+It is a part of .Net Framework.
+Strong Programming Features of C#
+Although C# constructs closely follow traditional high-level languages, C and C++ and being an object-oriented programming language. It has strong resemblance with Java, it has numerous strong programming features that make it endearing to a number of programmers worldwide.
+</br>
+Following is the list of few important features of C# −
+</br>
+Boolean Conditions
+Automatic Garbage Collection
+Standard Library
+Assembly Versioning
+Properties and Events
+Delegates and Events Management
+Easy-to-use Generics
+Indexers
+Conditional Compilation
+Simple Multithreading
+LINQ and Lambda Expressions
+Integration with Windows
+
+</br>
+
+To work on ASP. NET and to understand the ASP. NET world, first we have to understand .NET Framework. It is a common question which is asked in interviews that "What is .NET Framework and the need of .NET Framework?"
+
+As I know my friends and colleagues who is working as a web developer also face problems on .NET Framework's questions. So, today I decided to write about .NET framework.
+</br>
+.NET Framework
+</br>
+.NET framework is a complete development and execution environment. That allows the developer to develop, run and deploy the following application.
+</br>
+Console application.
+Windows application
+Web application
+Service oriented application (WCF)
+Web service
+Windows service
+WPF, WWF etc.
+</br>
+.NET framework support the object oriented programming model for multiple language such as, C#, VB, vC++, J#, etc.
+</br>
+It support the language interoperability. Interoperability implies that each language can use the code written in some other language.
+
+It provides a common set of tools and enables easy integration of module developed with one another.
+
+It also enables the developers to create shareable component to be used in distributed computing architecture.
+Need of .NET Framework 
+</br>
+.NET Framework was designed to fulfill the following goals.
+</br>
+Interoperability
+Cross platform Support
+Language Independence
+Base class library.
+Easy development f. Security
+Interoperability
+</br>
+.NET Framework supports interoperability between new application and existing application. It implies that the code written in one language can be used in some other language.
+
+Cross Platform support
+</br>
+Each .NET compatible language, such as C#, VB, VC++ provides its own compiler to compile code to MSIL. After that, the common runtime engine compile MSIL code to native code with the help of Just In Time (JIT) compiler and then run the application.
+
+Cross Platform
+
+Language Independence
+</br>
+.NET framework provides the multiple language support by using feature known as common type system. That is built into common language runtime.
+</br>
+Base Class Library
+</br>
+The base class library provides the fundamental building block for any application you develop. These applications could be windows, web, console, or service oriented. The BCL mostly serves as the main point of interaction with the CLR.
+</br>
+Easy Deployment
+</br>
+.NET Framework makes the task of employment easier. In most cases, to install an application along with component on the target computer is easier.
+</br>
+Security
+</br>
+.NET Framework provides security model that allows you to authorize and authenticate the user.
+</br>
+Component of .NET Framework 
+</br>
+The following are the main components of the .NET Framework.
+</br>
+.NET Framework library
+CLR
+DLR (Dynamic Language Runtime
+Application Domain
+Runtime host
+CTS ( Common Type System)
+Metadata
+Cross Language Interoperability
+Security
+Side by side execution
+Profiling etc.
+Above all components discussed separately in next topic.
+
+MSIL (Microsoft Intermediate Language) OR Intermediate Language( IL) 
+
+IL stands for Intermediate Language. It is also known as MSIL (Microsoft Intermediate Language) or CIL (Common Intermediate Language ). All the .NET language such as C#, J#,VB uses there own compiler. The compiler compile the code into IL and after thaT common runtime engine convert the IL code into native code with the help of JIT compiler. 
+
+OR
+
+MSIL: .NET is shipped with compiler of all programming language to develop program. There are separate compiler for the VB, C#, VC++, etc. All compilers produce an intermediate code after compiling source code. The intermediate code is common for all language and it is understandable into .NET environment. This intermediate code is known as IL or MSIL.
+</br>
+Assembly Manifest 
+</br>
+Assembly manifest stores the assembly metadata. It contains all the metadata needed to do the following things:
+</br>
+Version of assembly
+Security Identity
+Scope of assembly
+Resolve reference to resource of class
+Assembly manifest contains PE file either .exe or .dll
+</br>
+<br><font size="5">Common Type System</font></br>
+
+CTS is a component of CLR (Common Language Runtime) through which .NET framework provide support for multiple language. Because it contains a type system, that is common across all the languages. Two common type system language do not require type conversion when calling the code written in another language. CTS provide a base set of data type for all languages supported by .NET framework. This means that the size of integer and long variable is same across all language.
+</br>
+Managed and Unmanaged code
+</br>
+Managed Code: Managed code is the code that executed directly by CLR instead of operating system. The language compiler compile the managed code to IL or MSIL. This code does not depend on the machine configuration and can be executed on different machine. Managed code process are as follows:
+</br>
+Choose Language Compiler --> Compile to MSIL, MSIL to Native Code, then Execute the code
+
+Unmanaged Code: Unmanaged code is the code that is executed directly by the operating system outside the CLR environment. It is directly compiled to native machine code which depends on the machine configuration. In unmanaged code, the allocation of memory , Type safety and security is required to be taken care of by the developer. If unmanaged code is not properly handled it may result in memory leak.
+Assembly in .NET framework 
+</br>
+Every software has an executable file (.exe) apart from the .exe file, there are some dynamic link library (.dll) and Library file (.lib) that contains the compiled code of some commonly used function. These files are shipped along with the software. Any software package includes an executed file along with some DLL and LIB file that are necessary to run the application. In .NET runtime terms, the process of packing is called assembly. An assembly contains MSIL, Metadata file are required to execute a .NET program successfully. There are two types of assembly,
+</br>
+Private Assembly
+Public assembly
+Global Assembly Catch (GAC ) 
+</br>
+While using shared assembly, to avoid assembly being overwritten by the different or same assembly . Shared assembly are placed in a special directory in the file system are known as global assembly catch.
+</br>
+Or
+
+GAC is a central repository (cache) in a system in which assemblies are registered to share among various applications that execute on local or remote machines. .NET Framework provides the GAC tool (gacutil.exe utility), which is used to view and change the content of GAC of a system. Adding new assemblies to GAC and removing assemblies from GAC are some of the tasks that can be performed using the gacutil.exe utility. GAC can contain multiple versions of the same .NET assembly. CLR checks GAC for a requested assembly before using information of configuration files.
+</br>
+<br><font size="5">Component and services of CLR</font></br>
+
+There are several component of CLR, which are as follows:
+</br>
+CTS
+MSIL
+Execution Support Function
+Security
+Garbage collection
+Class loader
+Memory layout
+Services of CLR
+</br>
+Loading and execution of program.
+Memory Isolation for application.
+Verification of type safety.
+Compilation of MSIL to native code.
+Providing Metadata.
+Interoperability with other system.
+Managing exception and error.
+Debugging and profiling.
+Garbage collection
+
+Garbage collection prevent memory leaks during execution of programs. It is a low priority process that manages the allocation and deallocation of memory in your application. It checks for unreferenced variable and objects. If GC find any object that is no longer used by application, it frees up the memory that object.
+</br>
+GC has changed a bit in .NET framework 4.0. It contains the following overload method,
+</br>
+GC.collect ()
+GC.collect (int, GC collection method)
+Generation of garbage collection
+</br>
+Generation 0: When an object is initialized.
+Generation 1: The object under the GC process.
+Generation 2: Whenever new object is created and added to memory. It adds generation 0 and generation 1.
+Namespace in .NET framework 
+</br>
+Namespace has two basic functionalities:
+</br>
+It is a logically group type.
+In object oriented world many times it is possible that programmer will use the same class name by qualifying namespace with class name, this collision is able to remove.
+Difference between Assembly and Namespace
+</br>
+An assembly is a physical grouping of logical unit while namespace is logical group of class.
+A namespace can span multiple assembly.
+It is a collection of names wherein each name is unique. While assembly is an output unit it contains a unit of development and deployment.
+Difference between private and shared assembly
+
+Private assembly is used inside an application only and does not have to be identified by a strong name. Shared assembly can be used by multiple applications and has to have a strong name.
+
+
+
+</br>
+
+
+  <br><font size="5">similarities & differences from JAVA
+</font></br>
+  .Net is a framework which is implemented and used with various programming languages like Visual Basic, C#, Fortran and etc. ... but java is platform independent but Net is platform dependent.Java is developed by Sun Microsystems where as .Net is by Microsoft Corporation.
+</br>
+Java Step by Step Tutorial
+</br>
+Both of them are capable of producing high end applications.
+
+.Net is Partly about Drag n Drop.
+
+Java is all about coding and coding.
+
+Java can be also drag & drop.
+
+It can be done using eclipse & net-beans editor.
+
+Java is a light weight language and can be run on almost all the OS. Light weight doesn't means that it have less capability then .Net rather it means that it do not trigger the computer with lots of load and Hard Disk space. Whereas .Net needs a very heavy framework to be installed which have higher Hardware requirements too compared to Java.
+</br>
+C# is the most popular language of .Net and is used to create any kind of programming like Web Application, WIndows Application and up to an extenct games programming too.
+</br>
+The main reason why many programmers dominate .Net is because maximum things that you need to achieve manually in Java, are already provided by .Net framework automatically.
+
+The .Net garbage collector does not wipe away your objects as and when it likes, but will do the garbage collection in more efficient manner than Java. Basically in Java it has been upto the programmer to clean the memory manually whereas this task is moreover automated in .Net.
+
+Like .Net garbage collector runs at a certain interval and see is there is any memory occupied by any object whose parent is now finished processing (for eg. you closed an application), in this case the garbage collector automatically removes the reference of that object and free up the memory, whereas in Java you need to confirm it that all the objects are destroyed before application quits.
+
+On the other hand Java has a major advantage that it can be run on any OS which is able to install JVM. This is a major disadvantage with .Net.Also, for .Net a standard development IDE is available that is Microsoft Visual Studio. This tool comparises of all the things you require for your development purpose (Each and every thing you may think need of are at single place).
+
+Whereas, for Java no such standard tool is available. Although, many third party IDEs are available.
+</br>
+.net provide more user friendliness when designing the forms for example in .net we drag and drop controls into form which is not at all mind teasing process.developer can concentrate on the logic or other security issues.
+</br>
+where as in java code for creating a simple control like button also takes a lot of programming for a developer.
+</br>
+java supports connected architecture and .Net supports disconnected Architecture.
+
+Since java is multiplatform so it’s set of Framework Classes is limited to what is available on all platforms. While .Net has set of all the Classes available onMicrosoft Platform.
+</br>
+Java has support to open source platform while .Net has no direct support for Open source Platforms.
+</br>
+According to Sun, Java is renowned as “Write once run anywhere”. While .net has no such scene. But my perception is, its not completely true to say “Write once run anywhere” but one aspect is that most of the applications written today focus on one platform only. Similarly to assure its multiple support much time needed to debug it on all platforms. So I would like to say Sun that it’s not “Write once run anywhere” but its “Write once and Debug everywhere
+</br>
+<br><font size="5">   -Structure of C# program
+</font>
+</br>
+Creating Hello World Program
+A C# program consists of the following parts −
+
+Namespace declaration
+A class
+Class methods
+Class attributes
+A Main method
+Statements and Expressions
+Comments
+Let us look at a simple code that prints the words "Hello World" −
+</br>
+ Live Demo</br>
+using System;
+</br>
+namespace HelloWorldApplication {
+   class HelloWorld {
+      static void Main(string[] args) {
+         /* my first program in C# */
+         Console.WriteLine("Hello World");
+         Console.ReadKey();
+      }</br>
+   }</br>
+}</br>
+When this code is compiled and executed, it produces the following result −
+
+Hello World
+Let us look at the various parts of the given program −
+</br>
+The first line of the program using System; - the using keyword is used to include the System namespace in the program. A program generally has multiple using statements.
+
+The next line has the namespace declaration. A namespace is a collection of classes. The HelloWorldApplication namespace contains the class HelloWorld.
+
+The next line has a class declaration, the class HelloWorld contains the data and method definitions that your program uses. Classes generally contain multiple methods. Methods define the behavior of the class. However, the HelloWorld class has only one method Main.
+
+The next line defines the Main method, which is the entry point for all C# programs. The Main method states what the class does when executed.
+</br>
+The next line /*...*/ is ignored by the compiler and it is put to add comments in the program.
+
+The Main method specifies its behavior with the statement Console.WriteLine("Hello World");
+</br>
+WriteLine is a method of the Console class defined in the System namespace. This statement causes the message "Hello, World!" to be displayed on the screen.
+
+The last line Console.ReadKey(); is for the VS.NET Users. This makes the program wait for a key press and it prevents the screen from running and closing quickly when the program is launched from Visual Studio .NET.
+</br>
+It is worth to note the following points −
+
+C# is case sensitive.
+</br>
+All statements and expression must end with a semicolon (;).
+
+The program execution starts at the Main method.
+</br>
+Unlike Java, program file name could be different from the class name.
+
+Compiling and Executing the Program
+If you are using Visual Studio.Net for compiling and executing C# programs, take the following steps −
+</br>
+Start Visual Studio.
+</br>
+On the menu bar, choose File -> New -> Project.
+
+Choose Visual C# from templates, and then choose Windows.
+</br>
+Choose Console Application.
+
+Specify a name for your project and click OK button.
+
+This creates a new project in Solution Explorer.
+</br>
+Write code in the Code Editor.
+
+Click the Run button or press F5 key to execute the project. A Command Prompt window appears that contains the line Hello World.
+
+You can compile a C# program by using the command-line instead of the Visual Studio IDE −
+</br>
+Open a text editor and add the above-mentioned code.
+</br>
+Save the file as helloworld.cs
+</br>
+Open the command prompt tool and go to the directory where you saved the file.
+</br>
+Type csc helloworld.cs and press enter to compile your code.
+</br>
+If there are no errors in your code, the command prompt takes you to the next line and generates helloworld.exe executable file.
+</br>
+Type helloworld to execute your program.
+</br>
+You can see the output Hello World printed on the screen.
+
+</br>
+</div>
+</body>
+</html>

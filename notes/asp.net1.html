@@ -1,0 +1,362 @@
+<html>
+<body>
+<div align="justify"><center><h2>Unit I</h2></center>
+
+
+<br><font size="5"> Introduction to Dot Net Framework</font></br>
+<br>
+The .NET is the technology from Microsoft, on which all other Microsoft technologies will be depending on in future.
+It is a major technology change. Just like the computer world moved from DOS to Windows, now they are moving to .NET. But don't be surprised if you find anyone saying that "I do not like .NET and I would stick with the good old COM and C++". There are still lot of people who like to use the bullock-cart instead of the latest Honda car.
+
+.NET technology was introduced by Microsoft, to catch the market from the SUN's Java. Few years back, Microsoft had only VC++ and VB to compete with Java, but Java was catching the market very fast. With the world depending more and more on the Internet/Web and java related tools becoming the best choice for the web applications, Microsoft seemed to be loosing the battle. Thousands of programmers moved to java from VC++ and VB. To recover the market, Microsoft announced .NET.
+
+.NET framework comes with a single class library. And thats all programmers need to learn!! Whether they write the code in C# or VB.NET or J#, it doesn't matter, you just use the
+
+.NET class library. There is no classes specific to any language. There is nothing more you can do in a language, which you can't do in any other .NET language. You can write code in C# or VB.NET with the same number of lines of code, same performance and same efficiency, because everyone uses same .NET class library.
+</br>
+<br><font size="5">
+Features of .NET</font></br>
+<br>
+•	It is a platform neutral framework. </br>
+
+•	It is a layer between the operating system and the programming language.</br> 
+
+•	It supports many programming languages, including VB.NET, C# etc. </br>
+
+•	.NET provides a common set of class libraries, which can be accessed from any .NET based programming language. There will not be separate set of classes and libraries for each language. If you know any one .NET language, you can write code in any .NET
+
+	language. </br>
+
+•	In future versions of Windows, .NET will be freely distributed as part of operating system and users will never have to install .NET separately. </br>
+
+Major Components of .NET
+
+The diagram given below describes various components of .NET Framework.</br>
+
+The .NET framework can only be exploited by languages that are compliant with .NET. Most of Microsoft languages have been made to fully comply with .NET.
+
+
+
+</br>.NET also introduces Web Forms, Web Services and Windows Forms. The reason why they have been shown separately and not as a part of a particular language is that these
+
+
+
+technologies can be used by any .NET compliant language. For example Windows Forms is used by VC, VB.NET, C# all as a mode of providing GUI.
+
+The next component of .NET is the .NET Framework Base Classes. These are the common class libraries (much like Java packages) that can be used by any .NET compliant language. These classes provide the programmers with a high degree of functionality that they can use in their programs. For example their are classes to handle reading, writing and manipulating XML documents, enhanced ADOs etc.
+
+The bottom most layer is the CLR - the common runtime language.
+
+Origin of .net Technology
+</br>
+1.	OLE Technology
+</br>
+2.	COM Technology
+</br>
+3.	.net Technology
+
+</br>
+<br>
+<font size="5">OLE Technology(Object Linking and Embedding)</font>
+</br>
+
+
+– Easy interprocess communication
+</br>
+– Embed documents from one application into another application
+</br>
+– To enable one application to manipulate objects located in another application
+</br>
+
+
+– Ex: inter operability between various products such as MS word and MSExcel
+</br>
+COM Technology( Component Object Model)
+
+–  Monolithic approach leads to many problem of maintainability and testing
+</br>
+
+
+– A program is broken into number of independent components where each one offers a particular service
+</br>
+
+
+– Each component can be developed and tested independently and then integrated into main system.
+</br>
+–  Benefits:
+</br>
+–  Reduces the overall complexity of software.
+</br>
+–  Enables distributed development across multiple organization or departments.
+
+</br>
+
+–  Enhances software maintainability
+</br>
+.net Technology
+</br>
+–  Third generatiom component model
+</br>
+–  IP C in COM is replaced by Intermediate Language(IL or MSIL)
+</br>
+–  Interoperability by compiling code into IL.
+</br>
+
+
+–  Metadata
+
+
+
+</br><br>
+ <font size="5">Common Language Runtime (CLR)
+</font></br>
+
+
+The CLR is the heart of .NET framework. It is .NET equivalent of Java Virtual Machine (JVM). It is the runtime that converts a MSIL (Micro Soft Intermediate Language) code into the host machine language code, which is then executed appropriately. The CLR provides a number of services that include:
+
+•	Loading and execution of codes </br>
+
+•	Memory isolation for application </br>
+
+•	Verification of type safety </br>
+
+•	Compilation of IL into native executable code</br> 
+
+•	Providing metadata</br> 
+
+•	Automatic garbage collection 
+</br>
+•	Enforcement of Security 
+</br>
+ 
+•	Interoperability with other systems 
+</br>
+•	Managing exceptions and errors </br>
+
+•	Provide support for debugging and profiling 
+</br>
+
+-  New Object
+capabilities in Visual Basic
+
+</br>
+When Visual Basic 4.0 was released, it introduced a whole new era of programming for VB. Object-oriented (OO) programming was finally a possibility. Unfortunately, few OO features were included in the VB language at that point. Most notably lacking were inheritance capabilities, one of the key defining criteria for any OO language. VB was also missing a large number of secondary features such as method overloading and overriding, and constructors.
+
+With VB.NET, the VB language finally completes the transition to a fully OO language. We now have full inheritance, along with all of the associated features we’d expect.
+
+While it certainly remains possible to create applications that make no more use of objects than we did in VB3, these new capabilities are quite pervasive and so at least some basic understanding is required to become fully proficient in the use of VB.NET.
+</br>
+Generally speaking, a language is considered to be OO if it supports four main features:
+</br>
+Abstraction. VB has supported abstraction since VB4. Abstraction is merely the ability of a language to create “black box” code – to take a concept and create an abstract representation of that concept within a program. A Customer object, for instance, is an abstract representation of a real-world customer. A Recordset object is an abstract representation of a set of data.
+Encapsulation. This has also been with us since version 4.0. It’s the concept of a separation between interface and implementation. The idea is that we can create an interface (Public methods in a class) and, as long as that interface remains consistent, the application can interact with our objects. This remains true even if we entirely rewrite the code within a given method – thus the interface is independent of the implementation.
+</br>
+Encapsulation allows us to hide the internal implementation details of a class. For example, the algorithm we use to compute Pi might be proprietary. We can expose a simple API to the end user, but we hide all of the logic used for our algorithm by encapsulating it within our class.
+</br>
+Polymorphism. Likewise, polymorphism was introduced with VB4. Polymorphism is reflected in the ability to write one routine that can operate on objects from more than one class – treating different objects from different classes in exactly the same way. For instance, if both Customer and Vendor objects have a Name property, and we can write a routine that calls the Name property regardless of whether we’re using a Customer or Vendor object, then we have polymorphism.
+</br>
+VB, in fact, supports polymorphism in two ways – through late binding (much like Smalltalk, a classic example of a true OO language) and through the implementation of multiple interfaces. This flexibility is very powerful and is preserved within VB.NET.
+</br>
+Inheritance. VB.NET is the first version of VB that supports inheritance. Inheritance is the idea that a class can gain the pre-existing interface and behaviors of an existing class. This is done by inheriting these behaviors from the existing class through a process known as subclassing. With the introduction of full inheritance, VB is now a fully OO language by any reasonable definition.
+In this chapter we’ll discuss all these new features and what they mean to us as VB developers.
+</br>
+Merger of Object- and Component-Oriented Concepts
+Since version 4.0, VB has provided us with the ability not only to create objects, but also COM components. In fact, VB’s ability to create objects, and the way VB objects worked, was very closely tied to COM and the way objects worked within and between COM components.
+</br>
+In COM, components are pre-compiled binary entities – typically a DLL, EXE or OCX file. Each component contains one or more classes that can be used by client applications. In VB6 we could create ActiveX EXE, ActiveX DLL or user control (OCX) projects – thus creating COM components. Even when we weren’t creating these project types, the way VB6 allowed us to create and work with objects was defined by how objects were created within COM components.
+
+It comes as no surprise then that VB.NET is very closely tied to the way .NET handles objects and the way objects work within and between .NET assemblies or components. This represents a pretty substantial change for VB, however, since .NET is substantially more advanced in terms of objects and components as compared to COM.
+</br>
+With COM, objects and components were interrelated, but the marriage of the two was far from seamless. In .NET on the other hand, OO and component-oriented concepts (as defined earlier) are very closely related in ways that we could only dream of in the COM environment.
+</br>
+In .NET we retain the component-oriented features we are used to:
+</br>
+Component-level scoping via the Friend keyword
+Ability to implement interfaces with the Implements keyword
+Component-level scoping allows us to create classes or methods that are available to all the other code in our component – but not to code outside our component. We’ll discuss this in more detail later, but basically it is a level of scoping that sits between Private and Public – and is accessed via the Friend keyword.
+</br>
+Implementing interfaces via the Implements keyword allows each of our classes to have several different “identities” – each with its own interface. This is a powerful technique that is used widely within both COM and .NET, and is something we’ll discuss in more detail later.
+</br>
+In addition to these existing features, with .NET we also gain some strong capabilities – most importantly inheritance and the Inherits keyword.
+</br>
+VB.NET benefits from this new, closer relationship between objects and components – making both types of concept central to the language and to the way we develop applications.
+Let’s walk through the OO features in VB.NET
+
+</br>
+  - Modern Language capabilities
+   added to Visual Basic
+</br>
+
+The following topics introduce and discuss the essential components of Visual Basic, an object-oriented programming language. After creating the user interface for your application using forms and controls, you need to write the code that defines the application's behavior. As with any modern programming language, Visual Basic supports a number of common programming constructs and language elements.
+
+If you have programmed in other languages, much of the material covered in this section might seem familiar. While most of the constructs are similar to those in other languages, the event-driven nature of Visual Basic introduces some subtle differences.
+</br>
+If you are new to programming, the material in this section serves as an introduction to the basic building blocks for writing code. Once you understand the basics, you can create powerful applications using Visual Basic.
+<br>
+In This Section</br>
+<b>Arrays-</b></br>
+Discusses making your code more compact and powerful by declaring and using arrays, which hold multiple related values.
+</br><b>
+Collection Initializers-</b></br>
+Describes collection initializers, which enable you to create a collection and populate it with an initial set of values.
+</br><b>
+Constants and Enumerations-</b></br>
+Discusses storing unchanging values for repeated use, including sets of related constant values.
+</br><B>
+Control Flow-</b></br>
+Shows how to regulate the flow of your program's execution.
+</br><b>
+Data Types-</b></br>
+Describes what kinds of data a programming element can hold and how that data is stored.
+</br><B>
+Declared Elements-</b></br>
+Covers programming elements you can declare, their names and characteristics, and how the compiler resolves references to them.
+</br><b>
+Delegates-</b></br>
+Provides an introduction to delegates and how they are used in Visual Basic.
+</br><b>
+Early and Late Binding-</b></br>
+Describes binding, which is performed by the compiler when an object is assigned to an object variable, and the differences between early-bound and late-bound objects.
+</br><b>
+Error Types-</b></br>
+Provides an overview of syntax errors, run-time errors, and logic errors.
+</br><b>
+Events-</b></br>
+Shows how to declare and use events.
+</br><b>
+Interfaces-</b></br>
+Describes what interfaces are and how you can use them in your applications.
+</br><B>
+LINQ-</b></br>
+Provides links to topics that introduce Language-Integrated Query (LINQ) features and programming.
+</br><B>
+Objects and Classes-</b></br>
+Provides an overview of objects and classes, how they are used, their relationships to each other, and the properties, methods, and events they expose.
+</br><b>
+Operators and Expressions-</b></br>
+Describes the code elements that manipulate value-holding elements, how to use them efficiently, and how to combine them to yield new values.
+</br><b>
+Procedures-</b></br>
+Describes Sub, Function, Property, and Operator procedures, as well as advanced topics such as recursive and overloaded procedures.
+</br><b>
+Statements-</b></br>
+Describes declaration and executable statements.
+</br><b>
+Strings-</b></br>
+Provides links to topics that describe the basic concepts about using strings in Visual Basic.
+</br><b>
+Variables-</b></br>
+Introduces variables and describes how to use them in Visual Basic.
+</br><b>
+XML-</b></br>
+Provides links to topics that describe how to use XML in Visual Basic.
+</br>
+Related Sections
+Collections
+Describes some of the types of collections that are provided by the .NET Framework. Demonstrates how to use simple collections and collections of key/value pairs.
+</br>
+Visual Basic Language Reference
+Provides reference information on various aspects of Visual Basic programming.
+</br>
+
+<br><b><font size="5">Fitting Visual Basic into framework.
+</font></b>
+</br>
+
+. 
+We have already mentioned that VB.Net is part of .Net framework and used for writing .Net applications. Therefore before discussing the available tools for running a VB.Net program, let us understand how VB.Net relates to the .Net framework.
+</br>
+The .Net Framework</br>
+The .Net framework is a revolutionary platform that helps you to write the following types of applications:
+</br>
+Windows applications
+</br>
+Web applications
+</br>
+Web services
+</br>
+The .Net framework applications are multi-platform applications. The framework has been designed in such a way that it can be used from any of the following languages: Visual Basic, C#, C++, Jscript, and COBOL, etc.
+</br>
+All these languages can access the framework as well as communicate with each other.
+</br>
+The .Net framework consists of an enormous library of codes used by the client languages like VB.Net. These languages use object-oriented methodology.
+</br>
+Following are some of the components of the .Net framework:
+</br>
+Common Language Runtime (CLR)
+</br>
+The .Net Framework Class Library
+</br>
+Common Language Specification
+</br>
+Common Type System
+</br>
+Metadata and Assemblies
+</br>
+Windows Forms
+</br>
+ASP.Net and ASP.Net AJAX
+
+</br>ADO.Net
+
+Windows Workflow Foundation (WF)
+
+Windows Presentation Foundation
+
+Windows Communication Foundation (WCF)
+
+LINQ
+
+For the jobs each of these components perform, please see ASP.Net - Introduction, and for details of each component, please consult Microsoft's documentation.
+
+Integrated Development Environment (IDE) For VB.Net
+Microsoft provides the following development tools for VB.Net programming:
+</br>
+Visual Studio 2010 (VS)
+</br>
+Visual Basic 2010 Express (VBE)
+</br>
+Visual Web Developer
+</br>
+The last two are free. Using these tools, you can write all kinds of VB.Net programs from simple command-line applications to more complex applications. Visual Basic Express and Visual Web Developer Express edition are trimmed down versions of Visual Studio and has the same look and feel. They retain most features of Visual Studio. In this tutorial, we have used Visual Basic 2010 Express and Visual Web Developer (for the web programming chapter).
+
+You can download it from here. It gets automatically installed in your machine. Please note that you need an active internet connection for installing the express edition.
+</br>
+Writing VB.Net Programs on Linux or Mac OS
+Although the.NET Framework runs on the Windows operating system, there are some alternative versions that work on other operating systems. Mono is an open-source version of the .NET Framework which includes a Visual Basic compiler and runs on several operating systems, including various flavors of Linux and Mac OS. The most recent version is VB 2012.
+
+The stated purpose of Mono is not only to be able to run Microsoft .NET applications cross-platform, but also to bring better development tools to Linux developers. Mono can be run on many operating systems including Android, BSD, iOS, Linux, OS X, Windows, Solaris and UNIX.
+
+</br>
+
+- Integrated Development Environment Overview
+
+</br>
+When Visual Basic is loaded, the New Project dialog shown is displayed. The
+New Project dialog allows the programmer to choose what type of Visual Basic program
+to create. Standard EXE, which is highlighted by default, allows the programmer to create
+a standard executable (i.e., a program that uses the most common Visual Basic features).
+We use Standard EXE for the majority of examples and exercises in this book,
+although later in the book you will learn about some of the other types.</br>
+Each type listed in Fig. 2.1 describes a group of related files called a project. Collectively,
+the project files form a Visual Basic program. The project types listed in Fig. 2.1 are
+the “Visual” in Visual Basic, because they contain predefined features for designing Windows
+programs. The programmer can use or leverage these existing project types to create
+powerful Windows applications in a fraction of the time it would normally take to create
+the same applications in other programming languages.</br>
+The New Project dialog contains three tabs—New for creating a new project,
+Existing for opening an existing project and Recent for opening a project that has been
+previously loaded into the IDE. Note that the New Project dialog is displayed every time
+Visual Basic is executed unless the Don’t show this dialog in the future checkbox (in
+the lower-left portion of Fig. 2.1) is checked. The number and names of the types appearing
+in the window can differ depending on the version of Visual Basic. Figure 2.1 shows Visual
+Basic Enterprise Edition project types (you may be working with another version of Visual
+Basic 6 that shows fewer project types).</br>
+A project type is opened by either double-clicking its icon with the left mouse button
+or by single-clicking the icon with the left mouse button and pressing Open. Opening a
+project type closes the New Project dialog and loads the features associated with the
+selected project type into the IDE
+</br>
+</div>
+</body>
+</html>

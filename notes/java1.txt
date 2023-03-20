@@ -1,0 +1,5 @@
+Array:
+
+	In Java all arrays are dynamically allocated.(discussed below)
+	Since arrays are objects in Java, we can find their length using member length. This is different from C/C++ where we find length using sizeof.
+	A

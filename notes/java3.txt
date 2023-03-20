@@ -1,0 +1,5 @@
+Next FIle
+	In Java all arrays are dynamically allocated.(discussed below)
+	a array can be also be used as a static field, a local variable or a method parameter.
+	The size of an array must be specified by an int value and not long or short.
+	The direct superclass of an array type is Object.

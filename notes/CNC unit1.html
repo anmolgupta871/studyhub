@@ -1,0 +1,511 @@
+
+
+
+
+<html>
+<body><div align="justify"><Center><h2>Unit I</h2></center>
+
+
+<br><font size="5">1.Conventional Encryption –Convention Encryption:</font></br>
+
+<br>Plaintext is an original text / data which will be converted into a random nonsense text called ciphertext in order to prevent the original message being 
+read by the people out of the recipient. The encryption process consists of an algorithm that produce a different output depending on the specific key 
+being used at the time and a key which value is independent of the plaintext and shared by sender and recipient. The ciphertext can be transformed back 
+to the original plaintext by using a decryption algorithm and the same key that was used for encryption. The security of conventional encryption depends 
+on the secrecy of the key, not the secrecy of the algorithm. It is impractical to decrypt a message based on the ciphertext plus knowledge of the 
+encryption/decryption algorithm. The principal security problem is maintaining the secrecy of the key.
+
+Security of conventional encryption depends on several factors:
+-. The encryption algorithm must be impractical to decrypt a message on the basis of the ciphertext and knowledge of the encryption/decryption algorithm.
+-. Secrecy of the key
+
+Referring to the image above, message (X) will be encrypted using algorithm key (K) and the encryption process will produce the ciphertext (Y).
+
+            Y = EK(X)
+
+While the recipient  will decrypt the ciphertext (Y) into message (X) using the same algorithm key (K) as the key used to encrypt.
+
+            X = D K(Y)</br>
+						
+<br><font size="5">2.Conventional Encryption Model	</font></br>		
+<br>
+illustrates the conventional encryption process. The original “plaintext” is converted into apparently random nonsense, called “ciphertext”.
+ The encryption process consists of an algorithm and a key. The key is a value independent of the plaintext. The algorithm will produce a 
+ different output depending on the specific key being used at the time. Changing the key changes the output of the algorithm, i.e., the ciphertext.
+
+Once the ciphertext is produced, it may be transmitted. Upon reception, the ciphertext can be transformed back to the original plaintext 
+by using a decryption algorithm and the same key that was used for encryption.</br>
+
+<br>The security of conventional encryption depends on several factors:</br>
+
+<br>•	The Encryption Algorithm- It must be powerful enough that it is impractical to decrypt a message on the basis of the ciphertext alone.</br>
+
+<br>•	Secrecy of the key- It was shown that the security of conventional encryption depends on the secrecy of the key, not the secrecy of the algorithm.</br>
+
+<br>Referring to Fig. 1 above, with the message X and the encryption key K as input, the encryption algorithm forms the ciphertext.
+
+Y=Ek (X)
+
+The intended receiver, in possession of the key is able to invert the transformation
+X=Dk (Y)
+An opponent, observing Y but not having access to K or X, may attempt to recover X or K or both X and K. It is assumed that the opponent knows 
+the encryption (E) and decryption (D) algorithms. If the opponent is interested in only this particular message, then the focus of the effort is 
+to recover X by generating a plaintext estimate X^. Often, however, the opponent is interested in being able to read future messages as well, 
+in which case an attempt is made to recover K by generating an estimate K^.</br>
+
+<br><font size="5">3.Steganography</font></br>
+
+<br>
+Steganography is data hidden within data. Steganography is an encryption technique that can be used along with cryptography 
+as an extra-secure method in which to protect data.
+Steganography techniques can be applied to images, a video file or an audio file. 
+Typically, however, steganography is written in characters including hash marking, but its usage within images is also common.
+ At any rate, steganography protects  from pirating copyrighted materials as well as aiding in unauthorized viewing.
+ Rather than being incomprehensible to an unauthorized third party, as is the case with cryptography, steganography is designed to be hidden from a third party.
+ Not only must the hidden data be discovered—considered a formidable task in and of itself—it must be encrypted, which can be nearly impossible.
+
+<br>One use of steganography includes watermarking which hides copyright information within a watermark by overlaying files not easily 
+detected by the naked eye. This prevents fraudulent actions and gives copyright protected media extra protection.
+</br>
+<br>There is some concern, sans definite proof, that the terrorists who plotted and deployed the 9/11 mission in New York City utilized steganography. 
+This is what primarily brought the science of stenography front and center.
+ Data can be stolen and encrypted through a file transfer or, more often than not, through email. 
+ And as with what has been suspected for 9/11, steganography can be used for secret communications that deal with terrorist plots.
+
+On the lighter side, steganography usage has occurred in the military for decades, even if not computer based. One example was having a secret 
+message was tattooed on a soldier’s shaved head. His hair would of course grow out and, once it did, he would have his hair shaved again only 
+to reveal the hidden tattooed message to the designated recipient.</br>
+
+<br><font size="5">4. Classical Encryption Techniques</font></br>
+
+<br>Definitions of Terms *
+Plaintext: original message
+Ciphertext: coded message
+Enciphering or encryption: the process of converting from plaintext to ciphertext
+Deciphering or decryption: the process of restoring the plaintext from the ciphertext
+
+The many schemes used for encryption constitute the area of study known as cryptography. 
+Such a scheme is known as a cryptographic system (cryptosystem) or a cipher. 
+Techniques used for deciphering a message without any knowledge of the enciphering details fall into the area of cryptanalysis.
+Cryptanalysis is what the layperson calls "breaking the code". The areas of cryptography and cryptanalysis together are called cryptology.
+ </br>
+ 
+<br><font size="5">5.Simplified DES</font></br>
+ <br>Introduction
+
+Simplified DES is an algorithm explained in Section 4.2 of [4], is an algorithm that has many features of the DES, but is much simpler then DES. Like DES, this algorithm is also a bock cipher.
+
+Block Size:  In Simplified DES, encryption/decryption is done on blocks of 12 bits. The plaintext/ciphertext is divided into blocks of 12 bits and the algorithm is applied to each block.
+
+<br><h4>Key:</h4> - The key has 9 bits. The key, Ki, for the ith round of encryption is obtained by using 8 bits of K, starting with the ith bit.
+
+           <br> Example: If K = 111000111</br>
+
+   <br> Then K1 = 11100011 and K3 = 10001111 and K10 = K1 = 11100011 </br>
+</br>
+<h4>Algorithm: </h4>
+
+            The block of 12 bits is written in the form  L0R0, where L0 consists of the first 6 bits and R0 consists of the last 6 bits. The ith round of the algorithm transforms an input Li-1Ri-1 to the output LiRi using an 8-bit Ki derived from K.
+
+ 
+
+One Round of a Feistel System
+
+<br>The output for the ith round is found as follows.
+
+            Li = Ri-1 and Ri = Li-1 Å f (Ri-1, Ki)
+</br>
+This operation is performed for a certain number of rounds, say n, and produces LnRn. The ciphertext will be RnLn. Encryption and decryption are done the same way except the keys are selected in the reverse order. The keys for encryption will be K1, K2 …… Kn and for decryption will be Kn, Kn-1 …… K1.
+
+
+ <br>Function f(Ri-1,Ki): - The function f(Ri-1,Ki), depicted in the Figure below, is described in following steps.
+
+
+</br><br>
+ The Function f (Ri-1, Ki)
+
+The 6-bits are expanded using the following expansion function. The expansion function takes 6-bit input and produces an 8-bit output. This output is the input for the two S-boxes
+
+
+</br>
+The Expansion Function, E(Ri-1)
+
+<br>The 8-bit output from the previous step is Exclusive-ORed with the key Ki
+</br>
+<br>The 8-bit output is divided into two blocks. The first block consists of the first 4 bits and the last four bits make the second block. The first block is the input for the first S-box (S1) and the second block is the input for the second S-box (S2).
+</br>
+The S-boxes take 4 bits as input and produce 3bits of output.  The first bit of the input is used to select the row from the S-box, 0 for the first row and 1 for the second row. The last 3 bits are used to select the column.
+</br>
+<br>Example: Let the output from the expander function be 11010010.</br>
+So  1101 will be the input for the S1 box and 0010 will be the input for the S2 box.  The output from the S1 box will be 111, the first of the input is 1 so select the second  row and 101 will select the 6th column. Similarly the output from the S2 box will be 110.
+
+<br>The output from the S-boxes is combined to form a single block of 6 bits. These 6 bits will be the output of the function f(Ri-1,Ki)</br>.
+
+<br>In our example we have the S1 output 111 and S2 output 110. So the output for the function f(Ri-1,Ki) will be 111110, the S1 output followed by the S2 output.
+</br><br>
+The S1 and S2 boxes are shown below.
+
+<br>   S1-Box
+</br>
+101
+
+010
+
+001
+
+110
+
+011
+
+100
+
+111
+
+000
+
+001
+
+100
+
+110
+
+010
+
+000
+
+111
+
+101
+
+011
+<br>
+S2-Box
+</br>
+100
+
+000
+
+110
+
+101
+
+111
+
+001
+
+011
+
+010
+
+101
+
+011
+
+000
+
+111
+
+110
+
+010
+
+001
+
+100
+
+ 
+
+<br>Example
+</br>
+<br>The example is explained for two rounds.
+
+Let Input message be 100010110101 and the key be 111000111.
+
+</br>Encryption
+
+Round 1  (i = 0)
+
+L0= 100010 and R0= 110101; K1 = 11100011.
+
+E(R0) = 11101001.
+
+E(R0)  Å  K1  = 11101001 Å 11100011 = 00001010.
+
+S1(0000) = 101, S2(1010) = 000, è f(R0,K1) = 101000
+
+f(R0,K1) Å L0 = 101000 Å 100010 = 001010.
+
+Now using the formulas Li = Ri-1 and Ri = Li-1 Å f (Ri-1, Ki)
+
+we get L1 = 110101 and R1 = 001010.
+
+Round 2  (i = 1)
+
+L1 = 110101 and R1 = 001010; K2 = 11000111.
+
+E(R1) = 00010110.
+
+E(R1)  Å  K1  = 00010110 Å 11000111= 11010001.
+
+S1(1101) = 111; S2(0001) = 000; è f(R1,K2) = 111000
+
+f(R1,K2) Å L1 = 111000 Å 110101 = 001101.
+
+Now using the formulas Li = Ri-1 and Ri = Li-1 Å f (Ri-1, Ki)
+
+we get L2 = 001010 and R2 = 001101.
+
+So encrypted message, R2 L2 = 001101001010
+
+<br>Decryption
+</br>
+Round 1(i = 0)
+
+L0= 001101 and R0= 001010; K2 = 11000111.
+
+E(R0) = 00010110.
+
+E(R0)  Å  K1  = 00010110 Å 11000101 = 11010001.
+
+S1(1101) = 121; S2(0001) = 000; è f(R0,K2) = 111000
+
+f(R0,K2) Å L0 = 111000 Å 001101 = 110101.
+
+Now using the formulas Li = Ri-1 and Ri = Li-1 Å f (Ri-1, Kn-i)
+
+we get L1 = 001010 and R1 = 111000.
+
+Round 2 (i = 1)
+
+L1 = 001010 and R1 = 111000; K1 = 11100011.
+
+E(R1) = 00010110.
+
+E(R1)  Å  K1  = 11101001 Å 11100011= 00001010.
+
+S1(0000) = 101; S2(1010) = 000; è f(R1,K1) = 101000
+
+f(R1,K1) Å L1 = 101000 Å 001010 = 100010.
+
+Now using the formulas Li = Ri-1 and Ri = Li-1 Å f (Ri-1, Kn-i)
+
+we get L2 = 110101 and R2 = 100010.
+
+So decrypted message, R2 L2 =100010110101, which is the original plaintext message.
+
+</br>
+
+<br><font size="5">6.Block Cipher Principles</font></br>
+
+<br>In cryptography, a block cipher is a deterministic algorithm operating on fixed-length groups of bits, called a block, with an unvarying transformation 
+that is specified by a symmetric key. Block ciphers operate as important elementary components in the design of many cryptographic protocols, and are widely 
+used to implement encryption of bulk data.
+</br>
+<br>The modern design of block ciphers is based on the concept of an iterated product cipher. In his seminal 1949 publication, Communication Theory of Secrecy 
+Systems, Claude Shannon analyzed product ciphers and suggested them as a means of effectively improving security by combining simple operations such as 
+substitutions and permutations. Iterated product ciphers carry out encryption in multiple rounds, each of which uses a different subkey 
+derived from the original key. One widespread implementation of such ciphers, named a Feistel network after Horst Feistel, is notably imple
+mented in the DES cipher. Many other realizations of block ciphers, such as the AES, are classified as substitution–permutation networks.
+</br>
+<br>The publication of the DES cipher by the United States National Bureau of Standards (subsequently the U.S. National Institute of Standards and Technology,
+ NIST) in 1977 was fundamental in the public understanding of modern block cipher design. It also influenced the academic development of cryptanalytic 
+ attacks. Both differential and linear cryptanalysis arose out of studies on the DES design. As of 2016 there is a palette of attack techniques 
+ against which a block cipher must be secure, in addition to being robust against brute-force attacks.
+</br>
+<br>Even a secure block cipher is suitable only for the encryption of a single block under a fixed key. A multitude of modes of operation have been 
+designed to allow their repeated use in a secure way, commonly to achieve the security goals of confidentiality and authenticity. However, block ciphers
+ may also feature as building blocks in other cryptographic protocols, such as universal hash functions and pseudo-random number generators.
+</br>
+ 
+ <br><font size="5">7.The data Encryption Standard</font></br>
+ <br>
+ The Data Encryption Standard (DES) is a symmetric-key block cipher published by the National Institute of Standards and Technology (NIST).
+</br><br>
+DES is an implementation of a Feistel Cipher. It uses 16 round Feistel structure. The block size is 64-bit. Though, key length is 64-bit, DES has an effective key length of 56 bits, since 8 of the 64 bits of the key are not used by the encryption algorithm (function as check bits only). General Structure of DES is depicted in the following illustration −
+</br>
+<br>DES Structure
+Since DES is based on the Feistel Cipher, all that is required to specify DES is −
+</br>
+<br>
+Round function
+Key schedule
+Any additional processing − Initial and final permutation
+Initial and Final Permutation
+The initial and final permutations are straight Permutation boxes (P-boxes) that are inverses of each other. They have no cryptography significance in DES. The initial and final permutations are shown as follows −
+</br><br>
+Initial and Final Permutation
+Round Function
+The heart of this cipher is the DES function, f. The DES function applies a 48-bit key to the rightmost 32 bits to produce a 32-bit output.
+</br><br>
+Round Function
+Expansion Permutation Box − Since right input is 32-bit and round key is a 48-bit, we first need to expand right input to 48 bits. Permutation logic is graphically depicted in the following illustration −
+</br><br>
+Permutation Logic
+The graphically depicted permutation logic is generally described as table in DES specification illustrated as shown −
+</br><br>
+DES Specification
+XOR (Whitener). − After the expansion permutation, DES does XOR operation on the expanded right section and the round key. The round key is used only in this operation.
+</br><br>
+Substitution Boxes. − The S-boxes carry out the real mixing (confusion). DES uses 8 S-boxes, each with a 6-bit input and a 4-bit output. Refer the following illustration −
+</br><br>
+S-boxes
+The S-box rule is illustrated below −
+<br>
+S-box Rule
+There are a total of eight S-box tables. The output of all eight s-boxes is then combined in to 32 bit section.
+<br>
+Straight Permutation − The 32 bit output of S-boxes is then subjected to the straight permutation with rule shown in the following illustration:
+<br>
+Straight Permutation
+Key Generation
+The round-key generator creates sixteen 48-bit keys out of a 56-bit cipher key. The process of key generation is depicted in the following illustration −
+</br>
+Key Generation
+The logic for Parity drop, shifting, and Compression P-box is given in the DES description.
+</br>
+DES Analysis</br>
+The DES satisfies both the desired properties of block cipher. These two properties make cipher very strong.
+</br>
+Avalanche effect − A small change in plaintext results in the very great change in the ciphertext.
+</br>
+Completeness − Each bit of ciphertext depends on many bits of plaintext.
+</br>
+During the last few years, cryptanalysis have found some weaknesses in DES when key selected are weak keys. These keys shall be avoided.
+</br>
+DES has proved to be a very well designed block cipher. There have been no significant cryptanalytic attacks on DES other than exhaustive key search.
+ 
+ </br>
+ <br><font size="5">8.Differential and Linear Cryptanaysis</font></br>
+ 
+ </br>In cryptography, linear cryptanalysis is a general form of cryptanalysis based on finding affine approximations to the action of a cipher. Attacks have been developed for block ciphers and stream ciphers. Linear cryptanalysis is one of the two most widely used attacks on block ciphers; the other being differential cryptanalysis.
+
+</br>The discovery is attributed to Mitsuru Matsui, who first applied the technique to the FEAL cipher (Matsui and Yamagishi, 1992).[1] Subsequently, Matsui published an attack on the Data Encryption Standard (DES), eventually leading to the first experimental cryptanalysis of the cipher reported in the open community (Matsui, 1993; 1994).[2][3] The attack on DES is not generally practical, requiring 247 known plaintexts.[3]
+<br>
+</br>A variety of refinements to the attack have been suggested, including using multiple linear approximations or incorporating non-linear expressions, leading to a generalized partitioning cryptanalysis. Evidence of security against linear cryptanalysis is usually expected of new cipher designs.
+
+<br><h3>Contents</h3></br> 
+1 Overview
+<br>1.1	Constructing linear equations
+</br>1.2	Deriving key bits
+<br>2	See also
+</br>3	References
+<br>4	External links
+Overview</br>
+There are two parts to linear cryptanalysis. The first is to construct linear equations relating plaintext, ciphertext and key bits that have a high bias; that is, whose probabilities of holding (over the space of all possible values of their variables) are as close as possible to 0 or 1. The second is to use these linear equations in conjunction with known plaintext-ciphertext pairs to derive key bits.
+
+Constructing linear equations</br>
+For the purposes of linear cryptanalysis, a linear equation expresses the equality of two expressions which consist of binary variables combined with the exclusive-or (XOR) operation. For example, the following equation, from a hypothetical cipher, states the XOR sum of the first and third plaintext bits (as in a block cipher's block) and the first ciphertext bit is equal to the second bit of the key:
+
+</br>{\displaystyle P_{1}\oplus P_{3}\oplus C_{1}=K_{2}.} 
+  P_1 \oplus P_3 \oplus C_1 = K_2.
+<br>
+In an ideal cipher, any linear equation relating plaintext, ciphertext and key bits would hold with probability 1/2. Since the equations dealt with in linear cryptanalysis will vary in probability, they are more accurately referred to as linear approximations.
+</br>
+The procedure for constructing approximations is different for each cipher. In the most basic type of block cipher, a substitution-permutation network, analysis is concentrated primarily on the S-boxes, the only nonlinear part of the cipher (i.e. the operation of an S-box cannot be encoded in a linear equation). For small enough S-boxes, it is possible to enumerate every possible linear equation relating the S-box's input and output bits, calculate their biases and choose the best ones. Linear approximations for S-boxes then must be combined with the cipher's other actions, such as permutation and key mixing, to arrive at linear approximations for the entire cipher. The piling-up lemma is a useful tool for this combination step. There are also techniques for iteratively improving linear approximations (Matsui 1994).
+<br>
+Deriving key bits
+Having obtained a linear approximation of the form:
+</br>
+we can then apply a straightforward algorithm (Matsui's Algorithm 2), using known plaintext-ciphertext pairs, to guess at the values of the key bits involved in the approximation.
+
+For each set of values of the key bits on the right-hand side (referred to as a partial key), count how many times the approximation holds true over all the known plaintext-ciphertext pairs; call this count T. The partial key whose T has the greatest absolute difference from half the number of plaintext-ciphertext pairs is designated as the most likely set of values for those key bits. This is because it is assumed that the correct partial key will cause the approximation to hold with a high bias. The magnitude of the bias is significant here, as opposed to the magnitude of the probability itself.
+<br>
+This procedure can be repeated with other linear approximations, obtaining guesses at values of key bits, until the number of unknown key bits is low enough that they can be attacked with brute force.
+
+</br>
+<br><font size="5">9.Block Cipher Design Principles</font></br>
+
+<br>In cryptography, a block cipher is a deterministic algorithm operating on fixed-length groups of bits, called a block, with an unvarying transformation that is specified by a symmetric key. Block ciphers operate as important elementary components in the design of many cryptographic protocols, and are widely used to implement encryption of bulk data.
+
+The modern design of block ciphers is based on the concept of an iterated product cipher. In his seminal 1949 publication, Communication Theory of Secrecy Systems, Claude Shannon analyzed product ciphers and suggested them as a means of effectively improving security by combining simple operations such as substitutions and permutations.[1] Iterated product ciphers carry out encryption in multiple rounds, each of which uses a different subkey derived from the original key. One widespread implementation of such ciphers, named a Feistel network after Horst Feistel, is notably implemented in the DES cipher.[2] Many other realizations of block ciphers, such as the AES, are classified as substitution–permutation networks.[3]
+
+The publication of the DES cipher by the United States National Bureau of Standards (subsequently the U.S. National Institute of Standards and Technology, NIST) in 1977 was fundamental in the public understanding of modern block cipher design. It also influenced the academic development of cryptanalytic attacks. Both differential and linear cryptanalysis arose out of studies on the DES design. As of 2016 there is a palette of attack techniques against which a block cipher must be secure, in addition to being robust against brute-force attacks.
+Even a secure block cipher is suitable only for the encryption of a single block under a fixed key. A multitude of modes of operation have been designed to allow their repeated use in a secure way, commonly to achieve the security goals of confidentiality and authenticity. However, block ciphers may also feature as building blocks in other cryptographic protocols, such as universal hash functions and pseudo-random number generators.
+
+</br>
+
+
+<br>Substitution–permutation networks</br>
+
+A sketch of a substitution–permutation network with 3 rounds, encrypting a plaintext block of 16 bits into a ciphertext block of 16 bits. The S-boxes are the Si, the P-boxes are the same P, and the round keys are the Ki.
+Main article: Substitution–permutation network</br>
+One important type of iterated block cipher known as a substitution–permutation network (SPN) takes a block of the plaintext and the key as inputs, and applies several alternating rounds consisting of a substitution stage followed by a permutation stage—to produce each block of ciphertext output.[10] The non-linear substitution stage mixes the key bits with those of the plaintext, creating Shannon's confusion. The linear permutation stage then dissipates redundancies, creating diffusion.
+
+A substitution box (S-box) substitutes a small block of input bits with another block of output bits. This substitution must be one-to-one, to ensure invertibility (hence decryption). A secure S-box will have the property that changing one input bit will change about half of the output bits on average, exhibiting what is known as the avalanche effect—i.e. it has the property that each output bit will depend on every input bit.[13]
+
+A permutation box (P-box) is a permutation of all the bits: it takes the outputs of all the S-boxes of one round, permutes the bits, and feeds them into the S-boxes of the next round. A good P-box has the property that the output bits of any S-box are distributed to as many S-box inputs as possible.[citation needed]
+
+At each round, the round key (obtained from the key with some simple operations, for instance, using S-boxes and P-boxes) is combined using some group operation, typically XOR.[citation needed]
+
+Decryption is done by simply reversing the process (using the inverses of the S-boxes and P-boxes and applying the round keys in reversed order).[citation needed]
+
+
+</br>Operations</br>
+ARX (add–rotate–xor)
+Many modern block ciphers and hashes are ARX algorithms—their round function involves only three operations: modular addition, rotation with fixed rotation amounts, and XOR (ARX). Examples include Salsa20, Speck, XXTEA, and BLAKE. Many authors draw an ARX network, a kind of data flow diagram, to illustrate such a round function.[16]
+
+These ARX operations are popular because they are relatively fast and cheap in hardware and software, and also because they run in constant time, and are therefore immune to timing attacks. The rotational cryptanalysis technique attempts to attack such round functions.
+
+Other operations
+Other operations often used in block ciphers include data-dependent rotations as in RC5 and RC6, a substitution box implemented as a lookup table as in Data Encryption Standard and Advanced Encryption Standard, a permutation box, and multiplication as in IDEA.
+</br>
+<br><font size="5">10.Block Cipher Modes of Operation</font></br>
+<br>
+In cryptography, a block cipher mode of operation is an algorithm that uses a block cipher to provide an information service such as confidentiality or authenticity.[1] A block cipher by itself is only suitable for the secure cryptographic transformation (encryption or decryption) of one fixed-length group of bits called a block.[2] A mode of operation describes how to repeatedly apply a cipher's single-block operation to securely transform amounts of data larger than a block.[3][4][5]
+
+Most modes require a unique binary sequence, often called an initialization vector (IV), for each encryption operation. The IV has to be non-repeating and, for some modes, random as well. The initialization vector is used to ensure distinct ciphertexts are produced even when the same plaintext is encrypted multiple times independently with the same key.[6] Block ciphers have one or more block size(s), but during transformation the block size is always fixed. Block cipher modes operate on whole blocks and require that the last part of the data be padded to a full block if it is smaller than the current block size.[2] There are, however, modes that do not require padding because they effectively use a block cipher as a stream cipher.
+
+Historically, encryption modes have been studied extensively in regard to their error propagation properties under various scenarios of data modification. Later development regarded integrity protection as an entirely separate cryptographic goal. Some modern modes of operation combine confidentiality and authenticity in an efficient way, and are known as authenticated encryption modes.[7]
+The earliest modes of operation, ECB, CBC, OFB, and CFB (see below for all), date back to 1981 and were specified in FIPS 81, DES Modes of Operation. In 2001, the US National Institute of Standards and Technology (NIST) revised its list of approved modes of operation by including AES as a block cipher and adding CTR mode in SP800-38A, Recommendation for Block Cipher Modes of Operation. Finally, in January, 2010, NIST added XTS-AES in SP800-38E, Recommendation for Block Cipher Modes of Operation: The XTS-AES Mode for Confidentiality on Storage Devices. Other confidentiality modes exist which have not been approved by NIST. For example, CTS is ciphertext stealing mode and available in many popular cryptographic libraries.
+
+The block cipher modes ECB, CBC, OFB, CFB, CTR, and XTS provide confidentiality, but they do not protect against accidental modification or malicious tampering. Modification or tampering can be detected with a separate message authentication code such as CBC-MAC, or a digital signature. The cryptographic community recognized the need for dedicated integrity assurances and NIST responded with HMAC, CMAC, and GMAC. HMAC was approved in 2002 as FIPS 198, The Keyed-Hash Message Authentication Code (HMAC), CMAC was released in 2005 under SP800-38B, Recommendation for Block Cipher Modes of Operation: The CMAC Mode for Authentication, and GMAC was formalized in 2007 under SP800-38D, Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode (GCM) and GMAC.
+
+The cryptographic community observed that compositing (combining) a confidentiality mode with an authenticity mode could be difficult and error prone. They therefore began to supply modes which combined confidentiality and data integrity into a single cryptographic primitive (an encryption algorithm). These combined modes are referred to as authenticated encryption, AE or "authenc". Examples of AE modes are CCM (SP800-38C), GCM (SP800-38D), CWC, EAX, IAPM, and OCB.
+
+Modes of operation are nowadays[when?] defined by a number of national and internationally recognized standards bodies. Notable standards organizations include NIST, ISO (with ISO/IEC 10116[5]), the IEC, the IEEE, the national ANSI, and the IETF.
+</br>
+
+<br><font size="5">11. Conventional Encryption algorithms.</font></br>
+<br>
+Conventional Encryption involves transforming plaintext messages into ciphertext messages that are to be decrypted only by the intended receiver. Both sender and receiver agree upon a secrete key to be used in encrypting and decrypting. Usually the secrete key is transmitted via public key encryption methods.
+
+in conventional encryption, it is assumed that it is mathematically impossible to derive the plaintext from the ciphertext without the key.[R1] Therefore, it is essential that the key remains secret.
+
+These encryption algorithms are used in practice due to their efficiency in encrypting/decrypting but these algorithms have vulnerabilities. One aspect of these vulnerabilities is the total number of keys available to choose from. Larger key domains reduce possibility of brute force attacks. The key length is another aspect of these vulnerabilities since they will produce periodic patterns in the ciphertext. Longer keys often reduce periodicity. The goal of conventional encryption algorithms is to produce truly randomized ciphertexts, such that the use of frequency analysis on individual ciphertext symbols or ciphertext blocks is useless.
+
+There are several techniques in which encryption algorithms can produce ciphertext. The simplest forms of encryption are via substitution, where plaintext symbols are replaced and via transposition, where plaintext symbols are rearranged. Other approaches such as stream and block translation involve converting plaintext to ciphertext either one symbol at a time or several symbols at a time respectively. In addition, steganographic techniques can be used, where symbols are introduced in the ciphertext to hide the plaintext meaning. A particular encryption/decryption implementation could incorporate multiple techniques to increase security.
+<br>
+Monoalphabetic
+This is a substitution technique that uses a single alphabet to replace symbols of plaintext for symbols of ciphertext as dictated by the key. The key often represents the number of symbols to shift the plaintext from a circular alphabet. These techniques are relatively easy to break due to the fact that symbol frequencies remain invariant.[R5]
+</br>
+<br>Polyalphabetic
+This is a substitution technique that uses multiple alphabets to replace symbols of plaintext for symbols of ciphertext as dictated by the key. The key often represents a keyword where each letter defines the alphabet being used to encrypt each symbol of the plaintext. The keyword is repeated throughout the length of the message. These techniques suppress individual symbol frequency making these ciphers harder to break. However, the keyword length determines the periodicity in which alphabets are used. This periodicity is a major vulnerability of these types of ciphers.
+</br>
+<br>Polygraphic
+This is a substitution technique that replaces a group of n plaintext symbols by a group of n ciphertext symbols.[R2] In doing so, the individual frequency of symbols is hidden. In generality, this technique is similar to that of monoalphabetic ciphers with only using larger alphabets.
+</br>
+<br>Route Transposition
+This is a transposition technique where the plaintext is first written out in an mxn grid region. The key often represents a path on how to read from the grid, such as clockwise outward spiral, vertical zigzag, triangulation, etc.[R3] The ciphertext then becomes the sequence of symbols as read by the path. These techniques provide enormous amounts of available keys in which to use. However, some choices of keys are poor ones since they may leave sections of the ciphertext in their original or reversed plaintext order giving hints as to which key where used.
+</br>
+<br>Columnar Transposition
+This is a transposition technique where the plaintext is first written out in n-length rows. The key often represents a keyword of length n that defines the plaintext ordering of columns. The ordering could be done by sorting the keyword letters in alphabetical order or in any predefined order.
+</br>
+<br>Synchronous Stream
+This is a stream translation technique that combines plaintext with a key stream usually in the form of an XOR operation to form ciphertext one symbol at a time.[R4] These techniques require that the encoder and decoder be synchronized in the information they are processing. If information get introduced or lost during transition, decryption will be erroneous. If information gets corrupted only the particular symbol remains corrupted.
+</br>
+<br>Asynchronous Stream
+This is a stream translation technique that combines plaintext with a key stream that is generated from some fixed number of ciphertext symbols to produce the next ciphertext symbol.
+</br>
+<br>Iterated Block
+This is a block translation technique that iteratively converts an n-sized block of plaintext into ciphertext at the same time.
+</br><br>
+Fractioned Block
+This is a block translation technique that breaks up single symbols into parts and then combines the pieces of multiple plaintext letters in order to get the ciphertext.
+</br>
+<br>Steganographic
+This is a technique that involves inserting random symbols at random locations of a plaintext message with the goal of hiding the message.
+</br>
+</br>
+</div>
+</body>
+</html>
