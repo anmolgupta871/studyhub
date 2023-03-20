@@ -1,0 +1,544 @@
+<html>
+<body>
+<div align="justify"> <h2>
+
+        <center> B.C.A. 6th Semester (New/ATKT)</br>
+                 Examination,2014</br>
+                 
+                 .NET Technology</br>
+                                      
+   Time:3 Hours         Maximum Marks:{Reg.=85}</center></br></h2>   <hr/>
+  <font size="5"> Note: Attempt all questions.</br></br>
+Q1. what is meta data?</br>
+ans:-</font>Metadata in .Net is binary information which describes the characteristics of a resource . This information include Description of the Assembly , Data Types and members with their declarations and implementations, references to other types and members , Security permissions etc. A module's metadata contains everything that needed to interact with another module.
+
+During the compile time Metadata created with Microsoft Intermediate Language (MSIL) and stored in a file called a Manifest . Both Metadata and Microsoft Intermediate Language (MSIL) together wrapped in a Portable Executable (PE) file. During the runtime of a program Just In Time (JIT) compiler of the Common Language Runtime (CLR) uses the Metadata and converts Microsoft Intermediate Language (MSIL) into native code. When code is executed, the runtime loads metadata into memory and references it to discover information about your code's classes, members, inheritance, and so on. Moreover Metadata eliminating the need for Interface Definition Language (IDL) files, header files, or any external method of component reference.
+</br></br><font size="5">
+Q2. different b/w list box and combobox with example.</br>
+Ans:-</font>ListBox Control</br>
+A ListBox control displays a list of items from which the user can select one or more. If the number of items exceeds the number that can be displayed, a scroll bar is automatically added to the ListBox control.
+</br>
+If no item is selected, the ListIndex property value is -1. The first item in the list is ListIndex 0, and the value of the ListCount property is always one more than the largest ListIndex value.
+</br>
+To add or delete items in a ListBox control, use the AddItem or RemoveItem method. Set the List, ListCount, and ListIndex properties to enable a user to access items in the ListBox. Alternatively, you can add items to the list by using the List property at design time.
+</br>
+
+Using the Combo Box Control</br>
+A combo box control combines the features of a text box and a list box. This control allows the user to select an item either by typing text into the combo box, or by selecting it from the list.
+</br>
+Combo boxes present a list of choices to the user. If the number of items exceeds what can be displayed in the combo box, scroll bars will automatically appear on the control. The user can then scroll up and down or left to right through the list.
+</br>
+
+When to Use a Combo Box Instead of a List Box</br>
+Generally, a combo box is appropriate when there is a list of suggested choices, and a list box is appropriate when you want to limit input to what is on the list. A combo box contains an edit field, so choices not on the list can be typed in this field.
+</br>
+In addition, combo boxes save space on a form. Because the full list is not displayed until the user clicks the down arrow (except for Style 1, which is always dropped down), a combo box can easily fit in a small space where a list box would not fit.
+</br></br><font size="5">
+Q3.what is connected and disconnect data base?</br>
+ans:-</font>The ADO.NET Framework supports two models of Data Access Architecture, Connection Oriented Data Access Architecture and Disconnected Data Access Architecture.
+</br>
+In Connection Oriented Data Access Architecture the application makes a connection to the Data Source and then interact with it through SQL requests using the same connection. In these cases the application stays connected to the database system even when it is not using any Database Operations.
+</br>
+ADO.Net solves this problem by introduces a new component called Dataset. The DataSet is the central component in the ADO.NET Disconnected Data Access Architecture. A DataSet is an in-memory data store that can hold multiple tables at the same time. DataSets only hold data and do not interact with a Data Source. One of the key characteristics of the DataSet is that it has no knowledge of the underlying Data Source that might have been used to populate it.
+</br>
+DataSet ds = new DataSet();
+</br>
+In Connection Oriented Data Access, when you read data from a database by using a DataReader object, an open connection must be maintained between your application and the Data Source. Unlike the DataReader, the DataSet is not connected directly to a Data Source through a Connection object when you populate it. It is the DataAdapter that manages connections between Data Source and Dataset by fill the data from Data Source to the Dataset and giving a disconnected behavior to the Dataset. The DataAdapter acts as a bridge between the Connected and Disconnected Objects.
+</br>
+SqlDataAdapter adapter = new SqlDataAdapter("sql", "connection"); DataSet ds = new DataSet(); adapter.Fill(ds, "Src Table");
+</br>
+By keeping connections open for only a minimum period of time, ADO .NET conserves system resources and provides maximum security for databases and also has less impact on system performance.
+</br></br><font size="5">
+Q4.write short note on SOAP.</br>
+Ans:-</font>SOAP is an acronym for Simple Object Access Protocol. It is an XML-based messaging protocol for exchanging information among computers. SOAP is an application of the XML specification.
+</br>
+Points to Note
+</br>
+SOAP is a communication protocol designed to communicate via Internet.
+</br>
+SOAP can extend HTTP for XML messaging.
+</br>
+SOAP provides data transport for Web services.
+</br>
+SOAP can exchange complete documents or call a remote procedure.
+</br>
+SOAP can be used for broadcasting a message.
+</br>
+SOAP is platform- and language-independent.
+</br>
+SOAP is the XML way of defining what information is sent and how.
+</br>
+SOAP enables client applications to easily connect to remote services and invoke remote methods.
+</br>
+Although SOAP can be used in a variety of messaging systems and can be delivered via a variety of transport protocols, the initial focus of SOAP is remote procedure calls transported via HTTP.
+</br>
+Other frameworks including CORBA, DCOM, and Java RMI provide similar functionality to SOAP, but SOAP messages are written entirely in XML and are therefore uniquely platform- and language-independent.
+</br></br><font size="5">
+Q5. compare java and .net.</br>
+Ans:-</font>Java is programming language while .
+</br>
+.Net is a framework which is implemented and used with various programming languages like Visual Basic, C#, Fortran and etc. ... but java is platform independent but Net is platform dependent.Java is developed by Sun Microsystems where as .Net is by Microsoft Corporation.
+</br>
+Both of them are capable of producing high end applications.
+</br>
+.Net is Partly about Drag n Drop.
+</br>
+Java is all about coding and coding.
+
+Java can be also drag & drop.
+</br>
+It can be done using eclipse & net-beans editor.
+</br>
+Java is a light weight language and can be run on almost all the OS. Light weight doesn't means that it have less capability then .Net rather it means that it do not trigger the computer with lots of load and Hard Disk space. Whereas .Net needs a very heavy framework to be installed which have higher Hardware requirements too compared to Java.
+</br>
+C# is the most popular language of .Net and is used to create any kind of programming like Web Application, WIndows Application and up to an extenct games programming too.
+</br>
+The main reason why many programmers dominate .Net is because maximum things that you need to achieve manually in Java, are already provided by .Net framework automatically.
+</br>
+The .Net garbage collector does not wipe away your objects as and when it likes, but will do the garbage collection in more efficient manner than Java. Basically in Java it has been upto the programmer to clean the memory manually whereas this task is moreover automated in .Net.
+</br>
+Like .Net garbage collector runs at a certain interval and see is there is any memory occupied by any object whose parent is now finished processing (for eg. you closed an application), in this case the garbage collector automatically removes the reference of that object and free up the memory, whereas in Java you need to confirm it that all the objects are destroyed before application quits.
+</br>
+On the other hand Java has a major advantage that it can be run on any OS which is able to install JVM. This is a major disadvantage with .Net.Also, for .Net a standard development IDE is available that is Microsoft Visual Studio. This tool comparises of all the things you require for your development purpose (Each and every thing you may think need of are at single place).
+</br>
+Whereas, for Java no such standard tool is available. Although, many third party IDEs are available.
+</br>
+.net provide more user friendliness when designing the forms for example in .net we drag and drop controls into form which is not at all mind teasing process.developer can concentrate on the logic or other security issues.
+</br>
+where as in java code for creating a simple control like button also takes a lot of programming for a developer.
+</br>
+java supports connected architecture and .Net supports disconnected Architecture.
+</br>
+Since java is multiplatform so it’s set of Framework Classes is limited to what is available on all platforms. While .Net has set of all the Classes available onMicrosoft Platform.
+</br>
+Java has support to open source platform while .Net has no direct support for Open source Platforms.
+</br>
+According to Sun, Java is renowned as “Write once run anywhere”. While .net has no such scene. But my perception is, its not completely true to say “Write once run anywhere” but one aspect is that most of the applications written today focus on one platform only. Similarly to assure its multiple support much time needed to debug it on all platforms. So I would like to say Sun that it’s not “Write once run anywhere” but its “Write once and Debug everywhere.
+</br></br><font size="5">
+Q6. what is CLR  in .net architecture?Explain its features.</br>
+Ans:-</font>
+The .NET Framework provides a run-time environment called the common language runtime, which runs the code and provides services that make the development process easier.
+</br>
+Compilers and tools expose the common language runtime's functionality and enable you to write code that benefits from this managed execution environment. Code that you develop with a language compiler that targets the runtime is called managed code; it benefits from features such as cross-language integration, cross-language exception handling, enhanced security, versioning and deployment support, a simplified model for component interaction, and debugging and profiling services. 
+</br>
+To enable the runtime to provide services to managed code, language compilers must emit metadata that describes the types, members, and references in your code. Metadata is stored with the code; every loadable common language runtime portable executable (PE) file contains metadata. The runtime uses metadata to locate and load classes, lay out instances in memory, resolve method invocations, generate native code, enforce security, and set run-time context boundaries.+
+</br>
+The runtime automatically handles object layout and manages references to objects, releasing them when they are no longer being used. Objects whose lifetimes are managed in this way are called managed data. Garbage collection eliminates memory leaks as well as some other common programming errors. If your code is managed, you can use managed data, unmanaged data, or both managed and unmanaged data in your .NET Framework application. Because language compilers supply their own types, such as primitive types, you might not always know (or need to know) whether your data is being managed.
+</br>
+The common language runtime makes it easy to design components and applications whose objects interact across languages. Objects written in different languages can communicate with each other, and their behaviors can be tightly integrated. For example, you can define a class and then use a different language to derive a class from your original class or call a method on the original class. You can also pass an instance of a class to a method of a class written in a different language. This cross-language integration is possible because language compilers and tools that target the runtime use a common type system defined by the runtime, and they follow the runtime's rules for defining new types, as well as for creating, using, persisting, and binding to types.
+
+As part of their metadata, all managed components carry information about the components and resources they were built against. The runtime uses this information to ensure that your component or application has the specified versions of everything it needs, which makes your code less likely to break because of some unmet dependency. Registration information and state data are no longer stored in the registry where they can be difficult to establish and maintain. Instead, information about the types you define (and their dependencies) is stored with the code as metadata, making the tasks of component replication and removal much less complicated.
+</br>
+Language compilers and tools expose the runtime's functionality in ways that are intended to be useful and intuitive to developers. This means that some features of the runtime might be more noticeable in one environment than in another. How you experience the runtime depends on which language compilers or tools you use. For example, if you are a Visual Basic developer, you might notice that with the common language runtime, the Visual Basic language has more object-oriented features than before. The runtime provides the following benefits:
+</br>
+Performance improvements.
+</br>
+The ability to easily use components developed in other languages.
+</br>
+Extensible types provided by a class library.
+</br>
+Language features such as inheritance, interfaces, and overloading for object-oriented programming.
+</br>
+Support for explicit free threading that allows creation of multithreaded, scalable applications.
+</br>
+Support for structured exception handling.
+</br>
+Support for custom attributes.
+</br>
+Garbage collection.
+</br></br><font size="5">
+Q7.Explain different method for maintaining user state?</br>
+Ans:-</font>state management is the process by which you maintain state and page information over multiple requests for the same or different pages. As is true for any HTTP-based technology, Web Forms pages are stateless, which means that they do not automatically indicate whether the requests in a sequence are all from the same client or even whether a single browser instance is still actively viewing a page or site. Furthermore, pages are destroyed and re-created with each round trip to the server; therefore, page information will not exist beyond the life cycle of a single page.
+</br>
+ASP.NET provides multiple ways to maintain state between server round trips. Which of these options you choose depends heavily upon your application, and it should be based on the following criteria:
+</br>
+How much information do you need to store?
+</br>
+Does the client accept persistent or in-memory cookies?
+</br>
+Do you want to store the information on the client or on the server?
+</br>
+Is the information sensitive?
+</br>
+What performance and bandwidth criteria do you have for your application?
+</br>
+What are the capabilities of the browsers and devices that you are targeting?
+</br>
+Do you need to store information per user?
+</br>
+How long do you need to store the information?</br>
+
+Do you have a Web farm (multiple servers), a Web garden (multiple processes on one machine), or a single process that serves the application?
+</br>
+Client-Side State Management Options
+
+Storing page information using client-side options doesn't use server resources. These options typically have minimal security but fast server performance because the demand on server resources is modest. However, because you must send information to the client for it to be stored, there is a practical limit on how much information you can store this way.
+</br>
+The following are the client-side state management options that ASP.NET supports:
+</br>
+View state</br>
+
+Control state</br>
+
+Hidden fields</br>
+
+Cookies</br>
+
+Query strings</br>
+
+View State</br>
+
+Web Forms pages provide the Viewstate property as a built-in structure for automatically retaining values between multiple requests for the same page. View state is maintained as a hidden field in the page.
+</br>
+You can use view state to store your own page-specific values across round trips when the page posts back to itself. For example, if your application is maintaining user-specific information — that is, information that is used in the page but is not necessarily part of any control — you can store it in view state.
+</br>
+Advantages of using view state are:
+</br>
+No server resources are required   The view state is contained in a structure within the page code.
+</br>
+Simple implementation   View state does not require any custom programming to use. It is on by default to maintain state data on controls.
+</br>
+Enhanced security features   The values in view state are hashed, compressed, and encoded for Unicode implementations, which provides more security than using hidden fields.
+</br>
+Disadvantages of using view state are:
+</br>
+Performance considerations   Because the view state is stored in the page itself, storing large values can cause the page to slow down when users display it and when they post it. This is especially relevant for mobile devices, where bandwidth is often a limitation.
+</br>
+Device limitations   Mobile devices might not have the memory capacity to store a large amount of view-state data.
+</br>
+Potential security risks   The view state is stored in one or more hidden fields on the page. Although view state stores data in a hashed format, it can still be tampered with. The information in the hidden field can be seen if the page output source is viewed directly, creating a potential security issue. .
+</br>
+Control State
+</br>
+The ASP.NET page framework provides the Control state property as way to store custom control data between server trips. For example, if you have written a custom control that has different tabs showing different information, in order for that control to work as expected, the control needs to know which tab is selected between round trips. View state can be used for this purpose, but developers can turn view state off at the page level, effectively breaking your control. Unlike view state, control state cannot be turned off, so it provides a more reliable way to store control-state data.
+</br>
+Advantages of using control state are:
+</br>
+No server resources are required   By default, control state is stored in hidden fields on the page.
+
+Reliability   Because control state cannot be turned off like view state, control state is a more reliable method for managing the state of controls.
+
+Versatility   Custom adapters can be written to control how and where control-state data is stored.
+</br>
+Disadvantage of using control state are:
+</br>
+Some programming is required   While the ASP.NET page framework provides a foundation for control state, control state is a custom state-persistence mechanism. To fully utilize control state, you must write code to save and load control state.
+</br>
+Hidden Fields
+
+You can store page-specific information in a hidden field on your page as a way of maintaining the state of your page.
+
+If you use hidden fields, it is best to store only small amounts of frequently changed data on the client.
+</br>
+Note
+</br>
+If you use hidden fields, you must submit your pages to the server using the HTTP POST method rather than requesting the page via the page URL (the HTTP GET method).
+</br>
+Advantages of using hidden fields are:
+</br>
+No server resources are required   The hidden field is stored and read from the page.
+
+Widespread support   Almost all browsers and client devices support forms with hidden fields.
+
+Simple implementation   Hidden fields are standard HTML controls that require no complex programming logic.
+</br>
+Disadvantages of using hidden fields are:
+</br>
+Potential security risks   The hidden field can be tampered with. The information in the hidden field can be seen if the page output source is viewed directly, creating a potential security issue. You can manually encrypt and decrypt the contents of a hidden field, but doing so requires extra coding and overhead. If security is a concern, consider using a server-based state mechanism so that no sensitive information is sent to the client. 
+</br>
+Simple storage architecture   The hidden field does not support rich data types. Hidden fields offer a single string value field in which to place information. To store multiple values, you must implement delimited strings and the code to parse those strings. You can manually serialize and de-serialize rich data types to and from hidden fields, respectively. However, it requires extra code to do so. If you need to store rich data types on the client, consider using view state instead. View state has serialization built-in, and it stores data in hidden fields.
+</br>
+Performance considerations   Because hidden fields are stored in the page itself, storing large values can cause the page to slow down when users display it and when they post it.
+</br>
+Storage limitations   If the amount of data in a hidden field becomes very large, some proxies and firewalls will prevent access to the page that contains them. Because the maximum amount can vary with different firewall and proxy implementations, large hidden fields can be sporadically problematic. If you need to store many items of data, consider doing one of the following:
+</br>
+Put each item in a separate hidden field.
+</br>
+Use view state with view-state chunking turned on, which automatically separates data into multiple hidden fields.
+</br>
+Instead of storing data on the client, persist the data on the server. The more data you send to the client, the slower the apparent response time of your application will be because the browser will need to download or send more data.
+</br>
+Cookies
+</br>
+Cookies are useful for storing small amounts of frequently changed information on the client. The information is sent with the request to the server. 
+</br>
+Advantages of using cookies are:
+</br>
+Configurable expiration rules   The cookie can expire when the browser session ends, or it can exist indefinitely on the client computer, subject to the expiration rules on the client.
+</br>
+No server resources are required   The cookie is stored on the client and read by the server after a post.
+</br>
+Simplicity   The cookie is a lightweight, text-based structure with simple key-value pairs.
+</br>
+Data persistence   Although the durability of the cookie on a client computer is subject to cookie expiration processes on the client and user intervention, cookies are generally the most durable form of data persistence on the client.
+</br>
+Disadvantages of using cookies are:
+</br>
+Size limitations   Most browsers place a 4096-byte limit on the size of a cookie, although support for 8192-byte cookies is becoming more common in newer browser and client-device versions.
+
+User-configured refusal   Some users disable their browser or client device's ability to receive cookies, thereby limiting this functionality.
+</br>
+Potential security risks   Cookies are subject to tampering. Users can manipulate cookies on their computer, which can potentially cause a security risk or cause the application that is dependent on the cookie to fail. Also, although cookies are only accessible by the domain that sent them to the client, hackers have historically found ways to access cookies from other domains on a user's computer. You can manually encrypt and decrypt cookies, but it requires extra coding and can affect application performance because of the time that is required for encryption and decryption. 
+
+ Note
+</br>
+Cookies are often used for personalization, where content is customized for a known user. In most of these cases, identification is the issue rather than authentication. Thus, you can typically secure a cookie that is used for identification by storing the user name, account name, or a unique user ID (such as a GUID) in the cookie and then using the cookie to access the user personalization infrastructure of a site.
+</br>
+Query Strings
+</br>
+A query string is information that is appended to the end of a page URL.
+</br>
+You can use a query string to submit data back to your page or to another page through the URL. Query strings provide a simple but limited way of maintaining some state information. For example, query strings are an easy way to pass information from one page to another, such as passing a product number to another page where it will be processed.
+</br>
+Advantages of using query strings are:
+</br>
+No server resources are required   The query string is contained in the HTTP request for a specific URL.
+</br>
+Widespread support   Almost all browsers and client devices support using query strings to pass values.
+</br>
+Simple implementation   ASP.NET provides full support for the query-string method, including methods of reading query strings using the params property of the http request object.
+</br>
+Disadvantages of using query strings are:
+</br>
+Potential security risks   The information in the query string is directly visible to the user via the browser's user interface. A user can bookmark the URL or send the URL to other users, thereby passing the information in the query string along with it. If you are concerned about any sensitive data in the query string, consider using hidden fields in a form that uses POST instead of using query strings. 
+</br>
+Limited capacity   Some browsers and client devices impose a 2083-character limit on the length of URLs.
+</br>
+Client-Side Method State Management Summary
+</br>
+The following table lists the client-side state management options that are available with ASP.NET, and provides recommendations about when you should use each option.
+</br></br><font size="5">
+Q9.Explain data grid with programming example.</br>
+Ans:-</font>The DataGrid Web server control is a multi-column, data-bound grid.
+
+Columns can be made that displays and edit data. Multi-columns include Edit, Update, Cancel,
+</br>
+Select buttons, Custom Buttons, and Template Columns. Therefore Template Columns can
+</br>
+be laid further in Template-Editing Mode.
+</br>
+The DataGrid control displays the fields of a data source as columns in a table. Each row in the control represents a record in the data source. The control supports selection, editing, deleting, paging, and sorting.
+</br>
+The DataGrid control with strong features is the most complicated control included within the ASP.NET framework. Like the Repeater and DataList controls, it enables to format and display records from a database table. However, it has several advanced features, such as support for sorting and paging through records, which makes it unique.
+</br>
+Records can be displayed in a DataGrid without using templates. A data source can be simply bound to the DataGrid, and it automatically displays the records.
+</br>
+The following example, displays all the records from the Employees database table in a DataGrid
+
+</br>
+The output of above example is shown below:
+
+</br>
+
+By default, a DataGrid displays gridlines around its items. Modification of the Grid line appearance can be done by setting the GridLines property. The possible values are Both, Horizontal, None, or Vertical.
+</br>
+For example, to completely disable GridLines, the DataGrid would look like this: -
+</br>
+<asp:DataGrid
+</br>
+GridLines="None"
+</br>
+Runat="Server" />
+
+ </br>
+
+The cell spacing and cell padding of the cells in a DataGrid can be controlled by modi­fying the DataGrid control's CellSpacing and CellPadding properties like this:
+</br>
+<asp:DataGrid
+</br>
+CellSpacing="10"
+</br>
+CellPadding="10"
+</br>
+Runat="Server">
+
+ </br>
+
+A background image can be specified for a DataGrid by assigning the name of an image to the BackImageUrl property.
+</br>
+For example, the following DataGrid displays an image named Bricks. Gif in the background:
+</br>
+<asp:DataGrid
+</br>
+BackImageUrl="expert.Gif"
+</br>
+Runat="Server" />
+
+ </br>
+
+Finally, headers and footers can be displayed and hidden for the columns in a DataGrid by enabling or disabling the ShowHeader and ShowFooter properties. By default the ShowHeader property has the value True, and the ShowFooter property has the value False. To prevent column headers from being displayed, a DataGrid would be like this:
+
+<asp:DataGrid
+</br>
+ShowHeader="False"
+</br>
+Runat="Server" />
+</br>
+he DataGrid control displays the columns in a variety of ways.
+</br>
+By default, the columns are generated automatically based on fields in the data source. However, in order to control the content and layout of columns more precisely, the following types of columns can be defined:
+</br>
+Type of ColumnDescriptionBound columnAllows specifying which data source field to display and specifies the format of that field, using a .NET formatting expression. For details see Adding Bound Columns to a DataGrid Web Server Control.Hyperlink columnDisplays information as hyperlinks. A typical use is to display data (such as a customer number or product name) as a hyperlink that users can click to navigate to a separate page that provides details about that item. For details see Adding Hyperlink Columns to a DataGrid Web Server Control.Button columnAllows adding a button for each item in the grid and defining custom functionality for that button. For example, you might create a button labeled "Add to Shopping Cart" that runs your custom logic when a user clicks it. You can also add predefined buttons for Select, Edit, Update, Cancel, and Delete functions.Edit, Update, Cancel columnAllows creating in-place editing. For more details, see "Editing Items" below.Template columnAllows creating combinations of HTML text and server controls to design a custom layout for a column. The controls within a template column can be data-bound. Template columns gives great flexibility in defining the layout and functionality of the grid contents, because you have complete control over how the data is displayed and what happens when users interact with rows in the grid. For details see Adding Template Columns to a DataGrid Web Server Control.
+</br>
+Events
+</br>
+The DataGrid control supports several events.
+</br>
+One of them, the ItemCreated event, gives you a way to customize the item-creation process. The ItemDataBound event also gives you the ability to customize the DataGrid items, but after the data is available for inspection. For example, if you were using the DataGrid control to display a to-do list, you could display overdue items in red text, completed items in black text, and other tasks in green text.
+</br>
+The remaining events are raised in response to button or LinkButton clicked in grid items. They are designed to implement common data manipulation tasks. Four events of this type are supported:
+</br>
+EditCommandDeleteCommandUpdateCommandCancelCommand
+</br>
+ When the user clicks one of the buttons (labeled by default Edit, Delete, Update, or Cancel, respectively), the corresponding event is raised.
+</br>
+The DataGrid control also supports the ItemCommand event that is raised when a user clicks a button that is not one of the predefined buttons above. This event can be used for custom functions by setting a button's CommandName property to a value needed, and then testing for it in the ItemCommand event handler.
+</br>
+(For example, you could use this approach when selecting an item, as documented in allowing Users to Select Items in a DataList Web Server Control.) By default, a DataGrid simply displays all the columns from its data source. However, if False value is assigned to the DataGrid control's AutoGenerateColumnsproperty, columns can be created individually to have more control over the formatting.
+</br>
+Adding a BoundColumn to a DataGrid
+</br>
+The default column used in a DataGrid is a BoundColumn. If only limited columns are to be displayed and controlled from a data source, declaration of one or more BoundColumns controls is done explicitly.
+</br></br><font size"5">
+Q10. Explain the web services.</br>
+ans:</font>-A web service is a web-based functionality accessed using the protocols of the web to be used by the web applications. There are three aspects of web service development:
+
+Creating the web serviceCreating a proxyConsuming the web service
+</br>
+Creating a Web Service
+</br>
+A web service is a web application which is basically a class consisting of methods that could be used by other applications. It also follows a code-behind architecture such as the ASP.NET web pages, although it does not have a user interface.
+
+To understand the concept let us create a web service to provide stock price information. The clients can query about the name and price of a stock based on the stock symbol. To keep this example simple, the values are hardcoded in a two-dimensional array. This web service has three methods:
+</br>
+A default HelloWorld methodA GetName MethodA GetPrice Method
+</br>
+Take the following steps to create the web service:
+</br>
+Step (1) : Select File -> New -> Web Site in Visual Studio, and then select ASP.NET Web Service.
+</br>
+Step (2) : A web service file called Service.asmx and its code behind file, Service.cs is created in the App_Code directory of the project.
+</br>
+Step (3) : Change the names of the files to StockService.asmx and StockService.cs.
+</br>
+Step (4) : The .asmx file has simply a WebService directive on it:
+</br>
+<%@ WebService Language="C#" CodeBehind="~/App_Code/StockService.cs" Class="StockService" %>
+</br>
+Step (5) : Open the StockService.cs file, the code generated in it is the basic Hello World service. The default web service code behind file looks like the following:
+</br>
+using System; using System.Collections; using System.ComponentModel; using System.Data; using System.Linq; using System.Web; using System.Web.Services; using System.Web.Services.Protocols; using System.Xml.Linq; namespace StockService { // <summary> // Summary description for Service1 // <summary> [WebService(Namespace = "http://tempuri.org/")] [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)] [ToolboxItem(false)] // To allow this Web Service to be called from script, // using ASP.NET AJAX, uncomment the following line. // [System.Web.Script.Services.ScriptService] public class Service1 : System.Web.Services.WebService { [WebMethod] public string HelloWorld() { return "Hello World"; } } }
+
+Step (6) : Change the code behind file to add the two dimensional array of strings for stock symbol, name and price and two web methods for getting the stock information.
+
+using System; using System.Linq; using System.Web; using System.Web.Services; using System.Web.Services.Protocols; using System.Xml.Linq; [WebService(Namespace = "http://tempuri.org/")] [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)] // To allow this Web Service to be called from script, // using ASP.NET AJAX, uncomment the following line. // [System.Web.Script.Services.ScriptService] public class StockService : System.Web.Services.WebService { public StockService () { //Uncomment the following if using designed components //InitializeComponent(); } string[,] stocks = { {"RELIND", "Reliance Industries", "1060.15"}, {"ICICI", "ICICI Bank", "911.55"}, {"JSW", "JSW Steel", "1201.25"}, {"WIPRO", "Wipro Limited", "1194.65"}, {"SATYAM", "Satyam Computers", "91.10"} }; [WebMethod] public string HelloWorld() { return "Hello World"; } [WebMethod] public double GetPrice(string symbol) { //it takes the symbol as parameter and returns price for (int i = 0; i < stocks.GetLength(0); i++) { if (String.Compare(symbol, stocks[i, 0], true) == 0) return Convert.ToDouble(stocks[i, 2]); } return 0; } [WebMethod] public string GetName(string symbol) { // It takes the symbol as parameter and // returns name of the stock for (int i = 0; i < stocks.GetLength(0); i++) { if (String.Compare(symbol, stocks[i, 0], true) == 0) return stocks[i, 1]; } return "Stock Not Found"; } }
+
+</br></br><font size="5">
+Q10. Explain classes and interface with example.
+</br>
+ans:-</font>A class is a construct that enables you to create your own custom types by grouping together variables of other types, methods and events. A class is like a blueprint. It defines the data and behavior of a type. If the class is not declared as static, client code can use it by creatingobjects or instances which are assigned to a variable. The variable remains in memory until all references to it go out of scope. At that time, the CLR marks it as eligible for garbage collection. If the class is declared as satatic, then only one copy exists in memory and client code can only access it through the class itself, not an instance variable.
+
+Unlike structs, classes support inheritance, a fundamental characteristic of object-oriented programming. For more information, see inheritance.
+</br>
+Declaring Classes
+</br>
+Classes are declared by using the class keyword, as shown in the following example:
+</br>
+C#Copy
+
+public class Customer { //Fields, properties, methods and events go here... } 
+
+The class keyword is preceded by the access level. Because public is used in this case, anyone can create objects from this class. The name of the class follows the class keyword. The remainder of the definition is the class body, where the behavior and data are defined. Fields, properties, methods, and events on a class are collectively referred to as class members.
+</br>
+Creating Objects
+</br>
+Although they are sometimes used interchangeably, a class and an object are different things. A class defines a type of object, but it is not an object itself. An object is a concrete entity based on a class, and is sometimes referred to as an instance of a class.
+</br>
+Objects can be created by using the new keyword followed by the name of the class that the object will be based on, like this:
+</br>
+C#Copy
+</br>
+Customer object1 = new Customer(); 
+
+When </br>an instance of a class is created, a reference to the object is passed back to the programmer. In the previous example, object1 is a reference to an object that is based on Customer. This reference refers to the new object but does not contain the object data itself. In fact, you can create an object reference without creating an object at all:
+
+C#Copy
+</br>
+Customer object2; 
+</br>
+We don't recommend creating object references such as this one that don't refer to an object because trying to access an object through such a reference will fail at run time. However, such a reference can be made to refer to an object, either by creating a new object, or by assigning it to an existing object, such as this:
+</br>
+C#Copy
+</br>
+Customer object3 = new Customer(); Customer object4 = object3; 
+</br>
+This code creates two object references that both refer to the same object. Therefore, any changes to the object made through object3 will be reflected in subsequent uses of object4. Because objects that are based on classes are referred to by reference, classes are known as reference types.
+
+Class Inheritance
+
+Inheritance is accomplished by using aderivation, which means a class is declared by using a base class from which it inherits data and behavior. A base class is specified by appending a colon and the name of the base class following the derived class name, like this:
+</br>
+C#Copy
+
+public class Manager : Employee { // Employee fields, properties, methods and events are inherited // New Manager fields, properties, methods and events go here... } 
+</br>
+When a class declares a base class, it inherits all the members of the base class except the constructors.
+</br>
+Unlike C++, a class in C# can only directly inherit from one base class. However, because a base class may itself inherit from another class, a class may indirectly inherit multiple base classes. Furthermore, a class can directly implement more than one interface.
+</br>
+A class can be declared abstract. An abstract class contains abstract methods that have a signature definition but no implementation. Abstract classes cannot be instantiated. They can only be used through derived classes that implement the abstract methods. By contrast, a sealed class does not allow other classes to derive from it. 
+
+Class definitions can be split between different source files.
+</br>
+Description
+
+In the following example, a public class that contains a single field, a method, and a special method called a constructor is defined. For more information, see Contractors. The class is then instantiated with the new keyword.
+</br>
+Example
+</br>
+C#Copy
+
+public class Person { // Field public string name; // Constructor that takes no arguments. public Person() { name = "unknown"; } // Constructor that takes one argument. public Person(string nm) { name = nm; } // Method public void SetName(string newName) { name = newName; } } class TestPerson { static void Main() { // Call the constructor that has no parameters. Person person1 = new Person(); Console.WriteLine(person1.name); person1.SetName("John Smith"); Console.WriteLine(person1.name); // Call the constructor that has one parameter. Person person2 = new Person("Sarah Jones"); Console.WriteLine(person2.name); // Keep the console window open in debug mode. Console.WriteLine("Press any key to exit."); Console.ReadKey(); } } // Output: // unknown // John Smith // Sarah Jones
+
+</br>
+An interface contains definitions for a group of related functionalities that a class or a struct can implement.+
+
+By using interfaces, you can, for example, include behavior from multiple sources in a class. That capability is important in C# because the language doesn't support multiple inheritance of classes. In addition, you must use an interface if you want to simulate inheritance for structs, because they can't actually inherit from another struct or class.
+</br>
+You define an interface by using the interface keyword, as the following example shows.
+
+C#Copy
+</br>
+interface IEquatable<T> { bool Equals(T obj); } 
+</br>
+Any class or struct that implements the iequal<T>interface must contain a definition for an Equal method that matches the signature that the interface specifies. As a result, you can count on a class that implements IEquatable<T> to contain an Equals method with which an instance of the class can determine whether it's equal to another instance of the same class.
+
+The definition of IEquatable<T> doesn’t provide an implementation for Equals. The interface defines only the signature. In that way, an interface in C# is similar to an abstract class in which all the methods are abstract. However, a class or struct can implement multiple interfaces, but a class can inherit only a single class, abstract or not. Therefore, by using interfaces, you can include behavior from multiple sources in a class.
+
+</br>
+Interfaces can contain methods, properties, events, indexers, or any combination of those four member types. An interface can't contain constants, fields, operators, instance constructors, finalizers, or types. Interface members are automatically public, and they can't include any access modifiers. Members also can't be static.
+
+To implement an interface member, the corresponding member of the implementing class must be public, non-static, and have the same name and signature as the interface member.
+
+When a class or struct implements an interface, the class or struct must provide an implementation for all of the members that the interface defines. The interface itself provides no functionality that a class or struct can inherit in the way that it can inherit base class functionality. However, if a base class implements an interface, any class that's derived from the base class inherits that implementation.
+
+The following example shows an implementation of the IEquatable<T> interface. The implementing class, Car, must provide an implementation of the Equal method.
+</br>
+C#Copy
+
+public class Car : IEquatable<Car> { public string Make {get; set;} public string Model { get; set; } public string Year { get; set; } // Implementation of IEquatable<T> interface public bool Equals(Car car) { if (this.Make == car.Make && this.Model == car.Model && this.Year == car.Year) { return true; } else return false; } } 
+
+Properties and indexers of a class can define extra accessors for a property or indexer that's defined in an interface. For example, an interface might declare a property that has a get accessor. The class that implements the interface can declare the same property with both a get and set accessor. However, if the property or indexer uses explicit implementation, the accessors must match.
+
+Interfaces can implement other interfaces. A class might include an interface multiple times through base classes that it inherits or through interfaces that other interfaces implement. However, the class can provide an implementation of an interface only one time and only if the class declares the interface as part of the definition of the class (class ClassName : InterfaceName). If the interface is inherited because you inherited a base class that implements the interface, the base class provides the implementation of the members of the interface. However, the derived class can reimplement the interface members instead of using the inherited implementation.
+</br>
+
+
+
+
+
+</div>
+</body>
+</html>
+
+

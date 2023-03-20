@@ -1,0 +1,503 @@
+     .net technology 2013
+
+
+Q1. Solve nay five question.
+i.what is .net framework?
+Answer:- .NET Framework (pronounced dot net) is a software framework developed by Microsoft that runs primarily on Microsoft Windows. It includes a large class library named Framework Class Library (FCL) and provides language interoperability (each language can use code written in other languages) across several programming languages. Programs written for .NET Framework execute in a software environment (in contrast to a hardware environment) named Common Language Runtime (CLR), an application virtual machine that provides services such as security, memory management, and exception handling. (As such, computer code written using .NET Framework is called "managed code".) FCL and CLR together constitute .NET Framework.
+ii.write the features of c#.
+
+Answer:- C# is a simple, modern, object oriented language derived from C++ and Java.
+It aims to combine the high productivity of Visual Basic and the raw power of C++.
+It is a part of Microsoft Visual Studio 7.0.
+Visual Studio supports VB, VC++, C++, VBscript, JScript. All of these languages provide access to the Microsft .NET platform. 
+.NET includes a Common Execution engine and a rich class library. 
+Microsofts JVM eqiv is Common language run time(CLR). 
+CLR accommadates more than one languages such as C#, VB.NET, Jscript, ASP.NET,C ++. 
+Source code --->Intermediate Language code(IL) ---> (JIT Compiler) Native code. 
+The classes and data types are common to all of the .NET languages. 
+We may develop Console application, Windows application, and Web application using C#. 
+In C#, Microsoft has taken care of C++ problems, such as Memory management, pointers etc. 
+It supports garbage collection, automatic memory management, and a lot.
+MAIN FEATURES OF C#
+1. SIMPLE
+Pointers are missing in C#.
+Unsafe operations such as direct memory manipulation are not allowed.
+In C# there is  no usage of "::" or "->" operators.
+Since it's on .NET, it inherits the features of automatic memory management and garbage collection.
+Varying ranges of the primitive types like Integer,Floats etc.
+Integer values  of 0 and 1 are no longer accepted as boolean values.Boolean values are pure true or false values in C# so no more errors of "="operator and "=="operator.
+"==" is used for comparison operation and "=" is used for assignment operation.
+2. MODERN
+C# has been based according to the current trend and is very powerful and simple for building interoperable, scable, robust applications.
+C# includes built in support to turn any component into a web service that can be invoked over the internet from any application running on any platform.
+3. OBJECT ORIENTED
+
+C# supports Data Encapsulation, inheritance,polymorphism, interfaces.
+(int,float, double) are not objects in java but C# has introduces structures(structs) which enable the primitive types to become objects.
+int i=1;
+string a=i Tostring(); //conversion (or) Boxing
+
+4. TYPE SAFE
+In C# we cannot perform unsafe casts like convert double to a boolean.Value types (priitive types) are initialized to zeros and reference types (objects and classes) are initialized to null by the compiler automatically.
+arrays are zero base indexed and are bound checked.
+Overflow of types can be checked.
+5. INTEROPERABILITY
+C# includes native support for the COM and windows based applications.
+Allowing restriced use of native pointers.
+Users no longer have to explicityly implement the unknown and other COM interfacers, those features are built in.
+C# allows the users to use pointers as unsafe code blocks to manipulate your old code.
+Components from VB NET and other managed code languages and directlyt be used in C#.
+6. SCALABLE AND UPDATEABLE
+
+.NET has introduced assemblies which are self describing by means of their manifest. manifest establishes the assembly identity, version, culture and digital signature etc. Assemblies need not to be register anywhere.
+To scale our application we delete the old files and updating them with new ones. No registering of dynamic linking library.
+Updating software components is an error prone task. Revisions made to the code. can effect the existing program C# support versioning in the language. Native support for interfaces and method overriding enable complex frame works to be developed and evolved over time.
+iii.where should we use xml?
+Answer:-  So what XML is used for, is to outsource data. Rather than integrating them into the HTML document, they are stored in separate XML files. Since XML stores data in plain text format, the storage is independent of your platform and your data can be exported, imported, or simply moved much easier.
+XML stands for Extensible Markup Language. A markup language is used to annotate text or add additional information. These annotations are not shown to the end-user, but are needed by the ‘machine’ to read and subsequently process the text correctly.
+A very well known example is HTML (HyperText Markup Language). Websites are coded in HTML (and other programming languages), however, you (should) never see a trace of the code. What you do see is its interpretation by the browser, for example a certain font formatting, a table, or embedded images. So what does XML do?
+Let me start at the very beginning. XML is a more recent language similar to HTML, but it allows for more flexibility. Like HTML it is a simplified subset of SGML (Standard Generalized Markup Language), the mother of all markup languages. Per definition, XML is a universal format for structured documents and data on the web. In other words, it is used to markup or describe data.
+To achieve this description of data, XML relies on Document Type Definition (DTD). 
+iv. What is ASP?
+Answer:-  An Active Server Page (ASP) is an HTML page that includes one or more scripts (small embedded programs) that are processed on a Microsoft Web server before the page is sent to the user. An ASP is somewhat similar to a server-side include or a common gateway interface (CGI) application in that all involve programs that run on the server, usually tailoring a page for the user. Typically, the script in the Web page at the server uses input received as the result of the user's request for the page to access data from a database and then builds or customizes the page on the fly before sending it to the requestor.
+V.what do you mean clr?
+Answer:-Short for Common Language Runtime, a runtime environment that manages the execution of .NET program code and provides services such as memory and exception management, debugging and profiling, and security. The CLR is a major component of the .NET framework.
+                 Section B
+Q2. Explain the architecture of ADO.NET.
+Answer:- ADO.NET Architecture
+ADO.NET
+
+
+
+
+asp.net-ado.net-architecture
+ADO.NET consist of a set of Objects that expose data access services to the .NET environment. It is a data access technology from Microsoft .Net Framework , which provides communication between relational and non relational systems through a common set of components .
+
+System.Data namespace is the core of ADO.NET and it contains classes used by all data providers. ADO.NET is designed to be easy to use, and Visual Studio provides several wizards and other features that you can use to generate ADO.NET data access code.
+
+Data Providers and DataSet
+Net-informations.com
+
+ 
+ADO.NET Architecture
+ADO.NET
+
+asp.net-ado.net-architecture
+ADO.NET consist of a set of Objects that expose data access services to the .NET environment. It is a data access technology from Microsoft .Net Framework , which provides communication between relational and non relational systems through a common set of components .
+
+System.Data namespace is the core of ADO.NET and it contains classes used by all data providers. ADO.NET is designed to be easy to use, and Visual Studio provides several wizards and other features that you can use to generate ADO.NET data access code.
+
+Data Providers and DataSet
+
+asp.net-ado.net
+The two key components of ADO.NET are Data Providers and DataSet . The Data Provider classes are meant to work with different kinds of data sources. They are used to perform all data-management operations on specific databases. DataSet class provides mechanisms for managing data when it is disconnected from the data source.
+
+Data Providers
+
+The .Net Framework includes mainly three Data Providers for ADO.NET. They are the Microsoft SQL Server Data Provider , OLEDB Data Provider and ODBC Data Provider . SQL Server uses the SqlConnection object , OLEDB uses the OleDbConnection Object and ODBC uses OdbcConnection Object respectively.
+
+Q3 what is the procedure to create veriable in asp?
+Answer:- Variables are "containers" for storing information.
+
+More Examples
+Declare a variable
+This example demonstrates how to declare a variable, assign a value to it, and use the value in a text.
+
+Create an array
+Arrays are used to store a series of related data items. This example demonstrates how to create an array that stores names.
+
+Loop through the HTML headings
+How to loop through the six headings in HTML.
+
+Time-based greeting using VBScript
+This example will display a different message to the user depending on the time on the server.
+
+Time-based greeting using JavaScript
+This example is the same as the one above, but the syntax is different.
+
+Create and change a variable
+How to create a variable, assign a value to it, and then change the value of it.
+
+Insert a variable value in a text
+How to insert a variable value in a text.
+
+Do You Remember Algebra from School?
+Do you remember algebra from school? x=5, y=6, z=x+y
+
+Do you remember that a letter (like x) could be used to hold a value (like 5), and that you could use the information above to calculate the value of z to be 11?
+
+These letters are called variables, and variables can be used to hold values (x=5) or expressions (z=x+y).
+
+VBScript Variables
+As with algebra, VBScript variables are used to hold values or expressions.
+
+A variable can have a short name, like x, or a more descriptive name, like carname.
+
+Rules for VBScript variable names:
+
+Must begin with a letter 
+Cannot contain a period (.)
+Cannot exceed 255 characters
+In VBScript, all variables are of type variant, that can store different types of data.
+
+
+Declaring (Creating) VBScript Variables
+Creating variables in VBScript is most often referred to as "declaring" variables.
+
+You can declare VBScript variables with the Dim, Public or the Private statement. Like this:
+
+Dim x
+Dim carname
+Now you have created two variables. The name of the variables are "x" and "carname".
+
+You can also declare variables by using its name in a script. Like this:
+
+carname="Volvo"
+Now you have also created a variable. The name of the variable is "carname". However, this method is not a good practice, because you can misspell the variable name later in your script, and that can cause strange results when your script is running.
+
+If you misspell for example the "carname" variable to "carnime", the script will automatically create a new variable called "carnime".  To prevent your script from doing this, you can use the Option Explicit statement. This statement forces you to declare all your variables with the dim, public or private statement.
+
+Put the Option Explicit statement on the top of your script. Like this:
+
+Option Explicit
+Dim carname
+carname=some value
+Assigning Values to Variables
+You assign a value to a variable like this:
+
+carname="Volvo"
+x=10
+The variable name is on the left side of the expression and the value you want to assign to the variable is on the right. Now the variable "carname" has the value of "Volvo", and the variable "x" has the value of "10".
+
+VBScript Array Variables
+An array variable is used to store multiple values in a single variable.
+
+In the following example, an array containing 3 elements is declared:
+
+Dim names(2)
+The number shown in the parentheses is 2. We start at zero so this array contains 3 elements. This is a fixed-size array. You assign data to each of the elements of the array like this:
+
+names(0)="Tove"
+names(1)="Jani"
+names(2)="Stale"
+Similarly, the data can be retrieved from any element using the index of the particular array element you want. Like this:
+
+mother=names(0)
+You can have up to 60 dimensions in an array. Multiple dimensions are declared by separating the numbers in the parentheses with commas. Here we have a two-dimensional array consisting of 5 rows and 7 columns:
+
+Dim table(4,6)
+Assign data to a two-dimensional array:
+
+Example
+<html>
+<body>
+
+<%
+Dim x(2,2)
+x(0,0)="Volvo"
+x(0,1)="BMW"
+x(0,2)="Ford"
+x(1,0)="Apple"
+x(1,1)="Orange"
+x(1,2)="Banana"
+x(2,0)="Coke"
+x(2,1)="Pepsi"
+x(2,2)="Sprite"
+for i=0 to 2
+    response.write("<p>")
+    for j=0 to 2
+        response.write(x(i,j) & "<br />")
+    next
+    response.write("</p>")
+next
+%>
+
+</body>
+</html>
+Show Example »
+The Lifetime of Variables
+A variable declared outside a procedure can be accessed and changed by any script in the ASP file.
+
+A variable declared inside a procedure is created and destroyed every time the procedure is executed. No scripts outside the procedure can access or change the variable.
+
+To declare variables accessible to more than one ASP file, declare them as session variables or application variables.
+
+Session Variables
+Session variables are used to store information about ONE single user, and are available to all pages in one application. Typically information stored in session variables are name, id, and preferences.
+
+Application Variables
+Application variables are also available to all pages in one application. Application variables are used to store information about ALL users in one specific application.
+Q4. Describe the deference between XML and html .
+Answer:-Both are markup languages, which represents text data in proper format using tags. However they are used for completely different purposes.
+HTML is used to create basic structure for a webpage. The browser parse the HTML text and create User interface with that following W3C standard. Since HTML tags are fixed in standard, you can't create new tags in general (it's possible now with HTML5).
+XML is generally used to store text data only. Text data is easy to arrange in XML, which can later be sent as a response from Webserver to the requesting webpage or app. For example if you want to send a user's information from your web database to your android app, you can wrap it in the XML format just like below - 
+
+<User>
+<ID>1234</ID>
+<FirstName>John</FirstName>
+<LastName>Diggle</LastName>
+</User>
+
+Or you can send more than one user wrapping them in a UserGroup tag too. The tags are defined in an XML schema, so you can create your own tags if your requesting application knows how to parse it and what tag means what.
+Due to this XML is also used in defining User interfaces in Mobile applications. Android, iOS, BlackBerry and Windows Phone (Windows phone uses XAML, an advance version) uses XML for defining UI. They can use it since they can create their own tags and define what the tag will mean. For example they can define in their UI parser that <Button> tag will mean putting a button in the page and if they want to put an image of a cat instead, no one is stopping them to do that. 
+
+However HTML have W3C standard and it says that when <img> tag is used, the browser have to put an image there, it can't put button instead. Although they can choose to ignore it (HTML5 is not yet a W3C standard), but they generally follow it to give similar experience to users whether they see it in Firefox or in Chrome. How would you feel if in Firefox you see a button, while in Chrome you see a picture of cat in same website, and a developer used same code there?
+
+That's why HTML is made limited to be used for websites only, while XML is used for data storage. Since XML doesn't have any set tag standard (XML is also a W3C standard, but that doesn't define any tag in it), it has to have a schema defining that and it can be used anywhere.
+Q4. What do mean by XML schema?explain.
+Answers:- 
+An XML Schema describes the structure of an XML document.
+
+The XML Schema language is also referred to as XML Schema Definition (XSD).
+
+XSD Example
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="note">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="to" type="xs:string"/>
+      <xs:element name="from" type="xs:string"/>
+      <xs:element name="heading" type="xs:string"/>
+      <xs:element name="body" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
+
+The purpose of an XML Schema is to define the legal building blocks of an XML document:
+
+the elements and attributes that can appear in a document
+the number of (and order of) child elements
+data types for elements and attributes
+default and fixed values for elements and attributes
+Why Learn XML Schema?
+In the XML world, hundreds of standardized XML formats are in daily use.
+
+Many of these XML standards are defined by XML Schemas.
+
+XML Schema is an XML-based (and more powerful) alternative to DTD.
+
+
+XML Schemas Support Data Types
+One of the greatest strength of XML Schemas is the support for data types.
+
+It is easier to describe allowable document content
+It is easier to validate the correctness of data
+It is easier to define data facets (restrictions on data)
+It is easier to define data patterns (data formats)
+It is easier to convert data between different data types
+XML Schemas use XML Syntax
+Another great strength about XML Schemas is that they are written in XML.
+
+You don't have to learn a new language
+You can use your XML editor to edit your Schema files
+You can use your XML parser to parse your Schema files
+You can manipulate your Schema with the XML DOM
+You can transform your Schema with XSLT
+XML Schemas are extensible, because they are written in XML.
+
+With an extensible Schema definition you can:
+
+Reuse your Schema in other Schemas
+Create your own data types derived from the standard types
+Reference multiple schemas in the same document
+XML Schemas Secure Data Communication
+When sending data from a sender to a receiver, it is essential that both parts have the same "expectations" about the content.
+
+With XML Schemas, the sender can describe the data in a way that the receiver will understand.
+
+A date like: "03-11-2004" will, in some countries, be interpreted as 3.November and in other countries as 11.March.
+
+However, an XML element with a data type like this:
+
+<date type="date">2004-03-11</date>
+
+ensures a mutual understanding of the content, because the XML data type "date" requires the format "YYYY-MM-DD".
+
+Well-Formed is Not Enough
+A well-formed XML document is a document that conforms to the XML syntax rules, like:
+
+it must begin with the XML declaration
+it must have one unique root element
+start-tags must have matching end-tags
+elements are case sensitive
+all elements must be closed
+all elements must be properly nested
+all attribute values must be quoted
+entities must be used for special characters
+Even if documents are well-formed they can still contain errors, and those errors can have serious consequences.
+
+Think of the following situation: you order 5 gross of laser printers, instead of 5 laser printers. With XML Schemas, most of these errors can be caught by your validating software.
+Q6. How can create and use data girdview?
+Answer:-DataGridView displays data from SQL databases. This tutorial takes a specific table from a database and display it on a DataGridView. This is done with a DataAdapter and data logic. A visual representation of data is the end result.
+Start. In Visual Studio, select the File menu and then New Project, and select a Windows Forms application. Next, in the designer, drag the DataGridView icon into the window. On the right part of the window, we see the Visual Studio Toolbox.
+And:
+The Toolbox contains the icons and controls you can add. Select View and then Toolbox to show it.
+
+Databases. Here we need to generate an SDF file to interact with. We will use Visual Studio for this part. First, go to Data and then Add New Data Source. This is the Visual Studio wizard that you can use to add a new database.
+Then:
+Select Database, and click Next. Click on New Connection, as we need to create an all-new connection and database.
+
+Create database. Type in a database name, and then click Create. Note that we are using SQL Server CE, which is the compact edition of SQL Server 2005. You will use different dialogs to configure SQL Server 2005.
+Note:
+You will get the connection string at this point. The one given to me is as follows.
+
+Next:
+You will see the "Save the Connection String to the Application Configure File" dialog. Save it as DataConnectionString.
+
+Connection string
+
+Data Source=C:\Users\Sam\Documents\Data.sdf
+Create table. The database should have some tables containing row data. To keep this document as simple as possible, I create an example table. First, open Server Explorer. The Server Explorer is a pane in the right side of Visual Studio normally.
+Select your SDF database, and right click on the Tables folder. And then type in the table name. For my example, I use a table name of "Animals". Type this in the Name text box in Visual Studio.
+Next steps. Click in "Column Name" cell. Click in the empty cell under Column Name and type your column's name. I create a column named "Weight" with a data type of Numeric. To complete this step in the tutorial, click OK.
+Data. Next, we need to have actual data in the table we created. Return to the Server Explorer, and right-click on the table, such as the Animals table. Type in 10 for Weight, and brown for Color.
+Note:
+This data is for the example, but your program may have similar fields. We could be working on a table for a veterinarian's office.
+
+Animal 1
+
+Weight: 10
+Color:  Brown
+
+Animal 2
+
+Weight: 15
+Color:  Black
+
+Animal 3
+
+Weight: 5
+Color:  Green
+
+Animal 4
+
+Weight: 20
+Color:  White
+Windows Forms. At this point you have a special database as part of your C# Windows Forms program. It has one table and four rows, and you want to use a DataAdapter with your DataGridView. We must work on integrating it further.
+Adding directive. Before you add logic, add the SqlCeServer directive at the top of your Windows Forms program's code. When you use different database engines, you will need different directives.
+Using directive: C#
+
+using System.Data.SqlServerCe;
+Data adapter. In C# code, you must open a connection to your database first, and then create a DataAdapter. There are different adapter implementations, but they all work similarly. For this tutorial, we will use the SqlCeDataAdapter.
+Note:
+You are likely not using this exact database provider, but the code is the same for SQL Server 2005 and many others.
+
+SqlClient
+Tip:
+Make sure your program has the using System.Data and using System.Data.SqlServerCe directives at the top.
+
+Based on: .NET (2018)
+
+C# program that uses SqlCeConnection
+
+using System.Data;
+using System.Data.SqlServerCe;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication5
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            FillData();
+        }
+
+        void FillData()
+        {
+            // 1
+            // Open connection
+            using (SqlCeConnection c = new SqlCeConnection(
+                Properties.Settings.Default.DataConnectionString))
+            {
+                c.Open();
+                // 2
+                // Create new DataAdapter
+                using (SqlCeDataAdapter a = new SqlCeDataAdapter(
+                    "SELECT * FROM Animals", c))
+                {
+                    // 3
+                    // Use DataAdapter to fill DataTable
+                    DataTable t = new DataTable();
+                    a.Fill(t);
+                    // 4
+                    // Render data onto the screen
+                    dataGridView1.DataSource = t;
+                }
+            }
+        }
+    }
+}
+The example calls FillData after InitializeComponent, which is autogenerated by Visual Studio. Look at the FillData method, which is where we put the database contents into the DataGridView.
+Step 1:
+It opens a connection to the database. We use Properties.Settings.Default.DataConnectionString, which was autogenerated.
+
+Step 2:
+It uses a new DataAdapter: SqlCeDataAdapter. A DataAdapter specifies a command that directly fills a DataSet or DataTable.
+
+Step 3:
+It assigns the DataSource in the DataGridView, which renders the contents of the database onto the screen.
+
+DataSet, DataTable. The DataSet object available in System.Data has a slightly different purpose than DataTable, as it allows more information to be stored. For this tutorial, however, DataTable is adequate.
+DataSet
+The DataSet consists of a collection of DataTable objects that you can relate to each other with DataRelation objects. You can also enforce data integrity in the DataSet...
+
+DataSet Class: MSDN
+The DataTable is a central object in the ADO.NET library. Other objects that use the DataTable include the DataSet and the DataView.
+
+DataTable Class: MSDN
+Improvements. The default DataGridView appearance and functionality is not usually the best. Here we make some tweaks to the DataGridView to make it more pleasing. Appearances are important—let's improve them.
+First improvement steps. Expand and anchor the DataGridView. Use the Anchor property on the DataGridView in the designer view to "pin" it to each edge of your window. Go to Properties, and then Layout, and then Anchor.
+Appearance steps. Change the background. Usually, developers need to change the backgrounds of the DataGridView. Make it white by changing the Appearance and then BackgroundColor from AppWorkspace to Window.
+Also:
+Hide the row headers. Go to Appearance and then RowHeadersVisible and change it to False.
+
+Altering the selection mode option. Change the SelectionMode property. There are several SelectionMode enums: CellSelect, FullRowSelect, FullColumnSelect, RowHeaderSelect and ColumnHeaderSelect. Change this to FullRowSelect.
+Tutorial progress:
+What we have so far is a single window with a DataGridView that expands, rows that are selected the entire way across.
+
+And:
+The data from our database is now being fully displayed from a DataAdapter.
+
+Add columns. With the DataGridView, you can predefine columns for display. This doesn't display anything. You create the rules by which the actual data will be displayed. This allows you to have the first column have a width of 200px, for example.
+Note:
+For the tutorial, we want the Animal table's Weight column to be 110px wide.
+
+First column steps. Go to Properties and then locate Columns. This shows the Edit Columns dialog box. Click on the "Add" button. Change the Unbound column. An Unbound column is one that is not directly linked to a DataSource.
+Tip:
+Sometimes it is easier to directly use the DataSource property on the DataGridView.
+
+Next, change the header text. The text you type into the Header text box will ensure that the text is always shown. This means you can display a different form of the column's name than is in the actual DataTable and database.
+Note:
+For the example, I change the Weight cell header to "Weight". This ensures users will know to use pounds, not kilograms.
+
+Finally:
+Change the properties of the DataGridViewColumn in the dialog box. I set 110px as the width and AutoSizeMode of None.
+
+DataPropertyName. You need to specify that a certain column in your database be inserted into the Column you just added in the Columns dialog box. To do this, you must assign the DataPropertyName of the column to the column name from your database.
+So:
+To specify that your DataGridViewColumn be used for the Weight column for your database, type "Weight" into the DataPropertyName box.
+
+Alternating colors. For usability, you want to have alternating row colors on your DataGridView. Fortunately, newer versions of the .NET Framework have the AlternatingRowsDefaultCellStyle attribute. Click to change that property.
+Tip:
+Change the BackColor to something your users will enjoy, and that will improve the program's usability. I chose aqua.
+
+DataGridView Colors
+Discussion. Here I just apply some more tricks to improve the appearance and usability. At the top you can see the final result from this tutorial. First, I added another column property. I added another column template for the next column.
+DataGridView Columns
+DataGridView Add Rows
+Finishing touches. I changed AllowUserToAddRows. This eliminates the blank row on the bottom of the DataGridView. I changed the BorderStyle—Fixed3D works well on newer versions of Microsoft Windows.
+FixedSingle:
+This border looks better in Windows XP. The None option might be good for some programs.
+
+Column header, styles and fonts. I changed the ColumnHeaderBorderStyle. For more recent versions of Windows, we use None for a good appearance. The enums are Custom, Single, Raised, Sunken and None.
+Summary. We used a database and displayed its contents in a usable DataGridView. This is critical for many data-driven Windows Forms application. The example here could form the foundation of a data-driven program for a vet's office.
+Therefore:
+When a dog-owner arrives and his dog is sick, the vet employee could record the species, weight, and color of the dog.
+Q8. Explain the following languages:
+1 .type system 2.interface.

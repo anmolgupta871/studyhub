@@ -1,0 +1,264 @@
+<html>
+<head>
+<title>INTERET TECHNOLOGY AND SECURITY 2014</title>
+</head>
+<body><div align="justify"><h1><p align="center">
+B.C.A. 6th Semester Examination - 2014</br>
+INTERNET TECHNOLOGY AND SECURITY</br>
+</p></h1>
+<u><b><p align="left">(Time = 3 Hours)</p><p align="right">(Maximum Marks : 85</p></b></u>
+<font size="5">NOTE:- Attempt All Question<br>
+Internal Choice Is Available In Each Section.</font></br>
+
+
+
+
+<p>
+</br>Unit 1</br></br>
+1.  Differentiate between differential cryptanalysis and linear cryptanalysis.</br>
+Ans.= In cryptography, linear cryptanalysis is a general form of cryptanalysis based on finding affine approximations to the action of a cipher. Attacks have been developed for block ciphers and stream ciphers. Linear cryptanalysis is one of the two most widely used attacks on block ciphers; the other being differential cryptanalysis.With differential cryptanalysis, the known plaintext/ciphertext pairs must be organized in pairs where both plaintexts differ by a specific difference ("difference" being a XOR, a subtraction... whatever works well algebraically with the algorithm at hand; for DES, this is XOR). The "approximation" is that this input difference will yield another specific difference on the output with a probability which is somewhat higher than what could be obtained with pure randomness, and the exact difference which will most probably appear depends on some of the key bits. Successful differential cryptanalysis normally requires chosen plaintext/ciphertext pairs (the attacker gets to choose the plaintexts or the ciphertexts).</p>
+
+
+
+<p>Whereas Differential cryptanalysis is a general form of cryptanalysis applicable primarily to block ciphers, but also to stream ciphers and cryptographic hash functions. In the broadest sense, it is the study of how differences in information input can affect the resultant difference at the output. In the case of a block cipher, it refers to a set of techniques for tracing differences through the network of transformation, discovering where the cipher exhibits non-random behaviour, and exploiting such properties to recover the secret key (cryptography key). With linear cryptanalysis, the approximation is a linear formula (i.e. a bunch of XOR on bits) which links together some input bits, some output bits and some key bits, with a probability somewhat higher than what could be obtained with pure random. This "linear formula" works best (i.e. is fulfilled most often) when the hypothesis on the involved key bits is correct, so the analysis yields a few key bits.</p>
+
+<p>The most salient difference between linear and differential cryptanalysis is the known/chosen plaintext duality. For linear cryptanalysis, known random plaintexts are sufficient, but differential cryptanalysis requires chosen plaintexts, which, depending on the context, may or may not be a significant problem for the attacker.</p>
+</br>
+Or
+</br>
+</br><p>
+2. Differentiate among the following:</br>
+<p>
+(a) Plaintext and ciphertext</br>
+Ans.= Cleartext  is readable data transmitted or stored “in the clear” (i.e. unencrypted).</br>
+Plaintext is the input to an encryption algorithm.</br>
+Ciphertext is the unreadable output of an encryption algorithm.</br> 
+Plain text means its text that hasn’t been formatted (i.e., a plain text file).</br>
+And clear text… well, this is just text that is easy to comprehend (added to be thorough).</br>
+Something that is cleartext may be in plain text, could be used as plaintext, but definitely isn’t ciphertext.</br>
+Something that is plaintext should be in plain text, could be cleartext, and will become ciphertext.</br>
+Something that is ciphertext should be in plain text, could be used as plaintext, but definitely isn’t cleartext.</br>
+If you store a password in a database, you would store it as either cleartext or ciphertext, usually in plain text, meaning the password is either encrypted or unencrypted, usually without formatting. Since while just sitting in a database it isn’t an input to an encryption algorithm, it is not plaintext.</br>
+Now you can correctly say something like “The cleartext password was queried from the database and used as plaintext by the encryption method to produce ciphertext, protecting our proprietary clear text formula.”</br>
+One last important distinction to understand is that plaintext is not necessarily readable, as you could take the ciphertext from one algorithm, feed it to another (i.e., plaintext), and produce more ciphertext.</br>
+</p>
+<p>
+(b) Symmetric and public key cipher</br>
+Ans.= In comparison to symmetric key, public key cryptography systems use different keys to encrypt to plaintext and to decrypt the ciphertext.</br>
+Symmetric key cipher use the same key for both to encrypt the plaintext and to decrypt the ciphertext. Symmetric key systems have the advantage of being simple and fast. However, the important factor to be considered is that the parties involved must exchange the key in a secured way. Symmetric key cipher involves using a single key to encrypt and decrypt data. For example, suppose that you took a document and placed it in a file cabinet and then locked the cabinet with a key. For you or anyone else to access the document, you'd need the key to the file cabinet. Generally speaking, symmetric key cipher is fast and secure. On the other hand, symmetric key cipher works well locally, it doesn't work very well across networks. In order for the receiver of the encrypted packets to be able to decrypt the packets, they must use the key. Needless to say, this means that you must send them that key along with the message. The other problem is that the physical medium you're sending the packets across is insecure. If it were secure, there would be no reason to encrypt the message in the first place. Anyone who might be monitoring the network could steal the encrypted packets and the key necessary for decrypting them.</br>
+Public key cipher on the other hand uses a pair of keys: a public key that's sent along with the message and a private key which is always in the possession of the recipient. The private key is based on a derivative of the public key and only the two keys working together can decrypt the packets. Because the private key is never sent across the network, it remains secure. The down side of public key cipher is that it tends to be very slow and resource intensive. This makes it difficult to send large amounts of data using public key cipher. Public key ciper on the other hand uses a pair of keys: a public key that's sent along with the message and a private key which is always in the possession of the recipient. The private key cipher is based on a derivative of the public key and only the two keys working together can decrypt the packets. Because the private key is never sent across the network, it remains secure. The down side of public key  is that it tends to be very slow and resource intensive. This makes it difficult to send large amounts of data using public key cipher.</br>
+</p>
+<p>
+(c) Block Cipher and Stream Cipher</br>
+ Ans.= Block cipher technique involves encryption of one block of text at a time, i.e. singly. Similarly, decrypt the text by taking one block after another. In contrast, Stream cipher technique involves encryption and decryption of one byte of the text at a time.</br>
+Block cipher uses both confusion and diffusion while stream cipher relies only on confusion.</br>
+The usual size of the block could be 64 or 128 bits in the Block cipher. As against, 1 byte (8 bits) at a time is converted in the stream cipher.</br>
+Block cipher uses ECB (Electronic Code Book) and CBC (Cipher Block Chaining) algorithm modes. On the contrary, Stream cipher uses CFB (Cipher Feedback) and OFB (Output Feedback) algorithm modes.</br>
+Stream cipher uses XOR function for converting the plain text into cipher text, that is the reason why it is easy to reverse the XORed bits. Whereas Block cipher does not use XOR for doing so.</br>
+Block cipher uses the same key to encrypt each block while stream cipher uses a different key for each byte.</br>
+</p>
+<p>
+(d) Substitution Cipher and Transportation Cipher</br>
+Ans.= <b>Paramters</b></br>
+
+Substitution Cipher </br>
+
+Transportation Cipher</br>
+
+<b>Definition</b></br> 
+
+A substitution technique is one in which the letters of plain text are replaced by other letters or number or symbols.
+</br>Transposition cipher does not substitute one symbol for another instead it changes the location of the symbols.</br>
+
+<b>Type</b></br>	
+
+Monoalphabetic and Polyalphabetic substitution cipher.</br>	
+
+Keyless and Keyed transportation cipher.</br>
+
+<b>Changes</b></br>
+
+Each letter retains its position changes its identity.</br>	
+
+Each letter retains its identity but changes its position.<br>
+
+<b>Disadvantage</b></br>	
+
+The last letters of the alphabet which are mostly low frequency tend to stay at the end.</br>	
+
+Keys very close to the correct key will reveal long sections of legible plaintext.</br>
+
+<b>Example</b></br>	
+Ceaser Cipher<br>	
+Rail fence Cipher</br>
+
+</p>
+</p>
+</br>
+
+<b>Unit 2</b>
+</br>
+<p>
+3. (a) What is the strength of RAS? If modules used in RAS has very small Prime Factor will the RAS implementation be secure? Justify your answer. </br>
+Ans.= In 1977, Ron Rivest, Adi Shamir, and Leonard Adleman originated RSA algorithm, which then become famous and common algorithm in the web industry. The algorithm works on public and private keys to encode and decode the online transmitting information. In the handshake process, the private key is used to decode the message encrypted by a public key and is never shared with any person.</br>
+
+For example, when a user encodes the message with the public key, the receiver decodes the message with its own private key. It offers a process of ensuring the privacy, reliability, and legitimacy. There are many protocols like SSL/TLS, S/MIME, SSH, OPENPGP relies on RSA for digital signature functions. RSA keys come in different sizes like 1024-bit, 2048-bit, and 4096-bit. Currently, governments and organizations prefer 2048-bit encryption for better security and data privacy.</br>
+</p>
+<p>
+(b) What is the strength of ECC based encryption scheme? How to increase the security level? </br>
+Ans.= ECC stands for Elliptic Curve Cryptography is the latest encryption method offers stronger security. If we compare to the RSA and DSA algorithms, then 256-bit ECC is equal to 3072-bit RSA key. The reason behind keeping short key is the use of less computational power, fast and secure connection, ideal for Smartphone and tablet too.</br>
+
+The US government and the National Security Agency have certified ECC encryption method. The mathematical problem of the ECC algorithm, It is harder to break for hackers compare to RSA and DSA, which means the ECC algorithm ensures web site and infrastructure safety than traditional methods in a more secure manner.</br>
+
+
+ECC key is very helpful for the current generation as more people are moving to the Smartphone. As the utilization of Smartphone extends to grow, there is an emerging need for a more flexible encryption for business to meet with increasing security requirements.</br></p>
+</br>
+OR</br>
+</br>
+4. (a) What is clogging attack on Diffie-hellman key exchange? suggest a suitable counter measure.</br>
+Ans.= Diffie–Hellman key exchange (DH) is a method of securely exchanging cryptographic keys over a public channel and was one of the first public-key protocols as originally conceptualized by Ralph Merkle and named after Whitfield Diffie and Martin Hellman. </br>
+Due to computationally intensive nature of modular exponentiation, the DH key exchange is highly vulnerable to clogging (DoS) attack. waste their resources by computing wrong shared DH key. 3) The attacker can flood the initiator (victim) with DH group and public-key by sending fake DH request with forged source.</br>
+ <p>
+(b) In RAS if cipher text c=10, e=5, n=35 determine M?</br>
+Ans.= We know that the ciphertext C = 10, and the public key PU = {e, n} = {5, 35}.</br>
+Based on Euler’s Totient function, (n) is defined as the number of positive integers less than n and relatively prime to n [textbook: “Cryptography and Network Security”, page 240]. We could find that (n) = 24.</br>
+Now, we guess two prime numbers p and q. Let p be 5 and q be 7. All the following conditions will be satisfied based on the guess:</br>
+(1)	n = p*q = 5*7=35</br>
+(2)	(n) = (p-1)(q-1)=(5-1)(7-1)=4*6=24</br>
+(3)	gcd((n), e) = gcd(24, 5) =1, 1< e < (n)</br>
+
+We calculate d in the next step. Based on RSA key generation algorithm, </br>
+d ≡ e-1 mod (n) which is equivalent to </br>
+ed ≡ 1 mod (n) </br>
+or 	ed mod (n) =1.</br>
+
+We have e = 5, (n) = 24. So, 5d mod 24 =1, and d = 5.</br>
+
+Now, we find the private key PR = {d, n} = {5, 35}.</br>
+
+Based on RSA decryption algorithm, </br>
+M = Cd mod n </br>
+    = 105 mod 35</br>
+    = 5</br>
+
+We also can verify the correctness by the RSA encryption algorithm as the following:</br>
+	C = Me mod n = 55 mod 35 = 10</br>
+ 
+Therefore, we conclude that the plaintext M is 5.</br>
+</p>
+</br>
+
+<b>Unit 3</b>
+</br></br>
+5. What is the stength of MAC? Is MAC reversible? If no,does it pose any limitations or is dsigned to be so?</br>
+Ans.= A message authentication code (MAC) is a cryptographic checksum on data that uses a session key to detect both accidental and intentional modifications of the data.</br>
+A MAC requires two inputs: a message and a secret key known only to the originator of the message and its intended recipient(s). This allows the recipient of the message to verify the integrity of the message and authenticate that the messege's sender has the shared secret key. If a sender doesn’t know the secret key, the hash value would then be different, which would tell the recipient that the message was not from the original sender.</br>
+There are four types of MACs:  unconditionally secure, hash function-based, stream cipher-based  and block cipher-based  In the past, the most common approach to creating a MAC was to use block ciphers like Data Encryption Standard (DES), but hash-based MACs (HMACs) which use a secret key in conjunction with a cryptographic hash function to produce a hash, have become more widely used.</br>
+</br>
+Or</br>
+</br>
+6. What are the charateristics of good hash function?</br>
+Ans.= There are four main characteristics of a good hash function: </br> 
+1) The hash value is fully determined by the data being hashed.</br> 
+2) The hash function uses all the input data.</br>
+3) The hash function "uniformly" distributes the data across the entire set of possible hash values.</br>
+4) The hash function generates very different hash values for similar strings.</br>
+</br>
+
+<b><Unit 4</b>
+</br>
+<p>
+7. In the context of bio metric user authentication, explain the term, entrollment, verification and identification.</br>
+Ans.= In this process customer biometric template is verified to authenticate the payment. In verifica- tion process the customer enters their customer identity number into the verification system. The system then prompts the customer to present their live biometric on the scanner. The live biometric is then compared with the biometric template stored against the customer identity number in the biometric server. In case the verification is successful the payment transaction is considered authenticated and the transaction sent to the bank for processing. In case of a failure the customer may be asked to present the biometric template again up to a certain maximum number of tries. In the identification process, the system recognizes an individual by searching the templates of all the users in the database for a match (Figure 3). Therefore, the system conducts a one-to-many comparison to establish an individual’s identity (or fails if the subject is not enrolled in the system database) without the subject having to claim an identity (e.g., “Whose biometric data is this?”). Identification is a critical component in negative recognition applications where the system estab- lishes whether the person is who she (implicitly or explicitly) denies to be. The purpose of negative recognition is to prevent a single person from us- ing multiple identities. Identification may also be used in positive recognition for convenience (the user is not required to claim an identity). While traditional methods of personal recognition such as passwords, PINs, keys, and tokens may work for positive recognition, negative recognition can only be established through biometrics.</p><p> To implementing a biometric authenticated pay- ment a system requires three primary system elements to be put in place by a bank or acquirer. These are: It is used for enrolling customers on to the program and recording their biometric identity. In enrol- ment stage the biometric images of the different individuals to be verified are first processed by feature extraction module; the extracted features are stored as template in a database for later use. Used at retail locations for verifying the live bio- metric template with the stored fingerprints for authenticating payments. The biometric image of the individual to be verified first processed by feature extraction modules; the extracted features are then fed to a matching module with his/her identity ID, which matches them against his/her templates in the database. Used for storing the biometric template, extract- ing and verifying biometric template during a payment process and providing an interface to banks and acquirers for managing the customer data and reports. The authentication models for authenticating are to authenticate the customer who has registration in the service of the biometric payment system. Most models are based on network authentica- tion system and are composed of client terminal, server side, which is used to collect the multimodal biometric data and to provide the services respec- tively. The biometrics template storage place and the verification place may be held at client side, server side and trusted third party (TTP) that may be a smart card to perform complex calculations. The different components that are interacting for secure online transactions for the biometric pay- ment systems are: It has access to customer’s data; establishes connection with the Online Banking Software (BSW); conducts capital transactions and is able to identify a Biometric Trusted Device (BTD) as a communication partner to establish a secure connection. It is stored on the client and communicates with SBS in order to process different transactions. A trusted piece of hardware with predefined security criteria to provide secure functionality; cannot be manipulated by malware; has a biometric capture device as a fake resistant sensor which is qualified for unsupervised operation. An additional hardware is required to implement the biometric template in the proposed method- ology.</p><p> Biometric identification systems (BIS) is based around a core Automated Fingerprint Identification System ( AFIS) that offers full biometric integration – with the inclusion of fin- gerprints, palm-prints, facial images, descriptive data, signatures and documents. Known as mul- timodal biometrics (or ‘fusion’ technology), this approach optimizes the results of search queries, consequently achieving more accurate responses. Common BIS elements include: It is a central repository (e.g. Oracle database) for storage and near-immediate retrieval of biometric identifiers together with associated features and textual data. (Known as ‘descriptor’ data) These are equipped with a camera and scanner to enable the capture, encoding and submission of finger/palm-print images, slap impressions, rolled fingerprint images, photographs, signatures and demographic information. Are designed for the dedicated review and verifica- tion of search results, as well as match analysis. Allow the identification of individuals when the subject is present at the time of processing. Portable and single-finger scanning devices, cameras, two/ten-print card printers, automated case management systems, Web servers, applica- tion servers, mobile gateways, descriptor import/ export modules. The barcode technology has been developed with the creation of 2D barcodes to increase the data capacity of 1D barcodes. With the integration of cameras, mobile phones act as scanners, barcode readers and portable data storages and maintaining network connectivity. When used together with such camera phones, 2D-barcodes work as a tag to connect the digital and physical world. Today most of the mobile applications encode a URL or a website address inside a 2D barcode to visit a Web page containing a video clip or a document that can be accessed from a mobile Web browser. A 2D barcode can also represent a business card, an advertisement coupon, product information and it can be used in visual cryptography. In mobile payment systems, 2D barcodes are used to support presale, buy and sell, post sale operations in the form of transactions. 2D barcodes can be used to present advertisements, coupons, and receipts, which can be captured and decoded by mobile client software on mobile devices. Moreover, 2D barcodes enable mobile devices to become a point-of-sale device that reads the barcode and facilitates payment transactions. After a payment transaction, 2D barcodes can be used to present a purchase receipt to gain access to the information about the purchased goods and services.</p><p> There are two ways to build 2D barcodes in mobile payment systems. The first approach is to build 2D barcode-based Position of Sale (POS) sys- tems. The objective is to support mobile payment transactions between mobile users and mobile terminals at anytime and anywhere. This type of POS-based payment systems can be used in Parking lots, TAXI, airport and railroad stations. 2D barcodes are useful to support product infor- mation retrievals, secured payment transactions, customer and product verification, and mobile security checking. The other approach is to build 2D barcode- based systems to allow mobile users to issue mobile payment transactions using their digital wallets based on mobile payment accounts in a mobile payment server.</p></br>
+</br>
+ Or</br>
+</br>
+<p>8. List and briefly describe common techniques for selecting or assigning passwords or to protect password file.</br>
+Ans.= To selecting or assigning passwords:</br>
+ a) User education</br>
+b) Computer-generated passwords.</br>
+c) Reactive password checking: The system periodically runsits own password cracker and notifies the user if it was ableto crack his or her password.</br>
+d) Proactive password checking: The user chooses hispassword based on rules given by thesystem (eg. at leasteight characters long etc.</br>
+<p>To Protect Password:</br>
+The two common techniques used to protect a password file are by using hashed passwords and a salt value or password file access control. The salt is stored in plaintext with the hash from (salt + password). In the password file access control, the hashed passwords are kept in a separate file from the user IDs called 'shadow password file' (only users who have privilege 'Admin' can access this file).</br></p>
+</br>
+
+<b>Unit-5</b>
+</br>
+9. (a) What are different types of firewall explain in detail.</br>
+Ans.= firewall category has evolved:</br>
+
+<p>Packet filtering firewalls</br>
+This, the original type of firewall, operates inline at junction points where devices such as routers and switches do their work.
+However, this firewall doesn't route packets, but instead compares each packet received to a set of established criteria -- such as the allowed IP addresses, packet type, port number, etc. Packets that are flagged as troublesome are, generally speaking, unceremoniously dropped -- that is, they are not forwarded and, thus, cease to exist.</p>
+
+<p>Circuit-level gateways</br> 
+
+Using another relatively quick way to identify malicious content, these devices monitor the TCP handshakes across the network as they are established between the local and remote hosts to determine whether the session being initiated is legitimate -- whether the remote system is considered trusted. They don't inspect the packets themselves, however.
+The managed security provider comes knocking.</p>
+
+<p>Stateful inspection firewalls</br>
+
+State-aware devices, on the other hand, not only examine each packet, but also keep track of whether or not that packet is part of an established TCP session. This offers more security than either packet filtering or circuit monitoring alone, but exacts a greater toll on network performance.
+A further variant of stateful inspection is the multilayer inspection firewall, which considers the flow of transactions in process across multiple layers of the ISO Open Systems Interconnection seven-layer model.</p>
+
+<p>Application-level gateways</br> 
+
+This kind of device, technically a proxy, and sometimes referred to as a proxy firewall, combines some of the attributes of packet filtering firewalls with those of circuit-level gateways. They filter packets not only according to the service for which they are intended -- as specified by the destination port -- but also by certain other characteristics, such as the HTTP request string.
+While gateways that filter at the application layer provide considerable data security, they can dramatically affect network performance.</p>
+
+<p>Next-gen firewalls</br> 
+
+This looser category is the most recent -- and least-well delineated -- of the types of firewalls. A typical next-gen product combines packet inspection with stateful inspection, but also includes some variety of deep packet inspection.What is meant by deep packet inspection depends a great deal on the vendor in question, but the heart of the matter is that, whereas packet inspection in traditional firewalls looks exclusively at the header of the packet, deep packet inspection looks at the actual data that the packet is carrying. Thus, such a firewall might track the progress of a web browsing session and notice that the payload of a packet, when assembled with other packets in an HTTP server reply, does not constitute a legitimate HTML formatted response.</br>
+next-gen firewall PALO ALTO .</br>
+Whichever of the types of firewalls you choose, keep in mind that a misconfigured firewall can, in some ways, be worse than no firewall at all because it lends the dangerous impression of security, while providing little or none.</p>
+<p>
+(b) Explain trusted system in detail.</br>
+<p>Ans.= In the security engineering subspecialty of computer science, a trusted system is a system that is relied upon to a specified extent to enforce a specified security policy. This is equivalent to saying that a trusted system is one whose failure would break a security policy (if a policy exists that the trusted system is trusted to enforce).</p>
+<p>The meaning of the word "trust" is critical, as it does not carry the meaning that might be expected in everyday usage. A system trusted by a user, is one that the user feels safe to use, and trusts to do tasks without secretly executing harmful or unauthorised programs; while trusted computing refers to whether programs can trust the platform to be unmodified from that expected, whether or not those programs are innocent, malicious or execute tasks that are undesired by the user.</p>
+<p>The Need Of Trusted Operating System</p>
+<p>Trusted Operating System (TOS) generally refers to an operating system that provides sufficient support for multilevel security and evidence of correctness to meet a particular set of government requirements.
+The most common set of criteria for trusted operating system design is the Common Criteria combined with the Security Functional Requirements (SFRs) for Labeled Security Protection Profile (LSPP) and mandatory access control (MAC). The Common Criteria is the result of a multi-year effort by the governments of the U.S., Canada, United Kingdom, France, Germany, the Netherlands and other countries[1] to develop a harmonized security criteria for IT products.</p>
+<p>Examples of certified trusted operating systems are:</br>
+Apple Mac OS X 10.6 (Rated EAL 3+[2])</br>
+HP-UX 11i v3 (Rated EAL 4+)</br>
+Some Linux distributions (Rated up to EAL 4+)</br>
+Microsoft Windows 7 and Microsoft Server 2008 R2 (Rated EAL 4+[3])</br>
+AIX 5L with PitBull Foundation (Rated EAL 4+[4])</br>
+Trusted Solaris</br>
+Trusted UNICOS 8.0 (Rated B1[5])</p></br>
+</br>
+Or</br>
+</br>
+10. Write short note on:</br>
+<p>
+(a) Viruses and Worms</br>
+Ans.= Viruses and worms are malicious programs that self-replicate on computers or via computer networks without the user being aware; each subsequent copy of such malicious programs is also able to self-replicate.
+Malicious programs which spread via networks or infect remote machines when commanded to do so by the “owner” (e.g. Backdoors) or programs that create multiple copies that are unable to self-replicate are not part of the Viruses and Worms subclass.</br>
+The main characteristic used to determine whether or not a program is classified as a separate behaviour within the Viruses and Worms subclass is how the program propagates (i.e. how the malicious program spreads
+ copies of itself via local or network resources.)</br>
+Most known worms are spead as files sent as email attachments, via a link to a web or FTP resource, via a link sent in an ICQ or IRC message, via P2P file sharing networks etc.</br>
+Some worms spread as network packets; these directly penetrate the computer memory, and the worm code is then activated.</br>
+Worms use the following techniques to penetrate remote computers and launch copies of themselves: social engineering (for example, an email message suggesting the user opens an attached file), exploiting network configuration errors (such as copying to a fully accessible disk), and exploiting loopholes in operating system and application security.</br>
+</br></P>
+(b) Firewall configuration</br>
+Ans.= Firewalls are customizable. This means that you can add or remove filters based on several conditions. Some of these are:</br>
+IP addresses - Each machine on the Internet is assigned a unique address called an IP address. IP addresses are 32-bit numbers, normally expressed as four "octets" in a "dotted decimal number." A typical IP address looks like this: 216.27.61.137. For example, if a certain IP address outside the company is reading too many files from a server, the firewall can block all traffic to or from that IP address.</br>
+Domain names - Because it is hard to remember the string of numbers that make up an IP address, and because IP addresses sometimes need to change, all servers on the Internet also have human-readable names, called domain names. For example, it is easier for most of us to remember www.howstuffworks.com than it is to remember 216.27.61.137. A company might block all access to certain domain names, or allow access only to specific domain names. Protocols - The protocol is the pre-defined way that someone who wants to use a service talks with that service. The "someone" could be a person, but more often it is a computer program like a Web browser. Protocols are often text, and simply describe how the client and server will have their conversation. The http in the Web's protocol. Some common protocols that you can set firewall filters for include:</br>
+IP (Internet Protocol) - the main delivery system for information over the Internet</br>
+TCP (Transmission Control Protocol) - used to break apart and rebuild information that travels over the Internet</br>
+HTTP (Hyper Text Transfer Protocol) - used for Web pages</br>
+FTP (File Transfer Protocol) - used to download and upload files</br>
+UDP (User Datagram Protocol) - used for information that requires no response, such as streaming audio and video</br>
+ICMP (Internet Control Message Protocol) - used by a router to exchange the information with other routers</br>
+SMTP (Simple Mail Transport Protocol) - used to send text-based information (e-mail)</br>
+SNMP (Simple Network Management Protocol) - used to collect system information from a remote computer
+Telnet - used to perform commands on a remote computer</br>
+A company might set up only one or two machines to handle a specific protocol and ban that protocol on all other machines.</br>
+Ports - Any server machine makes its services available to the Internet using numbered ports, one for each service that is available on the server (see How Web Servers Work for details). For example, if a server machine is running a Web (HTTP) server and an FTP server, the Web server would typically be available on port 80, and the FTP server would be available on port 21. A company might block port 21 access on all machines but one inside the company.</br>
+Specific words and phrases - This can be anything. The firewall will sniff (search through) each packet of information for an exact match of the text listed in the filter. For example, you could instruct the firewall to block any packet with the word "X-rated" in it. The key here is that it has to be an exact match. The "X-rated" filter would not catch "X rated" (no hyphen). But you can include as many words, phrases and variations of them as you need.</br>
+Some operating systems come with a firewall built in. Otherwise, a software firewall can be installed on the computer in your home that has an Internet connection. This computer is considered a gateway because it provides the only point of access between your home network and the Internet.</br>
+With a hardware firewall, the firewall unit itself is normally the gateway. A good example is the Linksys Cable/DSL router. It has a built-in Ethernet card and hub. Computers in your home network connect to the router, which in turn is connected to either a cable or DSL modem. You configure the router via a Web-based interface that you reach through the browser on your computer. You can then set any filters or additional information.</br>
+</div>
+</body>
+</html>
