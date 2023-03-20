@@ -1,0 +1,95 @@
+Internet Technology & Security 2017
+Section A
+1.MCQ
+(i)_______is an antivirus program
+Ans All the above
+(ii)Password  Should be contain :
+ANS Both(a)and (b)
+(iii)The process of converting palin text to cipher text and cipher text to plain text is called as
+Ans None
+(iv)Full Form of DES 
+Ans Data Encryption Standard
+(v)Which one of the following algo is not used in asymmetric cryptography?
+Ans None
+Section B
+
+2.Write the encryption algorithm. 
+Ans
+1Design the algorithm. 
+2Test your algorithm
+3Consider decryption. 
+4Draft the pseudocode. 
+3.What is Cryptography?
+Ans
+Definition: Cryptography is associated with the process of converting ordinary plain text into unintelligible text and vice-versa. It is a method of storing and transmitting data in a particular form so that only those for whom it is intended can read and process it. Cryptography not only protects data from theft or alteration, but can also be used for user authentication.
+4.What is Mac Algorithm?
+Ans
+MAC algorithm is a symmetric key cryptographic technique to provide message authentication. For establishing MAC process, the sender and receiver share a symmetric key K. Essentially, a MAC is an encrypted checksum generated on the underlying message that is sent along with a message to ensure message authentication.
+5.What is web Security?
+Ans 
+Web application security, is a branch of Information Security that deals specifically with security of websites, web applications and web services. At a high level, Web application security draws on the principles of application security but applies them specifically to Internet and Web systems.
+6.What is virus.Give any Two virus?
+Ans
+A computer virus is malicious code that replicates by copying itself to another program, computer boot sector or document and changes how a computer works. The virus requires someone to knowingly or unknowingly spread the infection without the knowledge or permission of a user or system administrator. In contrast, a computer worm is stand-alone programming that does not need to copy itself to a host program or require human interaction to spread. Viruses and worms may also be referred to as malware.
+1. The Morris worm    2. The Concept virus
+Section-C
+7.Explain DES with Example?
+Ans
+The Data Encryption Standard (DES) is an outdated symmetric-key method of data encryption.DES works by using the same key to encrypt and decrypt a message, so both the sender and the receiver must know and use the same private key. Once the go-to, symmetric-key algorithm for the encryption of electronic data, DES has been superseded by the more secure Advanced Encryption Standard (AES) algorithm.
+Example:
+DES works on bits, or binary numbers--the 0s and 1s common to digital computers. Each group of four bits makes up a hexadecimal, or base 16, number. Binary "0001" is equal to the hexadecimal number "1", binary "1000" is equal to the hexadecimal number "8", "1001" is equal to the hexadecimal number "9", "1010" is equal to the hexadecimal number "A", and "1111" is equal to the hexadecimal number "F".
+DES works by encrypting groups of 64 message bits, which is the same as 16 hexadecimal numbers. To do the encryption, DES uses "keys" where are also apparently 16 hexadecimal numbers long, or apparently 64 bits long. However, every 8th key bit is ignored in the DES algorithm, so that the effective key size is 56 bits. But, in any case, 64 bits (16 hexadecimal digits) is the round number upon which DES is organized.
+For example, if we take the plaintext message "8787878787878787", and encrypt it with the DES key "0E329232EA6D0D73", we end up with the ciphertext "0000000000000000". If the ciphertext is decrypted with the same secret DES key "0E329232EA6D0D73", the result is the original plaintext "8787878787878787".
+8Define the Hullman algorithm?
+Ans
+Definition: A minimal variable-length character coding based on the frequency of each character. First, each character becomes a one-node binary tree, with the character as the only node. The character's frequency is the tree's frequency. Two trees with the least frequencies are joined as the subtrees of a new root that is assigned the sum of their frequencies. Repeat until all characters are in one tree. One code bit represents each level. Thus more frequent characters are near the root and are coded with few bits, and rare characters are far from the root and are coded with many bits.Also known as static Huffman coding.
+Generalization (I am a kind of ...)
+greedy algorithm.
+Specialization (... is a kind of me.)
+adaptive Huffman coding, k-ary Huffman coding.
+Aggregate child (... is a part of or used in me.)coding tree, full binary tree, priority queue.
+9 Disscuss Hash Algorithms?
+Ans
+The Secure Hash Algorithms are a family of cryptographic hash functions published by the National Institute of Standards and Technology (NIST) as a U.S. Federal Information Processing Standard (FIPS), including:
+SHA-0: A retronym applied to the original version of the 160-bit hash function published in 1993 under the name "SHA". It was withdrawn shortly after publication due to an undisclosed "significant flaw" and replaced by the slightly revised version SHA-1.
+SHA-1: A 160-bit hash function which resembles the earlier MD5 algorithm. This was designed by the National Security Agency (NSA) to be part of the Digital Signature Algorithm. Cryptographic weaknesses were discovered in SHA-1, and the standard was no longer approved for most cryptographic uses after 2010.
+SHA-2: A family of two similar hash functions, with different block sizes, known as SHA-256 and SHA-512. They differ in the word size; SHA-256 uses 32-bit words where SHA-512 uses 64-bit words. There are also truncated versions of each standard, known as SHA-224, SHA-384, SHA-512/224 and SHA-512/256. These were also designed by the NSA.
+SHA-3: A hash function formerly called Keccak, chosen in 2012 after a public competition among non-NSA designers. It supports the same hash lengths as SHA-2, and its internal structure differs significantly from the rest of the SHA family.
+The corresponding standards are FIPS PUB 180 (original SHA), FIPS PUB 180-1 (SHA-1), FIPS PUB 180-2 (SHA-1, SHA-256, SHA-384, and SHA-512). NIST has updated Draft FIPS Publication 202, SHA-3 Standard separate from the Secure Hash Standard (SHS).
+10.Why Security of web is necessary to protect data from unauthorized user?
+Ans:
+Data security is fundamental. All new and existing business and data processes should include a data security review. This ensures MIT data is safe from loss and secured against unauthorized access.Plan ahead. Develop a plan to review your data security status and policies. Create routine processes to access, handle, and store the data safely. Archive unneeded data.
+Know your data. Know what data you have and what levels of protection are required to keep the data both confidential and safe from loss.Scale down. Keep only the data you need for routine current business. Safely archive or destroy older data and remove it from all computers and other devices.Lock it up and back it up! Physical security is the key to safe and confidential computing. All the passwords in the world won't get your laptop back if it's stolen. Back up data to a safe place so it can be recovered if equipment fails or is lost or stolen.
+Sensitivity of data
+Data at MIT is assigned a level of sensitivity based on who should have access to it and how much harm would be done if it were disclosed. It's important to make sure that you're handling sensitive data properly at the Institute. Spirion is a tool that finds instances of sensitive data. Learn what steps to take if sensitive data is detected on your machine, including how to remove it.
+Minimizing risks to data
+Massachusetts has issued regulations for anyone who handles the personal information (e.g., Social Security, credit card, and bank account numbers) of MA residents. To comply with these regulations, MIT implements a Written Information Security Program (WISP) that includes specific requirements for those who handle the personal information of others
+Data breaches
+11.Explain the principle of Firewall?
+Ans
+Firewall Design Principles
+Firewall is a security barrier between two networks that screens traffic coming in and out of the gate of one network to accept or reject connections and services according to a set of rules.
+For a firewall to be effective the design of the firewalls should be efficient. The various principles that should be adopted while designing a firewall are as follows:
+Firewall Characteristics:
+i. All traffic from inside to outside and vice versa must pass through the firewall. This is achieved by physically blocking all access to the local network except via the firewall. The configurations used for this are screened Host Firewall (Single and Dual) and Screened Subnet Firewall.
+
+ii. Only authorized traffic as defined by the local security policy will be allowed to pass. Various types of firewalls that can be used are Packet-Filters, Stateful Filters and Application Proxy Filters.
+
+iii. The firewall itself is immune to penetration. This implies that use of a trusted system with a secure operating system.
+
+Techniques for Control:
+Four general techniques that firewalls use to control access and enforce security policy are as follows
+
+i. Service Control- This determines the types of internet services that can be accessed inbound or outbound.
+ii. Direction Control: This determines the direction in which particular service requests may be initiated and allowed to flow through the firewall.
+iii. User Control: Control access to a service according to which user is attempting to access it. This feature is typically applied to users inside the firewall perimeter.
+iv. Behaviour Control: Controls how particular services are used.
+Capabilities of Firewalls: The expectations from a firewall are as follows
+
+i.	A firewall defines a single choke point that keeps unauthorized users out of the protected network, prohibits vulnerability and provides protection from spoofing and routing attacks.
+ii.	. A firewall provides a location for monitoring security-related events. Audits and alarms can be implemented on the firewall system.
+iii. A firewall is a convenient platform for several internet functions that are not security related which include network address translator and a network management function.
+iv. A firewall can serve as the platform for IPsec. Using the tunnel mode capability, the firewall can be used to implement virtual private networks.
+	
+
+

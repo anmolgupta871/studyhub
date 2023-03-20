@@ -1,0 +1,41 @@
+       
+              Internet Tech. & Security-2014
+
+
+ Note: Attempt are questions from each unit Unit-1 
+
+1. (a) Differentiate between differential cryptanalysis and lincar cryptanalysis. 
+
+(b Explain how monolithiciipher is prove to statistical analysis attack? How is this problem elimimated in vigilancul 
+          or 
+2. Differentiate among the following: 
+(a) Plaintext and ciphertext, 
+(b) symmetric and public Key cipher, 
+(c) Block Ciphers and stream ciphcrs, 
+(d) substitution cipher and transportation ciphers
+                   Unit-II 
+3. (a) What is the strength of RSA? If modules used in RSA has very small Prime Factors will thc RSA has very small Prime Factors will the RSA implemcntation be secure? Justify your answer.
+b) What is the strength of ECC based encryption scheme? How to increase the securily level 
+or 
+4. (a) What is clogging attack on Diffie.Hollman Kuy exchange? Suggest asuitable counter measure. 
+(b) In RSA if cipher text c- 10, e 5, n 35 dukarmlne M?
+   Unit-III 5. 
+(a) Explain use o Hanh runollon to provku source authentiwallon Using public key engryptlon
+ (ii) without using public key eneryption (b What is the strongth of MAC? s MAC reversible unction? lino, does it poso any limitation or is designed to be so.
+         or
+ 6. a)Differentiate between Message Authentication code and Hash values which are encrypted? 
+(b) What are the characteristics of good hash function.
+ Unit iv
+7. (a) What are the service provided by IPSEE? Explain.
+
+(b) In the context of bio metric user authentication, explain the term, enroliment, verification and identification. 
+      or     
+8. (a) List and briefly describe common techniques for selecting password, assigning password or to protect password file
+ (b) Explain kerberos and x.509. 
+     
+      Unitv
+ 9. (a) What are different type of firewall explain in detail (b) Explain trusted system in detail. 
+      Or 
+10. Write short note on 
+(a) Viruses and worm, 
+(b Fircwall configuration.

@@ -1,0 +1,223 @@
+<html>
+<body>
+<div align="justify">
+<center>
+<h2>B.C.A. VI Semester Examination 2013</br>
+Internet technology & security 2013</center>
+</h2></br>
+<font size="5">
+
+Q1. Explain classical encryption techniques.
+</br>
+
+answer:-  </font>
+
+Classical Encryption Techniques in Network Security</br>
+1. Network Security Classical Encryption Techniques</br>
+2. 2 Outline</br> • Introduction</br> • Symmetric Cipher Model</br> • Substitution Techniques</br> • Transposition Techniques</br> • Rotor Machines</br> • Steganography</br>
+3. Classical encryption techniques </br>• As opposed to modern cryptography </br>• Goals: – to introduce basic concepts & terminology of encryption – to prepare us for studying modern cryptography 3
+</br>4. Basic terminology </br>• Plaintext: original message to be encrypted </br>• Ciphertext: the encrypted message </br>• Enciphering or encryption: the process of converting plaintext into ciphertext </br>• Encryption algorithm: performs encryption – Two inputs: a plaintext and a secret key 4
+</br>5. • Deciphering or decryption: recovering plaintext from ciphertext</br> • Decryption algorithm: performs decryption – Two inputs: ciphertext and secret key </br>• Secret key: same key used for encryption and decryption – Also referred to as a symmetric key 5 Basic terminology
+</br>6. • Cipher or cryptographic system : a scheme for encryption and decryption </br>• Cryptography: science of studying ciphers</br> • Cryptanalysis: science of studying attacks against cryptographic systems</br> • Cryptology: cryptography + cryptanalysis 6 Basic terminology
+ </br>7. Ciphers</br> • Symmetric cipher: same key used for encryption and decryption – Block cipher: encrypts a block of plaintext at a time (typically 64 or 128 bits) – Stream cipher: encrypts data one bit or one byte at a time</br> • Asymmetric cipher: different keys used for encryption and decryption 7
+</br>8. 8 Symmetric Cipher ModelSymmetric Cipher Model</br> • A symmetric encryption scheme has five ingredients: – Plaintext – Encryption algorithm – Secret Key – Ciphertext – Decryption algorithm </br>• Security depends on the secrecy of the key, not the secrecy of the algorithm
+</br>9. Symmetric Cipher Model 9
+</br>10. Symmetric Encryption </br>• or conventional / secret-key / single-key</br> • sender and recipient share a common key </br>• all classical encryption algorithms are symmetric • The only type of ciphers prior to the invention of asymmetric-key ciphers in 1970’s • by far most widely used 10
+</br></br><font size="5">
+
+Q2. What are the principles of public key cryptosystem?</br>
+answer:-</font>
+
+1.Asymmetric algorithms rely on one key for encryption and a different but related key for decryption.</br>
+2.It is computationally infeasible to determine the decryption from encryption key and encryption algorithm.</br>
+3.Either of the 2 keys (related) can be used for encryption with the other used for decryption (In case of RSA algorithm)</br>
+4.A Public key encryption has following key ingredients:
+</br>
+A) EncryptionA) Encryption
+</br>
+B) AuthenticationB) Authentication</br>
+</br>
+a) Plaintext: This is a readable message or data that is feed into the algorithm as input.</br>
+b) Encryption Algorithm: The encryption algorithm performs various transformations on the plain text.</br>
+c) Public and Private Keys: This is a pair of keys that has been selected so that if one is used for encryption then the other is used for decryption.
+</br>d) Ciphertext: This is the scrambled message produced as output. It depends on the key and the energy algorithm used for a given message two different keys will produce two different ciphertext.
+</br>e) Decryption Algorithm: This algorithm accepts the ciphertxt and the matching key to produce original plaintext.
+</br></br><font size="5">
+
+Q3.how key management can be done in # function?</br>
+answer:-</font>
+
+A cryptographic hash function is a special class of hash function that has certain properties which make it suitable for use in cryptography. It is a mathematical algorithm that maps data of arbitrary size to a bit string of a fixed size (a hash) and is designed to be a one-way function, that is, a function which is infeasible to invert. The only way to recreate the input data from an ideal cryptographic hash function's output is to attempt a brute-force search of possible inputs to see if they produce a match, or use a rainbow table of matched hashes. Bruce Schneierhas called one-way hash functions "the workhorses of modern cryptography".[1] The input data is often called the message, and the output (the hash value or hash) is often called the message digest or simply the digest.
+The ideal cryptographic hash function has five main properties:</br>
+it is deterministic so the same message always results in the same hash
+it is quick to compute the hash value for any given message
+it is infeasible to generate a message from its hash value except by trying all possible messages
+a small change to a message should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value
+it is infeasible to find two different messages with the same hash value
+Cryptographic hash functions have many information-security applications, notably in digital signatures, message authentication codes (MACs), and other forms of authentication. They can also be used as ordinary hash functions, to index data in hash tables, for fingerprinting, to detect duplicate data or uniquely identify files, and as checksumsto detect accidental data corruption. Indeed, in information-security contexts, cryptographic hash values are sometimes called (digital) fingerprints, checksums, or just hash values, even though all these terms stand for more general functions with rather different properties and purposes.
+Properties[edit]
+Most cryptographic hash functions are designed to take a string of any length as input and produce a fixed-length hash value.
+A cryptographic hash function must be able to withstand all known types of cryptanalytic attack. In theoretical cryptography, the security level of a cryptographic hash function has been defined using the following properties:
+Pre-image resistance
+Given a hash value h it should be difficult to find any message m such that h = hash(m). This concept is related to that of a one-way function. Functions that lack this property are vulnerable to preimage attacks.
+Second pre-image resistance
+Given an input m1, it should be difficult to find a different input m2 such that hash(m1) = hash(m2). Functions that lack this property are vulnerable to second-preimage attacks.
+Collision resistance
+
+It should be difficult to find two different messages m1 and m2 such that hash(m1) = hash(m2). Such a pair is called a cryptographic hash collision. This property is sometimes referred to as strong collision resistance. It requires a hash value at least twice as long as that required for pre-image resistance; otherwise collisions may be found by a birthday attack.[2]
+</br></br><font size="5">
+
+Q4.what do you understand by IP security?</br>
+answer:-</font>
+
+Definition - What does Internet Protocol Security (IPsec)mean?
+Internet protocol security (IPsec) is a set of protocols that provides security for Internet Protocol. It can use cryptography to provide security. IPsec can be used for the setting up of virtual private networks (VPNs) in a secure manner.
+Also known as IP Security.
+Techopedia explains Internet Protocol Security (IPsec)
+IPsec involves two security services:
+Authentication Header (AH): This authenticates the sender and it discovers any changes in data during transmission.
+Encapsulating Security Payload (ESP): This not only performs authentication for the sender but also encrypts the data being sent.
+There are two modes of IPsec:
+Tunnel Mode: This will take the whole IP packet to form secure communication between two places, or gateways.
+Transport Mode: This only encapsulates the IP payload (not the entire IP packet as in tunnel mode) to ensure a secure channel of communication.
+</br></br><font size="5">
+
+Q5. What is Virus?</br>
+answer:-</font>
+
+A computer virus is malicious code that replicates by copying itself to another program, computer boot sector or document and changes how a computer works. The virus requires someone to knowingly or unknowingly spread the infection without the knowledge or permission of a user or system administrator. In contrast, a computer worm is stand-alone programming that does not need to copy itself to a host program or require human interaction to spread. Viruses and worms may also be referred to as malware.
+Types of viruses
+File infectors. Some file infector viruses attach themselves to program files, usually selected .com or .exe files. Some can infect any program for which execution is requested, including .sys, .ovl, .prg, and .mnu files. When the program is loaded, the virus is loaded as well. Other file infector viruses arrive as wholly contained programs or scripts sent as an attachment to an email note.
+Macro viruses. These viruses specifically target macro language commands in applications like Microsoft Word and other programs. In Word, macros are saved sequences for commands or keystrokes that are embedded in the documents. Macro viruses can add their malicious code to the legitimate macro sequences in a Word file. Microsoft disabled macros by default in more recent versions of Word; as a result, hackers have used social engineering schemes to convince targeted users to enable macros and launch the virus. As macro viruses have seen a resurgence in recent years, Microsoft added a new feature in Office 2016 that allows security managers to selectively enable macro use for trusted workflows only, as well as block macros across an organization.
+Overwrite viruses. Some viruses are designed specifically to destroy a file or application's data. After infecting a system, an overwrite virus begins overwriting files with its own code. These viruses can target specific files or applications or systematically overwrite all files on an infected device. An overwrite virus can install new code in files and applications that programs them to spread the virus to additional files, applications and systems.
+Polymorphic viruses. A polymorphic virus is a type of malware that has the ability to change or mutate its underlying code without changing its basic functions or features. This process helps a virus evade detection from many antimalware and threat detection products that rely on identifying signatures of malware; once a polymorphic virus' signature is identified by a security product, the virus can then alter itself so that it will no longer be detected using that signature.
+Resident viruses. This type of virus embeds itself in the memory of a system. The original virus program isn't needed to infect new files or applications; even if the original virus is deleted, the version stored in memory can be activated when the operating system loads a specific application or function. Resident viruses are problematic because they can evade antivirus and antimalware software by hiding in the system's RAM.
+Rootkit viruses. A rootkit virus is a type of malware that installs an unauthorized rootkiton an infected system, giving attackers full control of the system with the ability to fundamentally modify or disable functions and programs. Rootkit viruses were designed to bypass antivirus software, which typically scanned only applications and files. More recent versions of major antivirus and antimalware programs include rootkit scanning to identify and mitigate these types of viruses.
+System or boot-record infectors. These viruses infect executable code found in certain system areas on a disk. They attach to the DOS bootsector on diskettes and USB thumb drives or the Master Boot Record on hard disks. In a typical attack scenario, the victim receives storage device that contains a boot disk virus. When the victim's operating system is running, files on the external storage device can infect the system; rebooting the system will trigger the boot disk virus. An infected storage device connected to a computer can modify or even replace the existing boot code on the infected system so that when the system is booted next, the virus will be loaded and run immediately as part of the master boot record. Boot viruses are less common now as today's devices rely less on physical storage media.
+</br></br><font size="5">
+
+Q6. Explain block cipher principal with example.</br>
+answer:-</font>
+
+Design Principles of Block Ciphers and Differential Attacks Design Principles of Block Ciphers • Diffussion and Confusion (Shannon) Diffussion:: each plaintext digit affects many cipher text digits, or each ciphertext digit is affected by many plaintext digits. Confusion: Make the statistical relationship between a plaintext and the corresponding ciphertext as complex as possible in order to thread attempts to deduce the key
+Differential cryptanalysis attack:</br>
+C = f x k x Î F k Î F C Î F ( ) 2 ( ) 2 ( ) 2 : n n n f F ´ F ®</br></br>
+• Nonlinearlity of f: f is far from the linear functions </br>
+• The strict avalanche Criterion: one bit change in the plaintext or the key should produce a significant change in the ciphertext
+</br></br><font size="5">
+
+Q7.what is message authentication codes? Explain.</br>
+Definitions[edit]</br></font>
+Informally, a message authentication code consists of three algorithms:</br>
+A key generation algorithm selects a key from the key space uniformly at random.</br>
+A signing algorithm efficiently returns a tag given the key and the message.</br></br>
+A verifying algorithm efficiently verifies the authenticity of the message given the key and the tag. That is, return accepted when the message and tag are not tampered with or forged, and otherwise return rejected.</br>
+For a secure unforgeable message authentication code, it should be computationally infeasible to compute a valid tag of the given message without knowledge of the key, even if for the worst case, we assume the adversary can forge the tag of any message except the given one.[1]</br>
+Formally, a message authentication code (MAC) is a triple of efficient[2] algorithms (G, S, V) satisfying:</br>
+G (key-generator) gives the key k on input 1n, where n is the security parameter.</br>
+S (signing) outputs a tag t on the key k and the input string x.
+V (verifying) outputs accepted or rejected on inputs: the key k, the string x and the tag t. S and V must satisfy the following:</br>
+Pr [ k ← G(1n), V( k, x, S(k, x) ) = accepted ] = 1.[3]</br>
+A MAC is unforgeable if for every efficient adversary A
+Pr [ k ← G(1n), (x, t) ← AS(k, · )(1n), x ∉ Query(AS(k, · ), 1n), V(k, x, t) = accepted] < negl(n),
+where AS(k, · ) denotes that A has access to the oracle S(k, · ), and Query(AS(k, · ), 1n) denotes the set of the queries on S made by A, which knows n. Clearly we require that any adversary cannot directly query the string x on S, since otherwise she can easily obtain a valid tag.[4]
+Security[edit]
+While MAC functions are similar to cryptographic hash functions, they possess different security requirements. To be considered secure, a MAC function must resist existential forgery under chosen-plaintext attacks. This means that even if an attacker has access to an oracle which possesses the secret key and generates MACs for messages of the attacker's choosing, the attacker cannot guess the MAC for other messages (which were not used to query the oracle) without performing infeasible amounts of computation.
+MACs differ from digital signatures as MAC values are both generated and verified using the same secret key. This implies that the sender and receiver of a message must agree on the same key before initiating communications, as is the case with symmetric encryption. For the same reason, MACs do not provide the property of non-repudiation offered by signatures specifically in the case of a network-wide shared secret key: any user who can verify a MAC is also capable of generating MACs for other messages. In contrast, a digital signature is generated using the private key of a key pair, which is public-key cryptography. Since this private key is only accessible to its holder, a digital signature proves that a document was signed by none other than that holder. Thus, digital signatures do offer non-repudiation. However, non-repudiation can be provided by systems that securely bind key usage information to the MAC key; the same key is in the possession of two people, but one has a copy of the key that can be used for MAC generation while the other has a copy of the key in a hardware security module that only permits MAC verification. This is commonly done in the finance industry.
+<font size="5">
+</br>
+Q8.how mac algorithm is helpful in providing security?</br>
+answer:-</font>
+A MAC requires two inputs: a message and a secret key known only to the originator of the message and its intended recipient(s). This allows the recipient of the message to verify the integrity of the message and authenticate that the messege's sender has the shared secret key. If a sender doesn’t know the secret key, the hash value would then be different, which would tell the recipient that the message was not from the original sender. 
+There are four types of MACs:  unconditionally secure, hash function-based, stream cipher-based  and block cipher-based  In the past, the most common approach to creating a MAC was to use block ciphers like Data Encryption Standard (DES), but hash-based MACs(HMACs) which use a secret key in conjunction with a cryptographic hash function to produce a hash, have become more widely used.
+An example of MAC use[edit]
+
+In this example, the sender of a message runs it through a MAC algorithm to produce a MAC data tag. The message and the MAC tag are then sent to the receiver. The receiver in turn runs the message portion of the transmission through the same MAC algorithm using the same key, producing a second MAC data tag. The receiver then compares the first MAC tag received in the transmission to the second generated MAC tag. If they are identical, the receiver can safely assume that the message was not altered or tampered with during transmission (data integrity).
+However, to allow the receiver to be able to detect replay attacks, the message itself must contain data that assures that this same message can only be sent once (e.g. time stamp, sequence number or use of a one-time MAC). Otherwise an attacker could – without even understanding its content – record this message and play it back at a later time, producing the same result as the original sender.
+</br></br><font size="5">
+
+Q.9  why security of web is necessary to protect data form unauthorised user?
+</br>
+answer:-</font>
+
+Data security is fundamental. All new and existing business and data processes should include a data security review. This ensures MIT data is safe from loss and secured against unauthorized access.
+Plan ahead. Develop a plan to review your data security status and policies. Create routine processes to access, handle, and store the data safely. Archive unneeded data.
+Know your data. Know what data you have and what levels of protection are required to keep the data both confidential and safe from loss.
+Scale down. Keep only the data you need for routine current business. Safely archive or destroy older data and remove it from all computers and other devices.
+Lock it up and back it up! Physical security is the key to safe and confidential computing. All the passwords in the world won't get your laptop back if it's stolen. Back up data to a safe place so it can be recovered if equipment fails or is lost or stolen.
+Sensitivity of data
+Data at MIT is assigned a level of sensitivity based on who should have access to it and how much harm would be done if it were disclosed. It's important to make sure that you're handling sensitive data properly at the Institute. Spirion is a tool that finds instances of sensitive data. Learn what steps to take if sensitive data is detected on your machine, including how to remove it.
+What are the risks to data?
+Understanding how data can be disclosed and what to do to protect it is the key to minimizing data breaches.
+Compliance and policy
+If you are handling sensitive data, know the MIT policies that apply.
+Minimizing risks to data
+Massachusetts has issued regulations for anyone who handles the personal information (e.g., Social Security, credit card, and bank account numbers) of MA residents. To comply with these regulations, MIT implements a Written Information Security Program (WISP) that includes specific requirements for those who handle the personal information of others.
+Data breaches
+
+Know the steps to take in the event of a security incident involving MIT business data. If in doubt, report the incident to MIT's IT Security Team.
+</br></br><font size="5">
+
+Q10.what are the various design principal of firewall?
+</br>
+answer:-</font>
+
+1. Firewall design principles
+ </br>
+Internet connectivity is no longer an option for most organizations. However, while internet access provides benefits to the organization, it enables the outside world to reach and interact with local network assets. This creates the threat to the organization. While it is possible to equip each workstation and server on the premises network with strong security features, such as intrusion protection, this is not a practical approach. The alternative, increasingly accepted, is the firewall.
+ 
+The firewall is inserted between the premise network and internet to establish a controlled link and to erect an outer security wall or perimeter. The aim of this perimeter is to protect the premises network from internet based attacks and to provide a single choke point where security and audit can be imposed. The firewall can be a single computer system or a set of two or more systems that cooperate to perform the firewall function.
+ </br>
+2. Firewall characteristics:</br>
+ 
+        All traffic from inside to outside, and vice versa, must pass through the firewall. </br>
+This is achieved by physically blocking all access to the local network except via the firewall.</br>
+        Various configurations are possible. </br>
+
+        Only authorized traffic, as defined by the local security policy, will be allowed to pass.
+</br> 
+        Various types of firewalls are used, which implement various types of security policies. 
+     </br>   
+ 
+        The firewall itself is immune to penetration. This implies that use of a trusted system with a secure operating system. This implies that use of a trusted system with a secure operating system. 
+ </br>
+Four techniques that firewall use to control access and enforce the site‟s security policy is as follows:
+ </br>     Service control – determines the type of internet services that can be accessed, inbound or outbound. The firewall may filter traffic on this basis of IP address and TCP port number; may provide proxy software that receives and interprets each service request before passing it on; or may host the server software itself, such as web or mail service. 
+</br>
+2.     Direction control – determines the direction in which particular service request may be initiated and allowed to flow through the firewall.
+ 
+ </br>
+     User control – controls access to a service according to which user is attempting to access it. 
+</br>
+4.     Behavior control – controls how particular services are used.
+</br>Capabilities of firewall
+</br>    A firewall defines a single choke point that keeps unauthorized users out of the protected network, prohibits potentially vulnerable services from entering or leaving the network, and provides protection from various kinds of IP spoofing and routing attacks. 
+</br>    A firewall provides a location for monitoring security related events. Audits and alarms can be implemented on the firewall system. 
+</br>    A firewall is a convenient platform for several internet functions that are not security related. 
+</br>    A firewall can serve as the platform for IPsec. 
+</br>
+3. Limitations of firewall
+</br>
+        The firewall cannot protect against attacks that bypass the firewall. Internal systems may have dial-out capability to connect to an ISP. An internal LAN may support a modem pool that provides dial-in capability for traveling employees and telecommuters. 
+</br>
+        The firewall does not protect against internal threats. The firewall does not protect against internal threats, such as a disgruntled employee or an employee who unwittingly cooperates with an external attacker. 
+</br>
+        The firewall cannot protect against the transfer of virus-infected programs or files. Because of the variety of operating systems and applications supported inside the perimeter, it would be impractical and perhaps impossible for the firewall to scan all incoming files, e-mail, and messages for viruses. 
+</br>
+4 Types of firewalls
+</br>There are 3 common types of firewalls.
+</br>
+        Packet filters 
+</br>        Application-level gateways        
+</br>        Circuit-level gateways         
+5. Packet filtering router
+</br>         A packet filtering router applies a set of rules to each incoming IP packet and then forwards or discards the packet. The router is typically configured to filter packets going in both directions. Filtering rules are based on the information contained in a network packet:
+</br>
+        Source IP address – IP address of the system that originated the IP packet.  Destination IP address – IP address of the system, the IP is trying to reach.  Source and destination transport level address – transport level port number.  IP protocol field – defines the transport protocol. 
+</br>
+        Interface – for a router with three or more ports, which interface of the router the packet come from or which interface of the router the packet is destined for.
+</br>
+</div>
+</body>
+</html>
+</html>
