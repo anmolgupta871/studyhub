@@ -1,0 +1,7 @@
+1. Write a program to design a login form in ASP.NET.
+2. Create a web page that demonstrates of Label, Button and text box control.
+3. Write a program to create a webpage and apply the validation controls
+4. Write a program to demonstrate check box, radio button, dropdown list and list box..
+5. Create a web page that demonstrate use of menu control.
+6. write a program to design a registration form in ASP.NET and generate a database.
+7. Create a webpage that demonstrate use of grid view control

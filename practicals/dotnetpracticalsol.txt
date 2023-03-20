@@ -1,0 +1,778 @@
+Practical question with solutions
+
+
+Ques1. Write a program to design a login form in ASP.NET.
+<!-----
+<!DOCTYPE html>  
+	  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head run at="server">  
+ <title></title>  
+<style type="text/css">  
+.auto-style1 {  
+ width: 100%;  
+     }  
+</style>  
+	</head>  
+	<body>  
+   <form id="form1" run at="server">  
+   <div>  
+     <table class="auto-style1">  
+            <tr>  
+              <td colspan="6" style="text-align: center; vertical-align: top">  
+	</tr>  
+	</table> 	      
+    </div>  
+	    </form>  
+	</body>  
+	</html>----->
+Afterwards, drag and drop two labels, two textbox and one button below design view source code. Set the password textbox properties Text Mode as a password.
+	<asp:TextBox ID="TextBox2" runat="server" Font-Size="X-Large" TextMode="Password"></asp:TextBox>  
+ Complete source code is given below.
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
+  <!-------------
+<!DOCTYPE html>  
+	  
+	<html xmlns="http://www.w3.org/1999/xhtml">  
+	<head run at="server">  
+	    <title></title>  
+	    <style type="text/css">  
+	        .auto-style1 {  
+	            width: 100%;  
+	        }  
+	    </style>  
+	</head>  
+	<body>  
+	    <form id="form1" runat="server">  
+	    <div>  
+	      
+	        <table class="auto-style1">  
+	            <tr>  
+	                <td colspan="6" style="text-align: center; vertical-align: top">  
+	                    <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" Font-Underline="True" Text="Log In "></asp:Label>  
+	                </td>  
+	            </tr>  
+	            <tr>  
+	                <td> </td>  
+	                <td style="text-align: center">  
+        <asp:Label ID="Label2" runat="server" Font-Size="X-Large" Text="UserId :"></asp:Label>  
+       </td>  
+       <td style="text-align: center">  
+              <asp:TextBox ID="TextBox1" runat="server" Font-Size="X-Large"></asp:TextBox>  
+
+	                <td style="text-align: center">  
+	                    <asp:Label ID="Label3" runat="server" Font-Size="X-Large" Text="Password :"></asp:Label>  
+	                </td>  
+	                <td style="text-align: center">  
+	                    <asp:TextBox ID="TextBox2" runat="server" Font-Size="X-Large" TextMode="Password"></asp:TextBox>  
+	       
+                <td style="text-align: center">  	
+				<asp:Button ID="Button1" runat="server" BorderStyle="None" Font-Size="X-Large" OnClick="Button1_Click" Text="Log In" />  
+
+                    <asp:Label ID="Label4" runat="server" Font-Size="X-Large"></asp:Label>  
+
+        </table>  
+	      
+	    </div>  
+	    </form>  
+	</body>  
+	</html>  ------>
+Step 3
+Let’s create connection Web Application to SQL Server. Double click in Log in button. Prior to doing this, open web config file, write add connection code given below.
+1.	<connection Strings>  
+2.	    <add name="mycon" connectionString="server=KRISHNA\SQLEXPRESS;database=abcd;integrated security=true;" />  
+3.	  </connection Strings>  
+ Write the source code for the connection, add namespace for SQL Server.
+1.	using System.Data.SqlClient; //this namespace is for sqlclient server  
+2.	using System.Configuration; // this namespace is add I am adding connection name in web config file config connection name  
+Create a SQL connection object with the connection name and write the code given below.
+1.	SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["mycon"].ToString());  
+Adding a Button Click Event Handler
+The Click attribute of the button element adds the click event handler. The code given below adds the click event handler for a button.
+1.	<td style="text-align: center">  
+2.	                    <asp:Button ID="Button1" runat="server" BorderStyle="None" Font-Size="X-Large" OnClick="Button1_Click" Text="Log In" />  
+3.	                </td>  
+The code for the click event handler looks, as shown below.
+1.	protected void Button1_Click(object sender, EventArgs e)  
+2.	{  
+3.	  
+4.	}  
+Now, whatever code you write in the click event handler, it will be executed on the click of a button.
+1.	private void DrawCircleButton_Click(object sender, RoutedEventArgs e)  
+2.	{  
+3.	try{  
+4.	        string uid = TextBox1.Text;  
+5.	        string pass = TextBox2.Text;  
+6.	        con.Open();  
+7.	        string qry = "select * from Ulogin where UserId='" + uid + "' and Password='" + pass + "'";  
+8.	        SqlCommand cmd = new SqlCommand(qry,con);  
+9.	        SqlDataReader sdr = cmd.ExecuteReader();  
+10.	        if(sdr.Read())  
+11.	        {  
+12.	            Label4.Text = "Login Sucess......!!";  
+13.	        }  
+14.	        else  
+15.	        {  
+16.	            Label4.Text = "UserId & Password Is not correct Try again..!!";  
+17.	  
+18.	        }  
+19.	            con.Close();  
+20.	        }  
+21.	        catch(Exception ex)  
+22.	        {  
+23.	            Response.Write(ex.Message);  
+24.	        }  
+25.	}      
+26.	  
+27.	}  
+Final output is given below.
+
+ 
+
+    
+
+Ques2. Create a web page that demonstrates of Label, Button and text box control.
+1.	<!--------  
+2.	<!DOCTYPE html>  
+3.	  
+4.	<html xmlns="http://www.w3.org/1999/xhtml">  
+5.	<head runat="server">  
+6.	    <title></title>  
+7.	</head>  
+8.	<body>  
+9.	    <form id="form1" runat="server">  
+10.	        <div>  
+11.	            <table class="auto-style1">  
+12.	                <tr>  
+13.	                    <td>Name :</td>  
+14.	                    <td>  
+15.	                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>  
+16.	                    </td>  
+17.	  
+18.	               </tr>  
+19.	                <tr>  
+20.	                    <td>Password</td>  
+21.	                     <td> <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox></td>  
+22.	                </tr>  
+23.	                <tr>  
+24.	                    <td>Confirm Password</td>  
+25.	                    <td>  
+26.	                        <asp:TextBox ID="TextBox3" runat="server" TextMode="Password"></asp:TextBox>  
+27.	                    </td>  
+28.	                </tr>  
+29.	                <tr>  
+30.	                    <td>City</td>  
+31.	                    <td>  
+32.	                        <asp:DropDownList ID="DropDownList1" runat="server">  
+33.	                            <asp:ListItem Text="Select City" Value="select" Selected="True"></asp:ListItem>  
+34.	                            <asp:ListItem Text="Bangalore" Value="Bangalore"></asp:ListItem>  
+35.	                            <asp:ListItem Text="Mysore" Value="Mysore"></asp:ListItem>  
+36.	                            <asp:ListItem Text="Hubli" Value="hubli"></asp:ListItem>  
+37.	                        </asp:DropDownList>  
+38.	                    </td>  
+39.	                </tr>  
+40.	                <tr>  
+41.	                    <td>Gender</td>  
+42.	                    <td>  
+43.	                        <asp:RadioButtonList ID="RadioButtonList1" runat="server">  
+44.	                            <asp:ListItem>Male</asp:ListItem>  
+45.	                            <asp:ListItem>Female</asp:ListItem>  
+46.	                        </asp:RadioButtonList>  
+47.	                    </td>  
+48.	               </tr>  
+49.	                <tr>  
+50.	                    <td>Gmail</td>  
+51.	                    <td>  
+52.	                        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>  
+53.	                    </td>  
+54.	                </tr>  
+55.	                <tr>  
+56.	                    <td>  
+57.	                        <asp:Button ID="Button1" runat="server" Text="Button" />  
+58.	                    </td>  
+59.	                </tr>  
+60.	            </table>  
+61.	        </div>  
+62.	    </form>  
+63.	</body>  
+64.	</html>  ------>
+2.	HTML Source code is created following the registration form.
+
+ 
+Ques3. Write a program to create a webpage and apply the validation controls
+<!-------
+3.	<html>
+4.	    xmlns="http://www.w3.org/1999/xhtml">  
+5.	    <head runat="server">  
+6.	        <title></title>  
+7.	        <style type="text/css">  
+8.	.style1  
+9.	{  
+10.	width: 122px;  
+11.	}   
+12.	.style2  
+13.	{  
+14.	width: 239px;  
+15.	}  
+16.	.style3  
+17.	{  
+18.	text-align: left;  
+19.	text-decoration: underline;  
+20.	font-family: Arial, Helvetica, sans-serif;  
+21.	font-size: large;  
+22.	}  
+23.	</style>  
+24.	    </head>  
+25.	    <body>  
+26.	        <form id="form1" runat="server">  
+27.	            <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>  
+28.	            <div>  
+29.	                <table style="width:100%;">  
+30.	                    <caption class="style3">  
+31.	                        <strong>Registration Form with Validation</strong>  
+32.	                    </caption>  
+33.	                    <tr>  
+34.	                        <td class="style1">  
+35.	 </td>  
+36.	                        <td class="style2">  
+37.	 </td>  
+38.	                        <td>  
+39.	 </td>  
+40.	                    </tr>  
+41.	                    <tr>  
+42.	                        <td class="style1">  
+43.	                            <asp:Label ID="Label1" runat="server" Text="FirstName:"></asp:Label>  
+44.	                        </td>  
+45.	                        <td class="style2">  
+46.	                            <asp:TextBox ID="TextBox1" runat="server" Height="22px" MaxLength="20"   
+47.	Width="158px"></asp:TextBox>  
+48.	                        </td>  
+49.	                        <td>  
+50.	                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server"   
+51.	ControlToValidate="TextBox1" ErrorMessage="Please Enter your First Name"   
+52.	ForeColor="#CC0000"></asp:RequiredFieldValidator>  
+53.	                        </td>  
+54.	                        <td>  
+55.	                            <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" TargetControlID="TextBox1" FilterType="LowercaseLetters,UppercaseLetters,Custom" runat="server"></asp:FilteredTextBoxExtender>  
+56.	                        </td>  
+57.	                    </tr>  
+58.	                    <tr>  
+59.	                        <td class="style1">  
+60.	                            <asp:Label ID="Label2" runat="server" Text="LastName:"></asp:Label>  
+61.	                        </td>  
+62.	                        <td class="style2">  
+63.	                            <asp:TextBox ID="TextBox2" runat="server" Height="22px" MaxLength="10"   
+64.	Width="158px"></asp:TextBox>  
+65.	                        </td>  
+66.	                        <td>  
+67.	                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"   
+68.	ControlToValidate="TextBox2" ErrorMessage="Please Enter your Last Name"   
+69.	ForeColor="#CC0000"></asp:RequiredFieldValidator>  
+70.	                        </td>  
+71.	                        <td>  
+72.	                            <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" TargetControlID="TextBox2" FilterType="LowercaseLetters,UppercaseLetters,Custom" runat="server"></asp:FilteredTextBoxExtender>  
+73.	                        </td>  
+74.	                    </tr>  
+75.	                    <tr>  
+76.	                        <td class="style1">  
+77.	                            <asp:Label ID="Label3" runat="server" Text="Email:"></asp:Label>  
+78.	                        </td>  
+79.	                        <td class="style2">  
+80.	                            <asp:TextBox ID="TextBox3" runat="server" Height="22px" MaxLength="15"   
+81.	Width="158px"></asp:TextBox>  
+82.	                        </td>  
+83.	                        <td>  
+84.	                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"   
+85.	ControlToValidate="TextBox3" ErrorMessage="Please Enter your Email ID"   
+86.	ForeColor="#CC0000"></asp:RequiredFieldValidator>  
+87.	                        </td>  
+88.	                        <td>  
+89.	                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Invalid Email Id"></asp:RegularExpressionValidator>  
+90.	                            <td>  
+91.	 </td>  
+92.	                        </td>  
+93.	                    </tr>  
+94.	                    <tr>  
+95.	                        <td class="style1">  
+96.	                            <asp:Label ID="Label4" runat="server" Text="Phone No. :"></asp:Label>  
+97.	                        </td>  
+98.	                        <td class="style2">  
+99.	                            <asp:TextBox ID="TextBox4" runat="server" Height="22px" MaxLength="10"   
+100.	Width="158px"></asp:TextBox>  
+101.	                        </td>  
+102.	                        <td>  
+103.	                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"   
+104.	ControlToValidate="TextBox4" ErrorMessage="Please Enter your Phone No"   
+105.	ForeColor="#CC0000"></asp:RequiredFieldValidator>  
+106.	                        </td>  
+107.	                        <td>  
+108.	                            <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender3" TargetControlID="TextBox4" FilterType="Numbers" runat="server"></asp:FilteredTextBoxExtender>  
+109.	                        </td>  
+110.	                    </tr>  
+111.	                    <tr>  
+112.	                        <td class="style1">  
+113.	                            <asp:Label ID="Label5" runat="server" Text="Location:"></asp:Label>  
+114.	                        </td>  
+115.	                        <td class="style2">  
+116.	                            <asp:TextBox ID="TextBox5" runat="server" Height="22px" MaxLength="15"   
+117.	Width="158px"></asp:TextBox>  
+118.	                        </td>  
+119.	                        <td>  
+120.	                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server"   
+121.	ControlToValidate="TextBox5" ErrorMessage="Please Enter your Location"   
+122.	ForeColor="#CC0000"></asp:RequiredFieldValidator>  
+123.	                        </td>  
+124.	                        <td>  
+
+125.	                        </td>  
+126.	                    </tr>  
+127.	                    <tr>  
+128.	                        <td class="style1">  
+129.	 </td>  
+130.	                        <td class="style2">  
+131.	 </td>  
+132.	                        <td>  
+133.	 </td>  
+134.	                    </tr>  
+135.	                    <tr>  
+136.	                        <td class="style1">  
+137.	 </td>  
+138.	                        <td class="style2">  
+139.	                            <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Submit" />  
+140.	                        </td>  
+141.	                        <td>  
+142.	 </td>  
+143.	                    </tr>  
+144.	                </table>  
+145.	            </div>  
+146.	        </form>  
+147.	    </body>  
+148.	</html> -----> 
+ 
+Ques4. Write a program to demonstrate check box, radio button, dropdown list and list box..
+
+<!------
+1.	<body>  
+2.	    <form id="form1" runat="server">  
+3.	        <div style="margin-left:200px; border:solid; border-color:aqua; width:300px;">  
+4.	            <table>  
+5.	                <tr>  
+6.	                    <td>  
+7.	                        <b>Name</b>  
+8.	                    </td>  
+9.	                </tr>  
+10.	                <tr>  
+11.	                    <td>  
+12.	                        <asp:TextBox ID="txt_name" runat="server"></asp:TextBox>  
+13.	                    </td>  
+14.	                </tr>  
+15.	                <tr>  
+16.	                    <td>  
+17.	                        <b>Select Country:-</b>  
+18.	                    </td>  
+19.	                </tr>  
+20.	                <tr>  
+21.	                    <td>  
+22.	                        <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple" Width="200px"></asp:ListBox>  
+23.	                    </td>  
+24.	                </tr>  
+25.	                <tr>  
+26.	                    <td>  
+27.	                        <asp:Button runat="server" ID="btn_save" Text="Add" />  
+28.	                    </td>  
+29.	                </tr>  
+30.	            </table>  
+31.	        </div>  
+32.	    </form>  
+33.	</body>  ---->
+3. I have the following database table structure.
+
+ 
+
+4. Add the following code for dynamically populating the country names from the database.
+1.	using System;  
+2.	using System.Collections.Generic;  
+3.	using System.Linq;  
+4.	using System.Web;  
+5.	using System.Web.UI;  
+6.	using System.Web.UI.WebControls;  
+7.	using System.Data;  
+8.	using System.Data.SqlClient;  
+9.	public partial class country: System.Web.UI.Page {  
+10.	    SqlConnection con = new SqlConnection("Data Source=TUNA-PC;Initial Catalog=Employee;User ID=sa;Password=123");  
+11.	    SqlDataAdapter da;  
+12.	    DataTable dt;  
+13.	    protected void Page_Load(object sender, EventArgs e) {  
+14.	        if (!IsPostBack) {  
+15.	            fillListview();  
+16.	        }  
+17.	    }  
+18.	    public void fillListview() {  
+19.	        da = new SqlDataAdapter("select country from tbl_country", con);  
+20.	        dt = new DataTable();  
+21.	        da.Fill(dt);  
+22.	        ListBox1.DataSource = dt;  
+23.	        ListBox1.DataTextField = dt.Columns["country"].ToString();  
+24.	        ListBox1.DataBind();  
+25.	    }  
+26.	}  
+  
+
+Ques5. Create a web page that demonstrate use of menu control.
+<!--------
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+<siteMapNode url="" title=""  description="">
+<siteMapNode url="Default.aspx" title="Home"  description="Home Page"/>
+<siteMapNode url="Forums.aspx" title="Forums"  description="Forums Page"/>
+<siteMapNode url="Careers.aspx" title="Careers"  description="Careers Page" >
+<siteMapNode url="Jobs.aspx" title="Jobs"  description="Jobs Page" />
+<siteMapNode url="upload.aspx" title="Upload"  description="Upload Page" />
+</siteMapNode>
+<siteMapNode url="ContactUs.aspx" title="Contact US"  description="ContacUs Page" />
+</siteMapNode>
+</siteMap>
+Now open Masterpage and write the following code
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>Master Page with Menu control in asp.net with example</title>
+<asp:ContentPlaceHolder id="head" runat="server">
+</asp:ContentPlaceHolder>
+<style type="text/css">
+.parent_menu
+{
+width: 110px;
+background-color: #8AE0F2;
+color: #000;
+text-align: center;
+height: 30px;
+margin-right: 5px;
+}
+.child_menu
+{
+width: 110px;
+background-color: #000;
+color: #fff;
+text-align: center;
+height: 30px;
+line-height: 30px;
+
+
+}
+.sub_menu
+{
+width: 110px;
+background-color: #000;
+color: #fff;
+text-align: center;
+height: 30px;
+line-height: 30px;
+margin-top: 5px;
+}
+.selected_menu
+{
+background-color: #FF6600;
+}
+.hover_menu
+{
+background-color: #990000;
+color:#fff;
+}
+</style>
+</head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1"Orientation="Horizontal">
+<LevelMenuItemStyles>
+<asp:MenuItemStyle CssClass="parent_menu" />
+</LevelMenuItemStyles>
+<LevelSelectedStyles>
+<asp:MenuItemStyle CssClass="child_menu" />
+</LevelSelectedStyles>
+<DynamicMenuItemStyle CssClass="sub_menu" />
+<DynamicHoverStyle CssClass="hover_menu" />
+<StaticSelectedStyle CssClass="selected_menu" />
+<StaticHoverStyle CssClass="hover_menu" />
+</asp:Menu>
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+</div>
+</form>
+</body>
+</html>------>
+Now open Default.aspx page and add master page like as shown below
+
+
+<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default"MasterPageFile="~/MasterPage.master" %>
+<asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+</asp:Content>
+
+
+Now run your application and check the output that will be like as shown below
+
+ 
+
+
+
+Ques6. write a program to design a registration form in ASP.NET and generate a database.
+Step 1: First open your visual studio->File->New->website->ASP.NET Empty website->click OK.->Now open Solution Explorer->Add New Item-> Web form-> click Add.
+Step 2: Now make a Registration page like this,which is given below.
+see
+Make this Registration Form in following ways:
+
+	First put Script Manager on your form.
+	Create User Name-->Now put Update Panel-->Now put TextBox in UpdatePanel->Put RequiredFieldValidator.
+	Password--> TextBox-->Now put RequiredFieldValidator.
+	Retype Password-->TextBox-->Now put RequiredFieldValidator.
+	Mobile Number-->TextBox-->Put RegularExpressionValidator &  RequiredFieldValidator
+	Email Id -->TextBox-->Put RegularExpressionValidator and  RequiredFieldValidator.
+	Captcha Image-->To know more here
+	Enter Captcha Image-->TextBox-->Put Label and RequiredFieldValidator.
+	
+Now go propeties in every RegularExpressionValidator &  RequiredFieldValidator and set following fields which is given below:
+
+Control To Validate -->Select TextBox which you want to validate. open this application on your visual studio and see all changes.This is more easy for you.
+
+Step 3: Now Add Database(.mdf) on your website.Open Solution Explorer -->Right click on website-->Add New Item-->Sql Server Database-->click Add.
+
+Now if you are facing problem in adding database(.mdf) on Website,please here.
+Step 4: Now Double click  on Database.mdf --> Solution Exporer will open-->Right click on Tables -->Add New Table-->Now Enter the column name.
+see it:
+ 
+
+Step 5: Now double click on Submit Button and write the following code which is given below:
+01	using System;
+02	using System.Web;
+03	using System.Web.UI;
+04	using System.Web.UI.WebControls;
+05	using System.Data.SqlClient;
+06	using System.Drawing;
+07	 
+08	public partial class _Default : System.Web.UI.Page
+09	{
+10	    protected void TextBox1_TextChanged(object sender, EventArgs e)
+11	    { 
+12	        SqlConnection con = new SqlConnection(@"Data Source=.\;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True;");
+13	        con.Open();
+14	        SqlCommand cmd = new SqlCommand("select*from regform where username='" + TextBox1.Text + "'", con);
+15	        SqlDataReader dr = cmd.ExecuteReader();
+16	 
+17	        if (dr.Read())
+18	        {
+19	            Label1.Text = "User Name is Already Exist";
+20	            this.Label1.ForeColor = Color.Red;
+21	        }
+22	        else
+23	        {
+24	            Label1.Text = "UserName is Available";
+25	            this.Label1.ForeColor = Color.Red;
+26	        }
+27	        con.Close();
+28	    }
+29	    protected void  Button1_Click(object sender, EventArgs e)
+30	{
+31	    captcha1.ValidateCaptcha(TextBox6.Text.Trim());
+32	    if (captcha1.UserValidated)
+33	    {   //you can use disconnected architecture also,here i have used connected architecture.
+34	        SqlConnection con = new SqlConnection(@"Data Source=.\;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True;");
+35	        con.Open();
+36	       SqlCommand cmd = new SqlCommand("insert into regform values(@a,@b,@c,@d)",con);
+37	        cmd.Parameters.AddWithValue("a", TextBox1.Text);
+38	        cmd.Parameters.AddWithValue("b", TextBox2.Text);
+39	        cmd.Parameters.AddWithValue("c", TextBox4.Text);
+40	        cmd.Parameters.AddWithValue("d", TextBox5.Text);
+41	        cmd.ExecuteNonQuery();
+42	        Session["name"] = TextBox1.Text;
+43	        Response.Redirect("default.aspx");
+44	        con.Close();
+45	    }
+46	    else
+47	    {
+48	 Label2.ForeColor = System.Drawing.Color.Red;
+49	 Label2.Text = "You have Entered InValid Captcha Characters please Enter again";
+50	  }    
+51	 }  
+52	 }
+
+Step 6: Now create a New page and make a Login form which is give below:
+see it:
+ 
+Note->In this application  all (* )represents the Label control.
+Step 7: Now Double click on Login Button and write the following codes which is given below:
+01	using System;
+02	using System.Web;
+03	using System.Web.UI;
+04	using System.Web.UI.WebControls;
+05	using System.Data.SqlClient;
+06	using System.Drawing;
+07	 
+08	public partial class login : System.Web.UI.Page
+09	{
+10	    protected void Button1_Click(object sender, EventArgs e)
+11	    {
+12	        SqlConnection con = new SqlConnection(@"Data Source=.\;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True;");
+13	        con.Open();
+14	        SqlCommand cmd = new SqlCommand("select COUNT(*)FROM regform WHERE username='"+ TextBox1.Text + "' and password='" + TextBox2.Text + "'");
+15	        cmd.Connection = con;
+16	        int OBJ = Convert.ToInt32(cmd.ExecuteScalar());
+17	        if (OBJ > 0)
+18	        {
+19	            Session["name"] = TextBox1.Text;
+20	            Response.Redirect("default.aspx");
+21	        }
+22	        else
+23	        {
+24	            Label1.Text = "Invalid username or password";
+25	            this.Label1.ForeColor = Color.Red;
+26	        }
+27	    }
+28	    protected void LinkButton2_Click(object sender, EventArgs e)
+29	    {
+30	        Response.Redirect("Registration.aspx");
+31	    }
+32	}
+
+Step 8: Now Create a another page (Default.aspx)which is given below:
+see it:
+ 
+
+Step 9: Now Double click on Page and write the following codes  on Page load which is given below:
+01	using System;
+02	using System.Web;
+03	using System.Web.UI;
+04	using System.Web.UI.WebControls;
+05	 
+06	public partial class _Default : System.Web.UI.Page
+07	{
+08	    protected void Page_Load(object sender, EventArgs e)
+09	    {
+10	        Label1.Text = Session["name"].ToString();
+11	    }
+12	}
+
+Step 10: Now Run the program(Press F5).
+see it:
+ 
+
+There are some points to see the Exact output of whole application.
+     1. If you are not part of this application then click New User Button.
+   see it:
+   
+ 
+
+     2. When you will Enter UserName then this user name will check from database.if this name is available then it will show User Name is available otherwise show User Name is Already Exist.
+  see it:
+
+ 
+
+     3.  when you will Enter Password & ReType Password  Field ,if both Password are not matched then see it:
+
+ 
+    
+      4. When you will Enter Mobile Number Field ,if Number is Not correct (according to India).you will see following output:
+  
+ 
+  
+      5. If you will Enter Email Id Field and Email is not correct format then you will see following error.
+
+ 
+
+     6. When you will enter wrong Captcha code then you will see following output:
+
+  
+ 
+
+     7. When you will enter all fields in Registration page correct then you will see following output:
+  
+ 
+ Step 11: Now you will see Rajesh has  entered Database(.mdf).
+see student table:
+
+ 
+
+  
+   Step 12: Now you can directly Login  with correct Login Name and Password, which is present in Database (.mdf).
+See it:
+ 
+
+See output:-
+
+ 
+
+Ques7. Create a webpage that demonstrate use of grid view control
+Step 1: Open the CSASPNETGridView.sln. Expand the CSASPNETGridView web application and press Ctrl + F5 to show the DataFromDatabase.aspx.
+Step 2: We will see a GirdView control on the page, you can add, edit, delete the columns of the GridView control, the data is come from App_Data/GridView.mdf file, and the GridView's status is stored in ViewState for persisting data across postbacks.
+   
+Step 3: The GridView the page size is 15, you need insert 16 Persons in this GridView to see the next page. Please click the title of the GridView to sort the result by PersonID, LastName or FirstName properties.
+ 
+Step 4: Please press Ctrl+F5 to show DataInMemory.aspx page, the test steps just like DataFromDataBase.aspx.
+Step 5: Validation finished.
+Using the Code
+Code Logical:
+Step 1. Create a C# "ASP.NET Empty Web Application" in Visual Studio 2010 or Visual Web Developer 2010. Name it as "CSASPNETGridView ". The project includes two web form pages for demonstrating two ways to bind data source with the GridView, name them as "DataFromDataBase.aspx", "DataInMemory.aspx".
+Step 2. Before we start to write code, we need install SqlServer 2008 R2 Express and create a database file as the data source of GridView control. Add an Asp.net folder "App_Data" and create a Sql Server Database,"GridView.mdf". Add "Person" table with three fields "PersonID","FirstName","LastName", PersonID is the primary key of the table, and you can insert some default values in Person table.
+Step 3. Drag and drop a GridView control, two LinkButton controls, two TextBox controls and a Panel control into DataFromDataBase.aspx page. The GridView is used to display, edit and delete the data of database file, the TextBox and LinkButton are used to insert new items to the data table. In the first step, check your controls and rename them and set some basic properties of the GridView, such as GridView's templates and events.
+The following Html code is showing the GridView's necessary events (onpageindexchanging, onrowcancelingedit, onrowdatabound, etc), GridView's TemplateField and other controls:            
+HTML
+<asp:GridView ID="gvPerson" runat="server" AutoGenerateColumns="False" BackColor="White"  
+BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4"  
+    onpageindexchanging="gvPerson_PageIndexChanging"  
+    onrowcancelingedit="gvPerson_RowCancelingEdit"  
+    onrowdatabound="gvPerson_RowDataBound" onrowdeleting="gvPerson_RowDeleting"  
+    onrowediting="gvPerson_RowEditing" onrowupdating="gvPerson_RowUpdating"  
+    onsorting="gvPerson_Sorting"> 
+<RowStyle BackColor="White" ForeColor="#003399" /> 
+    <Columns> 
+        <asp:CommandField ShowEditButton="True" /> 
+        <asp:CommandField ShowDeleteButton="True" /> 
+        <asp:BoundField DataField="PersonID" HeaderText="PersonID" ReadOnly="True"  
+            SortExpression="PersonID" /> 
+        <asp:TemplateField HeaderText="LastName" SortExpression="LastName"> 
+            <EditItemTemplate> 
+                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("LastName") %>'></asp:TextBox> 
+            </EditItemTemplate> 
+            <ItemTemplate> 
+                <asp:Label ID="Label1" runat="server" Text='<%# Bind("LastName") %>'></asp:Label> 
+            </ItemTemplate> 
+        </asp:TemplateField> 
+        <asp:TemplateField HeaderText="FirstName" SortExpression="FirstName"> 
+            <EditItemTemplate> 
+                <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("FirstName") %>'></asp:TextBox> 
+            </EditItemTemplate> 
+            <ItemTemplate> 
+                <asp:Label ID="Label2" runat="server" Text='<%# Bind("FirstName") %>'></asp:Label> 
+            </ItemTemplate> 
+        </asp:TemplateField> 
+    </Columns> 
+    <FooterStyle BackColor="#99CCCC" ForeColor="#003399" /> 
+    <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" /> 
+    <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" /> 
+    <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" /> 
+</asp:GridView> 
+     
+ 
+<asp:LinkButton ID="lbtnAdd" runat="server" onclick="lbtnAdd_Click">AddNew</asp:LinkButton> 
+ 
+ 
+<asp:Panel ID="pnlAdd" runat="server" Visible="False"> 
+    Last name: 
+    <asp:TextBox ID="tbLastName" runat="server"></asp:TextBox> 
+     
+     
+    First name: 
+    <asp:TextBox ID="tbFirstName" runat="server"></asp:TextBox> 
+     
+     
+    <asp:LinkButton ID="lbtnSubmit" runat="server" onclick="lbtnSubmit_Click">Submit</asp:LinkButton> 
+        
+    <asp:LinkButton ID="lbtnCancel" runat="server" onclick="lbtnCancel_Click">Cancel</asp:LinkButton> 
+     
+</asp:Panel> 
+ 
+ 
+ 
+
