@@ -1,0 +1,82 @@
+            BCA 6TH sem 
+          Examination 2014
+               objective 1 
+Questions) Choose the correct answer 
+(i) The outcome of requirement analysis phase of SDLC is:
+ (a) Quality assurance plan 
+(b) Dc sign document
+ (c) SRS
+ (d) Test plan. 
+(ii) Which model was given by Dr. Berry Bochan: (a) Water fall model
+ (b) Spiral model
+ (c) Build fix model
+ (d) None of the above 
+(iii) SRS document shows:
+ (a) "What" of the system
+ (b) How to design the system
+ (c) Both (a) and (b)
+ (d) None of the above
+ (iv Which is not a characteristics of a good SRS? 
+(a) Correct 
+(b) Complete
+ (c) Consistent 
+(d) Brief Function point method was developed by: 
+(a) Beizer 
+b) Dr. B. Bochan
+ (c) Halstead 
+(d) A. albrecht
+ (vi) COCOMO stand for: t'
+ (a) Initial function point-uniform group
+ (b) International function point uniform group (c) International function poin: user group 
+(d) Initial function point-user group 
+(vi) Which of the following is not a design concept:
+ (a) Conesion. 
+(b) Coupling 
+(c) Modularity
+ (d) None of the above
+ (viii)Stepwise requirement was proposed by (b) Wirth 
+(a) Bocham
+ (c Jacobson 
+(d)None of the above
+ (ix) Software quality is:
+ (a) Conformance to requirements
+ (b) Fitness for the purpose
+ (c) Level of satisfaction 
+(d) All of the above 
+(x) How many product quality factors have been proposed in MCCell quality model 
+(a) 2 (b) 3 (c) 4 (d) 5
+
+Q2.process 
+Q3.What is meant "VOU" in software Engineering. 
+       or
+ What is monotonicity an important
+   characteristics of a size or effort matric. Q4. What do you mean by software configuration 
+             Or 
+Explain the characteristics of SRS.
+Q5. Discuss the difference between object oriented and function oriented design. 
+           or 
+What is impact of cohesion and coupling in software design process.
+ Q6. Differentiate between errors fault and failure. 
+    or 
+What are alpha and beta tesint. Nuellon. 
+
+    C' (Long Answer Type Questions) 
+
+7. Explain various phase of system development life cycle. Givc thu Importance in terms of approximately percentage effort roquired during the phase. 
+           Or
+ What are the various process models. Briefly explain each of them. 
+Q8. What are the advantagcs of using the LOC or the function point metric to measure the size of a software product.
+         or 
+Discuss about the following:
+(i)cocomo (ii)Putnam estimation model
+
+Q9. What is the object of software project planning. Whul aro tho different resourccs required for soluware development. 
+                or 
+Quality and reliability are related concepts but aru fundamentally different in number of ways. Discuss. 
+
+Q10. Discuss the term data dictionary. Distinguish among structured english, decision table and decision tree while developing the data dictionary. 
+       or 
+  What is modularity? List the important properties of a modular system.
+Q 11 .   What do you mean by quality assurance? Why quality assurance is needed in various stages of development? Explain the various factor that contributes to the quality of a system.
+            or 
+What is the difference between black boxtesting and white box testing? Give atleast three examples in which black box testing

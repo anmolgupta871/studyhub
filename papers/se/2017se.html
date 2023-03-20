@@ -1,0 +1,566 @@
+﻿<html>
+<body>
+<div align="justify">
+<center>
+<h2> Software Engineering 2017</h2>
+</center>
+<font size="5">
+</br></br>
+Q1.</br>
+Ans1. </font>Software Process:
+In contrast to software life cycle models, software process models often represent a networked sequence of activities, objects, transformations, and events that embody strategies for accomplishing software evolution. Such models can be used to develop more precise and formalized descriptions of software life cycle activities. Their power emerges from their utilization of a sufficiently rich notation, syntax, or semantics, often suitable for computational processing. 
+
+Software process networks can be viewed as representing multiple interconnected task chains (Kling 1982, Garg 1989). Task chains represent a non-linear sequence of actions that structure and transform available computational objects (resources) into intermediate or finished products.
+Task chains can be employed to characterize either prescriptive or descriptive action sequences. Prescriptive task chains are idealized plans of what actions should be accomplished, and in what order. For example, a task chain for the activity of object-oriented software design might include the following task actions: 
+ </br>a) Develop an informal narrative specification of the system. 
+</br>b) Identify the objects and their attributes. 
+</br>c) Identify the operations on the objects. 
+</br> d) Identify the interfaces between objects, attributes, or operations. 
+</br>e)  Implement the operations.
+
+</br>A software process as mentioned earlier, specifies a method of development software. A software project, on the other hand is a development project in which a software process is used. And software products are the outcomes of a software project. Each software development project starts with some needs and (hopefully) ends with some software that satisfies those needs. A software process specifies the abstract set of activities that should be performed to go from user needs to final product. The actual act of executing the activities for some specific user needs is a software project. And all the outputs that are produced while the activities are being executed are the products.
+</br></br><font size="5"></br>
+Q2.</br>
+Ans2. </font>Functional and non-functional requirements:
+</br>(I) Functional Requirements:
+</br>Functional requirements are those requirements which deal with what the system should do or provide for users.
+</br>i) Describes the behavior of the system as it relates to the system's functionality.
+</br>ii) Includes the description of the required functions, outlines of associated reports or online queries, and details of data to be held in the system.
+</br>iii) Specified by users themselves.
+
+</br> (II) Non-Functional Requirements:
+Non-functional requirements are those requirements which elaborate the performance characteristic of the system and define the constraints on how the system will do so.
+</br>i) Defines the constraints, targets or control mechanisms for the new system.
+</br>ii) Describes how, how well or to what standard a function should be provided.
+</br>iii) Specified by technical peoples e.g. Architect, Technical leaders and software developers.
+</br>v) They are sometimes defined in terms of metrics (something that can be measured about the system) to make them more tangible.
+</br>v) Identify realistic, measurable target values for each service level.
+</br>vi) These include reliability, performance, service availability, responsiveness, throughput and security.
+</br></br><font size="5">
+Q3.</br>
+Ans3.</font> Software configuration management
+Configuration Management has its roots in the US Department of Defence in the 1950’s. It started as a technical management discipline and has been widely adopted by many other engineering disciplines, including Systems Engineering and Software Engineering. Configuration Management focuses on establishing, and maintaining, the consistency of a system or product throughout its lifetime. CM is a collection of competencies, techniques and tools whose purpose is to ensure the consistency of the system’s requirements, functional attributes and physical properties.
+
+For the purposes of this paper we shall consider four fundamental, inter-related activities:
+</br>i)Revision Control: Revision control is concerned with controlling access to project artefacts and maintaining a history of changes to each artefact.
+</br>ii)Configuration Identification: Before you can control any artefact you must identify what it is, what information it is going to contain and how it will be controlled.
+</br>iii) Change Management: When an artefact has to change, Change Management controls when, or even if, the changes may be performed.
+</br>iv)Release Management: Release Management focuses on the delivery of software outside the development department.
+</br>These activities are inter-related and highly dependent on each other.
+<font size="5"></br></br>
+Q4.</br>
+Ans4.</font> Coupling and cohesion
+Coupling</br>
+Coupling is defined as the degree of interdependence between two or more classes, modules, or components.  Tight coupling is bad, and loose coupling is good. This will make more sense with an example.
+Procedure SSN Check</br>
+Begin</br>
+If is_Number(Left_Three_Chars)</br>
+Then</br>
+Result=0</br>
+Else</br>
+Result =1</br>
+
+If is_Number(Middle_Two_Chars)</br>
+Then</br>
+Result=0</br>
+Else</br>
+Result =1</br>
+
+If is_Number(Right_Three_Chars)</br>
+Then</br>
+Result=0</br>
+Else</br>
+Result =1</br>
+
+If Result=0</br>
+Then</br>
+Count = “SELECT SSN</br>
+FROM patients</br>
+WHERE SocNum=SSN”</br>
+Else</br>
+Print “This is not a valid SSN”</br>
+</br>
+End
+</br>
+Cohesion</br>
+Cohesion is defined as the degree to which all elements of a module, class, or component work together as a functional unit. High cohesion is good, and low cohesion is bad. The ideal situation is one where a module, class, or component provides only one function or, at most, a very closely related set of functions.    Looking at the above procedure, we see that it performs two functions.  It validates SSNs, and it performs a database query.   These are completely unrelated actions and, thus, the procedure exhibits low cohesion. Example:
+Procedure SSN Check</br>
+Begin</br>
+Result =Validate (SSN)</br>
+If Result=0</br>
+Then</br>
+Count=Database_look_up(SSN)</br>
+Else</br>
+Print “This is not a valid SSN”</br>
+
+End</br></br>
+<font size="5"></br>
+Q5.</br>
+Ans5. </font>System testing and stress testing:
+(I) Stress Testing: Stress testing is the process of determining the ability of a computer, network, program or device to maintain a certain level of effectiveness under unfavorable conditions. The process can involve quantitative tests done in a lab, such as measuring the frequency of errors or system crashes. The term also refers to qualitative evaluation of factors such as availability or resistance to denial-of-service (DoS) attacks. Stress testing is often done in conjunction with the more general process of performance testing.
+When conducting a stress test, an adverse environment is deliberately created and maintained. Actions involved may include:
+</br>
+Running several resource-intensive applications in a single computer at the same time
+Attempting to hack into a computer and use it as a zombie to spread spam
+Flooding a server with useless e-mail messages
+Making numerous, concurrent attempts to access a single Web site
+Attempting to infect a system with viruses, Trojans, spyware or other malware.
+The adverse condition is progressively and methodically worsened, until the performance level falls below a certain minimum or the system fails altogether. In order to obtain the most meaningful results, individual stressors are varied one by one, leaving the others constant. This makes it possible to pinpoint specific weaknesses and vulnerabilities. For example, a computer may have adequate memory but inadequate security. Such a system, while able to run numerous applications simultaneously without trouble, may crash easily when attacked by a hacker intent on shutting it down.
+</br>
+Stress testing can be time-consuming and tedious. Nevertheless, some test personnel enjoy watching a system break down under increasingly intense attacks or stress factors. Stress testing can provide a means to measure graceful degradation, the ability of a system to maintain limited functionality even when a large part of it has been compromised.
+Once the testing process has caused a failure, the final component of stress testing is determining how well or how fast a system can recover after an adverse event.
+(II) System Testing: 
+SYSTEM TESTING is a level of software testing where a complete and integrated software is tested. The purpose of this test is to evaluate the system’s compliance with the specified requirements.
+System testing is the process of testing an integrated system to verify that it meets specified requirements.
+</br>1.Analogy:
+During the process of manufacturing a ballpoint pen, the cap, the body, the tail, the ink cartridge and the ballpoint are produced separately and unit tested separately. When two or more units are ready, they are assembled and Integration Testing is performed. When the complete pen is integrated, System Testing is performed.
+</br>2.Method:
+Usually, Black Box Testing method is used.
+</br>3.Tasks:
+</br>(A) System Test Plan-
+i) Prepare
+ii) Review
+iii) Rework
+iv) Baseline
+</br>(B) System Test Cases-
+i) Prepare
+ii) Review
+iii) Rework
+iv) Baseline
+</br>(C) System Test-
+i) Perform</br>
+<font size="5"></br>
+Q6.</br>
+Ans6.</font> Prototype Model
+The basic idea in Prototype model is that instead of freezing the requirements before a design or coding can proceed, a throwaway prototype is built to understand the requirements. This prototype is developed based on the currently known requirements. Prototype model is a software development model. By using this prototype, the client can get an “actual feel” of the system, since the interactions with prototype can enable the client to better understand the requirements of the desired system.  Prototyping is an attractive idea for complicated and large systems for which there is no manual process or existing system to help determining the requirements.
+
+The prototype are usually not complete systems and many of the details are not built in the prototype. The goal is to provide a system with overall functionality.
+</br>
+Advantages of Prototype model:
+</br>
+i) Users are actively involved in the development
+ii) Since in this methodology a working model of the system is provided, the users get a better understanding of the system being developed.
+iii) Errors can be detected much earlier.
+iv) Quicker user feedback is available leading to better solutions.
+v) Missing functionality can be identified easily
+vi) Confusing or difficult functions can be identified
+Requirements validation, Quick implementation of, incomplete, but
+functional, application.
+</br>
+Disadvantages of Prototype model:
+</br>
+i) Leads to implementing and then repairing way of building systems.
+ii) Practically, this methodology may increase the complexity of the system as scope of the system may expand beyond original plans.
+iii) Incomplete application may cause application not to be used as the
+full system was designed</br>
+Incomplete or inadequate problem analysis.
+</br>
+RAD Model</br>
+RAD Model or Rapid Application Development Model is similar to incremental model and waterfall model. In RAD Model, development should be done in specified time frame. RAD Model is suitable for the small project where all the requirements are gathered before starting development of the project and no any concrete plan required Development starts as soon as requirement gathered and delivered initial working prototype to the client to get the feedback. Once client gives the feedback, based on the client’s feedback other changes are done. This process goes parallel with co-operation with client and developers. Each prototype is delivered to the client with working functionality and changes made based on the client’s feedback. Development moves faster in RAD Model with minimum errors. RAD Model follows the incremental delivery of the modules. The main goal or RAD Model is to make the reusability of the developed components.
+</br>
+Phases in RAD Model:
+</br>
+- Business Modeling
+- Data Modeling
+- Process Modeling
+- Application Modeling
+- Testing and Turnover
+</br>
+Advantages of RAD Model:
+</br>
+- Fast application development and delivery.
+- Lest testing activity required.
+- Visualization of progress.
+- Less resources required.
+- Review by the client from the very beginning of development so very less chance to miss the requirements.
+- Very flexible if any changes required.
+- Cost effective.
+- Good for small projects.
+</br>
+Disadvantages of RAD Model:
+</br>
+- High skilled resources required.
+- On each development phase client’s feedback required.
+- Automated code generation is very costly.
+- Difficult to manage.
+- Not a good process for long term and big projects.
+- Proper modularization of project required.
+<font size="5"></br></br>
+Q7</br>
+Ans7.</font> Software Requirements Specification
+A software requirements specification (SRS) is a description of a software system to be developed. It lays out functional and non-functional requirements, and may include a set of use cases that describe user interactions that the software must provide.
+
+Software requirements specification establishes the basis for an agreement between customers and contractors or suppliers (in market-driven project, these roles may be played by the marketing and development divisions) on what the software product is to do as well as what it is not expected to do. Software requirements specification permits a rigorous assessment of requirements before design can begin and reduces later redesign. It should also provide a realistic basis for estimating product costs, risks, and schedules.[1] Used appropriately, software requirements specifications can help prevent software project failure.[2]
+
+The software requirements specification document enlists enough and necessary requirements that are required for the project development.[3] To derive the requirements, the developer needs to have clear and thorough understanding of the products to be developed or being developed. This is achieved and refined with detailed and continuous communications with the project team and customer till the completion of the software.
+</br>1.    Complete
+ A complete requirements specification must precisely define all the real world situations that will be encountered and the capability’s responses to them. It must not include situations that will not be encountered or unnecessary capability features.
+
+</br>2.    Consistent
+ System functions and performance level must be compatible and the required quality features (reliability, safety, security, etc.) must not contradict the utility of the system. For example, the only aircraft that is totally safe is one that cannot be started, contains no fuel or other liquids, and is securely tied down.
+
+</br>3.    Correct
+ The specification must define the desired capability’s real world operational environment, its interface to that environment and its interaction with that environment. It is the real world aspect of requirements that is the major source of difficulty in achieving specification correctness. The real world environment is not well known for new applications and for mature applications the real world keeps changing. The Y2K problem with the transition from the year 1999 to the year 2000 is an example of the real world moving beyond an application’s specified requirements.
+
+</br>4.    Modifiable
+
+Related concerns must be grouped together and unrelated concerns must be separated. Requirements document must have a logical structure to be modifiable.
+
+</br>5.    Ranked
+ Ranking specification statements according to stability and/or importance is established in the requirements document’s organization and structure. The larger and more complex the problem addressed by the requirements specification, the more difficult the task is to design a document that aids rather than inhibits understanding.
+
+</br>6.    Testable
+ A requirement specification must be stated in such as manner that one can test it against pass/fail or quantitative assessment criteria, all derived from the specification itself and/or referenced information. Requiring that a system must be “easy” to use is subjective and therefore is not testable.
+
+</br>7.    Traceable
+ Each requirement stated within the SRS document must be uniquely identified to achieve traceability. Uniqueness is facilitated by the use of a consistent and logical scheme for assigning identification to each specification statement within the requirements document.
+
+</br>8.    Unambiguous
+ A statement of a requirement is unambiguous if it can only be interpreted one way. This perhaps, is the most difficult attribute to achieve using natural language. The use of weak phrases or poor sentence structure will open the specification statement to misunderstandings.
+
+</br>9.    Valid
+ To validate a requirements specification all the project participants, managers, engineers and customer representatives, must be able to understand, analyze and accept or approve it. This is the primary reason that most specifications are expressed in natural language.
+</br>
+10.    Verifiable
+ In order to be verifiable, requirement specifications at one level of abstraction must be consistent with those at another level of abstraction. Most, if not all, of these attributes are subjective and a conclusive assessment of the quality of a requirements specification requires review and analysis by technical and operational experts in the domain addressed by the requirements.
+
+It should only specify what the system should do and refrain from stating how to do these. This means that the SRS document should specify the external behavior of the system and not discuss the implementation issues. ... For this reason, the SRS document is also called the black-box specification of a system.
+<font size="5"></br></br>
+Q8</br>.
+Ans8.</font> Designs
+Software Design - Objectives
+ </br>
+This is intended to be a short reference of basic software design concepts. The objectives are to:
+</br>•Identify different types of software, based on the usage. 
+</br>•Show differences between design and coding. 
+</br>•Define concepts of structured programming. 
+</br>•Illustrate some basic design concepts. 
+</br>•See how to design for testability and maintainability. </br>
+•Introduce some formal design notations. 
+</br>
+This section is NOT:</br>
+•About a specific programming language.</br>
+•Advanced tips & tricks for coding (though I may add those later).</br>
+•Detailed course on formal notations, such as UML.</br>
+
+Major Categories of Software</br>
+
+(Jones, Capers. Applied Software Measurement, and</br>
+ Gamma et. al. Design Patterns, Elements of Reusable Object Oriented Software. )
+
+</br>
+End User</br>
+• Written by the primary user(s). e.g: ◦ Spreadsheet. </br>
+◦ Basic program to analyze data. 
+</br>
+•Relatively small in size. </br>
+•Small number of local users. </br>
+•Least documented. </br>
+•Highest defect rates.
+•Lowest test effectiveness 
+ (about 50% - 55%) 
+
+Application Software</br>
+•Applications for general distribution. e.g. ◦ Word Processor. </br>
+◦Graphics Editor. </br>
+◦Web Application. </br>
+•Small to large in size. </br>
+•Large number of users in remote locations. </br>
+•Design documentation and user manuals. </br>
+•Moderate to low defect rates.</br>
+•Good test effectiveness</br>
+ (about 85% to 99%) </br>
+ Toolsets •Libraries of functions for use by applications. e.g. ◦Third party ActiveX component. 
+◦Math library. </br>
+
+•Small in size. </br>
+•Incorporated into many application programs. </br>
+•Detailed interface documentation. </br>
+•Very low defect rates. </br>
+•Very good test effectiveness</br>
+ (about 95% to 99%) 
+</br>
+Frameworks
+•Reusable design for software applications. e.g. ◦C/C++ Complier. 
+◦Relational Database System. 
+◦Operating System. 
+</br>
+•Very large in size. 
+•Used to create application software. 
+•Well documented interface. 
+•Extremely low defect rates. 
+•Very good test effectiveness
+ (about 95% to 99%) 
+ 
+</br>
+Since Toolsets may be used in hundreds of applications, and Frameworks are very large in size, those two categories are the most intolerant of defects, hence must have the lowest defect rates. Applications and Frameworks also tend to be very large in size, necessitating even lower defect rates. Defect prevention quickly becomes more critical than defect detection.
+</br>
+
+Coding in the Big City
+</br>
+•On a country road, I can probably get away without looking before I cross the road (my brother always got away with it, though we sometimes heard the squeal of brakes on the road). 
+</br>
+
+•However, in the Big City I’ll likely get flattened! 
+
+</br>
+•In the big city, requirements change, customers find bugs, schedules get shifted, team members have different interpretations of the requirements, and new requirements are added long after software deployment. 
+
+</br>
+•Moral: design and coding practices that may be adequate for end-user software can get you flattened when writing applications, toolkits, or frameworks! 
+</br>
+It is common for C programmers to use bit flags for error bits. A single unsigned integer gives 32 possible error bits. In a safety critical application, the senior developers had used a 32-bit unsigned integer in just this fashion. However, a few months into the project they reached the 33rd critical error that had to be tracked. Their solution: was to add a second error variable.
+</br>
+They had to add the second error variable in *every* location where they checked for errors. There were over 50 such locations. They forgot two. The result was a safety related defect that resulted in the recall of medical device software.
+</br>
+Had they instead used an error object, they could have changed the internal implementation to accommodate additional error flags without impacting the rest of the code.
+ 
+</br>
+Major Categories of Programming Languages
+</br>
+Programming languages fall into two major categories:
+1.Procedural. Lines of code are executed in a defined sequence, one after another. Branch instructions change the flow of control. Some example languages are: machine langauge, assembly, C/C++, Basic, Visual Basic, Pascal, SmallTalk, and Fortran, Java, JavaScript. 
+</br>
+2.Declarative. Lines of code constitute rules that are interpreted by an engine. Program flow is determined by the engine. Some example languages are: Prolog, LISP, PALASM, VHDL, SQL.
+</br>
+Another way of categorizing langauges is by the distance from the hardware:
+1.First Generation - uses the native machine code of the processor. Programmed in raw 1's and 0's. Code only runs on that processor. 
+</br>
+2.Second Generation - uses mnemonic codes to represent the native machine code. For example, instead of writing a line of code that looks like 1101111000010110, you would write a line like: 
+ move a, c. 
+ In a second generation langauge, one line of code generates one line of machine code. Code only runs on that processor. Some example langauges are Assembly, PL/M, and PALASM.
+</br>
+3.Third Generation - uses more abstract concepts, like A = B + C. Each line of code generates several lines of machine code. In some cases, the code only runs on that processor; however, languages like Java and JavaScript can run on different types of processors. Some example languages are: C/C++, Basic, Visual Basic, Pascal, SmallTalk, Java, and Fortran.
+</br>
+4.Fourth Generation - abstracts the programmer from the procedural nature of the code and focuses on the business rules. Languages tend to become more declarative. Program can run on any machine that has an engine for the language. Some example langauges are: SQL, LISP, Prolog, VHDL.
+</br></br>
+<font size="5">
+Q9.</br>
+Ans9. </font>
+Before starting a software project, it is essential to determine the tasks to be performed and properly manage allocation of tasks among individuals involved in the software development. Hence, planning is important as it results in effective software development.
+</br>
+
+
+
+ 
+Project planning is an organized and integrated management process, which focuses on activities required for successful completion of the project. It prevents obstacles that arise in the project such as changes in projects or organization's objectives, non-availability of resources, and so on. Project planning also helps in better utilization of resources and optimal usage of the allotted time for a project. The other objectives of project planning are listed below.
+It defines the roles and responsibilities of the project management team members.
+It ensures that the project management team works according to the business objectives.
+It checks feasibility of the schedule and user requirements.
+It determines project constraints.
+</br>
+Several individuals help in planning the project. These include senior management and project management team. Senior management is responsible for employing team members and providing resources required for the project. The project management team, which generally includes project managers and developers, is responsible for planning, determining, and tracking the activities of the project. Table lists the tasks performed by individuals involved in the software project.
+</br>
+                            Tasks of Individuals involved in Software Project</br>
+
+
+Senior Management</br>
+ 
+Project Management Team
+ </br>
+Approves the project, employ personnel, and provides resources required for the project.
+Reviews project plan to ensure that it accomplishes the business objectives.
+Resolves conflicts among the team members.
+Considers risks that may affect the project so that appropriate measures can be taken to avoid them.
+ Reviews the project plan and implements procedures for completing the project.
+Manages all project activities.
+Prepares budget and resource allocation plans.
+Helps in resource distribution, project management, issue resolution, and so on.
+Understands project objectives and finds ways to accomplish the objectives.
+Devotes appropriate time and effort to achieve the expected results.
+Selects methods and tools for the project.
+ 
+</br>
+Project planning should be effective so that the project begins with well-defined tasks. Effective project planning helps to minimize the additional costs incurred on the project while it is in progress. For effective project planning, some principles are followed. These principles are listed below.
+
+</br>
+
+
+Planning is necessary: Planning should be done before a project begins. For effective planning, objectives and schedules should be clear and understandable.
+Risk analysis: Before starting the project, senior management and the project management team should consider the risks that may affect the project. For example, the user may desire changes in requirements while the project is in progress. In such a case, the estimation of time and cost should be done according to those requirements (new requirements).
+Tracking of project plan: Once the project plan is prepared, it should be tracked and modified accordingly.
+Meet quality standards and produce quality deliverables: The project plan should identify processes by which the project management team can ensure quality in software. Based on the process selected for ensuring quality, the time and cost for the project is estimated.
+Description of flexibility to accommodate changes: The result of project planning is recorded in the form of a project plan, which should allow new changes to be accommodated when the project is in progress.
+</br>
+Project planning comprises project purpose, project scope, project planning process, and project plan. This information is essential for effective project planning and to assist project management team in accomplishing user requirements.
+</br>
+Project Purpose
+</br>
+Software project is carried out to accomplish a specific purpose, which is classified into two categories, namely, project objectives and business objectives. The commonly followed project objectives are listed below.
+Meet user requirements: Develop the project according to the user requirements after understanding them.
+Meet schedule deadlines: Complete the project milestones as described in the project plan on time in order to complete the project according to the schedule.
+Be within budget: Manage the overall project cost so that the project is within the allocated budget.
+Produce quality deliverables: Ensure that quality is considered for accuracy and overall performance of the project.
+</br>
+Business Software Engineering
+</br>
+Business objectives ensure that the organizational objectives and requirements are accomplished in the project. Generally, these objectives are related to business process improvements, customer satisfaction, and quality improvements. The commonly followed business objectives are listed below.
+Evaluate processes: Evaluate the business processes and make changes when and where required as the project progresses.
+Renew policies and processes: Provide flexibility to renew the policies and processes of the organization in order to perform the tasks effectively.
+Keep the project on schedule: Reduce the downtime (period when no work is done) factors such as unavailability of resources during software development.
+Improve software: Use suitable processes in order to develop software that meets organizational requirements and provides competitive advantage to the organization.
+</br>
+Project Scope
+</br>
+With the help of user requirements, the project management team determines the scope of the project before the project begins. This scope provides a detailed description of functions, features, constraints, and interfaces of the software that are to be considered. Functions describe the tasks that the software is expected to perform. Features describe the attributes required in the software as per the user requirements. Constraints describe the limitations imposed on software by hardware, memory, and so on. Interfaces describe the interaction of software components (like modules and functions) with each other. Project scope also considers software performance, which in turn depends on its processing capability and response time required to produce the output.
+
+Once the project scope is determined, it is important to properly understand it in order to develop software according to the user requirements. After this, project cost and duration are estimated. Lf the project scope is not determined on time, the project may not be completed within the specified schedule. Project scope describes the following information.
+The elements included and excluded in the project
+The processes and entities
+The functions and features required in software according to the user requirements.
+</br>
+Note that the project management and senior management team should communicate with the users to understand their requirements and develop software according to those requirements and expected functionalities.
+</br>
+Project Planning Process
+</br>
+The project planning process involves a set of interrelated activities followed in an orderly manner to implement user requirements in software and includes the description of a series of project planning activities and individual(s) responsible for performing these activities. In addition, the project planning process comprises the following.
+1.Objectives and scope of the project
+2.Techniques used to perform project planning
+3.Effort (in time) of individuals involved in project
+4.Project schedule and milestones
+5.Resources required for the project
+6.Risks associated with the project.
+</br>
+Project planning process comprises several activities, which are essential for carrying out a project systematically. These activities refer to the series of tasks performed over a period of time for developing the software. These activities include estimation of time, effort, and resources required and risks associated with the project.
+</br>
+                   Project Planning Activities
+</br>
+Project planning process consists of the following activities.
+Identification of project requirements: Before starting a project, it is essential to identify the project requirements as identification of project requirements helps in performing the activities in a systematic manner. These requirements comprise information such as project scope, data and functionality required in the software, and roles of the project management team members.
+Identification of cost estimates: Along with the estimation of effort and time, it is necessary to estimate the cost that is to be incurred on a project. The cost estimation includes the cost of hardware, network connections, and the cost required for the maintenance of hardware components. In addition, cost is estimated for the individuals involved in the project.
+Identification of risks: Risks are unexpected events that have an adverse effect on the project. Software project involves several risks (like technical risks and business risks) that affect the project schedule and increase the cost of the project. Identifying risks before a project begins helps in understanding their probable extent of impact on the project.
+Identification of critical success factors: For making a project successful, critical success factors are followed. These factors refer to the conditions that ensure greater chances of success of a project. Generally, these factors include support from management, appropriate budget, appropriate schedule, and skilled software engineers.
+Preparation of project charter: A project charter provides a brief description of the project scope, quality, time, cost, and resource constraints as described during project planning. It is prepared by the management for approval from the sponsor of the project.
+Preparation of project plan: A project plan provides information about the resources that are available for the project, individuals involved in the project, and the schedule according to which the project is to be carried out.
+Commencement of the project: Once the project planning is complete and resources are assigned to team members, the software project commences.
+
+Once the project objectives and business objectives are determined, the project end date is fixed. The project management team prepares the project plan and schedule according to the end date of the project. After analyzing the project plan, the project manager communicates the project plan and end date to the senior management. The progress of the project is reported to the management from time to time. Similarly, when the project is complete, senior management is informed about it. In case of delay in completing the project, the project plan is re-analyzed and corrective actions are taken to complete the project. The project is tracked regularly and when the project plan is modified, the senior management is informed.
+</br>
+Project Plan
+</br>
+As stated earlier, a project plan stores the outcome of project planning. It provides information about the end date, milestones, activities, and deliverables of the project. In addition, it describes the responsibilities of the project management team and the resources required for the project. It also includes the description of hardware and software (such as compilers and interfaces) and lists the methods and standards to be used. These methods and standards include algorithms, tools, review techniques, design language, programming language, and testing techniques.
+
+A project plan helps a project manager to understand, monitor, and control the development of software project. This plan is used as a means of communication between the users and project management team. There are various advantages associated with a project plan, some of which are listed below.
+It ensures that software is developed according to the user requirements, objectives, and scope of the project.
+It identifies the role of each project management team member involved in the project.
+It monitors the progress of the project according to the project plan.
+It determines the available resources and the activities to be performed during software development.
+It provides an overview to management about the costs of the software project, which are estimated during project planning.
+
+Note that there are differences in the contents of two project plans depending on the kind of project and user requirements. Atypical project plan is divided into the following sections.
+1.Introduction: Describes the objectives of the project and provides information about the constraints that affect the software project.
+2.Project organization: Describes the responsibilities assigned to the project management team members for completing the project.
+3.Risk analysis: Describes the risks that can possibly arise during software development as well as explains how to assess and reduce the effect of risks.
+4.Resource requirements: Specifies the hardware and software required to carry out the software project. Cost estimation is done according to these resource requirements.
+5.Workbreakdown: Describes the activities into which the project is divided. It also describes the milestones and deliverables of the project activities.
+6.Project schedule: Specifies the dependencies of activities on each other. Based on this, the time required by the project management team members to complete the project activities is estimated.
+</br>
+In addition to these sections, there are several plans that may be a part of or 'linked to a project plan. These plans include quality assurance plan, verification and validation plan, configuration management plan, maintenance plan, and staffing plan.
+</br>
+The quality assurance plan describes the strategies and methods that are to be followed to accomplish the following objectives.
+1.Ensure that the project is managed, developed, and implemented in an organized way.
+2.Ensure that project deliverables are of acceptable quality before they are delivered to the user.
+</br>
+Verification and Validation Plan
+</br>
+ 
+
+The verification and validation plan describes the approach, resources and schedule used for system validation. The verification and validation plan, which comprises the following sections.
+</br>
+$11.      General information: Provides description of the purpose, scope, system overview, project references, acronyms and abbreviations, and points of contact. Purpose describes the procedure to verify and validate the components of the system. Scope provides information about the procedures to verify and validate as they relate to the project. System overview provides information about the organization responsible for the project and other information such as system name, system category, operational status of the system, and system environment. Project references provide the list of references used for the preparation of the verification and validation plan. Acronyms and abbreviations provide a list of terms used in the document. Points of contact provide information to users when they require assistance from organization for problems such as troubleshooting and so on.
+</br>
+$12.      Reviews and walkthroughs: Provides information about the schedule and procedures. Schedule describes the end date of milestones of the project. Procedures describe the tasks associated with reviews and walkthroughs. Each team member reviews the document for errors and consistency with the project requirements. For walkthroughs, the project management team checks the project for correctness according to software requirements specification (SRS).
+</br>
+$13.      System test plan and procedures: Provides information about the system test strategy, database integration, and platform system integration. System test strategy provides an overview of the components required for integration of the database and ensures that the application runs on at least two specific platforms. Database integration procedure describes how database is connected to the Graphical User Interface (GUI).Platform system integration procedure is performed on different operating systems to test the platform.
+</br>
+$14.      Acceptance test and preparation for delivery: Provides information about procedure, acceptance criteria, and installation procedure. Procedure describes how acceptance testing is to be performed on the software to verify its usability as required. Acceptance criteria describes that software will be accepted only if all the components, features and functions are tested including the system integration testing. In addition, acceptance criteria checks whether the software accomplishes user expectations such as its ability to operate on several platforms. Installation procedure describes the steps of how to install the software according to the operating system being used.
+</br>
+ 
+
+Configuration Management Plan
+</br>
+The configuration management plan defines the process, which is used for making changes to the project scope. Generally, the configuration management plan is concerned with redefining the existing objectives of the project and deliverables (software products that are delivered to the user after completion of software development).
+</br>
+Maintenance Plan
+</br>
+The maintenance plan specifies the resources and processes required for making the software operational after its installation. Sometimes, the project management team (or software development team) does not carry out the task of maintenance. In such a case, a separate team known as software maintenance team performs the task of software maintenance.
+
+The maintenance plan, which comprises the sections listed below.
+</br>
+$11.      Introduction and background: Provides a description of software to be maintained and the services required for it. It also specifies the scope of maintenance activities that are to be performed.
+</br>
+$12.      Budget: Specifies the budget required for carrying out software maintenance and operational activities.
+</br>
+$13.      Roles and responsibilities: Specifies the roles and responsibilities of the team members associated with the software maintenance and operation. It also describes the skills required to perform maintenance and operational activities. In addition to software maintenance team, software maintenance comprises user support, user training, and support staff.
+</br>
+$14.      Performance measures and reporting: Identifies the performance measures required for carrying out software maintenance. It also describes how measures required for enhancing the performance of services (for the software) are recorded and reported.
+</br>
+$15.      Management approach: Identifies the methodologies that are required for establishing maintenance priorities of the projects. For this purpose, the management either refers to the existing methodologies or identifies new methodologies. Management approach also describes how users are involved in software maintenance and operations activities as well as how users and project management team communicate with each other.
+
+$16.      Documentation strategies: Provides a description of the documentation that is prepared for user reference. Generally, documentation includes reports, information about problems occurring in software, error messages, and the system documentation.
+
+$17.      Training: Provides information about the training activities.
+
+$18.      Acceptance: Defines a point of agreement between the project management team and software maintenance team after the completion of implementation and transition activities. Once the agreement has been made, the software maintenance begins.
+
+Staffing Plan
+
+The staffing plan describes the number of individuals required for a project. It includes selecting and assigning tasks to the project management team members. It provides information about appropriate skills required to perform the tasks to produce the project deliverables and manage the project. In addition, it provides information of resources such as tools, equipment, and processes used by the project management team.
+
+Staff planning is performed by a staff planner, who is responsible for determining the individuals available for the project. Other responsibilities of a staff planner are listed below.
+
+11.      The staff planner determines individuals, who can be from existing staff, staff on contract, or newly employed staff. It is important for the staff planner to know the structure of the organization to determine the availability of staff.
+
+12.      The staff planner determines the skills required to execute the tasks mentioned in the project schedule and task plan. In case staff with required skills is not available, staff planner informs the project manager about the requirements.
+
+13.      The staff planner ensures that the required staff with required skills is available at the right time. For this purpose, the staff planner plans the availability of staff after the project schedule is fixed. For example, at the initial stage of a project, staff may consist of a project manager and a few software engineers whereas during software development, staff consists of software designers as well as the software developers.
+
+14.      The staff planner defines roles and responsibilities of the project management team members so that they can communicate and coordinate with each other according to the tasks assigned to them. Note that the project management team can be further broken down into sub-teams depending on the size and complexity of the project.
+
+The staffing plan comprises the following sections.
+
+11.      General information: Provides information such as name of the project and project manager who is responsible for the project. In addition, it specifies the start and end dates of the project.
+
+12.      Skills assessment: Provides information, which is required for assessment of skills. This information includes the knowledge, skill, and ability of team members who are required to achieve the objectives of the project. In addition, it specifies the number of team members required for the project.
+
+13.      Staffing profile: Describes the profile of the staff required for the project. The profile includes calendar time, individuals involved, and level of commitment. Calendar time specifies the period of time such as month or quarter for which individuals are required to complete the project. Individuals who are involved in the project have specific designations such as project manager and the developer. Level of commitment is the utilization rate of individuals such as work performed on full-time and part-time basis.
+
+14.      Organization chart: Describes the organization of project management team members. In addition, it includes information such as name, designation, and role of each team member.
+</br></br><font size="5">
+Q11.</br>
+Ans11.</font> Black Box Testing
+Black Box Testing is a testing technique where no knowledge of the internal functionality and structure of the system is available. This testing technique treats the system as a black box or closed box. The tester only knows the formal inputs and expected outputs, but does not know how the program actually arrives at those outputs. As a result, all testing must be based on functional specifications. For this reason black box testing is also considered to be functional testing and is also a form of behavioral testing or opaque box testing or simply closed box testing. Although black box testing is behavioral testing, behavioral test design is slightly different from black box test design because internal knowledge may be available in behavioral testing.
+</br>
+Advantages of Black Box Testing</br>
+Efficient when used on large systems.
+SInce the tester and developer are independent of each other, testing is balanced and unprejudiced.
+Tester can be non-technical.
+There is no need for the tester to have detailed functional knowledge of system.
+Tests will be done from an end user's point of view, because the end user should accept the system. (This testing technique is sometimes also called Acceptance testing.)
+Testing helps to identify vagueness and contradictions in functional specifications.
+Test cases can be designed as soon as the functional specifications are complete.
+Disadvantages of Black Box Testing
+Test cases are challenging to design without having clear functional specifications.
+It is difficult to identify tricky inputs if the test cases are not developed based on specifications.
+It is difficult to identify all possible inputs in limited testing time. As a result, writing test cases may be slow and difficult.
+There are chances of having unidentified paths during the testing process.
+There is a high probability of repeating tests already performed by the programmer.
+</br>
+
+Equivalence Class</br>
+When the elements of some set S have a notion of equivalence (formalized as an equivalence relation) defined on them, then one may naturally split the set S into equivalence classes. These equivalence classes are constructed so that elements a and b belong to the same equivalence class if and only if a and b are equivalent.
+
+Formally, given a set S and an equivalence relation ~ on S, the equivalence class of an element a in S is the set
+</br>
+{\displaystyle \{x\in S\mid x\sim a\}} {\displaystyle \{x\in S\mid x\sim a\}}
+of elements which are equivalent to a. It may be proven from the defining properties of "equivalence relations" that the equivalence classes form a partition of S. This partition – the set of equivalence classes – is sometimes called the quotient set or the quotient space of S by ~ and is denoted by S / ~.
+</br>
+When the set S has some structure (such as a group operation or a topology) and the equivalence relation ~ is defined in a manner suitably compatible with this structure, then the quotient set often inherits a similar structure from its parent set. Examples include quotient spaces in linear algebra, quotient spaces in topology, quotient groups, homogeneous spaces, quotient rings, quotient monoids, and quotient categories.
+
+Equivalence partitioning
+Equivalence partitioning or equivalence class partitioning (ECP)[1] is a software testing technique that divides the input data of a software unit into partitions of equivalent data from which test cases can be derived. In principle, test cases are designed to cover each partition at least once. This technique tries to define test cases that uncover classes of errors, thereby reducing the total number of test cases that must be developed. An advantage of this approach is reduction in the time required for testing a software due to lesser number of test cases.
+
+Equivalence partitioning is typically applied to the inputs of a tested component, but may be applied to the outputs in rare cases. The equivalence partitions are usually derived from the requirements specification for input attributes that influence the processing of the test object.
+ </div>
+</body>
+</html>

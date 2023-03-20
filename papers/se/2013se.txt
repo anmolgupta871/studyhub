@@ -1,0 +1,66 @@
+        Software Engineering 2013 
+   
+
+Note Attempt all question Internal choice is available in cach suction. 
+          Section A 
+(objective Type Questions) 
+Q1 .  Choose the correct answLE- 
+(i)Parallul teams are rcquired in: 
+(a) RAD model (b) Meta modci (c) Spiral model (d) None of the abovc 
+(ii) Software tesling is given by an equation: 
+(a) Verification validation 
+(b) Verification validation online BU com
+ (c) Verification/validation
+ (d) None of the above 
+(iii) The most important task in a soltwaru projuct is: 
+(a) implementation 
+(b) Controlling
+ (c) Closing
+ (d) Planning 
+(iv) In Mc Call quality model, product revision quality ractor consist of: 
+(a) Maintainability 
+(b) Flexibility 
+(c) Testability 
+(d) None of thc above 
+(v) Alpha testing is done by: 
+(a) Tesler
+ (b) Customer 
+(c) Developer 
+(d) All of the above 
+         Section-B 
+(Short Answer Type Questions) 
+Q2. What is the basic difference between RAD model and Incremental model? 
+        or 
+How many types of metrics aru thcrc? Explain in brief?
+
+ Q3 . Briefly describe requirement review and its type 
+         or
+ What is SRS? Also write its components?
+
+Q IV What is Mc Call's Quality facor?
+    or 
+inc different levels or CocoMo model? 
+Qv. Distinguish between cohesion and coupling?         
+
+                or 
+What is verification? Also, write down metrics used for this. 
+QVI. Why status accounting is required?
+ or 
+How many types of system tesuing are there?       
+      Section (Long Answer Type Questions) Define Software Engineering? Compare prototype model with
+ Q.VIl spiral model of software.
+        or 
+what is project management? How functionality of a softwaru is calculated? 
+
+Q VIII. Explain process steps of requirement engincuring with a suitable diagram. 
+   or
+ How information mudeling is donc in a software, explain with an example.
+ QIX. What is software quality assurance? Give a comparative analysis of external versus internal qualitics? 
+       Or 
+management activity? 
+Qx. What do you mean by design objectives? Explain various design principles involved in design-engineering of a sofware. 
+       or
+ What are design classes? How functional indcpcndence can bc achieved in designing a software? 
+  Qxl. Describe SCM process steps with a suitable diagram. 
+    or 
+  Distinguish betwccn: (i) White Box and Black Box uesting, (ii) Integration System testing online BU com
